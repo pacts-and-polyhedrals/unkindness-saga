@@ -9,6 +9,10 @@ import inheritance
 import hold
 import p1_actors
 import spellbooks
+import p1_tokens
+import p1_inhabitants
+print('Part I inhabitants (scenes, creatures):', p1_inhabitants.write(f'{ROOT}/module/data/ravenloft/inhabitants.json'))
+print('Part I tokens (scenes, tokens):', p1_tokens.write(f'{ROOT}/module/data/ravenloft/tokens.json'))
 CR2_FIX = {"odran": 4, "dagnner": 5, "tovik": 1, "heddra": 0.5}
 SAVES2 = {"odran": ("wis", "cha"), "dagnner": ("str", "con"), "edda": ("str", "con"), "runa": ("int", "wis"), "yrsa": ("wis", "cha"),
           "urzha": ("con", "wis"), "skrik": ("dex", "int"), "ketta": ("dex", "int")}
@@ -32,7 +36,7 @@ from playlists_data import PLAYLISTS
 
 MODDIR = f"{ROOT}/module"
 SRC = f"{ROOT}/build/packs"
-VERSION = "2.1.6"
+VERSION = "2.1.9"
 REPO = "https://github.com/pacts-and-polyhedrals/unkindness-saga"
 
 shutil.rmtree(SRC, ignore_errors=True)

@@ -1,0 +1,1108 @@
+{
+ "monsters": {
+  "vampire-spawn": [
+   "Vampire Spawn"
+  ],
+  "zombie": [
+   "Zombie"
+  ],
+  "skeleton": [
+   "Skeleton"
+  ],
+  "ghoul": [
+   "Ghoul"
+  ],
+  "ghast": [
+   "Ghast"
+  ],
+  "wight": [
+   "Wight"
+  ],
+  "specter": [
+   "Specter"
+  ],
+  "shadow": [
+   "Shadow"
+  ],
+  "ghost": [
+   "Ghost"
+  ],
+  "wraith": [
+   "Wraith"
+  ],
+  "animated-armor": [
+   "Animated Armor"
+  ],
+  "flying-sword": [
+   "Flying Sword",
+   "Animated Flying Sword"
+  ],
+  "rug": [
+   "Rug of Smothering",
+   "Animated Rug of Smothering"
+  ],
+  "bats": [
+   "Swarm of Bats"
+  ],
+  "rats": [
+   "Swarm of Rats"
+  ],
+  "wolf": [
+   "Wolf"
+  ],
+  "dire-wolf": [
+   "Dire Wolf"
+  ],
+  "gargoyle": [
+   "Gargoyle"
+  ],
+  "cultist": [
+   "Cultist"
+  ],
+  "fanatic": [
+   "Cult Fanatic",
+   "Cultist Fanatic"
+  ],
+  "guard": [
+   "Guard"
+  ],
+  "commoner": [
+   "Commoner"
+  ],
+  "mastiff": [
+   "Mastiff"
+  ],
+  "priest": [
+   "Priest"
+  ],
+  "acolyte": [
+   "Acolyte",
+   "Priest Acolyte"
+  ],
+  "nightmare": [
+   "Nightmare"
+  ],
+  "ochre-jelly": [
+   "Ochre Jelly"
+  ],
+  "wisp": [
+   "Will-o'-Wisp",
+   "Will-o\u2019-Wisp"
+  ]
+ },
+ "scenes": {
+  "cu.scene.ravenloft-00-grounds-roofed": [
+   {
+    "m": "dire-wolf",
+    "n": 1,
+    "x": 0.55,
+    "y": 0.21,
+    "label": "Strahd's Wolf (pack leader)"
+   },
+   {
+    "m": "wolf",
+    "n": 3,
+    "x": 0.55,
+    "y": 0.21,
+    "label": "Strahd's Wolf"
+   },
+   {
+    "m": "nightmare",
+    "n": 1,
+    "x": 0.68,
+    "y": 0.19,
+    "label": "Beucephalus"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.3,
+    "y": 0.11,
+    "label": "Wall Gargoyle"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.77,
+    "y": 0.87,
+    "label": "Wall Gargoyle"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.87,
+    "y": 0.5,
+    "label": "Gate Warden (vampire spawn)"
+   },
+   {
+    "m": "zombie",
+    "n": 3,
+    "x": 0.3,
+    "y": 0.22,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.25,
+    "y": 0.7,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "cultist",
+    "n": 3,
+    "x": 0.56,
+    "y": 0.66,
+    "label": "Blood Choir Thrall"
+   },
+   {
+    "m": "fanatic",
+    "n": 1,
+    "x": 0.56,
+    "y": 0.66,
+    "label": "Blood Choir Cantor"
+   }
+  ],
+  "cu.scene.ravenloft-01-grounds-open": [
+   {
+    "m": "dire-wolf",
+    "n": 1,
+    "x": 0.55,
+    "y": 0.21,
+    "label": "Strahd's Wolf (pack leader)"
+   },
+   {
+    "m": "wolf",
+    "n": 3,
+    "x": 0.55,
+    "y": 0.21,
+    "label": "Strahd's Wolf"
+   },
+   {
+    "m": "nightmare",
+    "n": 1,
+    "x": 0.68,
+    "y": 0.19,
+    "label": "Beucephalus"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.3,
+    "y": 0.11,
+    "label": "Wall Gargoyle"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.77,
+    "y": 0.87,
+    "label": "Wall Gargoyle"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.87,
+    "y": 0.5,
+    "label": "Gate Warden (vampire spawn)"
+   },
+   {
+    "m": "zombie",
+    "n": 3,
+    "x": 0.3,
+    "y": 0.22,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.25,
+    "y": 0.7,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "cultist",
+    "n": 3,
+    "x": 0.56,
+    "y": 0.66,
+    "label": "Blood Choir Thrall"
+   },
+   {
+    "m": "fanatic",
+    "n": 1,
+    "x": 0.56,
+    "y": 0.66,
+    "label": "Blood Choir Cantor"
+   }
+  ],
+  "cu.scene.ravenloft-02-main-floor": [
+   {
+    "m": "animated-armor",
+    "n": 2,
+    "x": 0.4,
+    "y": 0.52,
+    "label": "Hall Armour"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 2,
+    "x": 0.54,
+    "y": 0.33,
+    "label": "Household Guard (vampire spawn)"
+   },
+   {
+    "m": "shadow",
+    "n": 3,
+    "x": 0.85,
+    "y": 0.4
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.19
+   },
+   {
+    "m": "rats",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.81
+   },
+   {
+    "m": "rug",
+    "n": 1,
+    "x": 0.62,
+    "y": 0.11
+   },
+   {
+    "m": "commoner",
+    "n": 2,
+    "x": 0.67,
+    "y": 0.22,
+    "label": "Frightened Servant"
+   },
+   {
+    "m": "flying-sword",
+    "n": 2,
+    "x": 0.66,
+    "y": 0.44,
+    "label": "Hall Blade"
+   },
+   {
+    "m": "animated-armor",
+    "n": 1,
+    "x": 0.165,
+    "y": 0.67,
+    "label": "Hall Armour"
+   }
+  ],
+  "cu.scene.ravenloft-03-court-of-the-count": [
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.19,
+    "label": "Household Guard (vampire spawn)"
+   },
+   {
+    "m": "commoner",
+    "n": 3,
+    "x": 0.3,
+    "y": 0.33,
+    "label": "Frightened Servant"
+   },
+   {
+    "m": "animated-armor",
+    "n": 2,
+    "x": 0.54,
+    "y": 0.54,
+    "label": "Hall Armour"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.64,
+    "y": 0.12,
+    "label": "Household Guard (vampire spawn)"
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.42,
+    "y": 0.72
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.42,
+    "y": 0.72
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.83
+   },
+   {
+    "m": "specter",
+    "n": 1,
+    "x": 0.16,
+    "y": 0.72,
+    "label": "Restless Dead"
+   }
+  ],
+  "cu.scene.ravenloft-04-rooms-of-weeping": [
+   {
+    "m": "specter",
+    "n": 2,
+    "x": 0.25,
+    "y": 0.3,
+    "label": "Weeping Spirit"
+   },
+   {
+    "m": "ghost",
+    "n": 1,
+    "x": 0.2,
+    "y": 0.51,
+    "label": "Weeping Ghost"
+   },
+   {
+    "m": "shadow",
+    "n": 2,
+    "x": 0.34,
+    "y": 0.52
+   },
+   {
+    "m": "shadow",
+    "n": 2,
+    "x": 0.2,
+    "y": 0.72
+   },
+   {
+    "m": "rug",
+    "n": 1,
+    "x": 0.34,
+    "y": 0.72
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.6,
+    "y": 0.52,
+    "label": "Household Guard (vampire spawn)"
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.7,
+    "y": 0.4
+   }
+  ],
+  "cu.scene.ravenloft-05-rooftops": [
+   {
+    "m": "gargoyle",
+    "n": 2,
+    "x": 0.3,
+    "y": 0.37,
+    "label": "Roof Gargoyle"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.25,
+    "y": 0.85,
+    "label": "Roof Gargoyle"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.52,
+    "y": 0.31,
+    "label": "Roof Watch (vampire spawn)"
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.52,
+    "y": 0.31
+   },
+   {
+    "m": "bats",
+    "n": 2,
+    "x": 0.52,
+    "y": 0.77
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.2,
+    "label": "Roof Gargoyle"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.095,
+    "y": 0.85,
+    "label": "Roof Gargoyle"
+   }
+  ],
+  "cu.scene.ravenloft-06-spires-1": [
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.44,
+    "y": 0.72,
+    "label": "Tower Guard (vampire spawn)"
+   },
+   {
+    "m": "rats",
+    "n": 1,
+    "x": 0.52,
+    "y": 0.8
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.43,
+    "y": 0.35
+   },
+   {
+    "m": "gargoyle",
+    "n": 2,
+    "x": 0.23,
+    "y": 0.37,
+    "label": "Roof Gargoyle"
+   }
+  ],
+  "cu.scene.ravenloft-07-spires-2": [
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.53,
+    "y": 0.3
+   }
+  ],
+  "cu.scene.ravenloft-08-spires-3-heart": [
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.5,
+    "y": 0.72
+   }
+  ],
+  "cu.scene.ravenloft-09-spires-4": [
+   {
+    "m": "wraith",
+    "n": 1,
+    "x": 0.53,
+    "y": 0.31,
+    "label": "Tower Wraith"
+   },
+   {
+    "m": "shadow",
+    "n": 2,
+    "x": 0.53,
+    "y": 0.31
+   },
+   {
+    "m": "gargoyle",
+    "n": 2,
+    "x": 0.5,
+    "y": 0.77,
+    "label": "Spire Gargoyle"
+   }
+  ],
+  "cu.scene.ravenloft-10-spires-5": [
+   {
+    "m": "gargoyle",
+    "n": 2,
+    "x": 0.52,
+    "y": 0.31,
+    "label": "Spire Gargoyle"
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.5,
+    "y": 0.77
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.5,
+    "y": 0.77,
+    "label": "Tower Guard (vampire spawn)"
+   }
+  ],
+  "cu.scene.ravenloft-11-spires-6": [
+   {
+    "m": "bats",
+    "n": 2,
+    "x": 0.52,
+    "y": 0.31
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.65,
+    "y": 0.66,
+    "label": "Tower Wight"
+   }
+  ],
+  "cu.scene.ravenloft-12-spires-7": [
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.65,
+    "y": 0.66,
+    "label": "Spire Gargoyle"
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.65,
+    "y": 0.66
+   }
+  ],
+  "cu.scene.ravenloft-13-larders": [
+   {
+    "m": "ghoul",
+    "n": 3,
+    "x": 0.38,
+    "y": 0.56,
+    "label": "Larder Ghoul"
+   },
+   {
+    "m": "ghast",
+    "n": 1,
+    "x": 0.38,
+    "y": 0.56,
+    "label": "Larder Ghast"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.38,
+    "y": 0.3,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "rats",
+    "n": 1,
+    "x": 0.46,
+    "y": 0.3
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.48,
+    "y": 0.43,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "ochre-jelly",
+    "n": 1,
+    "x": 0.6,
+    "y": 0.43
+   },
+   {
+    "m": "ghoul",
+    "n": 1,
+    "x": 0.58,
+    "y": 0.53,
+    "label": "Larder Ghoul"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.76,
+    "y": 0.52,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "commoner",
+    "n": 2,
+    "x": 0.26,
+    "y": 0.76,
+    "label": "Prisoner in the Cells"
+   },
+   {
+    "m": "ghoul",
+    "n": 1,
+    "x": 0.26,
+    "y": 0.76,
+    "label": "Larder Ghoul"
+   }
+  ],
+  "cu.scene.ravenloft-15-larders-mist": [
+   {
+    "m": "ghoul",
+    "n": 3,
+    "x": 0.37,
+    "y": 0.53,
+    "label": "Larder Ghoul"
+   },
+   {
+    "m": "ghast",
+    "n": 1,
+    "x": 0.37,
+    "y": 0.53,
+    "label": "Larder Ghast"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.36,
+    "y": 0.2,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "rats",
+    "n": 1,
+    "x": 0.47,
+    "y": 0.23
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.48,
+    "y": 0.4,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "ochre-jelly",
+    "n": 1,
+    "x": 0.61,
+    "y": 0.4
+   },
+   {
+    "m": "ghoul",
+    "n": 1,
+    "x": 0.6,
+    "y": 0.52,
+    "label": "Larder Ghoul"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.8,
+    "y": 0.56,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "commoner",
+    "n": 2,
+    "x": 0.22,
+    "y": 0.81,
+    "label": "Prisoner in the Cells"
+   },
+   {
+    "m": "ghoul",
+    "n": 1,
+    "x": 0.22,
+    "y": 0.81,
+    "label": "Larder Ghoul"
+   }
+  ],
+  "cu.scene.ravenloft-14-dungeons-catacombs": [
+   {
+    "m": "vampire-spawn",
+    "n": 2,
+    "x": 0.437,
+    "y": 0.35,
+    "label": "Crypt Guard (vampire spawn)"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 2,
+    "x": 0.537,
+    "y": 0.713,
+    "label": "Crypt Guard (vampire spawn)"
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.437,
+    "y": 0.647,
+    "label": "Crypt Wight"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.437,
+    "y": 0.647,
+    "label": "Crypt Skeleton"
+   },
+   {
+    "m": "specter",
+    "n": 2,
+    "x": 0.587,
+    "y": 0.35,
+    "label": "Restless Dead"
+   },
+   {
+    "m": "ghost",
+    "n": 1,
+    "x": 0.49,
+    "y": 0.12,
+    "label": "Weeping Ghost"
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.49,
+    "y": 0.88,
+    "label": "Crypt Wight"
+   },
+   {
+    "m": "ghoul",
+    "n": 2,
+    "x": 0.09,
+    "y": 0.6,
+    "label": "Ghoul of Orcus"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.21,
+    "y": 0.69,
+    "label": "Crypt Skeleton"
+   },
+   {
+    "m": "specter",
+    "n": 1,
+    "x": 0.09,
+    "y": 0.39,
+    "label": "Restless Dead"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.08,
+    "y": 0.85,
+    "label": "Risen Dead of Orcus"
+   }
+  ],
+  "cu.scene.ravenloft-16-catacombs-mist": [
+   {
+    "m": "vampire-spawn",
+    "n": 2,
+    "x": 0.562,
+    "y": 0.349,
+    "label": "Crypt Guard (vampire spawn)"
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 2,
+    "x": 0.662,
+    "y": 0.647,
+    "label": "Crypt Guard (vampire spawn)"
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.562,
+    "y": 0.713,
+    "label": "Crypt Wight"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.562,
+    "y": 0.713,
+    "label": "Crypt Skeleton"
+   },
+   {
+    "m": "specter",
+    "n": 2,
+    "x": 0.662,
+    "y": 0.349,
+    "label": "Restless Dead"
+   },
+   {
+    "m": "ghost",
+    "n": 1,
+    "x": 0.59,
+    "y": 0.107,
+    "label": "Weeping Ghost"
+   },
+   {
+    "m": "wight",
+    "n": 1,
+    "x": 0.6,
+    "y": 0.88,
+    "label": "Crypt Wight"
+   },
+   {
+    "m": "ghoul",
+    "n": 2,
+    "x": 0.2,
+    "y": 0.67,
+    "label": "Ghoul of Orcus"
+   },
+   {
+    "m": "skeleton",
+    "n": 2,
+    "x": 0.34,
+    "y": 0.67,
+    "label": "Crypt Skeleton"
+   },
+   {
+    "m": "specter",
+    "n": 1,
+    "x": 0.21,
+    "y": 0.49,
+    "label": "Restless Dead"
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.15,
+    "y": 0.91,
+    "label": "Risen Dead of Orcus"
+   }
+  ],
+  "cu.scene.vallaki-01-streets-a": [
+   {
+    "m": "guard",
+    "n": 3,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Vallaki Watch"
+   },
+   {
+    "m": "mastiff",
+    "n": 2,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Watch Hound"
+   },
+   {
+    "m": "commoner",
+    "n": 3,
+    "x": 0.25,
+    "y": 0.5,
+    "label": "Frightened Vallakian"
+   },
+   {
+    "m": "zombie",
+    "n": 3,
+    "x": 0.76,
+    "y": 0.8,
+    "label": "Corpse Facing West"
+   },
+   {
+    "m": "priest",
+    "n": 1,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Priest of St. Andral's"
+   },
+   {
+    "m": "acolyte",
+    "n": 2,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Acolyte"
+   }
+  ],
+  "cu.scene.vallaki-02-streets-b": [
+   {
+    "m": "guard",
+    "n": 3,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Vallaki Watch"
+   },
+   {
+    "m": "mastiff",
+    "n": 2,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Watch Hound"
+   },
+   {
+    "m": "commoner",
+    "n": 3,
+    "x": 0.25,
+    "y": 0.5,
+    "label": "Frightened Vallakian"
+   },
+   {
+    "m": "zombie",
+    "n": 3,
+    "x": 0.76,
+    "y": 0.8,
+    "label": "Corpse Facing West"
+   },
+   {
+    "m": "priest",
+    "n": 1,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Priest of St. Andral's"
+   },
+   {
+    "m": "acolyte",
+    "n": 2,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Acolyte"
+   }
+  ],
+  "cu.scene.vallaki-03-streets-c": [
+   {
+    "m": "guard",
+    "n": 3,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Vallaki Watch"
+   },
+   {
+    "m": "mastiff",
+    "n": 2,
+    "x": 0.8,
+    "y": 0.3,
+    "label": "Watch Hound"
+   },
+   {
+    "m": "commoner",
+    "n": 3,
+    "x": 0.25,
+    "y": 0.5,
+    "label": "Frightened Vallakian"
+   },
+   {
+    "m": "zombie",
+    "n": 3,
+    "x": 0.76,
+    "y": 0.8,
+    "label": "Corpse Facing West"
+   },
+   {
+    "m": "priest",
+    "n": 1,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Priest of St. Andral's"
+   },
+   {
+    "m": "acolyte",
+    "n": 2,
+    "x": 0.88,
+    "y": 0.42,
+    "label": "Acolyte"
+   }
+  ],
+  "cu.scene.vallaki-04-arcane-outfitter": [
+   {
+    "m": "commoner",
+    "n": 2,
+    "x": 0.22,
+    "y": 0.3,
+    "label": "Refugee Sheltering with Van Richten"
+   },
+   {
+    "m": "mastiff",
+    "n": 1,
+    "x": 0.48,
+    "y": 0.8,
+    "label": "Workshop Hound"
+   }
+  ],
+  "cu.scene.ravenloft-00a-the-last-road": [
+   {
+    "m": "dire-wolf",
+    "n": 1,
+    "x": 0.42,
+    "y": 0.32,
+    "label": "Strahd's Wolf (pack leader)"
+   },
+   {
+    "m": "wolf",
+    "n": 3,
+    "x": 0.42,
+    "y": 0.32,
+    "label": "Strahd's Wolf"
+   },
+   {
+    "m": "zombie",
+    "n": 4,
+    "x": 0.15,
+    "y": 0.53,
+    "label": "Risen Dead of Orcus"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.31,
+    "y": 0.42,
+    "label": "Gate Gargoyle"
+   },
+   {
+    "m": "gargoyle",
+    "n": 1,
+    "x": 0.31,
+    "y": 0.66,
+    "label": "Gate Gargoyle"
+   },
+   {
+    "m": "bats",
+    "n": 1,
+    "x": 0.82,
+    "y": 0.45
+   },
+   {
+    "m": "vampire-spawn",
+    "n": 1,
+    "x": 0.96,
+    "y": 0.36,
+    "label": "Gate Warden (vampire spawn)"
+   }
+  ],
+  "cu.scene.barovia-01-unravelling-mistway": [
+   {
+    "m": "shadow",
+    "n": 3,
+    "x": 0.15,
+    "y": 0.25,
+    "label": "Mist-Shadow"
+   },
+   {
+    "m": "wolf",
+    "n": 3,
+    "x": 0.2,
+    "y": 0.75,
+    "label": "Starving Wolf"
+   },
+   {
+    "m": "wisp",
+    "n": 3,
+    "x": 0.47,
+    "y": 0.3
+   },
+   {
+    "m": "zombie",
+    "n": 2,
+    "x": 0.25,
+    "y": 0.52,
+    "label": "Wandering Dead"
+   },
+   {
+    "m": "specter",
+    "n": 2,
+    "x": 0.82,
+    "y": 0.3,
+    "label": "Soul Lost in the Mist"
+   },
+   {
+    "m": "commoner",
+    "n": 3,
+    "x": 0.6,
+    "y": 0.66,
+    "label": "Barovian Refugee"
+   }
+  ]
+ }
+}

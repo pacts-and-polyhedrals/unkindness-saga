@@ -253,22 +253,22 @@ async function stageScene(key) {
 
 async function buildScenes() {
   const all = await sceneData();
-  const note = ui.notifications.info(`${ROOT}: building scenes…`, { permanent: true });
+  const note = ui.notifications.info(`${ROOT}: building scenes (Part II, then Part I)…`, { permanent: true });
   const folder = await ensureFolder(ROOT, "Scene");
   await ensureScene(all.landing, folder);
   await ensureScene(all.section, folder);
   for (const s of all.scenes) await stageScene(s.key);
+  let p1 = 0; try { p1 = await buildPartOneScenes(); } catch (e) { console.error(MOD, "Part I scenes", e); }
   note?.remove?.();
   await repairArt({ quiet: true });
-  ui.notifications.info(`${ROOT}: ${all.scenes.length} scenes built.`);
+  const chk = await checkScenes({ repair: true });
+  ui.notifications[chk.incomplete.length ? "warn" : "info"](`${ROOT}: ${chk.total} scenes built${chk.incomplete.length ? `; ${chk.incomplete.length} still incomplete (see the Scene check card in chat)` : " and checked: every one complete"}.`);
 }
 
 async function setupAll() {
   await migrateLegacy();
-  try { if (game.catAndUnkindness?.setup) await game.catAndUnkindness.setup(); } catch (e) { console.error(MOD, "Part I setup", e); }
-  await fixPartOnePadding();
   await installContent({ update: false });
-  await buildScenes();
+  await buildScenes(); // also sets up Part I and places its creatures
   await applyPartySize(game.settings.get(MOD, "partySize"));
   await grantSpells();
   await repairArt({ quiet: true });
@@ -681,12 +681,13 @@ class Manager extends foundry.applications.api.ApplicationV2 {
     actions: {
       setupAll: async function () { await API.setupAll(); this.render(); },
       board: async function () { Board.open(); },
-      partOne: async function () { await migrateLegacy(); await game.catAndUnkindness?.setup?.(); await fixPartOnePadding(); await repairArt({ quiet: true }); this.render(); },
+      partOne: async function () { await rebuildPartOne({ scenes: false }); await repairArt({ quiet: true }); this.render(); },
       art: async function () { await repairArt({ force: true }); this.render(); },
       partOneDash: async function () { await game.catAndUnkindness?.dashboard?.(); },
       install: async function () { await installContent({ update: false }); await grantSpells(); await repairArt({ quiet: true }); this.render(); },
       update: async function () { await updateContent(); this.render(); },
       scenes: async function () { await buildScenes(); this.render(); },
+      check: async function () { await checkScenes(); },
       scene: async function (ev, el) { await stageScene(el.dataset.key); await repairArt({ quiet: true }); ui.notifications.info(`Scene rebuilt: ${el.dataset.key}`); },
       remove: async function () { await removeAll(); this.render(); },
       party: async function (ev, el) { const n = await applyPartySize(Number(el.dataset.n)); ui.notifications.info(`Scaled for ${n} heroes.`); this.render(); },
@@ -716,8 +717,9 @@ class Manager extends foundry.applications.api.ApplicationV2 {
         <div class="il-row"><button type="button" data-action="install"><i class="fa-solid fa-download"></i> Install Content</button>
         <button type="button" data-action="update"><i class="fa-solid fa-arrows-rotate"></i> Update Content</button>
         <button type="button" data-action="art" title="Point every map, portrait, token, icon and track at a copy that loads (fixes blank maps on The Forge)"><i class="fa-solid fa-image"></i> Repair Art</button>
-        <button type="button" data-action="scenes"><i class="fa-solid fa-map"></i> Build All Scenes</button></div>
-        <p class="hint">Rebuilding a scene replaces only the walls, lights, pins and tokens this module placed. Update Content refreshes documents from the compendiums and keeps their IDs, so tokens and links keep working.</p></section>
+        <button type="button" data-action="scenes"><i class="fa-solid fa-map"></i> Build All Scenes</button>
+        <button type="button" data-action="check" title="Compare every scene with what the module ships and whisper the result"><i class="fa-solid fa-list-check"></i> Check Scenes</button></div>
+        <p class="hint">Build All Scenes rebuilds both parts' maps and places every creature (Part I's start hidden: reveal each encounter when it begins). Rebuilding a scene replaces only the walls, lights, pins and tokens this module placed. Update Content refreshes documents from the compendiums and keeps their IDs, so tokens and links keep working.</p></section>
       <section><h3>Party Size</h3><div class="il-row">${[4, 5, 6].map(n => `<button type="button" data-action="party" data-n="${n}" class="${n === ps ? "active" : ""}">${n} heroes</button>`).join("")}</div>
         <p class="hint">Four heroes: Korga, Hadrik and the Bastion Engine drop to about 85% hit points (Appendix A). Six heroes: hit points are unchanged — add one ordinary support enemy or an exposed objective instead.</p></section>
       <section><h3>The Stone Ledger</h3><div class="il-row"><button type="button" data-action="ledger"><i class="fa-solid fa-scale-balanced"></i> Open the Ledger</button><button type="button" data-action="resetLedger">Reset</button></div></section>
@@ -1102,7 +1104,238 @@ async function runRepairArt({ quiet = false, force = false } = {}) {
   return docs + emb;
 }
 const artWhere = b => b === ART_PREFIX ? "the module folder" : b.startsWith(GH_RAW) ? "the module's GitHub repository" : "your Forge assets library";
-const ArtAPI = { base: artBase, repair: repairArt, tokens: fixTokenLevels, padding: fixPartOnePadding, spells: grantSpells, report: async () => { await artBase(true); console.log(ART_REPORT.join("\n")); return ART_REPORT; } };
+const ArtAPI = { inhabitants: placePartOneTokens, base: artBase, repair: repairArt, tokens: fixTokenLevels, padding: fixPartOnePadding, spells: grantSpells, p1tokens: placePartOneTokens, p1rebuild: rebuildPartOne, p1scene: stagePartOneScene, check: checkScenes, report: async () => { await artBase(true); console.log(ART_REPORT.join("\n")); return ART_REPORT; } };
+
+// ---------------------------------------------------------------- Part I creature placement
+// data/ravenloft/tokens.json lists where each Part I creature stands (token centres). Every placed token starts hidden.
+// ---------------------------------------------------------------- the castle's other inhabitants
+// data/ravenloft/inhabitants.json: groups of SRD monsters per Part I map (anchor in map fractions). The stat blocks
+// are imported once from the dnd5e system's monster compendium into "07 — Castle Inhabitants".
+let MONSTER_INDEX = null;
+async function monsterIndex() {
+  if (MONSTER_INDEX) return MONSTER_INDEX;
+  MONSTER_INDEX = new Map();
+  const packs = (game.packs?.contents ?? [...(game.packs?.values?.() ?? [])]).filter(p => p.documentName === "Actor" && (p.metadata?.packageName === "dnd5e" || String(p.metadata?.id ?? p.collection).startsWith("dnd5e.")));
+  packs.sort((a, b) => /legacy/i.test(a.collection) - /legacy/i.test(b.collection));
+  for (const pack of packs) {
+    let idx; try { idx = await pack.getIndex(); } catch (e) { continue; }
+    for (const e of (idx.contents ?? [...idx.values?.() ?? idx])) {
+      const k = String(e.name).toLowerCase().replace(/[’']/g, "'").trim();
+      if (!MONSTER_INDEX.has(k)) MONSTER_INDEX.set(k, { pack, id: e._id });
+    }
+  }
+  return MONSTER_INDEX;
+}
+async function inhabitantActor(key, names, missing) {
+  const have = game.actors.find(a => a.flags?.[MOD]?.inhabitant === key);
+  if (have) return have;
+  const idx = await monsterIndex();
+  const hit = names.map(n => idx.get(n.toLowerCase().replace(/[’']/g, "'"))).find(Boolean);
+  if (!hit) { missing.add(names[0]); return null; }
+  const src = await hit.pack.getDocument(hit.id); if (!src) { missing.add(names[0]); return null; }
+  const folder = await folderPath("Actor", "The Cat and the Unkindness/07 — Castle Inhabitants");
+  const d = src.toObject(); delete d._id; delete d._stats;
+  d.folder = folder?.id ?? null;
+  d.flags = { ...(d.flags ?? {}), [MOD]: { inhabitant: key } };
+  return Actor.create(d, { cuInternal: true });
+}
+// Free squares near an anchor, in the same room: never across a wall, not hugging one, not on another token.
+function spreadSquares(scene, ax, ay, size, count, occ) {
+  const g = scene.grid?.size ?? 100, W = scene.width, H = scene.height;
+  const walls = scene.walls.filter(w => (w.move ?? 1) !== 0).map(w => w.c);
+  const cross = (p1, p2, a, b) => { const o = (u, v, w) => (v[0] - u[0]) * (w[1] - u[1]) - (v[1] - u[1]) * (w[0] - u[0]);
+    return ((o(a, b, p1) > 0) !== (o(a, b, p2) > 0)) && ((o(p1, p2, a) > 0) !== (o(p1, p2, b) > 0)); };
+  const dist = (px, py, c) => { const dx = c[2] - c[0], dy = c[3] - c[1], L = dx * dx + dy * dy; const t = L ? Math.max(0, Math.min(1, ((px - c[0]) * dx + (py - c[1]) * dy) / L)) : 0; return Math.hypot(px - (c[0] + t * dx), py - (c[1] + t * dy)); };
+  const cx = Math.floor(ax / g), cy = Math.floor(ay / g), R = 10, out = [];
+  const cands = []; for (let dx = -R; dx <= R; dx++) for (let dy = -R; dy <= R; dy++) cands.push([dx, dy]);
+  cands.sort((a, b) => (a[0] ** 2 + a[1] ** 2) - (b[0] ** 2 + b[1] ** 2));
+  for (const [dx, dy] of cands) {
+    if (out.length >= count) break;
+    const x0 = cx + dx, y0 = cy + dy, cells = [];
+    for (let i = 0; i < size; i++) for (let j = 0; j < size; j++) cells.push([x0 + i, y0 + j]);
+    const ok = cells.every(([qx, qy]) => { const px = (qx + 0.5) * g, py = (qy + 0.5) * g;
+      return !occ.has(`${qx},${qy}`) && px > 0 && py > 0 && px < W && py < H && !walls.some(c => cross([ax, ay], [px, py], [c[0], c[1]], [c[2], c[3]]) || dist(px, py, c) < 0.45 * g); });
+    if (!ok) continue;
+    cells.forEach(([qx, qy]) => occ.add(`${qx},${qy}`)); out.push({ x: x0 * g, y: y0 * g });
+  }
+  return out;
+}
+function occupied(scene) {
+  const g = scene.grid?.size ?? 100, occ = new Set();
+  for (const t of scene.tokens) { const x0 = Math.round(t.x / g), y0 = Math.round(t.y / g); for (let i = 0; i < (t.width ?? 1); i++) for (let j = 0; j < (t.height ?? 1); j++) occ.add(`${x0 + i},${y0 + j}`); }
+  return occ;
+}
+async function placePartOneTokens(only = null) {
+  if (!game.user?.isGM) return 0;
+  let plan, inh; try { [plan, inh] = await Promise.all([p1json("tokens.json"), p1json("inhabitants.json")]); } catch (e) { console.warn(MOD, "Part I tokens", e); return 0; }
+  const actorFor = sid => game.actors.find(a => a.getFlag?.(MOD, "sourceId") === sid || a.flags?.[MOD]?.sourceId === sid);
+  let n = 0; const missing = new Set(), missingMon = new Set();
+  for (const sid of new Set([...Object.keys(plan), ...Object.keys(inh.scenes)])) {
+    if (only && !only.includes(sid)) continue;
+    const scene = game.scenes.find(sc => sc.getFlag?.(MOD, "sourceId") === sid || sc.flags?.[MOD]?.sourceId === sid);
+    if (!scene) continue;
+    try {
+      const old = scene.tokens.filter(t => t.flags?.[MOD]?.p1token).map(t => t.id);
+      if (old.length) await scene.deleteEmbeddedDocuments("Token", old);
+      const levelId = gen() >= 14 ? (await sceneLevel(scene))?.id : null;
+      const grid = scene.grid?.size ?? 100;
+      const finish = data => { foundry.utils.setProperty(data, `flags.${MOD}.p1token`, true); delete data.levels; if (levelId) data.level = levelId; return data; };
+      const docs = [];
+      for (const t of plan[sid] ?? []) {
+        const actor = actorFor(t.actor);
+        if (!actor) { missing.add(t.actor); continue; }
+        const w = actor.prototypeToken?.width ?? 1, h = actor.prototypeToken?.height ?? w;
+        const data = (await actor.getTokenDocument({ x: Math.round(t.x - (w * grid) / 2), y: Math.round(t.y - (h * grid) / 2), hidden: true })).toObject();
+        data.name = t.name || data.name || actor.name;
+        docs.push(finish(data));
+      }
+      if (docs.length) { await scene.createEmbeddedDocuments("Token", docs); n += docs.length; }
+      // the other inhabitants, spread over free squares around each group's anchor
+      const occ = occupied(scene), more = [];
+      for (const grp of inh.scenes[sid] ?? []) {
+        const actor = await inhabitantActor(grp.m, inh.monsters[grp.m] ?? [grp.m], missingMon);
+        if (!actor) continue;
+        const size = Math.max(1, Math.round(actor.prototypeToken?.width ?? 1));
+        for (const sq of spreadSquares(scene, grp.x * scene.width, grp.y * scene.height, size, grp.n, occ)) {
+          const data = (await actor.getTokenDocument({ x: sq.x, y: sq.y, hidden: true })).toObject();
+          if (grp.label) data.name = grp.label;
+          foundry.utils.setProperty(data, `flags.${MOD}.inhabitant`, grp.m);
+          more.push(finish(data));
+        }
+      }
+      if (more.length) { await scene.createEmbeddedDocuments("Token", more); n += more.length; }
+    } catch (e) { console.error(MOD, "Part I tokens on", scene.name, e); }
+  }
+  if (missing.size) console.warn(`${MOD} | Part I creatures not in this world (run Set Up / Repair Part I):`, [...missing]);
+  if (missingMon.size) ui.notifications.warn(`The Unkindness Saga: ${missingMon.size} castle inhabitants weren't found in your dnd5e monster compendium and were left off the maps: ${[...missingMon].join(", ")}.`);
+  return n;
+}
+// ---------------------------------------------------------------- Part I scenes, built by this module
+// Part I's own setup still imports its journals, actors and macros; its maps are built here the same way as
+// Part II's (walls and lights on the scene's level, in batches that survive a bad entry), then checked.
+const p1data = {};
+async function p1json(f) { return (p1data[f] ??= await (await fetch(`modules/${MOD}/data/ravenloft/${f}`)).json()); }
+async function folderPath(type, path) {
+  let parent = null;
+  for (const name of String(path ?? "").split("/").map(x => x.trim()).filter(Boolean)) {
+    let f = game.folders.find(x => x.type === type && x.name === name && (x.folder?.id ?? x.folder ?? null) === (parent?.id ?? null));
+    if (!f) f = await Folder.create({ name, type, folder: parent?.id ?? null, sorting: "a" }, { cuInternal: true });
+    parent = f;
+  }
+  return parent;
+}
+const bySource = (coll, sid) => coll.find(d => d.flags?.[MOD]?.sourceId === sid);
+async function createSafely(scene, type, docs) {
+  let ok = 0, bad = 0;
+  for (let i = 0; i < docs.length; i += 100) {
+    const chunk = docs.slice(i, i + 100);
+    try { const r = await scene.createEmbeddedDocuments(type, chunk, { cuInternal: true }); ok += r?.length ?? chunk.length; }
+    catch (e) {
+      for (const d of chunk) { try { await scene.createEmbeddedDocuments(type, [d], { cuInternal: true }); ok++; } catch (e2) { bad++; console.warn(`${MOD} | ${scene.name}: skipped a ${type}`, e2.message, d); } }
+    }
+  }
+  return { ok, bad };
+}
+async function stagePartOneScene(src) {
+  const [plan, pins] = await Promise.all([p1json("tokens.json"), p1json("pins.json")]);
+  const base = await artBase();
+  const img = fixArt(src.img, base);
+  const folder = await folderPath("Scene", src.folder);
+  const W = src.width, H = src.height;
+  const flags = { [MOD]: { sourceId: src.sourceId, managed: true, part: "ravenloft", lastSourceHash: src.sourceHash, dirty: false } };
+  const data = { name: src.name, folder: folder?.id ?? null, width: W, height: H, padding: 0, backgroundColor: "#050306",
+    grid: { type: 1, size: src.gridSize, distance: src.gridDistance ?? 5, units: "ft" }, tokenVision: true,
+    environment: { darknessLevel: src.darkness ?? 0.6, globalLight: { enabled: false } }, flags };
+  let scene = bySource(game.scenes, src.sourceId);
+  if (!scene) {
+    const create = { ...data, sort: src.sort ?? 0, navigation: false };
+    if (gen() >= 14) create.levels = [{ name: "Ground", background: { src: img } }]; else create.background = { src: img };
+    scene = await Scene.create(create, { cuInternal: true });
+  } else await scene.update(data, { cuInternal: true });
+  await setBackground(scene, img, "Ground");
+  const level = gen() >= 14 ? (await sceneLevel(scene))?.id : null;
+  const lv = level ? { levels: [level] } : {};
+  const mine = d => d.flags?.["unkindness-saga"]?.managed || d.flags?.[MOD]?.p1token || d.flags?.[MOD]?.p1pin;
+  for (const [type, coll] of [["Wall", scene.walls], ["AmbientLight", scene.lights], ["Note", scene.notes], ["Token", scene.tokens]]) {
+    const ids = coll.filter(mine).map(d => d.id);
+    if (ids.length) await scene.deleteEmbeddedDocuments(type, ids, { cuInternal: true });
+  }
+  const tag = { [MOD]: { managed: true, part: "ravenloft" } };
+  const cl = (v, m) => Math.max(0, Math.min(m, Math.round(v)));
+  const walls = (src.walls ?? []).map(w => ({ c: [cl(w.c[0], W), cl(w.c[1], H), cl(w.c[2], W), cl(w.c[3], H)], move: w.move, sight: w.sight, light: w.light, sound: w.sound,
+    door: w.door ?? 0, ds: w.ds ?? 0, dir: w.dir ?? 0, flags: tag, ...lv })).filter(w => w.c[0] !== w.c[2] || w.c[1] !== w.c[3]);
+  const lights = (src.lights ?? []).map(l => ({ ...l, x: cl(l.x, W), y: cl(l.y, H), flags: tag, ...lv }));
+  const rw = await createSafely(scene, "Wall", walls);
+  const rl = await createSafely(scene, "AmbientLight", lights);
+  // map pins to the journal pages that run each scene
+  const notes = []; let journal = null;
+  for (const p of pins[src.sourceId] ?? []) {
+    const j = bySource(game.journal, p.journal); if (!j) continue;
+    const page = j.pages.find(pg => pg.flags?.[MOD]?.sourcePageId === p.page);
+    journal ??= { j: j.id, p: page?.id ?? null };
+    notes.push({ x: cl(p.x, W), y: cl(p.y, H), entryId: j.id, pageId: page?.id ?? null, text: p.label, global: false,
+      texture: { src: `${artUrl()}assets/icons/note-pin.webp` }, iconSize: Math.max(48, Math.round(src.gridSize * 0.6)), fontSize: Math.max(22, Math.round(src.gridSize * 0.22)), textAnchor: 1,
+      flags: { [MOD]: { p1pin: true } }, ...lv });
+  }
+  const rn = await createSafely(scene, "Note", notes);
+  if (journal) await scene.update({ journal: journal.j, journalEntryPage: journal.p }, { cuInternal: true });
+  const rt = await placePartOneTokens([src.sourceId]);
+  try { const th = await scene.createThumbnail({ img }); if (th?.thumb) await scene.update({ thumb: th.thumb }, { cuInternal: true }); } catch (e) { /* thumbnails are optional */ }
+  return { scene, walls: rw, lights: rl, notes: rn, tokens: rt };
+}
+async function buildPartOneScenes() {
+  const C = game.catAndUnkindness;
+  await migrateLegacy();
+  if (C?.setup) { try { await C.setup(); } catch (e) { console.error(MOD, "Part I setup", e); } }
+  const { scenes } = await p1json("scenes.json");
+  let tokens = 0;
+  for (const src of scenes) {
+    try { const r = await stagePartOneScene(src); tokens += r.tokens; }
+    catch (e) { console.error(`${MOD} | Part I scene ${src.name}`, e); }
+  }
+  return tokens;
+}
+async function rebuildPartOne({ scenes = true } = {}) {
+  if (scenes) return buildPartOneScenes();
+  const C = game.catAndUnkindness;
+  await migrateLegacy(); if (C?.setup) await C.setup(); await fixPartOnePadding();
+  return placePartOneTokens();
+}
+// ---------------------------------------------------------------- scene check
+async function checkScenes({ repair = false, post = true } = {}) {
+  const base = await artBase();
+  const [{ scenes: p1 }, plan, pins, all, inh] = await Promise.all([p1json("scenes.json"), p1json("tokens.json"), p1json("pins.json"), sceneData(), p1json("inhabitants.json")]);
+  const bgOf = sc => sc ? ((gen() >= 14 ? (sc.initialLevel ?? sc.levels?.contents?.[0])?.background?.src : null) ?? sc.background?.src ?? "") : "";
+  const rows = [];
+  const look = async (part, name, sc, want, fix) => {
+    const got = sc ? { walls: sc.walls.size, lights: sc.lights.size, notes: sc.notes.size, tokens: sc.tokens.size } : null;
+    const bg = bgOf(sc); const map = bg ? await probeImage(fixArt(bg, base), 15000) : false;
+    const short = !sc || !map || got.walls < want.walls || got.lights < want.lights || got.notes < want.notes || got.tokens < want.tokens;
+    rows.push({ part, name, sc, got, want, map, short, fix });
+  };
+  for (const s of p1) {
+    const sc = bySource(game.scenes, s.sourceId);
+    await look("I", s.name, sc, { walls: s.walls.length, lights: s.lights.length, notes: (pins[s.sourceId] ?? []).length, tokens: (plan[s.sourceId] ?? []).length + (inh.scenes[s.sourceId] ?? []).reduce((k, g) => k + g.n, 0) }, () => stagePartOneScene(s));
+  }
+  for (const s of all.scenes) {
+    const sc = game.scenes.get(s.id);
+    await look("II", s.title, sc, { walls: s.walls?.length ?? 0, lights: s.lights?.length ?? 0, notes: (s.notes ?? []).filter(n => game.journal.get(n.entryId)).length, tokens: (s.tokens ?? []).filter(t => game.actors.get(t.actorId)).length }, () => stageScene(s.key));
+  }
+  let fixed = 0;
+  if (repair) for (const r of rows.filter(r => r.short)) {
+    try { await r.fix(); fixed++; } catch (e) { console.error(MOD, "repair", r.name, e); }
+  }
+  if (repair && fixed) return checkScenes({ repair: false, post });
+  const short = rows.filter(r => r.short);
+  const cell = (g, w) => `${g ?? 0}/${w}`;
+  const line = r => `<tr${r.short ? ' style="color:#e88"' : ""}><td>${r.part}</td><td>${r.name}</td><td>${r.got ? cell(r.got.walls, r.want.walls) : "—"}</td><td>${r.got ? cell(r.got.lights, r.want.lights) : "—"}</td><td>${r.got ? cell(r.got.notes, r.want.notes) : "—"}</td><td>${r.got ? cell(r.got.tokens, r.want.tokens) : "—"}</td><td>${!r.sc ? "missing" : r.map ? "ok" : "won't load"}</td></tr>`;
+  console.table(rows.map(r => ({ part: r.part, scene: r.name, exists: !!r.sc, map: r.map, ...Object.fromEntries(Object.keys(r.want).map(k => [k, `${r.got?.[k] ?? 0}/${r.want[k]}`])) })));
+  if (post) await ChatMessage.create({ whisper: ChatMessage.getWhisperRecipients("GM").map(u => u.id), speaker: { alias: "The Unkindness Saga" },
+    content: `<div class="il-card"><h3>Scene check: ${short.length ? `${short.length} of ${rows.length} scenes incomplete` : `all ${rows.length} scenes complete`}</h3>
+      <p style="font-size:11px">Each column is <em>in this world / what the module ships</em>. Red rows are incomplete${short.length ? ": <strong>Build all scenes</strong> on the DM Control Board's Setup tab rebuilds them" : ""}.</p>
+      <table style="font-size:10px"><tr><th></th><th>Scene</th><th>Walls</th><th>Lights</th><th>Pins</th><th>Tokens</th><th>Map</th></tr>${rows.map(line).join("")}</table></div>` });
+  return { total: rows.length, incomplete: short.map(r => r.name) };
+}
 
 // ---------------------------------------------------------------- creature spellcasting
 // Spells come from the dnd5e system's own compendiums (and this module's rune spells) at install time,
@@ -1384,8 +1617,8 @@ function boardSetup() {
       T("setupall", "Set up everything", "fa-wand-magic-sparkles", "First-time setup for both parts: content, scenes, music, cards.") +
       T("p1setup", "Set up / repair Part I", "fa-chess-rook", "Re-imports the Ravenloft finale content. Anything you edited by hand is kept as a recovery copy.") +
       T("update", "Update Part II content", "fa-arrows-rotate", "Refreshes Part II actors, items, journals, tables and macros from the module.") +
-      T("scenes", "Build all Part II scenes", "fa-map-location-dot", "Rebuilds the Part II maps with walls, lights, pins, tokens and music."), true)}
-    ${card("Repair", "", T("art", "Repair art", "fa-image", "Points every map, portrait, token and track at a copy that loads. Fixes blank maps on The Forge.") + T("manager", "Open the Manager", "fa-shield-halved", "The full Manager window: party size, single-scene rebuilds, removal."))}
+      T("scenes", "Build all scenes", "fa-map-location-dot", "Rebuilds every map in both parts: walls, lights, pins, music, and the creatures (Part I's start hidden). Then checks every scene, rebuilds any that came out incomplete, and whispers you the result."), true)}
+    ${card("Repair", "", T("check", "Check all scenes", "fa-list-check", "Changes nothing: compares every scene with what the module ships (walls, lights, pins, tokens, whether the map loads) and whispers you a table. Red rows need Build all scenes.") + T("art", "Repair art", "fa-image", "Points every map, portrait, token and track at a copy that loads. Fixes blank maps on The Forge.") + T("manager", "Open the Manager", "fa-shield-halved", "The full Manager window: party size, single-scene rebuilds, removal."))}
   </div>`;
 }
 
@@ -1431,8 +1664,8 @@ const BOARD_RUN = {
   dispatch: async () => drawDispatch(), pressure2: async () => nextPressure(), favour: async () => dealFavour(), rune: async () => forgeRune(), music: async () => playSceneMusic(),
   holdmap: async () => HoldAPI.map(), rivets: async () => HoldAPI.rivets(), rumour: async () => HoldAPI.rumour(),
   // setup
-  setupall: async () => API.setupAll(), p1setup: async () => { await migrateLegacy(); await C1()?.setup?.(); await fixPartOnePadding(); await repairArt({ quiet: true }); },
-  update: async () => updateContent(), scenes: async () => buildScenes(), art: async () => repairArt({ force: true }), manager: async () => new Manager().render(true)
+  setupall: async () => API.setupAll(), p1setup: async () => { await rebuildPartOne({ scenes: false }); await repairArt({ quiet: true }); },
+  update: async () => updateContent(), scenes: async () => buildScenes(), check: async () => checkScenes(), art: async () => repairArt({ force: true }), manager: async () => new Manager().render(true)
 };
 // steppers with a key after the colon
 for (const [pre, fn] of Object.entries({

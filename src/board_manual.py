@@ -57,9 +57,10 @@ def build(J):
     pages.append(("setup", "Tab 4 — Setup & Repair", BANNER("DM Control Board", "Setup & Repair")
         + TABLE(["Button", "When"], [
             ["Set up everything", "First time in a world."],
-            ["Set up / repair Part I", "After an update, or if Part I content went missing. Hand-edited documents are kept as recovery copies."],
+            ["Set up / repair Part I", "After an update, or if Part I content went missing. Hand-edited documents are kept as recovery copies. Also re-places Part I's hidden creatures."],
             ["Update Part II content", "After an update."],
-            ["Build all Part II scenes", "After an update that changed maps, or if a scene got messed up."],
+            ["Build all scenes", "After an update that changed maps, or if a scene got messed up. Rebuilds every map in both parts and places the creatures. Part I's creatures go where the journals stage each fight (brides in the great hall, the Abbot, Finn, Tatyana and Strahd Phase I in the chapel, Ludmilla and her pylons in the witches' workroom, Phase II and the Heart Chains at the Heart of Sorrow, Phase III and the coffin in the catacombs, Orcus, Vampyr and their anchors in the castle yards, the cultists on the Vallaki streets, Arl at the gates) and start <strong>hidden</strong>: select them and toggle visibility when the encounter begins. Every other Part I map is populated too (242 more creatures: Strahd's frightened household and guards, animated armour, gargoyles and bats on the roofs and spires, ghosts in the Rooms of Weeping, Orcus's risen dead in the larders and crypts, the blood cult in the yard, the Vallaki watch and townsfolk, wolves on the road, lost souls on the Mistway), all hidden. Their stat blocks come from your dnd5e monster compendium and live in <em>The Cat and the Unkindness / 07 — Castle Inhabitants</em>."],
+            ["Check all scenes", "Whenever a map looks incomplete. Changes nothing: whispers you a table of every scene with walls, lights, pins and tokens as <em>in your world / what the module ships</em>, and whether the map picture loads. Red rows are incomplete; Build all scenes fixes them."],
             ["Repair art", "Maps, portraits or tokens show blank (common on The Forge)."],
             ["Open the Manager", "Party size, single-scene rebuilds, removing Part II."]])))
     pages.append(("faq", "What's Automatic, and FAQ", BANNER("DM Control Board", "What happens on its own")

@@ -1,4 +1,33 @@
 # Changelog
+## 2.1.9 — Castle Ravenloft (and Barovia) populated
+- **Every Part I map is populated: 242 creatures in 23 maps,** on top of the 51 finale creatures, all hidden until you reveal them. They tell the finale's story: Strahd's frightened, divided household; the War of Broken Gods spilling inside; Finn's chapel left empty on purpose.
+  - *Grounds:* Strahd's wolves, Beucephalus in the stable, gargoyles on the walls, a gate warden, Orcus's risen dead, the blood cult around the Blood Hearts.
+  - *Main Floor and Court of the Count:* household guards (vampire spawn), frightened servants, animated armour and blades, a rug of smothering, shadows, a wight and skeletons in the bone room, bats. The unattended dinner stays unattended.
+  - *Rooms of Weeping:* weeping spirits, a ghost, shadows.
+  - *Rooftops and Spires 1–7:* gargoyles, bats, tower guards, a wraith, a wight.
+  - *Larders (both versions):* ghouls and a ghast, Orcus's dead, rats, an ochre jelly, prisoners in the cells.
+  - *Catacombs (both versions):* crypt guards (vampire spawn), wights, skeletons, specters, a ghost, ghouls, the dead in the lower cave. Phase III's hall and the tomb are kept clear.
+  - *Vallaki streets (all three):* the watch and its hounds, frightened townsfolk, corpses standing and facing west, a priest and acolytes of St. Andral's.
+  - *Van Richten's workshop:* refugees and a hound. *The Last Road:* wolves, Orcus's dead on the road, gate gargoyles, bats, a gate warden. *The Mistway:* mist-shadows, wolves, will-o'-wisps, the wandering dead, lost souls, refugees at the wagons.
+- Their stat blocks are imported once from your dnd5e monster compendium (both SRD spellings understood) into *07 — Castle Inhabitants*. Each group is spread over free squares in the room it belongs to, never across a wall or on top of another token.
+- Build All Scenes and Set Up / Repair Part I place them; the Scene check counts them.
+## 2.1.8 — Every scene built, checked and repaired
+- **Part I's maps are now built by the same builder as Part II's.** Walls and lights are placed on the scene's level, in batches. If the server rejects a batch, it retries one entry at a time, so a single bad entry can't wipe out a whole floor's walls. Coordinates are kept inside the map.
+- **Build All Scenes checks its own work.** After building, it compares every scene (47) with what the module ships: walls, lights, pins, tokens and whether the map picture loads. It rebuilds any that came out incomplete, then whispers you the result.
+- **New: Check all scenes** (Control Board → Setup & Repair, and the Manager). It only reports and changes nothing.
+- **Part I maps get pins and journal links like Part II.** 44 pins on 14 maps open the journal page that runs each scene (the Unattended Dinner, the Ballroom, the chapel scenes, the Laboratory of Night, the Heart, Phase III and the coffin, the War of Broken Gods fronts, the Vallaki pages, Van Richten's workshop and Strahd's letter, the Last Road, and Barovia's collapse). Each of those maps opens its main journal from the scene's notes button.
+- Van Richten now stands in his workshop (the Arcane Outfitter map), hidden like the rest.
+## 2.1.7 — One button for every scene; Part I creatures placed
+- **Build All Scenes now rebuilds both parts.** Part II's 24 maps as before, then Part I's 23 (walls and lights redrawn from the module data), then every creature placed. *Set Up Everything* uses it too.
+- **Part I's creatures are on their maps (50 tokens on 11 scenes), all hidden** until you reveal them:
+  - *Court of the Count:* Anastrasya and Volenta in the great hall (Movement I); the Abbot at the chapel altar, Finn in the aisle, Tatyana on the dais and Strahd Phase I by the doors.
+  - *Spires 2:* Ludmilla in the witches' workroom with her three Nightglass Pylons.
+  - *Spires 3 (Heart of Sorrow):* Strahd Phase II on the landing, the Blood, Stone and Dominion Heart Chains around the Heart.
+  - *Dungeons & Catacombs* (and the mist-lit version): Strahd Phase III in the crypt hall, the coffin in his tomb.
+  - *Grounds* (both versions): Orcus and three Grave Horns in the west yard, Vampyr and three Blood Hearts in the east yard.
+  - *Vallaki streets* (all three versions): three Blood Choir zealots and two Grave Apostles.
+  - *The Last Road:* Arl on the castle approach.
+- *Set Up / Repair Part I* re-places the creatures too. Re-running either replaces only the tokens this module placed; your own tokens are left alone.
 ## 2.1.6 — Creature audit
 - **Spellcasters now have their spells.** 12 creatures get real spell lists (107 spells), pulled at setup from the dnd5e system's own compendiums so every spell rolls properly: Sigrun, Old Kharn and Runa (including this module's rune spells), Sister Yrsa, Ludmilla, Strahd (Phases I and II), the Abbot, Arl, Orcus, Vampyr and Saraphene. Prepared casters get slots; innate casters get their uses per day. Each has a Spellcasting feature that explains it.
 - **Hit points:** every creature now has a hit-dice formula matching its size and Constitution (HP moved by at most a few points so the numbers agree).

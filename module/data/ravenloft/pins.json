@@ -1,0 +1,338 @@
+{
+ "cu.scene.ravenloft-00-grounds-roofed": [
+  {
+   "journal": "cu.journal.darkwar",
+   "page": "war.arrival",
+   "x": 1519,
+   "y": 2379,
+   "label": "The War of Broken Gods"
+  },
+  {
+   "journal": "cu.journal.orcus",
+   "page": "orcus.interventions",
+   "x": 2126,
+   "y": 3139,
+   "label": "Orcus front"
+  },
+  {
+   "journal": "cu.journal.vampyr",
+   "page": "vamp.interventions",
+   "x": 5366,
+   "y": 5113,
+   "label": "Vampyr front"
+  },
+  {
+   "journal": "cu.journal.allies",
+   "page": "ally.az",
+   "x": 911,
+   "y": 2835,
+   "label": "Deploy allies"
+  }
+ ],
+ "cu.scene.ravenloft-01-grounds-open": [
+  {
+   "journal": "cu.journal.darkwar",
+   "page": "war.arrival",
+   "x": 1519,
+   "y": 2379,
+   "label": "The War of Broken Gods"
+  },
+  {
+   "journal": "cu.journal.orcus",
+   "page": "orcus.interventions",
+   "x": 2126,
+   "y": 3139,
+   "label": "Orcus front"
+  },
+  {
+   "journal": "cu.journal.vampyr",
+   "page": "vamp.interventions",
+   "x": 5366,
+   "y": 5113,
+   "label": "Vampyr front"
+  },
+  {
+   "journal": "cu.journal.allies",
+   "page": "ally.az",
+   "x": 911,
+   "y": 2835,
+   "label": "Deploy allies"
+  }
+ ],
+ "cu.scene.ravenloft-02-main-floor": [
+  {
+   "journal": "cu.journal.approach",
+   "page": "app.dinner",
+   "x": 2223,
+   "y": 4445,
+   "label": "The Unattended Dinner"
+  },
+  {
+   "journal": "cu.journal.lair",
+   "page": "lair.actions",
+   "x": 3260,
+   "y": 3482,
+   "label": "Strahd as the invisible lair boss"
+  }
+ ],
+ "cu.scene.ravenloft-03-court-of-the-count": [
+  {
+   "journal": "cu.journal.brides1",
+   "page": "b1.setup",
+   "x": 2270,
+   "y": 3784,
+   "label": "Movement I: the Ballroom"
+  },
+  {
+   "journal": "cu.journal.abbot",
+   "page": "abbot.social",
+   "x": 7160,
+   "y": 3493,
+   "label": "The Abbot at the altar"
+  },
+  {
+   "journal": "cu.journal.finn",
+   "page": "finn.setup",
+   "x": 6695,
+   "y": 3493,
+   "label": "Finn: the last door"
+  },
+  {
+   "journal": "cu.journal.tatyana",
+   "page": "tat.choice",
+   "x": 7277,
+   "y": 3027,
+   "label": "Ireena / Tatyana"
+  },
+  {
+   "journal": "cu.journal.rest",
+   "page": "rest.offer",
+   "x": 6695,
+   "y": 2736,
+   "label": "Strahd's courtesy"
+  },
+  {
+   "journal": "cu.journal.phase1",
+   "page": "p1.run",
+   "x": 6578,
+   "y": 4017,
+   "label": "Strahd Phase I"
+  }
+ ],
+ "cu.scene.ravenloft-07-spires-2": [
+  {
+   "journal": "cu.journal.brides2",
+   "page": "b2.lab",
+   "x": 4250,
+   "y": 5006,
+   "label": "Movement II: the Laboratory of Night"
+  }
+ ],
+ "cu.scene.ravenloft-08-spires-3-heart": [
+  {
+   "journal": "cu.journal.phase2",
+   "page": "p2.run",
+   "x": 4279,
+   "y": 3027,
+   "label": "Strahd Phase II: the Heart"
+  },
+  {
+   "journal": "cu.journal.integration",
+   "page": "int.p2",
+   "x": 4657,
+   "y": 3027,
+   "label": "Phase II: three masters"
+  }
+ ],
+ "cu.scene.ravenloft-14-dungeons-catacombs": [
+  {
+   "journal": "cu.journal.phase3",
+   "page": "p3.run",
+   "x": 3978,
+   "y": 2907,
+   "label": "Strahd Phase III"
+  },
+  {
+   "journal": "cu.journal.coffin",
+   "page": "coffin.chase",
+   "x": 4590,
+   "y": 3060,
+   "label": "The coffin chase"
+  },
+  {
+   "journal": "cu.journal.coffin",
+   "page": "coffin.final",
+   "x": 5763,
+   "y": 3060,
+   "label": "The last anchor"
+  }
+ ],
+ "cu.scene.ravenloft-16-catacombs-mist": [
+  {
+   "journal": "cu.journal.phase3",
+   "page": "p3.run",
+   "x": 2400,
+   "y": 1400,
+   "label": "Strahd Phase III"
+  },
+  {
+   "journal": "cu.journal.coffin",
+   "page": "coffin.chase",
+   "x": 2767,
+   "y": 1483,
+   "label": "The coffin chase"
+  },
+  {
+   "journal": "cu.journal.coffin",
+   "page": "coffin.final",
+   "x": 3267,
+   "y": 1483,
+   "label": "The last anchor"
+  }
+ ],
+ "cu.scene.vallaki-01-streets-a": [
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.arrival",
+   "x": 2000,
+   "y": 1567,
+   "label": "A city already at war"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.choice",
+   "x": 3000,
+   "y": 1567,
+   "label": "One last choice in Vallaki"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.departure",
+   "x": 3600,
+   "y": 1000,
+   "label": "Departure for Ravenloft"
+  }
+ ],
+ "cu.scene.vallaki-02-streets-b": [
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.arrival",
+   "x": 2000,
+   "y": 1567,
+   "label": "A city already at war"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.choice",
+   "x": 3000,
+   "y": 1567,
+   "label": "One last choice in Vallaki"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.departure",
+   "x": 3600,
+   "y": 1000,
+   "label": "Departure for Ravenloft"
+  }
+ ],
+ "cu.scene.vallaki-03-streets-c": [
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.arrival",
+   "x": 2000,
+   "y": 1567,
+   "label": "A city already at war"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.choice",
+   "x": 3000,
+   "y": 1567,
+   "label": "One last choice in Vallaki"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.departure",
+   "x": 3600,
+   "y": 1000,
+   "label": "Departure for Ravenloft"
+  }
+ ],
+ "cu.scene.vallaki-04-arcane-outfitter": [
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.van-richten",
+   "x": 1250,
+   "y": 1083,
+   "label": "Van Richten: the warning"
+  },
+  {
+   "journal": "cu.journal.strahd-letter",
+   "page": "letter.text",
+   "x": 1167,
+   "y": 542,
+   "label": "Strahd's sealed letter"
+  },
+  {
+   "journal": "cu.journal.vallaki-prelude",
+   "page": "vallaki.knowledge",
+   "x": 1583,
+   "y": 1083,
+   "label": "What Van Richten knows"
+  }
+ ],
+ "cu.scene.ravenloft-00a-the-last-road": [
+  {
+   "journal": "cu.journal.prelude",
+   "page": "road.manifest",
+   "x": 1042,
+   "y": 1583,
+   "label": "The prisoners reach the castle"
+  },
+  {
+   "journal": "cu.journal.approach",
+   "page": "app.dragon",
+   "x": 2083,
+   "y": 1583,
+   "label": "Azrathox and the storm"
+  },
+  {
+   "journal": "cu.journal.allies",
+   "page": "ally.fiend",
+   "x": 2917,
+   "y": 1550,
+   "label": "Arl"
+  }
+ ],
+ "cu.scene.barovia-01-unravelling-mistway": [
+  {
+   "journal": "cu.journal.collapse",
+   "page": "collapse.domain",
+   "x": 833,
+   "y": 1542,
+   "label": "The domain collapses"
+  },
+  {
+   "journal": "cu.journal.collapse",
+   "page": "collapse.dark",
+   "x": 2333,
+   "y": 1542,
+   "label": "Resolve the cosmic shadow"
+  },
+  {
+   "journal": "cu.journal.collapse",
+   "page": "collapse.box",
+   "x": 3583,
+   "y": 1792,
+   "label": "The keepsake box reacts"
+  },
+  {
+   "journal": "cu.journal.collapse",
+   "page": "collapse.transition",
+   "x": 4333,
+   "y": 1583,
+   "label": "The first sound is an anvil"
+  }
+ ]
+}

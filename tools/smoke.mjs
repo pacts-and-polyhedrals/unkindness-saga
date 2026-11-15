@@ -65,6 +65,14 @@ for (const dir of fs.readdirSync(`${ROOT}/build/packs`)) {
   PACKS.set(`${MOD}.${dir}`, { folders, getDocuments: async () => docs, documentName: type, metadata: meta, collection: meta.id,
     getIndex: async () => docs.map(d => ({ _id: d._id ?? d.id, name: d.name, type: d.type })), getDocument: async id => docs.find(d => (d._id ?? d.id) === id) });
 }
+{ // a stand-in for the dnd5e system's SRD monster compendium (2024 spellings where they differ)
+  const inh = JSON.parse(fs.readFileSync(`${ROOT}/module/data/ravenloft/inhabitants.json`, "utf8"));
+  const big = { "dire-wolf": 2, nightmare: 2, "ochre-jelly": 2 };
+  const docs = Object.entries(inh.monsters).map(([k, names], i) => new Doc({ _id: `mon${i}`, name: names.at(-1), type: "npc", system: { attributes: { hp: { value: 10, max: 10 } } }, prototypeToken: { name: names.at(-1), width: big[k] ?? 1, height: big[k] ?? 1 } }, "Actor"));
+  const meta = { packageName: "dnd5e", id: "dnd5e.monsters" };
+  PACKS.set("dnd5e.monsters", { documentName: "Actor", metadata: meta, collection: "dnd5e.monsters", getDocuments: async () => docs,
+    getIndex: async () => docs.map(d => ({ _id: d._id ?? d.id, name: d.name, type: "npc" })), getDocument: async id => docs.find(d => (d._id ?? d.id) === id) });
+}
 { // a stand-in for the dnd5e system's SRD spell compendium: every spell name the spellbooks ask for
   const books = JSON.parse(fs.readFileSync(`${ROOT}/module/data/spellbooks.json`, "utf8"));
   const names = [...new Set(Object.values(books).flatMap(b => b.spells.map(s => s.name)))];
@@ -120,6 +128,30 @@ await api.setupAll();
   const ka = game.actors.find(a => a.name.startsWith("Old Kharn")); console.log("spells: Kharn rune spells", ka.items.filter(i => i.type === "spell" && /Rune|Seal|Hammerfall|Chisel|Echoes|Stoneward/.test(i.name)).length, "| innate uses on Ludmilla's Blight", JSON.stringify(game.actors.find(a => a.name.startsWith("Ludmilla")).items.find(i => i.name === "Blight")?.system?.uses));
   const orc = game.actors.find(a => a.name.startsWith("Orcus —")); console.log("stats: Orcus hp", JSON.stringify(orc.system.attributes.hp), "legact", JSON.stringify(orc.system.resources?.legact), "legendary items", orc.items.filter(i => /Legendary\)/.test(i.name)).length, "| Arl CR", game.actors.find(a => a.name.startsWith("Arl —")).system.details.cr, "| Brynja hp", JSON.stringify(game.actors.find(a => a.name.startsWith("General Brynja")).system.attributes.hp));
   await api.art.spells(); console.log("spells: re-run keeps counts", game.actors.find(a => a.name.startsWith("Sister Yrsa")).items.filter(i => i.type === "spell").length); }
+{ const p1 = () => game.scenes.filter(s => String(s.flags?.[MOD]?.sourceId ?? "").startsWith("cu.scene.")).map(s => [s, s.tokens.filter(x => x.flags?.[MOD]?.p1token)]);
+  const before = p1(); const court = before.find(([s]) => /Court of the Count/.test(s.name));
+  console.log("p1tokens: scenes with creatures", before.filter(([, t]) => t.length).length, "| total", before.reduce((n, [, t]) => n + t.length, 0),
+    "| court", court?.[1].map(x => x.name).join(", "), "| all hidden", before.every(([, t]) => t.every(x => x.hidden)), "| level set", before.every(([, t]) => t.every(x => !!x.level || GEN < 14)));
+  await api.buildScenes(); const after = p1();
+  console.log("p1tokens: after Build All Scenes again", after.reduce((n, [, t]) => n + t.length, 0), "| Part II scenes", game.scenes.filter(s => s.flags?.[MOD]?.key).length);
+  const P1 = JSON.parse(fs.readFileSync(`${ROOT}/module/data/ravenloft/scenes.json`, "utf8")).scenes;
+  const diffs = P1.map(s => { const sc = game.scenes.find(x => x.flags?.[MOD]?.sourceId === s.sourceId); return sc ? `${sc.walls.size - s.walls.length}/${sc.lights.size - s.lights.length}` : "MISSING"; });
+  const p1sc = game.scenes.filter(s => s.flags?.[MOD]?.part === "ravenloft");
+  console.log("p1scenes:", p1sc.length, "scenes | wall/light deltas", [...new Set(diffs)].join(","), "| pins", p1sc.reduce((n, s) => n + s.notes.size, 0),
+    "| walls on level", GEN < 14 || p1sc.every(s => [...s.walls.values?.() ?? s.walls].every(w => (w.levels?.length ?? w.levels?.size ?? 0) === 1)), "| journal linked", p1sc.filter(s => s.journal).length,
+    "| court journal", game.journal.get(p1sc.find(s => /Court/.test(s.name))?.journal)?.name);
+  const inhab = game.scenes.contents.flatMap(s => [...s.tokens.values?.() ?? s.tokens]).filter(x => x.flags?.[MOD]?.inhabitant);
+  console.log("inhabitants:", inhab.length, "tokens |", game.actors.filter(a => a.flags?.[MOD]?.inhabitant).length, "monster actors imported | all hidden", inhab.every(x => x.hidden),
+    "| e.g.", [...new Set(inhab.map(x => x.name))].slice(0, 6).join(", "));
+  const chk = await api.art.check({ post: true }); console.log("check:", chk.total, "scenes, incomplete:", JSON.stringify(chk.incomplete));
+  // simulate a world where a Part I scene lost its walls, then Build All Scenes repairs it
+  const vic = p1sc.find(s => /Main Floor/.test(s.name)); await vic.deleteEmbeddedDocuments("Wall", vic.walls.map(w => w.id));
+  const chk2 = await api.art.check({ post: false }); console.log("check after damage:", JSON.stringify(chk2.incomplete));
+  { // a server that rejects whole batches and one bad wall: the builder falls back to one at a time and keeps the rest
+    const S = P1.find(s => /Rooftops/.test(s.name)); const sc = p1sc.find(s => s.flags[MOD].sourceId === S.sourceId); const orig = sc.createEmbeddedDocuments.bind(sc); let bad = 0;
+    sc.createEmbeddedDocuments = async (type, docs, o) => { if (type === "Wall" && docs.length > 1) throw new Error("batch rejected"); if (type === "Wall" && docs[0].c[0] === S.walls[5].c[0] && docs[0].c[1] === S.walls[5].c[1] && !bad++) throw new Error("bad wall"); return orig(type, docs, o); };
+    const r = await api.art.p1scene(S); sc.createEmbeddedDocuments = orig; console.log("fallback:", JSON.stringify(r.walls), "of", S.walls.length); }
+  await api.buildScenes(); console.log("check after rebuild:", JSON.stringify((await api.art.check({ post: false })).incomplete), "| main floor walls", vic.walls.size); }
 { // DM Control Board
   globalThis.window ??= globalThis; window.prompt ??= () => null; window.confirm ??= () => true;
   api.board.open(); const app = api.board.app; const run = (r, a = "") => app.constructor.DEFAULT_OPTIONS.actions.run.call(app, null, { dataset: { run: r, arg: String(a) } });
