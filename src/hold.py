@@ -29,14 +29,17 @@ def _cast():
                      "If you're drinking, sit. If you're grieving, sit closer to the fire."))
     creature(FOLDER, "old-dagny", "Old Dagny Songkeeper", cr=0, ac=10, hp=9, abilities=(8, 10, 10, 12, 15, 14), langs=DW, disposition=1,
              skills={"prf": 2, "his": 1},
-             b=B("old-dagny").feature("Song-Keeper", "Dagny knows every shift-song of Lowhearth, including the verses nobody sings any more. Singing with her grants advantage on Performance checks to move a Lowhearth crowd.", ic="ab-rally"),
+             b=B("old-dagny").attack("Harp-Frame Staff", 1, "1d6-1", "bludgeoning", ic="ab-hammer")
+             .feature("Song-Keeper", "Dagny knows every shift-song of Lowhearth, including the verses nobody sings any more. Singing with her grants advantage on Performance checks to move a Lowhearth crowd.", ic="ab-rally")
+             .feature("Song of the Shift", "Action. Up to six allies within 30 feet who can hear Dagny gain 1d6 temporary hit points and have advantage on their next saving throw against being frightened.", ic="ab-rally", act=ACT(), heal="1d6", temp=True, uses_=per_day(1), consumption=consume_item_uses()),
              bio=bio("Lowhearth's song-keeper; once a pump-hand, now too stiff for the galleries. Leads Song Night at the Low Lantern.",
                      "To sing the whole of 'Down the Ninth' once more without anyone being arrested for it.",
                      "The song has seven verses. We've been singing six. Ask yourself who taught us to stop."))
     creature(FOLDER, "sorvald", "Sorvald Brightmantle, Host of the Gilded Nail", cr=0.25, ac=15, hp=22, abilities=(11, 12, 11, 12, 14, 16),
              langs=DW, disposition=0, skills={"per": 2, "ins": 1},
              b=B("sorvald").attack("Ceremonial Dagger", 3, "1d4+1", "piercing", ic="ab-blade")
-             .feature("Rules of the House", "Sorvald can call a Hammer-Moot to order. Officers who break moot rules in his house lose face with every officer present.", ic="ab-command"),
+             .feature("Rules of the House", "Sorvald can call a Hammer-Moot to order. Officers who break moot rules in his house lose face with every officer present.", ic="ab-command")
+             .feature("Order in the House", "Action. Every creature in the Gilded Nail that can hear Sorvald must succeed on a DC 13 Charisma saving throw or stop fighting until it is attacked or the end of its next turn. Officers have disadvantage: they know the rules.", ic="ab-command", act=ACT(), uses_=per_day(1), consumption=consume_item_uses()),
              bio=bio("Retired quartermaster who runs the officers' tavern on the Crown Market. Status-proud, scrupulous about rules, quietly decent.",
                      "His house kept clean of politics. It hasn't been clean for months.",
                      "In this house rank buys the table, not the argument."))
@@ -52,13 +55,16 @@ def _cast():
     creature(FOLDER, "fenn", "Fenn Coalsong, Bathmaster", cr=0.5, ac=12, hp=33, abilities=(13, 11, 15, 14, 12, 11), langs=DW, disposition=1,
              skills={"inv": 1, "med": 1},
              b=B("fenn").attack("Valve Wrench", 3, "1d6+1", "bludgeoning", ic="ab-tools")
-             .feature("Heat Log", "Fenn has logged the Ember Basin's temperature at every change of shift for nineteen years.", ic="ab-gauge"),
+             .feature("Heat Log", "Fenn has logged the Ember Basin's temperature at every change of shift for nineteen years.", ic="ab-gauge")
+             .save("Open the Steam Valve", "dex", 12, "Fenn vents a pipe at a 15-foot cone. Each creature in it takes 2d6 fire damage on a failed save, or half as much on a success; the area is lightly obscured until the end of his next turn.", dice="2d6", dtype="fire", ic="ab-vent", uses_=per_day(2), consumption=consume_item_uses(), tgt=target("", "creature", "cone", 15)),
              bio=bio("Old heat-engineer who keeps the Ember Baths on the Steamstair. Half deaf from forty years of pipes. Kind to everyone who is cold.",
                      "His water hot again, and somebody to admit why it went cold.",
                      "Heat doesn't vanish. It goes somewhere. Ask where."))
     creature(FOLDER, "pip", "Pip Ashwick (goblin child)", cr=0, ac=12, hp=3, abilities=(6, 15, 10, 10, 12, 9), ctype="humanoid", subtype="goblin",
              size="sm", speed=30, langs=("goblin",), disposition=1, skills={"ste": 2},
-             b=B("pip").feature("Small and Quick", "Bonus Action. Pip takes the Disengage or Hide action.", ic="ab-slip", act=BONUS()),
+             b=B("pip").attack("Thrown Stone", 4, "1d4", "bludgeoning", range_=20, kind="ranged", ic="ab-bomb")
+             .feature("Small and Quick", "Bonus Action. Pip takes the Disengage or Hide action.", ic="ab-slip", act=BONUS())
+             .feature("Pipe Crawler", "Pip can move through any space at least 1 foot wide without squeezing, and has advantage on Stealth checks in pipes, drains and vents.", ic="ab-slip"),
              bio=bio("A Cinder-Tusk child of nine who came up the drains looking for warm water for her grandmother's well-sickness.",
                      "Her grandmother warm; to go home without being caught.",
                      "The pipes are warm. Ours went cold. I only took a little."))
@@ -98,14 +104,16 @@ def _cast():
     creature(FOLDER, "bera", "Bera 'Mother Moss' Mossbeard", cr=0.5, ac=11, hp=30, abilities=(10, 10, 14, 14, 16, 13), langs=DW + ("goblin",),
              disposition=1, skills={"med": 2, "nat": 1},
              b=B("bera").attack("Walking Stick", 2, "1d6", "bludgeoning", ic="ab-medic")
-             .feature("Mother Moss's Poultice", "Action. One creature she touches regains 2d4 + 2 hit points.", ic="ab-heal", act=ACT(), heal="2d4+2", uses_=per_day(3), consumption=consume_item_uses()),
+             .feature("Mother Moss's Poultice", "Action. One creature she touches regains 2d4 + 2 hit points.", ic="ab-heal", act=ACT(), heal="2d4+2", uses_=per_day(3), consumption=consume_item_uses())
+             .feature("Bitter-Root Draught", "Action. One creature within 5 feet that is poisoned or diseased makes a new saving throw against the effect with advantage; a cough-sick patient stops coughing for an hour.", ic="ab-medic", act=ACT()),
              bio=bio("Lowhearth's apothecary for thirty years, partner of the goblin herbalist Tikka Fernspit. Doses everyone, dwarf or goblin, at the same price.",
                      "The bitter cough cured, and Tikka safe from the people who need a goblin to blame.",
                      "Medicine has no clan, dearie. Sit down and cough for me."))
     creature(FOLDER, "tikka", "Tikka Fernspit", cr=0.25, ac=13, hp=14, abilities=(8, 15, 11, 13, 14, 9), ctype="humanoid", subtype="goblin",
              size="sm", speed=30, langs=GOB, disposition=1, skills={"nat": 2, "ste": 1},
              b=B("tikka").attack("Fungus Knife", 4, "1d4+2", "slashing", ic="ab-blade")
-             .feature("Spore Pouch", "Action, once per day. A 10-foot puff of sleep-spores: creatures in it make a DC 12 Constitution save or are poisoned until the end of their next turn.", ic="ab-vent", act=ACT(), uses_=per_day(1), consumption=consume_item_uses()),
+             .save("Spore Pouch", "con", 12, "A 10-foot-radius puff of sleep-spores centred within 20 feet: creatures in it are poisoned until the end of their next turn on a failed save.", ic="ab-vent", uses_=per_day(1), consumption=consume_item_uses(), tgt=target("", "creature", "radius", 10))
+             .feature("Glowcap Salve", "Action. One creature Tikka touches regains 1d8 + 2 hit points and ends being poisoned.", ic="ab-heal", act=ACT(), heal="1d8+2", uses_=per_day(2), consumption=consume_item_uses()),
              bio=bio("Cinder-Tusk exile who has grown fungus beds in Lowhearth for twenty years. Bera's partner in business and in argument.",
                      "To prove her beds didn't make anybody sick; to get home once to see whether her sister's beds survived.",
                      "Mushrooms don't lie. They just die where the water's wrong."))
@@ -506,7 +514,7 @@ def build(J):
                     ["Travel between districts", "minutes by lift; half a day to the deep", "Lifts fail during the siege; the service stair still works."]])
                 + BOX("When the war arrives",
                       "From Session 10 (the night before the horns) the side quests pause. Unfinished quests get a line in 8.6, <em>The next morning</em>: Brannoc finishes the gate, Dagny sings the verse anyway, the cure goes down the stair. Never use a side quest to punish the party for fighting the war.")
-                + BOX("Rewards and the tracks", CAP, "Record each award with " + L_macro("defence", "Adjust Defence Readiness") + " or " + L_macro("accord", "Adjust Civilian Accord") + ", and tick it here so it isn't awarded twice:",
+                + BOX("Rewards and the tracks", CAP, "Tick each award on the <strong>★ DM Control Board</strong> (Stone Ledger tab → Hold side quests): it raises the track and stops at the cap by itself. The list for reference:",
                       UL("☐ Low Lantern (+1 A)", "☐ Ember Baths (+1 A)", "☐ Mossbeard and Fernspit (+1 A)", "☐ Anvilsong Forge (+1 D)", "☐ Deep Script (+1 D)"),
                       "There are three Accord awards available for a cap of +2: once the cap is reached, the third still earns its story ending and its items.")
                 + BOX("Spending money", "Prices follow the 5e standard. Lowhearth prices are lower than Crown Market prices; officers pay for being seen. Funded food, compensation or repairs can still earn a keyed track increase once (Section 2), never a second time through a venue."))

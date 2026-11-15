@@ -352,3 +352,23 @@ def portrait(name):
 
 def tok(name):
     return f"{ASSET}/tokens/{name}.webp"
+
+
+HD_DIE = {"tiny": 4, "sm": 6, "med": 8, "lg": 10, "huge": 12, "grg": 20}
+
+
+def hp_formula(system):
+    """Give an NPC a hit-dice formula from its size and Constitution; max becomes that formula's average (closest to the old value)."""
+    hp = system["attributes"]["hp"]; target = hp.get("max") or hp.get("value") or 1
+    if target <= 1:
+        hp["formula"] = "1"; hp["max"] = hp["value"] = 1
+        return 1
+    die = HD_DIE.get(system.get("traits", {}).get("size", "med"), 8)
+    con = (system["abilities"].get("con", {}).get("value", 10) - 10) // 2
+    per = die / 2 + 0.5 + con
+    n = max(1, round(target / per)) if per > 0 else max(1, round(target / (die / 2 + 0.5)))
+    tot = n * con
+    avg = max(1, int(n * (die / 2 + 0.5)) + tot)
+    hp["formula"] = f"{n}d{die}" + (f" + {tot}" if tot > 0 else f" - {-tot}" if tot < 0 else "")
+    hp["max"] = avg; hp["value"] = avg
+    return avg

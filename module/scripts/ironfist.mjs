@@ -27,7 +27,7 @@ const HANDS = [
 const BOSSES = { korga: 220, "bastion-engine": 250, hadrik: 180 };
 const DEFAULT_LEDGER = {
   defence: 2, accord: 0, evidence: {}, council: { brynja: 0, odran: 0, hadrik: 0 },
-  baldrik: { admitted: false, refused: false, submitted: false }, runes: [], hearings: {}
+  baldrik: { admitted: false, refused: false, submitted: false }, runes: [], hearings: {}, hold: {}
 };
 
 const gen = () => game.release?.generation ?? 13;
@@ -59,11 +59,15 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   game.modules.get(MOD).api = API;
   Clock.refresh();
+  // Part I's own Setup / Repair macro also gives its creatures their spells
+  const C = game.catAndUnkindness;
+  if (C?.setup && !C.setup.__spells) { const orig = C.setup; C.setup = async (...a) => { const r = await orig.apply(C, a); try { await grantSpells(); } catch (e) { console.error(MOD, e); } return r; }; C.setup.__spells = true; }
   if (!game.user.isGM) { artBase(); return; }
   for (const old of ["cat-and-unkindness", "ironfist-legacy"]) if (game.modules.get(old)?.active)
     ui.notifications.warn(`The Unkindness Saga replaces the separate "${old}" module. Disable it in Manage Modules to avoid duplicate content.`, { permanent: true });
   if (!game.settings.get(MOD, "migrated")) await migrateLegacy({ quiet: true });
   try { await fixTokenLevels(); } catch (e) { console.error(MOD, "token levels", e); }
+  try { await fixPartOnePadding(); } catch (e) { console.error(MOD, "Part I alignment", e); }
   try { await repairArt({ quiet: true }); } catch (e) { console.error(MOD, "art repair", e); }
   const ver = game.modules.get(MOD).version;
   const installed = game.settings.get(MOD, "installedVersion");
@@ -262,9 +266,11 @@ async function buildScenes() {
 async function setupAll() {
   await migrateLegacy();
   try { if (game.catAndUnkindness?.setup) await game.catAndUnkindness.setup(); } catch (e) { console.error(MOD, "Part I setup", e); }
+  await fixPartOnePadding();
   await installContent({ update: false });
   await buildScenes();
   await applyPartySize(game.settings.get(MOD, "partySize"));
+  await grantSpells();
   await repairArt({ quiet: true });
   await game.settings.set(MOD, "installedVersion", game.modules.get(MOD).version);
   ui.notifications.info(`The Unkindness Saga is ready. Part I starts in "00 — START HERE: THE LAST TWO SESSIONS"; Part II in "00 — Start Here: The Stone Ledger".`);
@@ -272,6 +278,7 @@ async function setupAll() {
 }
 async function updateContent() {
   await installContent({ update: true });
+  await grantSpells();
   await applyPartySize(game.settings.get(MOD, "partySize"));
   await repairArt({ quiet: true });
   await game.settings.set(MOD, "installedVersion", game.modules.get(MOD).version);
@@ -673,10 +680,11 @@ class Manager extends foundry.applications.api.ApplicationV2 {
     position: { width: 580, height: "auto" },
     actions: {
       setupAll: async function () { await API.setupAll(); this.render(); },
-      partOne: async function () { await migrateLegacy(); await game.catAndUnkindness?.setup?.(); await repairArt({ quiet: true }); this.render(); },
+      board: async function () { Board.open(); },
+      partOne: async function () { await migrateLegacy(); await game.catAndUnkindness?.setup?.(); await fixPartOnePadding(); await repairArt({ quiet: true }); this.render(); },
       art: async function () { await repairArt({ force: true }); this.render(); },
       partOneDash: async function () { await game.catAndUnkindness?.dashboard?.(); },
-      install: async function () { await installContent({ update: false }); await repairArt({ quiet: true }); this.render(); },
+      install: async function () { await installContent({ update: false }); await grantSpells(); await repairArt({ quiet: true }); this.render(); },
       update: async function () { await updateContent(); this.render(); },
       scenes: async function () { await buildScenes(); this.render(); },
       scene: async function (ev, el) { await stageScene(el.dataset.key); await repairArt({ quiet: true }); ui.notifications.info(`Scene rebuilt: ${el.dataset.key}`); },
@@ -697,6 +705,7 @@ class Manager extends foundry.applications.api.ApplicationV2 {
     const ps = game.settings.get(MOD, "partySize");
     const rows = all.scenes.map(s => `<li><span>${esc(s.title)}</span><button type="button" data-action="scene" data-key="${s.key}"><i class="fa-solid fa-rotate"></i> Rebuild</button></li>`).join("");
     return `<div class="il-manager">
+      <button type="button" class="il-big" data-action="board"><i class="fa-solid fa-gauge-high"></i> Open the DM Control Board</button>
       <header class="il-mhead"><img src="${artUrl()}assets/art/banner.webp" alt=""><p>Module ${ver} · World content ${inst || "not installed"} · Art: ${esc((ART_BASE ?? ART_PREFIX) === ART_PREFIX ? "module folder" : (ART_BASE ?? "").startsWith(GH_RAW) ? "GitHub repository (Forge fallback)" : "Forge assets library")}</p></header>
       <section><h3>Part I — The Cat and the Unkindness (Ravenloft finale)</h3>
         <div class="il-row"><button type="button" data-action="partOne"><i class="fa-solid fa-chess-rook"></i> Set Up / Repair Part I</button>
@@ -1033,6 +1042,17 @@ async function fixTokenLevels() {
   if (n) console.log(`${MOD} | placed ${n} tokens on their scene's level`);
   return n;
 }
+/** Part I's walls and lights are in map-image coordinates; scene padding shifted the map under them. */
+async function fixPartOnePadding() {
+  if (!game.user?.isGM) return 0;
+  let n = 0;
+  for (const sc of game.scenes?.contents ?? []) {
+    if (sc.flags?.[MOD]?.part !== "ravenloft" || !sc.padding) continue;
+    try { await sc.update({ padding: 0 }, { cuInternal: true }); n++; } catch (e) { console.warn(MOD, "padding", sc.name, e.message); }
+  }
+  if (n) ui.notifications.info(`The Unkindness Saga: realigned ${n} Part I maps with their walls and lights.`);
+  return n;
+}
 let ART_RUNNING = null;
 /** Point every art path in the world documents at the copy that loads. Safe to repeat. */
 function repairArt(opts = {}) { return (ART_RUNNING ??= runRepairArt(opts).finally(() => { ART_RUNNING = null; })); }
@@ -1082,7 +1102,62 @@ async function runRepairArt({ quiet = false, force = false } = {}) {
   return docs + emb;
 }
 const artWhere = b => b === ART_PREFIX ? "the module folder" : b.startsWith(GH_RAW) ? "the module's GitHub repository" : "your Forge assets library";
-const ArtAPI = { base: artBase, repair: repairArt, tokens: fixTokenLevels, report: async () => { await artBase(true); console.log(ART_REPORT.join("\n")); return ART_REPORT; } };
+const ArtAPI = { base: artBase, repair: repairArt, tokens: fixTokenLevels, padding: fixPartOnePadding, spells: grantSpells, report: async () => { await artBase(true); console.log(ART_REPORT.join("\n")); return ART_REPORT; } };
+
+// ---------------------------------------------------------------- creature spellcasting
+// Spells come from the dnd5e system's own compendiums (and this module's rune spells) at install time,
+// so every spell arrives with the system's full activities. data/spellbooks.json says who knows what.
+let SPELL_INDEX = null;
+async function spellIndex() {
+  if (SPELL_INDEX) return SPELL_INDEX;
+  SPELL_INDEX = new Map();
+  const packs = (game.packs?.contents ?? [...(game.packs?.values?.() ?? [])]).filter(p => p.documentName === "Item" && (p.metadata?.packageName === MOD || p.metadata?.packageName === "dnd5e" || p.metadata?.id?.startsWith?.("dnd5e.")));
+  // this module first, then the system's (newest SRD first, legacy last)
+  packs.sort((a, b) => (a.metadata?.packageName === MOD ? -1 : b.metadata?.packageName === MOD ? 1 : /legacy/i.test(a.collection) - /legacy/i.test(b.collection)));
+  for (const pack of packs) {
+    let idx; try { idx = await pack.getIndex({ fields: ["type"] }); } catch (e) { continue; }
+    for (const e of (idx.contents ?? [...idx.values?.() ?? idx])) {
+      if (e.type !== "spell") continue;
+      const k = e.name.toLowerCase().trim();
+      if (!SPELL_INDEX.has(k)) SPELL_INDEX.set(k, { pack, id: e._id });
+    }
+  }
+  return SPELL_INDEX;
+}
+async function grantSpells({ quiet = true } = {}) {
+  if (!game.user?.isGM) return 0;
+  let books; try { books = await (await fetch(`modules/${MOD}/data/spellbooks.json`)).json(); } catch (e) { console.warn(MOD, "spellbooks", e); return 0; }
+  const idx = await spellIndex(); const missing = new Set(); let n = 0;
+  for (const actor of game.actors?.contents ?? []) {
+    const f = actor.flags?.[MOD] ?? {};
+    const book = books[f.key] ?? books[f.sourceId];
+    if (!book || (!f.managed && !f.sourceId)) continue;
+    const old = actor.items.filter(i => i.getFlag(MOD, "grantedSpell"));
+    const docs = [];
+    for (const sp of book.spells) {
+      const hit = idx.get(sp.name.toLowerCase());
+      if (!hit) { missing.add(sp.name); continue; }
+      const src = await hit.pack.getDocument(hit.id); if (!src) { missing.add(sp.name); continue; }
+      const d = src.toObject(); delete d._id; delete d.folder; delete d._stats;
+      d.system.method = sp.method === "atwill" ? "atwill" : sp.method === "innate" ? "innate" : "spell";
+      d.system.prepared = sp.method === "spell" ? 1 : 0;
+      d.system.preparation = { mode: sp.method === "atwill" ? "atwill" : sp.method === "innate" ? "innate" : "prepared", prepared: sp.method === "spell" };
+      if (sp.method === "innate" && sp.uses) d.system.uses = { max: String(sp.uses), spent: 0, recovery: [{ period: "day", type: "recoverAll" }] };
+      d.flags = { ...(d.flags ?? {}), [MOD]: { grantedSpell: true } };
+      docs.push(d);
+    }
+    const sys = { "system.attributes.spellcasting": book.ability, "system.details.spellLevel": book.level, "system.attributes.spell.level": book.level };
+    try {
+      if (old.length) await actor.deleteEmbeddedDocuments("Item", old.map(i => i.id), { cuInternal: true });
+      if (docs.length) await actor.createEmbeddedDocuments("Item", docs, { cuInternal: true });
+      await actor.update(sys, { cuInternal: true });
+      n++;
+    } catch (e) { console.warn(MOD, "spells", actor.name, e); }
+  }
+  if (missing.size) console.warn(`${MOD} | spells not found in any dnd5e compendium:`, [...missing]);
+  if (!quiet || missing.size) ui.notifications[missing.size ? "warn" : "info"](`The Unkindness Saga: spells given to ${n} creatures${missing.size ? ` (${missing.size} spells not found in your dnd5e compendiums: see the console)` : ""}.`);
+  return n;
+}
 
 // ---------------------------------------------------------------- the Hold (Kharad-Varr side quests)
 const HoldAPI = {
@@ -1142,10 +1217,236 @@ const HoldAPI = {
   }
 };
 
+/* ------------------------------------------------------------------------ */
+/*  DM Control Board — every tracker and tool for both parts, in one window */
+/* ------------------------------------------------------------------------ */
+const STAGE_LABEL = {
+  "wachter-cellar": "Wachter House cellar (Nov 8 handoff)", "arl-released": "Arl released", "van-richten-route": "On the way to Van Richten",
+  "van-richten-briefing": "Van Richten's briefing", "vallaki-exit": "Leaving Vallaki", "azrathox-rendezvous": "Azrathox rendezvous",
+  "war-of-broken-gods": "The War of Broken Gods", "bride-gauntlet": "The bride gauntlet", "finn-tatyana": "Finn and Tatyana",
+  "strahd-phase-1": "Strahd, Phase I", "strahd-phase-2": "Strahd, Phase II", "wish-crisis": "The Wish crisis", "strahd-phase-3": "Strahd, Phase III",
+  "coffin-chase": "The coffin chase", "barovia-collapse": "Barovia collapses", "campaign-ended": "Campaign ended"
+};
+const HOLD_AWARDS = { "low-lantern": ["The Missing Verse", "accord"], "ember-baths": ["Cold Water", "accord"], "mossbeard-remedies": ["The Bitter Cough", "accord"],
+  "anvilsong-forge": ["The Last Commission", "defence"], "deep-script": ["A Rune Nobody Taught", "defence"] };
+const C1 = () => game.catAndUnkindness;
+/** Run one of Part I's prompt-driven tools with its answers filled in (any further question is still asked). */
+async function withAnswers(answers, fn) {
+  const orig = window.prompt; const q = [...answers];
+  window.prompt = (msg, def) => (q.length ? String(q.shift()) : orig.call(window, msg, def));
+  try { return await fn(); } finally { window.prompt = orig; }
+}
+async function p1patch(patch) { if (!C1()) return ui.notifications.warn("Part I isn't loaded."); await C1().patchState(patch); Board.refresh(); }
+async function holdAward(key) {
+  const L = ledgerState(); const hold = { ...(L.hold ?? {}) }; const [title, track] = HOLD_AWARDS[key]; const max = track === "defence" ? 6 : 4;
+  const used = Object.entries(hold).filter(([k, v]) => v === "applied" && HOLD_AWARDS[k]?.[1] === track).length;
+  const patch = {};
+  if (hold[key]) {
+    if (hold[key] === "applied") patch[track] = Math.max(0, L[track] - 1);
+    hold[key] = null;
+    chat(`<p>Hold award cleared: <strong>${esc(title)}</strong>${patch[track] !== undefined ? ` (${track === "defence" ? "Defence" : "Accord"} back to ${patch[track]})` : ""}.</p>`, "The Stone Ledger", true);
+  } else if (used >= 2) {
+    hold[key] = "capped";
+    chat(`<p><strong>${esc(title)}</strong> complete. The Hold cap for ${track === "defence" ? "Defence" : "Accord"} (+2) is already reached, so the track doesn't move; the quest's ending and items still apply.</p>`, "The Stone Ledger", true);
+  } else {
+    hold[key] = "applied"; patch[track] = Math.min(max, L[track] + 1);
+    chat(`<p><strong>${esc(title)}</strong> complete: ${track === "defence" ? "Defence Readiness" : "Civilian Accord"} rises to <strong>${patch[track]}</strong> (Hold award ${used + 1}/2).</p>`, "The Stone Ledger", true);
+  }
+  await game.settings.set(MOD, "ledger", foundry.utils.mergeObject(L, { ...patch, hold }, { inplace: false, performDeletions: true }));
+}
+
+class BoardApp extends foundry.applications.api.ApplicationV2 {
+  static DEFAULT_OPTIONS = {
+    id: "il-board", tag: "div", classes: ["il-app", "il-board-app"],
+    window: { title: "DM Control Board — The Unkindness Saga", icon: "fa-solid fa-gauge-high", resizable: true },
+    position: { width: 900, height: 760 },
+    actions: {
+      tab: function (ev, el) { this.tab = el.dataset.tab; this.render(); },
+      run: async function (ev, el) {
+        const name = el.dataset.run, arg = el.dataset.arg;
+        try {
+          if (name.includes(":")) { const [pre, key] = name.split(":"); await BOARD_RUN[pre]?.(key, arg); }
+          else await BOARD_RUN[name]?.(arg, el);
+        } catch (e) { console.error(MOD, "board action", name, e); ui.notifications.error(`Control Board: ${e.message}`); }
+        this.render();
+      },
+      manual: function () { const j = byKey(game.journal, "board-manual"); if (j) j.sheet.render(true, { pageId: j.pages.find(p => p.getFlag(MOD, "key") === (this.tab ?? "p1"))?.id }); else ui.notifications.warn("Install Part II content to get the manual."); }
+    }
+  };
+  tab = "p1";
+  async _renderHTML() {
+    const tabs = [["p1", "fa-chess-rook", "Ravenloft Finale"], ["p2", "fa-scale-balanced", "Stone Ledger"], ["tools", "fa-toolbox", "Session Tools"], ["setup", "fa-gear", "Setup & Repair"]];
+    const nav = `<nav class="il-board-tabs">${tabs.map(([k, i, l]) => `<button type="button" data-action="tab" data-tab="${k}" class="${this.tab === k ? "on" : ""}"><i class="fa-solid ${i}"></i> ${l}</button>`).join("")}
+      <button type="button" data-action="manual" class="il-board-help" title="Open the manual page for this tab"><i class="fa-solid fa-book-open"></i> Manual</button></nav>`;
+    let body = "";
+    try { body = this.tab === "p1" ? await boardP1() : this.tab === "p2" ? boardP2() : this.tab === "tools" ? boardTools() : boardSetup(); }
+    catch (e) { console.error(MOD, "board", e); body = `<p class="hint">Couldn't draw this tab: ${esc(e.message)}</p>`; }
+    return `<div class="il-board">${nav}<div class="il-board-body">${body}</div></div>`;
+  }
+  _replaceHTML(result, content) { const top = content.querySelector(".il-board-body")?.scrollTop ?? 0; content.innerHTML = result; const b = content.querySelector(".il-board-body"); if (b) b.scrollTop = top; }
+}
+const Board = { app: null, open(tab) { this.app ??= new BoardApp(); if (tab) this.app.tab = tab; return this.app.render(true); }, refresh() { if (this.app?.rendered) this.app.render(); } };
+Hooks.on("updateSetting", st => { if (String(st.key ?? "").startsWith(`${MOD}.`)) Board.refresh(); });
+
+const btn = (run, label, { arg = "", on = false, title = "", icon = "", cls = "" } = {}) =>
+  `<button type="button" class="il-b ${on ? "on" : ""} ${cls}" data-action="run" data-run="${run}" data-arg="${esc(String(arg))}" title="${esc(title)}">${icon ? `<i class="fa-solid ${icon}"></i> ` : ""}${label}</button>`;
+const card = (title, help, inner, wide = false) => `<section class="il-card ${wide ? "wide" : ""}"><h3>${title}</h3><p class="il-help">${help}</p>${inner}</section>`;
+const stepper = (run, label, value, max, help = "") => `<div class="il-step"><span class="il-step-l">${label}</span>${btn(run, "−", { arg: -1, title: "Lower" })}<b>${value}${max !== null ? `<small>/${max}</small>` : ""}</b>${btn(run, "+", { arg: 1, title: "Raise" })}${help ? `<small class="il-step-h">${help}</small>` : ""}</div>`;
+
+async function boardP1() {
+  if (!C1()) return `<p class="hint">Part I (The Cat and the Unkindness) isn't loaded.</p>`;
+  const s = await C1().getState();
+  const stage = Object.entries(STAGE_LABEL).map(([k, l], i) => btn("stage", `${i + 1}. ${l}`, { arg: k, on: s.stage === k })).join("");
+  const B = ["alive", "mist", "destroyed", "saved"];
+  const brides = ["anastrasya", "volenta", "ludmilla", "finn"].map(w => `<div class="il-line"><span class="il-step-l">${w[0].toUpperCase() + w.slice(1)}</span>${B.map(st => btn("bride", st, { arg: `${w}:${st}`, on: s.brides?.[w] === st })).join("")}</div>`).join("");
+  const chains = [["sanguine", "Sanguine Moon"], ["self", "Rejected Self"], ["gift", "Master's Gift"]].map(([k, l]) => btn("finn", (s.finnChains?.[k] ? "✓ " : "") + l, { arg: k, on: s.finnChains?.[k], title: "Broken = lit" })).join("");
+  const phase = [0, 1, 2, 3].map(n => btn("phase", n ? `Phase ${n}` : "Not started", { arg: n, on: (s.strahdPhase ?? 0) === n })).join("");
+  const hearts = [["blood", "Blood"], ["stone", "Stone"], ["dominion", "Dominion"]].map(([k, l]) => btn("heart", (s.heartChains?.[k] ? "" : "✗ ") + l, { arg: k, on: s.heartChains?.[k], title: "Lit = still standing; click to destroy / restore" })).join("");
+  const dp = s.darkPowers ?? {};
+  const pro = ["damien", "vesper", "bunch", "legna", "thorgrinn"].map(w => btn("prophecy", (s.prophecies?.[w] ? "✓ " : "") + w[0].toUpperCase() + w.slice(1), { arg: w, on: s.prophecies?.[w] })).join("");
+  const r = s.resources ?? {};
+  const w = s.wish ?? {};
+  const v = s.vallaki ?? {};
+  return `<div class="il-grid">
+    ${card("Where the party is", "Click the stage the party has reached. The status card in chat and the dashboard read this. <em>Post status card</em> whispers the full finale summary (stage, brides, Strahd, powers, prophecies) to you.",
+      `<div class="il-stages">${stage}</div><div class="il-line">${btn("dash", "Post status card", { icon: "fa-comment", cls: "big" })}${btn("reset", "Reset to the Nov 8 handoff", { icon: "fa-rotate-left", title: "Puts the whole finale state back to the start. Asks first." })}</div>`, true)}
+    ${card("Vallaki prelude", "Each button posts the scene card and records the outcome. Van Richten's warning also grants his diamonds and reagent if they haven't been given yet.",
+      `<div class="il-line">${btn("vallaki", "Van Richten's warning", { arg: "warning" })}${btn("vallaki", "Vampyr cult surges", { arg: "vampyr" })}${btn("vallaki", "Orcus cult surges", { arg: "orcus" })}</div>
+       <div class="il-line">${btn("vallaki", "Party evacuates", { arg: "evacuate" })}${btn("vallaki", "Both cults at once", { arg: "both" })}${btn("vallaki", "Party leaves Vallaki", { arg: "leave" })}</div>
+       <div class="il-line"><span class="il-step-l">Strahd's letter</span>${btn("letter", v.strahdLetterOpened ? "✓ Opened" : "Open it", { arg: "open", on: v.strahdLetterOpened })}${btn("letter", "Show again", { arg: "show" })}</div>`)}
+    ${card("Arl, the contracted pit fiend", "Show the agreed terms, then sign, then free him. Breach if either side breaks mutual non-harm. Deploying him needs him freed.",
+      `<div class="il-line">${btn("arl", "Show terms", { arg: "terms" })}${btn("arl", v.arlContract === "signed" ? "✓ Signed" : "Sign", { arg: "sign", on: v.arlContract === "signed" })}${btn("arl", v.arlFreed ? "✓ Freed" : "Free him", { arg: "free", on: v.arlFreed })}${btn("arl", "Breach", { arg: "breach" })}</div>
+       <div class="il-line"><span class="il-step-l">Send Arl to</span>${["orcus", "vampyr", "ravenloft", "unassigned"].map(t => btn("ally", t, { arg: `pitfiend:${t}`, on: s.allies?.pitFiend === t })).join("")}</div>
+       <div class="il-line"><span class="il-step-l">Send Azrathox to</span>${["orcus", "vampyr", "ravenloft", "unassigned"].map(t => btn("ally", t, { arg: `azrathox:${t}`, on: s.allies?.azrathox === t })).join("")}</div>`)}
+    ${card("The brides and Finn", "Set each one's state as it happens: <em>mist</em> = fled to reform, <em>destroyed</em>, or <em>saved</em> (talked down, freed). Finn's chains: light each one as the party breaks it; when all three are lit Finn is saved automatically.",
+      `${brides}<div class="il-line"><span class="il-step-l">Finn's chains</span>${chains}</div>`)}
+    ${card("Strahd", "Phase buttons move the fight on (entering Phase II or III gives back one Legendary Resistance, up to 4). Heart Chains: lit = standing; click when one is destroyed. Coffin distance counts down the chase.",
+      `<div class="il-line">${phase}</div>${stepper("legres", "Legendary Resistances", s.legendaryResistances ?? 4, 4, "shared across all three phases")}
+       <div class="il-line"><span class="il-step-l">Heart Chains</span>${hearts}</div>${stepper("coffin", "Coffin distance", s.coffinDistance ?? 5, null, "0 = they reach it")}
+       <div class="il-line">${btn("flag", (s.tatyanaAgencyHonoured ? "✓ " : "") + "Tatyana treated as a person", { arg: "tatyana", on: s.tatyanaAgencyHonoured, title: "If lit, she uses 'No' in Phase III" })}
+         <span class="il-step-l">Strahd's offer of rest</span>${["yes", "no", "unset"].map(x => btn("rest", x, { arg: x, on: (s.restAccepted === true ? "yes" : s.restAccepted === false ? "no" : "unset") === x })).join("")}</div>
+       <div class="il-line">${btn("mock", "Strahd mocks someone", { icon: "fa-masks-theater", title: "Posts a taunt aimed at a hero you choose" })}${btn("lair", "Lair action", { icon: "fa-dungeon", title: "Rolls and posts a Ravenloft lair action" })}${btn("sun", "Artifact sunlight rule", { icon: "fa-sun", title: "Posts the sunlight rules card" })}${btn("npc", "NPC action (selected token)", { icon: "fa-hand-fist", title: "Select a Part I token first" })}</div>`)}
+    ${card("The Dark Powers", "Pressure (Orcus) and Claim (Vampyr) rise as they gain ground. Attention is how much each power is watching the party (it carries into Part II). Intervention rolls a power's move; Reconstitution is for when a manifestation hits 0 HP before the Wish.",
+      `${stepper("pressure", "Orcus pressure", dp.orcus?.pressure ?? 2, 6, dp.orcus?.status ?? "")}${stepper("claim", "Vampyr claim", dp.vampyr?.claim ?? 2, 6, dp.vampyr?.status ?? "")}
+       ${["orcus", "vampyr", "vecna"].map(p => stepper(`arc:${p}`, `${p[0].toUpperCase() + p.slice(1)} attention`, s.arcAttention?.[p] ?? 0, null)).join("")}
+       <div class="il-line">${["orcus", "vampyr", "vecna"].map(p => btn("intervene", `${p} intervenes`, { arg: p })).join("")}</div>
+       <div class="il-line">${btn("recon", "Orcus reduced to 0", { arg: "orcus" })}${btn("recon", "Vampyr reduced to 0", { arg: "vampyr" })}</div>
+       <div class="il-line"><span class="il-step-l">Final ending (needs the Edict)</span>${["banish", "spare", "bargain"].map(e => btn("ending", `Orcus: ${e}`, { arg: `orcus:${e}` })).join("")}${["banish", "spare", "bargain"].map(e => btn("ending", `Vampyr: ${e}`, { arg: `vampyr:${e}` })).join("")}</div>`, true)}
+    ${card("The Wish", "Run these in order as the finale demands: <em>Crisis</em> when damage stops being the answer, then the source (Damien's djinn or Vecna's bargain), then <em>Cast</em>. Casting creates the Edict of Finality, which lets the Dark Powers' endings stick.",
+      `<div class="il-line">${btn("wish", (w.impossibleProven ? "✓ " : "") + "Crisis", { arg: "crisis", on: w.impossibleProven })}${btn("wish", "Djinn offers", { arg: "djinn" })}${btn("wish", "Vecna offers", { arg: "vecna" })}${btn("wish", (w.cast ? "✓ " : "") + "Cast the Wish", { arg: "cast", on: w.cast })}${btn("wish", "Claim clock", { arg: "claim" })}</div>
+       <div class="il-line">${btn("vecnadeal", "Vecna offers a hero a bargain", { icon: "fa-eye" })}<span class="hint">Edict of Finality: <b>${w.edictActive ? "active" : "not yet"}</b>${w.source ? ` · source: ${esc(w.source)}` : ""}</span></div>`)}
+    ${card("Madam Eva's prophecies", "Light a hero's prophecy when it is fulfilled. Each fulfilled prophecy gives a boon in Part II (Shadows Beyond Barovia imports them).", `<div class="il-line">${pro}</div>`)}
+    ${card("Supplies", "What the party is carrying into the castle. Spend them here as they're used.",
+      `${stepper("res:holyWater", "Holy water", r.holyWater ?? 0, null)}${stepper("res:diamonds300", "300 gp diamonds", r.diamonds300 ?? 0, null)}${stepper("res:diamonds500", "500 gp diamonds", r.diamonds500 ?? 0, null)}${stepper("res:antiUndeadReagent", "Anti-undead reagent", r.antiUndeadReagent ?? 0, null)}
+       <div class="il-line">${btn("restog", (r.silverShot ? "✓ " : "") + "Silver shot", { arg: "silverShot", on: r.silverShot })}${btn("restog", (r.fireGiantPotionLegna ? "✓ " : "") + "Legna's fire giant potion", { arg: "fireGiantPotionLegna", on: r.fireGiantPotionLegna })}</div>`)}
+  </div>`;
+}
+
+function boardP2() {
+  const L = ledgerState();
+  const eff = L.defence <= 1 ? "One unassigned front falls back." : L.defence <= 3 ? "Unassigned fronts hold, with damage." : "Unassigned fronts hold and grant one reinforcement.";
+  const acc = L.accord <= 1 ? "No cross-clan assistance." : L.accord === 2 ? "Civilians share safe routes." : "A Cinder-Tusk engineering team helps both populations.";
+  const ev = Object.entries(EVIDENCE).map(([id, [n]]) => btn("evidence", `${L.evidence[id] ? "✓ " : ""}${id} · ${esc(n)}`, { arg: id, on: L.evidence[id], title: "Authenticating deals the card to the Party Dossier and posts it" })).join("");
+  const council = ["brynja", "odran", "hadrik"].map(w => stepper(`council:${w}`, w[0].toUpperCase() + w.slice(1), STANCE[String(L.council[w] ?? 0)], null)).join("");
+  const bal = [["admitted", "Admits the report"], ["refused", "Refuses an unlawful order"], ["submitted", "Submits to judgement"]].map(([k, l]) => btn("baldrik", (L.baldrik[k] ? "✓ " : "") + l, { arg: k, on: L.baldrik[k] })).join("");
+  const hold = L.hold ?? {};
+  const used = t => Object.entries(hold).filter(([k, v]) => v === "applied" && HOLD_AWARDS[k]?.[1] === t).length;
+  const ha = Object.entries(HOLD_AWARDS).map(([k, [t, tr]]) => btn("hold", `${hold[k] ? "✓ " : ""}${t} <small>(+1 ${tr === "defence" ? "D" : "A"}${hold[k] === "capped" ? ", capped" : ""})</small>`, { arg: k, on: !!hold[k] })).join("");
+  const I = inhState();
+  return `<div class="il-grid">
+    ${card("The two tracks", "Raise a track once per concrete achievement the adventure names (never twice for the same thing). The line under each track is what it means right now.",
+      `${stepper("track:defence", "Defence Readiness", L.defence, 6)}<p class="il-help">${eff}</p>${stepper("track:accord", "Civilian Accord", L.accord, 4)}<p class="il-help">${acc}</p>${btn("postledger", "Post the Stone Ledger to chat", { icon: "fa-comment" })}`)}
+    ${card("Evidence E1–E7", "Light a piece of evidence when the party authenticates it. It is dealt into the Party Dossier card hand and announced. Click again to un-mark it (the card stays).", `<div class="il-col">${ev}</div>`)}
+    ${card("The Stone Council", "Each general's stance, from Hostile to Committed. Move them as hearings and scenes change their minds; the Hearing tool reads these.", council)}
+    ${card("Baldrik's accountability", "Each happens only through his own choices in play. Refusing an unlawful order also deals his Favour card.", `<div class="il-col">${bal}</div>`)}
+    ${card("Hold side quests (Kharad-Varr)", `Tick a quest when its rewarded ending happens. It raises its track by 1, up to the Hold cap of +2 per track (Defence ${used("defence")}/2 · Accord ${used("accord")}/2). Unticking takes the point back.`, `<div class="il-col">${ha}</div>`)}
+    ${card("Shadows Beyond Barovia", "Dark Power Attention carried over from Part I. Thresholds: 0 Watching, 3 Reaching, 6 Claiming, 9 Arriving. Import pulls everything from the Ravenloft finale state.",
+      `${["orcus", "vampyr", "vecna"].map(p => stepper(`inh:${p}`, `${p[0].toUpperCase() + p.slice(1)}`, I.attention?.[p] ?? 0, null)).join("")}
+       <div class="il-line">${btn("inhimport", "Import the Ravenloft ending", { icon: "fa-file-import" })}${btn("inhopen", "Inheritance window", { icon: "fa-eye" })}${btn("inhbeat", "Shadow beat for this session", { icon: "fa-moon" })}${btn("inhgift", "Offer a Dark Gift", { icon: "fa-gift" })}</div>`)}
+  </div>`;
+}
+
+function boardTools() {
+  const T = (run, label, icon, help) => `<div class="il-tool">${btn(run, label, { icon, cls: "big" })}<p class="il-help">${help}</p></div>`;
+  return `<div class="il-grid">
+    ${card("Politics", "", T("hearing", "Stone Council hearing", "fa-gavel", "Pick the issue and the evidence presented; it weighs evidence against the generals' stances and posts the council's finding.") + T("handout", "Show a handout", "fa-scroll", "Shows a handout journal page to every player."))}
+    ${card("Challenges", "", T("work", "Work challenge", "fa-screwdriver-wrench", "Puts an on-screen progress clock up (e.g. 3 successes before 2 setbacks) for repairs, forging, brewing.") + T("countdown", "Countdown", "fa-hourglass-half", "A visible countdown for pressure that's building: flooding, a door giving way.") + T("save", "Request a group save", "fa-dice-d20", "Asks every player token on the scene for the same saving throw."))}
+    ${card("War (Chapter 7)", "", T("dispatch", "Draw a siege dispatch", "fa-envelope", "Draws the next siege dispatch card onto the table and posts what happens at an unassigned front.") + T("pressure2", "Next pressure stage", "fa-gauge-simple-high", "Advances the Last Bastion pressure stage at the Heartworks.") + T("favour", "Deal a favour", "fa-handshake", "Deals an earned Shield-Wall Favour card to the party."))}
+    ${card("Magic and music", "", T("rune", "Rune Forge", "fa-hammer", "Walks a character through forging a rune: materials, check, result.") + T("music", "Play this scene's music", "fa-music", "Starts the track assigned to the scene you're viewing."))}
+    ${card("Kharad-Varr: the Hold", "", T("holdmap", "Open the Hold map", "fa-map", "The painted overview of the whole mountain; every pin opens its place.") + T("rivets", "Rivets and Runes", "fa-dice", "The Turning Gear's dice game, rolled and settled in chat.") + T("rumour", "Draw a Hold rumour", "fa-comments", "A private rumour for you; true rumours point at real leads."))}
+  </div>`;
+}
+
+function boardSetup() {
+  const T = (run, label, icon, help) => `<div class="il-tool">${btn(run, label, { icon, cls: "big" })}<p class="il-help">${help}</p></div>`;
+  return `<div class="il-grid">
+    ${card("Install and update", "Use these after installing or updating the module. None of them touch player characters.",
+      T("setupall", "Set up everything", "fa-wand-magic-sparkles", "First-time setup for both parts: content, scenes, music, cards.") +
+      T("p1setup", "Set up / repair Part I", "fa-chess-rook", "Re-imports the Ravenloft finale content. Anything you edited by hand is kept as a recovery copy.") +
+      T("update", "Update Part II content", "fa-arrows-rotate", "Refreshes Part II actors, items, journals, tables and macros from the module.") +
+      T("scenes", "Build all Part II scenes", "fa-map-location-dot", "Rebuilds the Part II maps with walls, lights, pins, tokens and music."), true)}
+    ${card("Repair", "", T("art", "Repair art", "fa-image", "Points every map, portrait, token and track at a copy that loads. Fixes blank maps on The Forge.") + T("manager", "Open the Manager", "fa-shield-halved", "The full Manager window: party size, single-scene rebuilds, removal."))}
+  </div>`;
+}
+
+const p1st = async () => C1().getState();
+const BOARD_RUN = {
+  // Part I
+  stage: async k => p1patch({ stage: k }),
+  dash: async () => C1()?.dashboard(),
+  reset: async () => C1()?.resetToHandoff(),
+  vallaki: async op => withAnswers([op], () => C1().promptVallaki()),
+  letter: async op => withAnswers([op], () => C1().promptLetter()),
+  arl: async op => withAnswers([op], () => C1().promptArl()),
+  ally: async a => { const [who, to] = a.split(":"); return withAnswers([who, to], () => C1().promptAlly()); },
+  bride: async a => { const [who, st] = a.split(":"); const s = await p1st(); return p1patch({ brides: { ...s.brides, [who]: st } }); },
+  finn: async k => { const s = await p1st(); const fc = { ...s.finnChains, [k]: !s.finnChains?.[k] }; const patch = { finnChains: fc }; if (Object.values(fc).every(Boolean)) patch.brides = { ...s.brides, finn: "saved" }; return p1patch(patch); },
+  phase: async n => { const s = await p1st(); n = Number(n); let lr = s.legendaryResistances ?? 4; if (n > (s.strahdPhase ?? 0) && n > 1) lr = Math.min(4, lr + 1); return p1patch({ strahdPhase: n, stage: n ? `strahd-phase-${n}` : s.stage, legendaryResistances: lr }); },
+  legres: async d => { const s = await p1st(); return p1patch({ legendaryResistances: Math.max(0, Math.min(4, (s.legendaryResistances ?? 4) + Number(d))) }); },
+  heart: async k => { const s = await p1st(); return p1patch({ heartChains: { ...s.heartChains, [k]: !s.heartChains?.[k] } }); },
+  coffin: async d => { const s = await p1st(); return p1patch({ coffinDistance: Math.max(0, (s.coffinDistance ?? 5) + Number(d)) }); },
+  flag: async () => { const s = await p1st(); return p1patch({ tatyanaAgencyHonoured: !s.tatyanaAgencyHonoured }); },
+  rest: async x => p1patch({ restAccepted: x === "yes" ? true : x === "no" ? false : null }),
+  mock: async () => C1()?.promptMockery(),
+  lair: async () => C1()?.promptLair(),
+  sun: async () => C1()?.promptSunlight(),
+  npc: async () => C1()?.npcAction(),
+  pressure: async d => { const s = await p1st(); const dp = foundry.utils.deepClone(s.darkPowers); dp.orcus.pressure = Math.max(0, Math.min(6, (dp.orcus.pressure ?? 2) + Number(d))); return p1patch({ darkPowers: dp }); },
+  claim: async d => { const s = await p1st(); const dp = foundry.utils.deepClone(s.darkPowers); dp.vampyr.claim = Math.max(0, Math.min(6, (dp.vampyr.claim ?? 2) + Number(d))); return p1patch({ darkPowers: dp }); },
+  intervene: async p => withAnswers([p], () => C1().promptIntervention()),
+  recon: async p => withAnswers([p], () => C1().promptReconstitution()),
+  ending: async a => { const [p, e] = a.split(":"); return withAnswers([p, e], () => C1().promptPowerEnding()); },
+  wish: async op => withAnswers([op], () => C1().promptWish()),
+  vecnadeal: async () => C1()?.promptVecnaDeal(),
+  prophecy: async w => { const s = await p1st(); return p1patch({ prophecies: { ...s.prophecies, [w]: !s.prophecies?.[w] } }); },
+  restog: async k => { const s = await p1st(); return p1patch({ resources: { ...s.resources, [k]: !s.resources?.[k] } }); },
+  // Part II
+  postledger: async () => postLedger(),
+  evidence: async id => toggleEvidence(id),
+  baldrik: async k => baldrikEvent(k),
+  hold: async k => holdAward(k),
+  inhimport: async () => Inheritance.importFinale(), inhopen: async () => Inheritance.open(), inhbeat: async () => Inheritance.beat(), inhgift: async () => Inheritance.gift(),
+  // tools
+  hearing: async () => hearing(), handout: async () => showHandout(), work: async () => workChallenge(), countdown: async () => countdown(), save: async () => requestSave(),
+  dispatch: async () => drawDispatch(), pressure2: async () => nextPressure(), favour: async () => dealFavour(), rune: async () => forgeRune(), music: async () => playSceneMusic(),
+  holdmap: async () => HoldAPI.map(), rivets: async () => HoldAPI.rivets(), rumour: async () => HoldAPI.rumour(),
+  // setup
+  setupall: async () => API.setupAll(), p1setup: async () => { await migrateLegacy(); await C1()?.setup?.(); await fixPartOnePadding(); await repairArt({ quiet: true }); },
+  update: async () => updateContent(), scenes: async () => buildScenes(), art: async () => repairArt({ force: true }), manager: async () => new Manager().render(true)
+};
+// steppers with a key after the colon
+for (const [pre, fn] of Object.entries({
+  "arc": async (p, d) => { const s = await p1st(); return p1patch({ arcAttention: { ...s.arcAttention, [p]: Math.max(0, (s.arcAttention?.[p] ?? 0) + Number(d)) } }); },
+  "res": async (k, d) => { const s = await p1st(); return p1patch({ resources: { ...s.resources, [k]: Math.max(0, (s.resources?.[k] ?? 0) + Number(d)) } }); },
+  "track": async (k, d) => { const s = ledgerState(); const max = k === "defence" ? 6 : 4; const v = Math.max(0, Math.min(max, s[k] + Number(d))); await setLedger({ [k]: v }); chat(`<p><strong>${k === "defence" ? "Defence Readiness" : "Civilian Accord"}</strong> is now <strong>${v}</strong>.</p>`, "The Stone Ledger", true); },
+  "council": async (w, d) => { const s = ledgerState(); await setLedger({ council: { [w]: Math.max(-2, Math.min(2, (s.council[w] ?? 0) + Number(d))) } }); },
+  "inh": async (p, d) => adjustAttention(p, Number(d), "Control Board")
+})) BOARD_RUN[pre] = fn;
+
 const API = {
   setupAll, installContent, updateContent, buildScenes, stageScene, removeAll, applyPartySize,
   ledger: Ledger, awardEvidence, toggleEvidence, adjustTrack, baldrikEvent, hearing, postLedger,
   workChallenge, countdown, clock: Clock, dealFavour, drawDispatch, nextPressure, passCard,
-  forgeRune, showHandout, requestSave, playSceneMusic, playSfx, inheritance: Inheritance, migrateLegacy, hold: HoldAPI, art: ArtAPI,
+  forgeRune, showHandout, requestSave, playSceneMusic, playSfx, inheritance: Inheritance, migrateLegacy, hold: HoldAPI, art: ArtAPI, board: Board,
   openManager: () => new Manager().render(true)
 };

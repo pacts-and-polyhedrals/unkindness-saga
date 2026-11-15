@@ -7,11 +7,32 @@ from lib5e import *
 import bestiary, items_spells, journals, misc, schedule as SC
 import inheritance
 import hold
+import p1_actors
+import spellbooks
+CR2_FIX = {"odran": 4, "dagnner": 5, "tovik": 1, "heddra": 0.5}
+SAVES2 = {"odran": ("wis", "cha"), "dagnner": ("str", "con"), "edda": ("str", "con"), "runa": ("int", "wis"), "yrsa": ("wis", "cha"),
+          "urzha": ("con", "wis"), "skrik": ("dex", "int"), "ketta": ("dex", "int")}
+for _a in bestiary.ACTORS:
+    _k = _a["flags"][MOD]["key"]
+    for _ab in SAVES2.get(_k, ()):
+        _a["system"]["abilities"][_ab]["proficient"] = 1
+    hp_formula(_a["system"])
+    if _k == "bastion-engine":
+        _a["system"]["attributes"]["senses"]["tremorsense"] = 60
+    if _k in CR2_FIX:
+        _a["system"]["details"]["cr"] = CR2_FIX[_k]
+    if _k in spellbooks.SPELLBOOKS:
+        _bk = spellbooks.SPELLBOOKS[_k]
+        _a["system"]["attributes"]["spellcasting"] = _bk["ability"]
+        _a["system"]["details"]["spellLevel"] = _bk["level"]
+        _a["items"].append(feat(f"{_k}-spellcasting", "Spellcasting", f"<p>{_bk['note']} The spells are on the Spells tab (added at setup from the dnd5e compendiums and this module's rune spells).</p>", img=icon("ab-scroll"), sort=900000))
+print('spellbooks (creatures, spells):', spellbooks.write(f'{ROOT}/module/data/spellbooks.json'))
+print('Part I stat blocks (actors, items):', p1_actors.build())
 from playlists_data import PLAYLISTS
 
 MODDIR = f"{ROOT}/module"
 SRC = f"{ROOT}/build/packs"
-VERSION = "2.1.3"
+VERSION = "2.1.6"
 REPO = "https://github.com/pacts-and-polyhedrals/unkindness-saga"
 
 shutil.rmtree(SRC, ignore_errors=True)
@@ -64,10 +85,11 @@ for t in misc.TABLES:
         tf[fn] = folder("tables", fn, "RollTable", sort=len(tf) * 1000)
     add("tables", t, tf[fn])
 mf = {}
+TOOLS = folder("macros", "Individual tools (all on the DM Control Board)", "Macro", sort=5000)
 for m in misc.MACROS:
     fn = m["folder"]
     if fn not in mf:
-        mf[fn] = folder("macros", fn, "Macro", sort=len(mf) * 1000)
+        mf[fn] = folder("macros", fn, "Macro", parent=None if fn.startswith("★") else TOOLS, sort=len(mf) * 1000)
     add("macros", m, mf[fn])
 for p in misc.PLAYLIST_DOCS:
     add("playlists", p, None)

@@ -37,7 +37,7 @@ class Doc {
   async updateEmbeddedDocuments(type, ups) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Item: "items", JournalEntryPage: "pages", Level: "levels", PlaylistSound: "sounds", Card: "cards" }; const c = this[map[type]]; for (const u of ups) { const d = c?.get(u._id); const { _id, ...rest } = u; await d?.update(rest); } }
   toObject() { const o = {}; for (const [k, v] of Object.entries(this)) { if (k === "parent" || k === "_source") continue; o[k] = v instanceof Coll ? v.contents.map(c => c.toObject()) : v; } return deep(o); }
   async createEmbeddedDocuments(t, arr) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Level: "levels", Item: "items", JournalEntryPage: "pages" }; const c = this[map[t]] ??= new Coll(t); for (const a of arr) { if (t === "Note" && !a.entryId) throw new Error("note without entry"); const d = new Doc(a, t, this); c.set(d.id, d); } return arr; }
-  async deleteEmbeddedDocuments(t, ids) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens" }; for (const i of ids) this[map[t]].delete(i); }
+  async deleteEmbeddedDocuments(t, ids) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Item: "items" }; for (const i of ids) this[map[t]].delete(i); }
   async getTokenDocument(o) { return { toObject: () => ({ ...deep(this.prototypeToken), ...o, actorId: this.id }) }; }
   async createThumbnail() { return { thumb: "data:" }; }
   get initialLevel() { return this.levels?.contents?.[0]; }
@@ -61,13 +61,23 @@ for (const dir of fs.readdirSync(`${ROOT}/build/packs`)) {
   for (const f of folders) f.folder = folders.find(x => x.id === f.folder) ?? null;
   const type = { actors: "Actor", items: "Item", spells: "Item", journals: "JournalEntry", tables: "RollTable", macros: "Macro", playlists: "Playlist", cards: "Cards" }[dir];
   const docs = files.filter(f => !f._key.startsWith("!folders")).map(f => { const d = new Doc(f, type); d.folder = folders.find(x => x.id === f.folder) ?? null; return d; });
-  PACKS.set(`${MOD}.${dir}`, { folders, getDocuments: async () => docs });
+  const meta = { packageName: MOD, id: `${MOD}.${dir}` };
+  PACKS.set(`${MOD}.${dir}`, { folders, getDocuments: async () => docs, documentName: type, metadata: meta, collection: meta.id,
+    getIndex: async () => docs.map(d => ({ _id: d._id ?? d.id, name: d.name, type: d.type })), getDocument: async id => docs.find(d => (d._id ?? d.id) === id) });
+}
+{ // a stand-in for the dnd5e system's SRD spell compendium: every spell name the spellbooks ask for
+  const books = JSON.parse(fs.readFileSync(`${ROOT}/module/data/spellbooks.json`, "utf8"));
+  const names = [...new Set(Object.values(books).flatMap(b => b.spells.map(s => s.name)))];
+  const docs = names.map((n, i) => new Doc({ _id: `srd${i}`, name: n, type: "spell", system: { level: 1, method: "spell", prepared: 0, activities: {} } }, "Item"));
+  const meta = { packageName: "dnd5e", id: "dnd5e.spells" };
+  PACKS.set("dnd5e.spells", { documentName: "Item", metadata: meta, collection: "dnd5e.spells", getDocuments: async () => docs,
+    getIndex: async () => docs.map(d => ({ _id: d._id ?? d.id, name: d.name, type: "spell" })), getDocument: async id => docs.find(d => (d._id ?? d.id) === id) });
 }
 const settings = new Map(); const reg = new Map();
 globalThis.game = {
   release: { generation: GEN }, version: `${GEN}.350`, ready: true,
   user: { isGM: true, character: null }, modules: new Map([[MOD, { version: "1.0.0" }]]),
-  packs: PACKS, settings: { register: (m, k, o) => reg.set(k, o), registerMenu() {}, get: (m, k) => settings.has(k) ? settings.get(k) : deep(reg.get(k)?.default), set: async (m, k, v) => { settings.set(k, v); reg.get(k)?.onChange?.(v); } },
+  packs: Object.assign(PACKS, { get contents() { return [...PACKS.values()]; } }), settings: { register: (m, k, o) => reg.set(k, o), registerMenu() {}, get: (m, k) => settings.has(k) ? settings.get(k) : deep(reg.get(k)?.default), set: async (m, k, v) => { settings.set(k, v); reg.get(k)?.onChange?.(v); } },
   collections: { get: t => COLLS[t] }, folders: COLLS.Folder, journal: COLLS.JournalEntry, actors: COLLS.Actor, items: COLLS.Item,
   scenes: COLLS.Scene, tables: COLLS.RollTable, macros: COLLS.Macro, playlists: COLLS.Playlist, cards: COLLS.Cards
 };
@@ -77,7 +87,7 @@ globalThis.CONST = { DOCUMENT_OWNERSHIP_LEVELS: { NONE: 0, OBSERVER: 2 }, WALL_S
 globalThis.CONFIG = { DND5E: { skills: { per: { label: "Persuasion" } }, abilities: { str: { label: "Strength" } } } };
 globalThis.ui = { notifications: { info: (m) => { log.push(m); return { remove() {} }; }, warn: m => errors.push("warn: " + m), error: m => errors.push(m) } };
 const hooks = {}; globalThis.Hooks = { once: (h, f) => (hooks[h] ??= []).push(f), on: (h, f) => (hooks[h] ??= []).push(f) };
-globalThis.ChatMessage = { create: async d => { log.push("chat"); return d; }, getWhisperRecipients: () => [{ id: "gm" }] };
+globalThis.ChatMessage = { create: async d => { log.push("chat"); return d; }, getWhisperRecipients: () => [{ id: "gm" }], getSpeaker: () => ({}) };
 globalThis.Roll = class { constructor(f) { this.f = f; } async evaluate() { this.total = 17; return this; } async toMessage() {} };
 globalThis.foundry = { utils: { deepClone: deep, mergeObject: (a, b) => merge(a, b), setProperty: setProp, escapeHTML: s => s },
   applications: { api: { ApplicationV2: class { render() { return this; } }, DialogV2: { confirm: async () => true, prompt: async o => null, wait: async () => null } } } };
@@ -105,6 +115,30 @@ await api.setupAll();
   const venues = ["low-lantern","gilded-nail","ember-baths","turning-gear","anvilsong-forge","glimmerhall","mossbeard-remedies","deep-script"].map(k => game.scenes.find(s => s.getFlag(MOD, "key") === k));
   console.log("hold: venues", venues.filter(Boolean).length, "walls", venues.reduce((n, s) => n + (s?.walls.size ?? 0), 0), "tokens", venues.reduce((n, s) => n + (s?.tokens.size ?? 0), 0));
 }
+{ const who = ["Sigrun Lampwright", "Old Kharn", "Sister Yrsa", "Runa Ironfist", "Ludmilla", "Strahd — Phase I", "Orcus —", "Arl —"].map(n => game.actors.find(a => a.name.startsWith(n)));
+  console.log("spells:", who.map(a => a ? `${a.name.split(/[ ,—]/)[0]} ${a.items.filter(i => i.type === "spell").length} (${a.system?.attributes?.spellcasting})` : "MISSING").join(" | "));
+  const ka = game.actors.find(a => a.name.startsWith("Old Kharn")); console.log("spells: Kharn rune spells", ka.items.filter(i => i.type === "spell" && /Rune|Seal|Hammerfall|Chisel|Echoes|Stoneward/.test(i.name)).length, "| innate uses on Ludmilla's Blight", JSON.stringify(game.actors.find(a => a.name.startsWith("Ludmilla")).items.find(i => i.name === "Blight")?.system?.uses));
+  const orc = game.actors.find(a => a.name.startsWith("Orcus —")); console.log("stats: Orcus hp", JSON.stringify(orc.system.attributes.hp), "legact", JSON.stringify(orc.system.resources?.legact), "legendary items", orc.items.filter(i => /Legendary\)/.test(i.name)).length, "| Arl CR", game.actors.find(a => a.name.startsWith("Arl —")).system.details.cr, "| Brynja hp", JSON.stringify(game.actors.find(a => a.name.startsWith("General Brynja")).system.attributes.hp));
+  await api.art.spells(); console.log("spells: re-run keeps counts", game.actors.find(a => a.name.startsWith("Sister Yrsa")).items.filter(i => i.type === "spell").length); }
+{ // DM Control Board
+  globalThis.window ??= globalThis; window.prompt ??= () => null; window.confirm ??= () => true;
+  api.board.open(); const app = api.board.app; const run = (r, a = "") => app.constructor.DEFAULT_OPTIONS.actions.run.call(app, null, { dataset: { run: r, arg: String(a) } });
+  const lens = [];
+  for (const t of ["p1", "p2", "tools", "setup"]) { app.tab = t; const h = await app._renderHTML(); lens.push(`${t}:${h.length}${h.includes("Couldn't draw") ? "!ERR" : ""}`); if (process.env.BOARD_HTML) fs.writeFileSync(`/tmp/board-${t}.html`, h); }
+  for (const [r, a] of [["stage", "bride-gauntlet"], ["bride", "volenta:destroyed"], ["finn", "sanguine"], ["finn", "self"], ["finn", "gift"], ["phase", 1], ["phase", 2], ["legres", -1], ["heart", "blood"],
+    ["pressure", 1], ["arc:orcus", 1], ["res:holyWater", -1], ["prophecy", "damien"], ["restog", "silverShot"], ["coffin", -1], ["rest", "no"], ["flag", ""], ["vallaki", "warning"], ["arl", "sign"],
+    ["track:defence", 1], ["evidence", "E1"], ["council:hadrik", -1], ["baldrik", "admitted"], ["hold", "low-lantern"], ["hold", "ember-baths"], ["hold", "mossbeard-remedies"], ["hold", "deep-script"], ["inh:orcus", 1]]) await run(r, a);
+  const s = await game.catAndUnkindness.getState(); const L = game.settings.get(MOD, "ledger");
+  console.log("board: tabs", lens.join(" "), "| stage", s.stage, "| volenta", s.brides.volenta, "finn", s.brides.finn, "| phase", s.strahdPhase, "LR", s.legendaryResistances, "| blood chain", s.heartChains.blood,
+    "| orcus pressure", s.darkPowers.orcus.pressure, "att", s.arcAttention.orcus, "| holy water", s.resources.holyWater, "| prophecy", s.prophecies.damien, "| arl", s.vallaki.arlContract, "| van richten", s.vallaki.vanRichtenWarning);
+  console.log("board: defence", L.defence, "accord", L.accord, "| E1", L.evidence.E1, "| hadrik", L.council.hadrik, "| hold", JSON.stringify(L.hold));
+  await run("hold", "low-lantern"); console.log("board: after untick accord", game.settings.get(MOD, "ledger").accord, JSON.stringify(game.settings.get(MOD, "ledger").hold));
+}
+{ const ap = game.actors.find(a => a.name.startsWith("Orcus Grave Apostle")); const st = game.actors.find(a => a.name.startsWith("Strahd — Phase I:"));
+  const acts = a => a.items.contents.reduce((n, i) => n + Object.keys(i.system?.activities ?? {}).length, 0);
+  console.log("part I stat blocks: apostle items", ap?.items.size, "activities", acts(ap), "| strahd I items", st?.items.size, "activities", acts(st), "legact", st?.system?.resources?.legact?.max, "| actors with <3 items", game.actors.filter(a => a.getFlag(MOD, "part") === "ravenloft" && a.items.size < 3).map(a => a.name));
+  await game.catAndUnkindness.setup(); console.log("part I stat blocks after re-run: apostle items", game.actors.find(a => a.name.startsWith("Orcus Grave Apostle")).items.size); }
+{ const p1 = game.scenes.filter(s => s.getFlag(MOD, "part") === "ravenloft"); p1[0].padding = 0.05; const fixed = await api.art.padding(); console.log("part I padding: nonzero now", p1.filter(s => s.padding).length, "| fixed", fixed); }
 if (GEN >= 14) { // tokens carry a single level id
   const sc = game.scenes.find(s => s.getFlag(MOD, "key") === "lowhearth"); const lid = sc.initialLevel?.id;
   const bad = sc.tokens.filter(t => t.level !== lid).length;

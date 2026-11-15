@@ -1,0 +1,621 @@
+{
+ "sigrun": {
+  "ability": "int",
+  "level": 6,
+  "note": "6th-level spellcaster (wizard). Spell save DC and attack from Intelligence.",
+  "spells": [
+   {
+    "name": "Light",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mage Hand",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Shocking Grasp",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Shield",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Magic Missile",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Alarm",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Detect Magic",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Hold Person",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Misty Step",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Counterspell",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Dispel Magic",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Glyph of Warding",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "kharn": {
+  "ability": "int",
+  "level": 7,
+  "note": "7th-level spellcaster (rune scholar). Knows the Deep Script rune spells.",
+  "spells": [
+   {
+    "name": "Chisel-Sign",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mending",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Message",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Stoneward Script",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Comprehend Languages",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Shield",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Echoes in the Masonry",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Arcane Lock",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Hammerfall Sigil",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Seal the Breach",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Glyph of Warding",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Dispel Magic",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Runegate Traverse",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Stoneskin",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "yrsa": {
+  "ability": "wis",
+  "level": 7,
+  "note": "7th-level spellcaster (priest of the hearth). Spell save DC and attack from Wisdom.",
+  "spells": [
+   {
+    "name": "Sacred Flame",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Spare the Dying",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Guidance",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Cure Wounds",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Bless",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Healing Word",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Lesser Restoration",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Prayer of Healing",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Spiritual Weapon",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mass Healing Word",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Revivify",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Spirit Guardians",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Death Ward",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "runa": {
+  "ability": "int",
+  "level": 5,
+  "note": "5th-level spellcaster (rune engineer).",
+  "spells": [
+   {
+    "name": "Chisel-Sign",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mending",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Stoneward Script",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Rune of the Returning Hammer",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Detect Magic",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Oath-Rune of the Shieldmates",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Echoes in the Masonry",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Seal the Breach",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Rune of Shared Burden",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "cu.actor.ludmilla": {
+  "ability": "int",
+  "level": 11,
+  "note": "Innate spellcasting (Intelligence). Her Counterspell Reserve is a separate feature.",
+  "spells": [
+   {
+    "name": "Mage Hand",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Minor Illusion",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Chill Touch",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Darkness",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Hold Person",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Blight",
+    "method": "innate",
+    "uses": 1
+   },
+   {
+    "name": "Dimension Door",
+    "method": "innate",
+    "uses": 1
+   },
+   {
+    "name": "Cone of Cold",
+    "method": "innate",
+    "uses": 1
+   }
+  ]
+ },
+ "cu.actor.strahd1": {
+  "ability": "int",
+  "level": 9,
+  "note": "9th-level spellcaster (wizard). <strong>Spell slots are shared by all three phases:</strong> when the fight moves to Phase II, copy the slots he has left onto that sheet. Phase III no longer casts.",
+  "spells": [
+   {
+    "name": "Mage Hand",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Prestidigitation",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Ray of Frost",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Comprehend Languages",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Fog Cloud",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Sleep",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Detect Thoughts",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Gust of Wind",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mirror Image",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Animate Dead",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Fireball",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Nondetection",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Blight",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Greater Invisibility",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Polymorph",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Animate Objects",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Scrying",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "cu.actor.strahd2": {
+  "ability": "int",
+  "level": 9,
+  "note": "Same spells as Phase I; use the slots he had left at the end of Phase I.",
+  "spells": [
+   {
+    "name": "Mage Hand",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Prestidigitation",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Ray of Frost",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Comprehend Languages",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Fog Cloud",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Sleep",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Detect Thoughts",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Gust of Wind",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Mirror Image",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Animate Dead",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Fireball",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Nondetection",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Blight",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Greater Invisibility",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Polymorph",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Animate Objects",
+    "method": "spell",
+    "uses": null
+   },
+   {
+    "name": "Scrying",
+    "method": "spell",
+    "uses": null
+   }
+  ]
+ },
+ "cu.actor.abbot": {
+  "ability": "cha",
+  "level": 0,
+  "note": "Innate spellcasting (Charisma).",
+  "spells": [
+   {
+    "name": "Detect Evil and Good",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Commune",
+    "method": "innate",
+    "uses": 1
+   },
+   {
+    "name": "Raise Dead",
+    "method": "innate",
+    "uses": 1
+   }
+  ]
+ },
+ "cu.actor.arl": {
+  "ability": "cha",
+  "level": 0,
+  "note": "Innate spellcasting (Charisma). His spells obey the contract's mutual non-harm.",
+  "spells": [
+   {
+    "name": "Detect Magic",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Fireball",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Hold Monster",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Wall of Fire",
+    "method": "innate",
+    "uses": 3
+   }
+  ]
+ },
+ "cu.actor.orcus": {
+  "ability": "cha",
+  "level": 0,
+  "note": "Innate spellcasting (Charisma).",
+  "spells": [
+   {
+    "name": "Chill Touch",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Detect Magic",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Blight",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Darkness",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Finger of Death",
+    "method": "innate",
+    "uses": 1
+   }
+  ]
+ },
+ "cu.actor.vampyr": {
+  "ability": "cha",
+  "level": 0,
+  "note": "Innate spellcasting (Charisma).",
+  "spells": [
+   {
+    "name": "Darkness",
+    "method": "atwill",
+    "uses": null
+   },
+   {
+    "name": "Dominate Person",
+    "method": "innate",
+    "uses": 3
+   },
+   {
+    "name": "Blight",
+    "method": "innate",
+    "uses": 3
+   }
+  ]
+ },
+ "cu.actor.saraphene": {
+  "ability": "cha",
+  "level": 0,
+  "note": "Innate spellcasting (Charisma).",
+  "spells": [
+   {
+    "name": "Darkness",
+    "method": "innate",
+    "uses": 1
+   },
+   {
+    "name": "Misty Step",
+    "method": "innate",
+    "uses": 1
+   }
+  ]
+ }
+}

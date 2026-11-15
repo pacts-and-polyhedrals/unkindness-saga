@@ -100,9 +100,9 @@ def fifth_finger():
     # ---- the Fifth Finger
     fx, fy, fw, fh = 22, 3, 15, 12
     m.floor_rect(fx, fy, fw, fh, "gravel")
-    m.room(fx, fy, fw, fh, "dwarf", doors=[("S", 6, 2, "iron")])
+    m.room(fx, fy, fw, fh, "dwarf", doors=[("S", 7, 2, "iron")])  # gate passage x 28-30, between the towers
     # gatehouse towers
-    for tx in (fx + 5, fx + 8):
+    for tx in (fx + 4, fx + 8):
         m.floor_rect(tx, fy + fh - 0.5, 2, 2, "dwarfslab")
         m.wall([(tx, fy + fh - 0.5), (tx, fy + fh + 1.5), (tx + 2, fy + fh + 1.5), (tx + 2, fy + fh)], "dwarf")
     m.g("high", fx + 7, fy + fh + 0.2, k.portcullis(200))
@@ -144,8 +144,8 @@ def fifth_finger():
     m.note(fx + 7, fy + fh + 2.2, "ch1:s12", "1.2 Recognition at the Fifth Finger")
     m.note(fx + 12, fy + 5.6, "ch1:s12", "Broken Winch (work challenge)")
     m.token("edda", fx + 6.2, fy + 2.4)
-    m.token("ironfist-trooper", fx + 6.3, fy + fh + 1.0)
-    m.token("ironfist-trooper", fx + 7.7, fy + fh + 1.0)
+    m.token("ironfist-trooper", fx + 5, fy + fh + 0.8)
+    m.token("ironfist-trooper", fx + 9, fy + fh + 0.8)
     m.token("ironfist-courier", fx + 3, fy + 8.2)
     m.token("lowhearth-worker", fx + 11.4, fy + 9.6)
     m.token("lowhearth-worker", fx + 12.4, fy + 7.4)
@@ -298,7 +298,7 @@ def hammerhall():
         brazier(m, x, y, 6, 2)
     # side chamber (west) — 1.5 "Two Mismatched Rivets"
     m.floor_rect(1, 10, 7, 9, "planks")
-    m.room(1, 10, 7, 9, "dwarf", doors=[("E", 3, 2, None)])
+    m.room(1, 10, 7, 9, "dwarf", gaps=[("E", 0, 9)])  # shared wall (and its door) drawn by the hall
     m.g("props", 3.5, 13.2, pr.round_table(60))
     for a in range(4):
         m.g("props", 3.5 + 1.0 * math.cos(a * math.pi / 2), 13.2 + 1.0 * math.sin(a * math.pi / 2), pr.chair(), rot=a * 90 + 90)
@@ -313,7 +313,7 @@ def hammerhall():
     m.text(17.4, 3.5, "COUNCIL", size=20, color="#e8c35a")
     # east antechamber (to the lifts)
     m.floor_rect(36, 10, 7, 9, "dwarfslab")
-    m.room(36, 10, 7, 9, "dwarf", doors=[("W", 3, 2, None), ("E", 3, 3, "iron")])
+    m.room(36, 10, 7, 9, "dwarf", gaps=[("W", 0, 9)], doors=[("E", 3, 3, "iron")])
     m.g("props", 39.5, 11.3, k.statue(60))
     m.text(39.5, 9.6, "TO GATE CROWN", size=22)
     # exterior bridge (south)
@@ -554,7 +554,7 @@ def treaty_stair():
     m.floor_rect(9, 0, 12, 5, "dwarfslab")
     m.wall([(9, 0), (9, 5)], "dwarf")
     m.wall([(21, 0), (21, 5)], "dwarf")
-    m.g("high", 15, 4.6, k.portcullis(500))
+    m.g("high", 15, 4.6, k.portcullis(600))
     m.wall([(9, 5), (12, 5)], "dwarf")
     m.door(12, 5, 18, 5, "iron")
     m.wall([(18, 5), (21, 5)], "dwarf")

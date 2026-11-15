@@ -102,3 +102,35 @@
 .il-journal .il-shadow-vampyr { border-left: 4px solid #5c0f14; }
 .il-journal .il-shadow-vecna { border-left: 4px solid #3b1d5a; }
 .il-journal .il-shadow-all { border-left: 4px solid #6b4416; }
+
+/* ---------------------------------------------------------------- DM Control Board */
+.il-board-app .window-content { padding: 0; overflow: hidden; }
+.il-board { display: flex; flex-direction: column; height: 100%; }
+.il-board-tabs { display: flex; gap: 4px; padding: 6px 8px; background: linear-gradient(#2a1e16, #161312); border-bottom: 2px solid var(--il-bronze); flex: 0 0 auto; }
+.il-board-tabs button { flex: 1 1 auto; padding: 6px 8px; font-size: 13px; }
+.il-board-tabs button.on { background: #7a1a18; color: #fff0d0; border-color: #ffb38a; }
+.il-board-tabs .il-board-help { flex: 0 0 auto; }
+.il-board-body { flex: 1 1 auto; overflow-y: auto; padding: 8px 10px 14px; }
+.il-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 10px; }
+.il-card { background: #1d1714; border: 1px solid #c8963a66; border-radius: 6px; padding: 6px 10px 10px; }
+.il-card.wide { grid-column: 1 / -1; }
+.il-card h3 { margin: 2px 0 4px; font-size: 15px; }
+.il-help { color: #b8a888; font-size: 12.5px; line-height: 1.35; margin: 0 0 6px; }
+.il-help em { color: #e8d8a8; }
+.il-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 4px 0; }
+.il-col { display: flex; flex-direction: column; gap: 3px; }
+.il-col .il-b { text-align: left; }
+.il-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.il-b { font-size: 12px !important; padding: 3px 8px !important; line-height: 1.4 !important; width: auto; flex: 0 0 auto; text-transform: none; }
+.il-b.on { background: #3e5a2a !important; color: #f0ffd8 !important; border-color: #9adf5a !important; }
+.il-b.big { font-size: 13.5px !important; padding: 6px 12px !important; }
+.il-b small { opacity: .8; }
+.il-step { display: flex; align-items: center; gap: 6px; margin: 3px 0; flex-wrap: wrap; }
+.il-step-l { min-width: 150px; font-family: "IFL Cinzel", serif; font-size: 12.5px; color: #e8d8a8; }
+.il-step b { min-width: 74px; text-align: center; font-size: 15px; color: var(--il-gold); }
+.il-step b small { color: #b8a888; font-size: 11px; }
+.il-step .il-b { min-width: 28px; }
+.il-step-h { color: #b8a888; font-style: italic; font-size: 11.5px; }
+.il-tool { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 8px; }
+.il-tool .il-b { min-width: 190px; text-align: left; }
+.il-tool .il-help { margin: 2px 0 0; }

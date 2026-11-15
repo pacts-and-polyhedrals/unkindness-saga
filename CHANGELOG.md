@@ -1,4 +1,22 @@
 # Changelog
+## 2.1.6 — Creature audit
+- **Spellcasters now have their spells.** 12 creatures get real spell lists (107 spells), pulled at setup from the dnd5e system's own compendiums so every spell rolls properly: Sigrun, Old Kharn and Runa (including this module's rune spells), Sister Yrsa, Ludmilla, Strahd (Phases I and II), the Abbot, Arl, Orcus, Vampyr and Saraphene. Prepared casters get slots; innate casters get their uses per day. Each has a Spellcasting feature that explains it.
+- **Hit points:** every creature now has a hit-dice formula matching its size and Constitution (HP moved by at most a few points so the numbers agree).
+- **Legendary actions** for the Orcus and Vampyr manifestations (3 each), which their CR assumed.
+- **Challenge ratings corrected** where the stat block didn't support the listed CR (checked with the DMG method): the Pylon, Heart Chains, Coffin and Dark Power anchors (objects), van Richten, Arl, General Odran, Sergeant Dagnner, Tovik and Aunt Heddra.
+- Missing saving-throw proficiencies added (Odran, Dagnner, Edda, Runa, Yrsa, Urzha, Skrik, Ketta); the Bastion Engine gets tremorsense.
+## 2.1.5 — DM Control Board
+- **One window for everything.** The new **★ DM Control Board** (macro, or the Manager's top button) gathers every tracker and tool for both parts on four tabs, each section with a line explaining what it does:
+  - *Ravenloft Finale:* the party's stage (16 steps) and the status card; Vallaki prelude, Arl and ally deployment; each bride's and Finn's state and Finn's three chains; Strahd's phase, Legendary Resistances, Heart Chains, coffin distance, Tatyana and the offer of rest; Orcus pressure, Vampyr claim and Attention; interventions, reconstitution and final endings; the Wish; Madam Eva's prophecies; supplies.
+  - *Stone Ledger:* Defence and Accord with what each level means, evidence E1–E7, the council, Baldrik, the Hold side-quest awards (applies the +1 and enforces the +2 cap), and Shadow Attention.
+  - *Session Tools* and *Setup & Repair.*
+- Lit buttons show what's true now; click to toggle. Part I's typed-in prompts are replaced by buttons.
+- New journal **00 — DM Control Board: Manual** (a page per tab, what's automatic, FAQ). The board's Manual button opens the page for the tab you're on.
+- The individual macros still work and are filed under *Individual tools (all on the DM Control Board)*.
+## 2.1.4 — Full stat blocks, aligned Ravenloft maps
+- **Part I NPCs now have full stat blocks.** All 23 Ravenloft-finale actors had their actions stored only as notes, so their sheets showed a single flavour feature. Every action, bonus action, reaction, legendary action and trait is now a real item with working activities: attack rolls and damage (split by type), saving throws with DCs and areas, healing, recharge 5–6, per-encounter uses and legendary-action costs. 184 items in total. Added saves, skills, senses, damage and condition immunities, resistances, languages, Legendary Resistance and legendary action pools, token sizes (Orcus and Vampyr are Huge, Arl is Large), and real rules text where there were only notes (vampire Regeneration, Spider Climb and weaknesses; Magic Resistance; object traits; concrete effects for the Heart Chains, pylons, anchors and coffin).
+- **Part I maps realigned with their walls and lights.** The scenes used 5% padding, which shifted every map under walls placed in map coordinates. Existing scenes are fixed on load.
+- **Part II:** the Fifth Finger gate now spans the passage (gate, portcullis and door line up), the Hammerhall side-chamber doors no longer overlap, and the Treaty Stair portcullis matches its door. Quieter NPCs got working abilities (Heddra, Tovik, Venn, Sorvald, Old Dagny, Fenn, Pip, Tikka, Bera, couriers).
 ## 2.1.3 — Token levels (Foundry v14)
 - **Fixes "level must exist".** Tokens placed by Build All Scenes were given a `levels` set, which v14 ignores for tokens: a token takes a single `level` id. Without one, Foundry rejected any update that moved them, which also stopped 2.1.1's art repair on the first scene. New tokens get the scene's level, and on load every token the module placed is put on its scene's level.
 - Includes 2.1.2: the art repair changes only image fields, repairs each document separately, shows progress and lists anything it couldn't fix.

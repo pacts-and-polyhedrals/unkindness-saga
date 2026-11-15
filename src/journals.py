@@ -274,6 +274,7 @@ def build_start():
                + BOX("New in 2.1: the Hold of Kharad-Varr",
                      "Eight new places, each with a painted map, a keeper and a self-contained side quest (two taverns, the Ember Baths, a gaming house, a smith, an enchanter, an apothecary and the rune smiths), "
                      "plus a painted overview of the whole mountain that pins every place in Part II. Start at " + L_page("hold", "start", "The Hold — Start Here") + " or open " + L_scene("hold-map", "the overview map") + ".")
+               + BOX("Run the table from one window", "Every tracker and tool for both parts is on the <strong>★ DM Control Board</strong> (macro of that name, or the Manager's top button). " + L_page("board-manual", "overview", "How the Control Board works") + ".")
                + BOX("The table", players))
     before = (BANNER("Start Here", "Before the Arc Begins")
               + P("The Sunday group is 10th level and still has to finish Strahd and face the Dark Powers. This arc starts the moment the mists release them, so a few things need to be carried across honestly.")
@@ -469,6 +470,8 @@ def build_docs():
     _inh.build(_s.modules[__name__])
     import hold as _hold
     _hold.build(_s.modules[__name__])
+    import board_manual as _bm
+    _bm.build(_s.modules[__name__])
     docs = []
     for jkey, name, folder, pages, sort, player in JOURNALS:
         jid = fid("journal:" + jkey)

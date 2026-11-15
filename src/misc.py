@@ -101,6 +101,7 @@ def macro(key, name, call, img, folder):
 
 
 GM, TB, WAR = "GM Setup", "At the Table", "Politics & War"
+macro("board", "★ DM Control Board", "api.board.open();", "mc-setup", "★ DM Control Board")
 macro("manager", "Ironfist Legacy Manager", "api.openManager();", "mc-setup", GM)
 macro("ledger", "The Stone Ledger", "api.ledger.open();", "mc-ledger", TB)
 macro("music", "Scene Music", "api.playSceneMusic();", "mc-music", TB)

@@ -2,7 +2,7 @@
   "id": "unkindness-saga",
   "title": "The Unkindness Saga: Ravenloft Finale & Ironfist Legacy",
   "description": "<p>The Sunday group's whole run from Wachter House to Kharad-Varr in one module. <strong>Part I — The Cat and the Unkindness</strong>: the Curse of Strahd finale overlay (Arl, Van Richten, Vallaki's cult war, the brides and Finn, three-phase Strahd, the War of Broken Gods with Orcus, Vampyr and Vecna, the Wish, the coffin chase, Barovia's collapse) with 23 walled and lit scenes and a live finale dashboard. <strong>Part II — The Shield Between Us: Ironfist Legacy</strong>: Thorgrinn's homecoming across twelve Sundays, 15 painted battlemaps, <em>the Hold of Kharad-Varr</em> (a linked painted overview of the whole mountain and eight new venue maps — taverns, baths, a gaming house, smith, enchanter, apothecary and rune smiths — each with a self-contained side quest), the full cast, evidence politics, rune magic, original music and the Stone Ledger — with <em>Shadows Beyond Barovia</em> carrying Part I's ending (Dark Power Attention, final choices, mercy, the Wish, the prophecies) into every session. One Manager sets up both parts.</p>",
-  "version": "2.1.3",
+  "version": "2.1.6",
   "authors": [
     {
       "name": "Asmo, Pacts & Polyhedrals (Ben Vale)",
@@ -163,7 +163,7 @@
   ],
   "url": "https://github.com/pacts-and-polyhedrals/unkindness-saga",
   "manifest": "https://github.com/pacts-and-polyhedrals/unkindness-saga/releases/latest/download/module.json",
-  "download": "https://github.com/pacts-and-polyhedrals/unkindness-saga/releases/download/v2.1.3/unkindness-saga.zip",
+  "download": "https://github.com/pacts-and-polyhedrals/unkindness-saga/releases/download/v2.1.6/unkindness-saga.zip",
   "readme": "https://github.com/pacts-and-polyhedrals/unkindness-saga/blob/main/README.md",
   "changelog": "https://github.com/pacts-and-polyhedrals/unkindness-saga/blob/main/CHANGELOG.md",
   "bugs": "https://github.com/pacts-and-polyhedrals/unkindness-saga/issues",

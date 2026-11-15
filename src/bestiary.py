@@ -132,7 +132,9 @@ creature(FAM, "baldrik", "Baldrik Ironfist", cr=9, ac=20, hp=170, abilities=(20,
 
 creature(FAM, "heddra", "Aunt Heddra Ironfist", cr=1, ac=13, hp=42, abilities=(13, 10, 16, 12, 15, 14), langs=DW, disposition=1,
          b=B("heddra").attack("Handaxe", 4, "1d6+2", "slashing", ic="ab-axe")
-         .feature("Household Authority", "Among Lowhearth households, Heddra can usually secure a hearing, shelter, food or a messenger without a roll unless doing so creates serious danger.", ic="ab-kitchen"),
+         .feature("Household Authority", "Among Lowhearth households, Heddra can usually secure a hearing, shelter, food or a messenger without a roll unless doing so creates serious danger.", ic="ab-kitchen")
+         .feature("Kitchen Remedy", "Action. One creature Heddra can touch regains 2d4 + 3 hit points from broth, bandage and scolding.", ic="ab-heal", act=ACT(), heal="2d4+3", uses_=per_day(2), consumption=consume_item_uses())
+         .feature("Get Behind Me", "Reaction when a creature within 5 feet of Heddra is attacked: she imposes disadvantage on that attack roll (she must be able to see the attacker).", ic="ab-shield", act=REACT("An ally within 5 feet is attacked")),
          bio=bio("Lower-tier household steward; keeps the communal kitchen and the family accounts. No military rank.",
                  "The family reunited without surrendering its conscience. She took Baldrik's money for repairs and food and hates that it let her avoid asking how it was earned.",
                  "I am glad you came home. That does not mean I am glad about everything we did while you were gone."))
@@ -200,7 +202,8 @@ creature(AUTH, "edda", "Edda, Warden of the Fifth Finger", cr=5, ac=18, hp=92, a
 creature(AUTH, "venn", "Venn Stoneclerk", cr=0.25, ac=12, hp=26, abilities=(9, 12, 12, 16, 14, 13), skills={"inv": 1, "his": 1},
          langs=DW, disposition=1,
          b=B("venn").attack("Dagger", 3, "1d4+1", "piercing", ic="ab-blade")
-         .feature("Archive Memory", "Advantage on checks to locate an indexed military record or identify a suspicious alteration in a registry. He can testify that he filed E3.", ic="ab-scroll"),
+         .feature("Archive Memory", "Advantage on checks to locate an indexed military record or identify a suspicious alteration in a registry. He can testify that he filed E3.", ic="ab-scroll")
+         .feature("Cite the Regulation", "Action. Venn quotes the standing order that applies. One officer or guard who can hear him must succeed on a DC 13 Wisdom saving throw or stop and verify the order before acting, losing its next action.", ic="ab-ledger", act=ACT()),
          bio=bio("Records clerk of the military archive. Habit: reads every document twice, aloud, under his breath.",
                  "Not to be the clerk who gets blamed. Protection as a witness makes him brave.",
                  "Archive transfer is due tomorrow. I am only mentioning it."))
@@ -218,7 +221,9 @@ creature(CIV, "yrsa", "Sister Yrsa Coalbraid", cr=6, ac=18, hp=90, abilities=(14
 
 creature(CIV, "tovik", "Tovik Deepgauge", cr=2, ac=15, hp=52, abilities=(14, 12, 15, 16, 14, 11), langs=DW, disposition=1,
          b=B("tovik").attack("Work Hammer", 5, "1d6+2", "bludgeoning", ic="ab-pick")
-         .feature("Read the Pressure", "Tovik can identify dangerous changes in a visible pump or gauge without a roll; complex sabotage still requires investigation. He carries the dated gauge sheet that begins E1.", ic="ab-gauge"),
+         .feature("Read the Pressure", "Tovik can identify dangerous changes in a visible pump or gauge without a roll; complex sabotage still requires investigation. He carries the dated gauge sheet that begins E1.", ic="ab-gauge")
+         .feature("Crew, On Me", "Bonus Action. Up to three Lowhearth workers who can hear Tovik move up to half their speed without provoking opportunity attacks.", ic="ab-rally", act=BONUS())
+         .feature("Shore It Up", "Action. Tovik braces a failing pump, door or tunnel section within 5 feet: it can't collapse or burst until the start of his next turn, and a work challenge he takes part in gains 1 progress (once per challenge).", ic="ab-tools", act=ACT()),
          bio=bio("Adult mine foreman at the Ninth Sluice. Habit: counts his crew by name, every time.",
                  "His missing shift brought home, and the complaints about dying wells — filed as 'enemy propaganda' — finally read.",
                  "We filed the complaints. They called them propaganda."))
@@ -236,7 +241,7 @@ creature(CIV, "cinder-civilian", "Cinder-Tusk Household Member", cr=0.125, ac=11
 
 creature(CIV, "ironfist-courier", "Ironfist Courier", cr=0.125, ac=12, hp=9, abilities=(10, 14, 10, 11, 12, 11), langs=DW, disposition=1,
          b=B("ironfist-courier").attack("Shortsword", 4, "1d6+2", "piercing", ic="ab-blade")
-         .feature("Fast Legs", "Couriers reach Kharad-Varr before a party that sleeps at the Fifth Finger.", ic="ab-scroll"),
+         .feature("Fast Legs", "Couriers reach Kharad-Varr before a party that sleeps at the Fifth Finger. Bonus Action: Dash or Disengage.", ic="ab-slip", act=BONUS()),
          bio=bio("Messengers who run the nine miles of military road.", "To deliver the dispatch and get paid.", "Sealed orders for the captain. Don't ask me what's in them."))
 
 # =========================================================================== Cinder-Tusk

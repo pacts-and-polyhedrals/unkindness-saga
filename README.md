@@ -19,6 +19,9 @@ Thorgrinn comes home in a body of metal to Kharad-Varr. Eight chapters across tw
 - **Shadows Beyond Barovia** imports how Part I ended and weaves Orcus, Vampyr and Vecna through every session: Attention thresholds, signature rules, Dark Gifts with stated prices, Marks, combined arcs, outcome rules for each ending, reputation, prophecy boons and 38 Shadow beats with hooks.
 - Content installs from compendium packs into *Ironfist Legacy* folders.
 
+## Running the table
+The **★ DM Control Board** (macro of that name, or the Manager's top button) holds every tracker and tool for both parts, with an explanation on each section. The manual is the journal *00 — DM Control Board: Manual*.
+
 ## Set up
 Enable the module, reload as GM and choose **Set Up Everything** (or *Game Settings → The Unkindness Saga Manager*). The Manager can set up or repair each part separately. Player character sheets are never touched.
 
