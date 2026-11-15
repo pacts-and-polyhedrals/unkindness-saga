@@ -1,6 +1,6 @@
 {
   "name": "unkindness-saga",
-  "version": "2.1.0",
+  "version": "2.1.3",
   "description": "The Unkindness Saga: Ravenloft Finale & Ironfist Legacy (Foundry VTT module)",
   "main": "index.js",
   "scripts": {

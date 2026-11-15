@@ -49,6 +49,7 @@ Hooks.once("init", () => {
     name: "Play scene music on activation", hint: "When the GM activates an Ironfist Legacy scene, start its assigned track.",
     scope: "world", config: true, type: Boolean, default: true
   });
+  game.settings.register(MOD, "artBase", { scope: "world", config: false, type: String, default: `modules/${MOD}/` });
   game.settings.registerMenu(MOD, "manager", {
     name: "The Unkindness Saga Manager", label: "Open Manager", hint: "Set up Part I (Ravenloft finale) and Part II (Ironfist Legacy), update, rebuild scenes, scale for party size, or remove Part II.",
     icon: "fa-solid fa-shield-halved", type: Manager, restricted: true
@@ -58,10 +59,12 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   game.modules.get(MOD).api = API;
   Clock.refresh();
-  if (!game.user.isGM) return;
+  if (!game.user.isGM) { artBase(); return; }
   for (const old of ["cat-and-unkindness", "ironfist-legacy"]) if (game.modules.get(old)?.active)
     ui.notifications.warn(`The Unkindness Saga replaces the separate "${old}" module. Disable it in Manage Modules to avoid duplicate content.`, { permanent: true });
   if (!game.settings.get(MOD, "migrated")) await migrateLegacy({ quiet: true });
+  try { await fixTokenLevels(); } catch (e) { console.error(MOD, "token levels", e); }
+  try { await repairArt({ quiet: true }); } catch (e) { console.error(MOD, "art repair", e); }
   const ver = game.modules.get(MOD).version;
   const installed = game.settings.get(MOD, "installedVersion");
   if (!installed && !game.settings.get(MOD, "promptDismissed")) {
@@ -128,7 +131,7 @@ async function ensureHands() {
   for (const h of HANDS) {
     if (byKey(game.cards, h.key)) continue;
     await Cards.create({
-      name: h.name, type: h.type, folder: folder.id, img: `modules/${MOD}/assets/icons/mc-cards.webp`,
+      name: h.name, type: h.type, folder: folder.id, img: `${artUrl()}assets/icons/mc-cards.webp`,
       ownership: { default: h.observer ? CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER : 0 },
       flags: { [MOD]: { managed: true, key: h.key } }
     });
@@ -222,7 +225,7 @@ async function stageScene(key) {
   if (lights.length) await scene.createEmbeddedDocuments("AmbientLight", lights);
   const notes = spec.notes.filter(n => game.journal.get(n.entryId)).map(n => ({
     x: n.x, y: n.y, entryId: n.entryId, pageId: n.pageId, text: n.label, flags: flag, ...lv,
-    texture: { src: `modules/${MOD}/assets/icons/note-pin.webp` }, iconSize: 48, fontSize: 22, textAnchor: 1, global: false
+    texture: { src: `${artUrl()}assets/icons/note-pin.webp` }, iconSize: 48, fontSize: 22, textAnchor: 1, global: false
   }));
   if (notes.length) await scene.createEmbeddedDocuments("Note", notes);
   const tokens = [];
@@ -234,7 +237,8 @@ async function stageScene(key) {
     const data = td.toObject();
     if (t.name) data.name = t.name;
     foundry.utils.setProperty(data, `flags.${MOD}.managed`, true);
-    Object.assign(data, lv);
+    delete data.levels;
+    if (levelId) data.level = levelId; // tokens take a single level id in v14, not a levels set
     tokens.push(data);
   }
   if (tokens.length) await scene.createEmbeddedDocuments("Token", tokens);
@@ -251,6 +255,7 @@ async function buildScenes() {
   await ensureScene(all.section, folder);
   for (const s of all.scenes) await stageScene(s.key);
   note?.remove?.();
+  await repairArt({ quiet: true });
   ui.notifications.info(`${ROOT}: ${all.scenes.length} scenes built.`);
 }
 
@@ -260,6 +265,7 @@ async function setupAll() {
   await installContent({ update: false });
   await buildScenes();
   await applyPartySize(game.settings.get(MOD, "partySize"));
+  await repairArt({ quiet: true });
   await game.settings.set(MOD, "installedVersion", game.modules.get(MOD).version);
   ui.notifications.info(`The Unkindness Saga is ready. Part I starts in "00 — START HERE: THE LAST TWO SESSIONS"; Part II in "00 — Start Here: The Stone Ledger".`);
   byKey(game.journal, "start")?.sheet?.render(true);
@@ -267,6 +273,7 @@ async function setupAll() {
 async function updateContent() {
   await installContent({ update: true });
   await applyPartySize(game.settings.get(MOD, "partySize"));
+  await repairArt({ quiet: true });
   await game.settings.set(MOD, "installedVersion", game.modules.get(MOD).version);
 }
 async function removeAll() {
@@ -382,7 +389,7 @@ class LedgerApp extends foundry.applications.api.ApplicationV2 {
       .map(([k, l]) => `<button type="button" class="il-ev ${s.baldrik[k] ? "on" : ""}" data-action="baldrik" data-b="${k}">${l}</button>`).join("");
     const eff = s.defence <= 1 ? "One unassigned front falls back." : s.defence <= 3 ? "Unassigned fronts hold, with damage." : "Unassigned fronts hold and grant one reinforcement.";
     const acc = s.accord <= 1 ? "No cross-clan assistance." : s.accord === 2 ? "Civilians share safe routes." : "A Cinder-Tusk engineering team helps both populations.";
-    return `<div class="il-ledger"><img class="il-ledger-banner" src="modules/${MOD}/assets/art/banner.webp" alt="">
+    return `<div class="il-ledger"><img class="il-ledger-banner" src="${artUrl()}assets/art/banner.webp" alt="">
       ${pips(s.defence, 6, "defence")}<p class="hint">${eff}</p>${pips(s.accord, 4, "accord")}<p class="hint">${acc}</p>
       <h3>Evidence</h3><div class="il-row">${ev}</div>
       <h3>The Council</h3>${council}
@@ -666,12 +673,13 @@ class Manager extends foundry.applications.api.ApplicationV2 {
     position: { width: 580, height: "auto" },
     actions: {
       setupAll: async function () { await API.setupAll(); this.render(); },
-      partOne: async function () { await migrateLegacy(); await game.catAndUnkindness?.setup?.(); this.render(); },
+      partOne: async function () { await migrateLegacy(); await game.catAndUnkindness?.setup?.(); await repairArt({ quiet: true }); this.render(); },
+      art: async function () { await repairArt({ force: true }); this.render(); },
       partOneDash: async function () { await game.catAndUnkindness?.dashboard?.(); },
-      install: async function () { await installContent({ update: false }); this.render(); },
+      install: async function () { await installContent({ update: false }); await repairArt({ quiet: true }); this.render(); },
       update: async function () { await updateContent(); this.render(); },
       scenes: async function () { await buildScenes(); this.render(); },
-      scene: async function (ev, el) { await stageScene(el.dataset.key); ui.notifications.info(`Scene rebuilt: ${el.dataset.key}`); },
+      scene: async function (ev, el) { await stageScene(el.dataset.key); await repairArt({ quiet: true }); ui.notifications.info(`Scene rebuilt: ${el.dataset.key}`); },
       remove: async function () { await removeAll(); this.render(); },
       party: async function (ev, el) { const n = await applyPartySize(Number(el.dataset.n)); ui.notifications.info(`Scaled for ${n} heroes.`); this.render(); },
       ledger: async function () { Ledger.open(); },
@@ -689,7 +697,7 @@ class Manager extends foundry.applications.api.ApplicationV2 {
     const ps = game.settings.get(MOD, "partySize");
     const rows = all.scenes.map(s => `<li><span>${esc(s.title)}</span><button type="button" data-action="scene" data-key="${s.key}"><i class="fa-solid fa-rotate"></i> Rebuild</button></li>`).join("");
     return `<div class="il-manager">
-      <header class="il-mhead"><img src="modules/${MOD}/assets/art/banner.webp" alt=""><p>Module ${ver} · World content ${inst || "not installed"}</p></header>
+      <header class="il-mhead"><img src="${artUrl()}assets/art/banner.webp" alt=""><p>Module ${ver} · World content ${inst || "not installed"} · Art: ${esc((ART_BASE ?? ART_PREFIX) === ART_PREFIX ? "module folder" : (ART_BASE ?? "").startsWith(GH_RAW) ? "GitHub repository (Forge fallback)" : "Forge assets library")}</p></header>
       <section><h3>Part I — The Cat and the Unkindness (Ravenloft finale)</h3>
         <div class="il-row"><button type="button" data-action="partOne"><i class="fa-solid fa-chess-rook"></i> Set Up / Repair Part I</button>
         <button type="button" data-action="partOneDash"><i class="fa-solid fa-gauge"></i> Finale Dashboard</button></div>
@@ -698,6 +706,7 @@ class Manager extends foundry.applications.api.ApplicationV2 {
         <button type="button" class="il-big" data-action="setupAll"><i class="fa-solid fa-wand-magic-sparkles"></i> Set Up Everything (Parts I and II)</button>
         <div class="il-row"><button type="button" data-action="install"><i class="fa-solid fa-download"></i> Install Content</button>
         <button type="button" data-action="update"><i class="fa-solid fa-arrows-rotate"></i> Update Content</button>
+        <button type="button" data-action="art" title="Point every map, portrait, token, icon and track at a copy that loads (fixes blank maps on The Forge)"><i class="fa-solid fa-image"></i> Repair Art</button>
         <button type="button" data-action="scenes"><i class="fa-solid fa-map"></i> Build All Scenes</button></div>
         <p class="hint">Rebuilding a scene replaces only the walls, lights, pins and tokens this module placed. Update Content refreshes documents from the compendiums and keeps their IDs, so tokens and links keep working.</p></section>
       <section><h3>Party Size</h3><div class="il-row">${[4, 5, 6].map(n => `<button type="button" data-action="party" data-n="${n}" class="${n === ps ? "active" : ""}">${n} heroes</button>`).join("")}</div>
@@ -878,7 +887,7 @@ class InheritanceApp extends foundry.applications.api.ApplicationV2 {
     const s = inhState(); const data = await inhData(); const gm = game.user.isGM; const p = presentPowers(s);
     const rows = POWER_KEYS.map(k => {
       const st = stageOf(s.attention[k], data.thresholds); const tag = p.primary.includes(k) ? (p.primary.length > 1 ? "co-primary" : "primary") : p.present.includes(k) ? "present" : "watching";
-      return `<div class="il-power" style="border-left:6px solid ${data.powers[k].color}"><img src="modules/${MOD}/assets/icons/${data.powers[k].icon}.webp" alt="">
+      return `<div class="il-power" style="border-left:6px solid ${data.powers[k].color}"><img src="${artUrl()}assets/icons/${data.powers[k].icon}.webp" alt="">
         <div><b>${data.powers[k].name}</b> <span class="hint">${data.powers[k].title}</span><br>
         ${gm ? `<button type="button" data-action="att" data-p="${k}" data-d="-1">−</button>` : ""}<strong class="il-att">${s.attention[k]}</strong>${gm ? `<button type="button" data-action="att" data-p="${k}" data-d="1">+</button>` : ""}
         <em>${st[1]}</em> · <span class="il-tag">${tag}</span> · <a data-action="disp" data-p="${k}">${esc(s.disposition[k])}</a> · ${esc(s.status[k])}</div></div>`;
@@ -947,12 +956,140 @@ async function migrateLegacy({ quiet = false } = {}) {
   await game.settings.set(MOD, "migrated", true);
 }
 
+// ---------------------------------------------------------------- art hosting
+// The Forge sometimes installs a custom module's code and data but none of its images or audio, so every
+// modules/unkindness-saga/assets/... request answers 404. When that happens the module finds another copy
+// that does load (the Forge assets library, then this module's GitHub repository, which serves the same
+// files with cross-site access) and rewrites the art paths in every world document it created.
+const ART_PREFIX = `modules/${MOD}/`;
+const ART_PROBE = "assets/art/banner.webp";
+const GH_RAW = "https://raw.githubusercontent.com/pacts-and-polyhedrals/unkindness-saga";
+const ART_RX = () => new RegExp(String.raw`(?:https://raw\.githubusercontent\.com/pacts-and-polyhedrals/unkindness-saga/[^/"'\s()]+/module/|https://assets\.forge-vtt\.com/[^"'\s()]*?/modules/unkindness-saga/|modules/unkindness-saga/)(?=assets/)`, "g");
+let ART_BASE = null, ART_REPORT = [];
+function probeImage(url, ms = 10000) {
+  if (typeof Image === "undefined") return Promise.resolve(url.startsWith(ART_PREFIX));
+  return new Promise(res => {
+    const img = new Image(); if (/^https?:/.test(url)) img.crossOrigin = "anonymous";
+    const t = setTimeout(() => { img.src = ""; res(false); }, ms);
+    img.onload = () => { clearTimeout(t); res(true); }; img.onerror = () => { clearTimeout(t); res(false); };
+    img.src = url;
+  });
+}
+async function artBase(force = false) {
+  if (ART_BASE !== null && !force) return ART_BASE;
+  const ver = game.modules.get(MOD)?.version ?? "main";
+  const cands = [ART_PREFIX];
+  try {
+    const P = globalThis.ForgeVTT?.ASSETS_LIBRARY_URL_PREFIX, uid = await globalThis.ForgeAPI?.getUserId?.();
+    if (P && uid) cands.push(`${P}${uid}/${ART_PREFIX}`);
+  } catch (e) { /* not on The Forge */ }
+  cands.push(`${GH_RAW}/v${ver}/module/`, `${GH_RAW}/main/module/`);
+  ART_REPORT = [];
+  for (const b of cands) {
+    const ok = await probeImage(b + ART_PROBE);
+    ART_REPORT.push(`${ok ? "OK " : "404"} ${b}${ART_PROBE}`);
+    if (ok) return (ART_BASE = b);
+  }
+  return (ART_BASE = ART_PREFIX);
+}
+const artUrl = (p = "") => (ART_BASE ?? ART_PREFIX) + p;
+function fixArt(v, base) {
+  if (typeof v === "string") return v.includes("assets/") ? v.replace(ART_RX(), base) : v;
+  if (Array.isArray(v)) return v.map(x => fixArt(x, base));
+  if (v && typeof v === "object") { const o = {}; for (const [k, x] of Object.entries(v)) o[k] = fixArt(x, base); return o; }
+  return v;
+}
+function flatArt(o, pre = "", out = {}) {
+  for (const [k, v] of Object.entries(o ?? {})) {
+    const key = pre ? `${pre}.${k}` : k;
+    if (v && typeof v === "object" && !Array.isArray(v)) flatArt(v, key, out); else out[key] = v;
+  }
+  return out;
+}
+/** Only the fields whose art path changes, as a flat update ({"texture.src": …}). */
+function artChanges(obj, base, skip = new Set()) {
+  const out = {};
+  for (const [k, v] of Object.entries(flatArt(obj))) {
+    if (skip.has(k.split(".")[0]) || k === "_id" || k.startsWith("_stats")) continue;
+    if (typeof v === "string") { const nv = fixArt(v, base); if (nv !== v) out[k] = nv; }
+    else if (Array.isArray(v)) { const nv = fixArt(v, base); if (JSON.stringify(nv) !== JSON.stringify(v)) out[k] = nv; }
+  }
+  return out;
+}
+/** v14: tokens this module placed before 2.1.3 were given no level, which Foundry rejects when they move. */
+async function fixTokenLevels() {
+  if (!game.user?.isGM || gen() < 14) return 0;
+  let n = 0;
+  for (const sc of game.scenes?.contents ?? []) {
+    if (!sc.flags?.[MOD] || !sc.tokens?.size) continue;
+    const lvl = sc.initialLevel ?? sc.levels?.contents?.[0];
+    if (!lvl) continue;
+    const ids = new Set(sc.levels.map(l => l.id));
+    const ups = sc.tokens.filter(t => !ids.has(t._source?.level ?? t.level)).map(t => ({ _id: t.id, level: lvl.id }));
+    if (!ups.length) continue;
+    try { await sc.updateEmbeddedDocuments("Token", ups, { cuInternal: true }); n += ups.length; }
+    catch (e) { for (const u of ups) { try { await sc.updateEmbeddedDocuments("Token", [u], { cuInternal: true }); n++; } catch (e2) { console.warn(MOD, "token level", sc.name, u._id, e2.message); } } }
+  }
+  if (n) console.log(`${MOD} | placed ${n} tokens on their scene's level`);
+  return n;
+}
+let ART_RUNNING = null;
+/** Point every art path in the world documents at the copy that loads. Safe to repeat. */
+function repairArt(opts = {}) { return (ART_RUNNING ??= runRepairArt(opts).finally(() => { ART_RUNNING = null; })); }
+async function runRepairArt({ quiet = false, force = false } = {}) {
+  if (!game.user?.isGM) return 0;
+  try { await fixTokenLevels(); } catch (e) { console.error(MOD, "token levels", e); }
+  const base = await artBase(force);
+  const last = game.settings.get(MOD, "artBase");
+  if (base === ART_PREFIX && last === ART_PREFIX && !force) return 0;
+  // find what needs changing first, so the GM sees how much work there is
+  const todo = [];
+  for (const coll of [game.scenes, game.actors, game.items, game.journal, game.tables, game.macros, game.playlists, game.cards])
+    for (const doc of (coll?.contents ?? [])) {
+      const raw = JSON.stringify(doc.toObject());
+      if (raw.includes("unkindness-saga/") && raw.replace(ART_RX(), base) !== raw) todo.push(doc);
+    }
+  if (!todo.length) {
+    await game.settings.set(MOD, "artBase", base);
+    if (!quiet) ui.notifications.info(`The Unkindness Saga: art already loads from ${artWhere(base)}.`);
+    return 0;
+  }
+  const note = ui.notifications.info(`The Unkindness Saga: pointing ${todo.length} documents at the art in ${artWhere(base)}. Leave this world open until it says it's done…`, { permanent: true });
+  let docs = 0, emb = 0; const errors = []; const scenes = new Set();
+  for (const doc of todo) {
+    try {
+      const src = doc.toObject();
+      const embedded = doc.constructor?.metadata?.embedded ?? doc._embeddedMap ?? {};
+      const upd = artChanges(src, base, new Set(Object.values(embedded)));
+      if (Object.keys(upd).length) { await doc.update(upd, { cuInternal: true }); docs++; }
+      for (const [cls, key] of Object.entries(embedded)) {
+        const ups = [];
+        for (const e of (src[key] ?? [])) { const c = artChanges(e, base); if (Object.keys(c).length) ups.push({ _id: e._id, ...c }); }
+        if (!ups.length) continue;
+        try { await doc.updateEmbeddedDocuments(cls, ups, { cuInternal: true }); emb += ups.length; if (doc.documentName === "Scene") scenes.add(doc); }
+        catch (e) {
+          for (const u of ups) { try { await doc.updateEmbeddedDocuments(cls, [u], { cuInternal: true }); emb++; if (doc.documentName === "Scene") scenes.add(doc); } catch (e2) { errors.push(`${doc.name} › ${cls} ${u._id}: ${e2.message}`); } }
+        }
+      }
+    } catch (e) { errors.push(`${doc.documentName} ${doc.name}: ${e.message}`); }
+  }
+  await game.settings.set(MOD, "artBase", base);
+  note?.remove?.();
+  const msg = `The Unkindness Saga: art now loads from ${artWhere(base)} (${docs} documents, ${emb} embedded records updated${errors.length ? `, ${errors.length} could not be updated — see the console` : ""}).`;
+  if (errors.length) { console.error(MOD, "art repair problems", errors); ui.notifications.warn(msg, { permanent: true }); } else ui.notifications.info(msg);
+  // thumbnails last: they download every map once
+  for (const sc of scenes) { try { const t = await sc.createThumbnail(); if (t?.thumb) await sc.update({ thumb: t.thumb }, { cuInternal: true }); } catch (e) { console.warn(MOD, "thumbnail", sc.name, e); } }
+  return docs + emb;
+}
+const artWhere = b => b === ART_PREFIX ? "the module folder" : b.startsWith(GH_RAW) ? "the module's GitHub repository" : "your Forge assets library";
+const ArtAPI = { base: artBase, repair: repairArt, tokens: fixTokenLevels, report: async () => { await artBase(true); console.log(ART_REPORT.join("\n")); return ART_REPORT; } };
+
 // ---------------------------------------------------------------- the Hold (Kharad-Varr side quests)
 const HoldAPI = {
   /** Stage (if needed) and view the painted overview of the Hold. */
   async map() {
     let scene = game.scenes.find(s => s.getFlag(MOD, "key") === "hold-map");
-    if (!scene) scene = await stageScene("hold-map");
+    if (!scene) { scene = await stageScene("hold-map"); await repairArt({ quiet: true }); }
     return scene?.view();
   },
   /** Draw from one of the Hold's roll tables by key (default: rumours). */
@@ -1009,6 +1146,6 @@ const API = {
   setupAll, installContent, updateContent, buildScenes, stageScene, removeAll, applyPartySize,
   ledger: Ledger, awardEvidence, toggleEvidence, adjustTrack, baldrikEvent, hearing, postLedger,
   workChallenge, countdown, clock: Clock, dealFavour, drawDispatch, nextPressure, passCard,
-  forgeRune, showHandout, requestSave, playSceneMusic, playSfx, inheritance: Inheritance, migrateLegacy, hold: HoldAPI,
+  forgeRune, showHandout, requestSave, playSceneMusic, playSfx, inheritance: Inheritance, migrateLegacy, hold: HoldAPI, art: ArtAPI,
   openManager: () => new Manager().render(true)
 };

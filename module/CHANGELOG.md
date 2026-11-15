@@ -1,4 +1,15 @@
 # Changelog
+## 2.1.3 — Token levels (Foundry v14)
+- **Fixes "level must exist".** Tokens placed by Build All Scenes were given a `levels` set, which v14 ignores for tokens: a token takes a single `level` id. Without one, Foundry rejected any update that moved them, which also stopped 2.1.1's art repair on the first scene. New tokens get the scene's level, and on load every token the module placed is put on its scene's level.
+- Includes 2.1.2: the art repair changes only image fields, repairs each document separately, shows progress and lists anything it couldn't fix.
+## 2.1.2 — Art repair, sturdier
+- The automatic art repair on load now shows a notice while it works ("pointing N documents at the art…") and another when it's done, instead of running silently. 2.1.1 could look finished while it was still going, or stop after the first scene.
+- Each document is repaired on its own and only the image fields are changed, so one document Foundry refuses can no longer stop the rest; anything that fails is listed in the console.
+- Thumbnails are rebuilt after the paths are fixed, not during.
+## 2.1.1 — Art on The Forge
+- **Blank maps on The Forge fixed.** The Forge installed the module's code and data but none of its images or audio, so every map, portrait, token, icon and track answered 404. On load the module now checks where its art actually loads from (the module folder, then your Forge assets library, then this module's public GitHub repository) and points every scene, actor, item, journal, table, macro, playlist and card deck it created at that copy. It runs automatically on load and after every setup, update or scene rebuild, and switches back by itself if the module folder ever starts serving the art.
+- Manager: **Repair Art** button, and the header shows where the art is loading from. Console: `game.modules.get("unkindness-saga").api.art.report()` lists every location tried.
+- Scene thumbnails are rebuilt after a repair.
 ## 2.1.0 — The Hold of Kharad-Varr
 - **Linked overview map** (*H0 · Kharad-Varr: The Hold*): a painted, gridless cutaway of the whole mountain from the Fifth Finger to the Heartworks. 25 pins: venue pins open the venue page; district pins open a district page linking every map in it.
 - **Eight new venue maps**, walled, darkly lit, pinned and populated, in the same painted style: the Low Lantern (Lowhearth tavern), the Gilded Nail (officers' tavern), the Ember Baths (Steamstair), the Turning Gear (gaming house), Anvilsong Forge (smith), Glimmerhall (enchanter), Mossbeard and Fernspit Remedies (apothecary) and the Hall of Deep Script (rune smiths).

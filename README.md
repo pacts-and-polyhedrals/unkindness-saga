@@ -24,6 +24,9 @@ Enable the module, reload as GM and choose **Set Up Everything** (or *Game Setti
 
 **Coming from the separate modules?** Disable *cat-and-unkindness* and *ironfist-legacy*, enable this one and reload. It migrates their world content, finale state and Stone Ledger automatically on first load, then *Set Up / Repair Part I* moves the Part I documents into their new folders and art paths without duplicating anything.
 
+## Art on The Forge
+If the host does not serve the module's own image and audio files (The Forge sometimes installs a custom module without them), the module loads them from its GitHub repository (`raw.githubusercontent.com/pacts-and-polyhedrals/unkindness-saga`) and rewrites the paths in the world documents it created. Keep the repository public and keep `module/assets` in it. Manager → **Repair Art** re-runs the check.
+
 ## Credits and third-party content
 Original adventure, cast and continuity: Asmo for the Sunday group — Jp (Thorgrinn), S. Alice (Damien), Paige (Vesper), John (Bunch) and Ryan (Legna).
 Part I bundles third-party art for **private home-game use only**: character art by Moonberry Maple; maps by Eledryll (mist-lit catacombs and larders) and DM_Andy (Vallaki streets); the 8k Castle Ravenloft map set; the arcane outfitter map. Do not publish this module publicly without those creators' permission.

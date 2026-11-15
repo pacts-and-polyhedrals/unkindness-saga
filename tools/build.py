@@ -11,7 +11,7 @@ from playlists_data import PLAYLISTS
 
 MODDIR = f"{ROOT}/module"
 SRC = f"{ROOT}/build/packs"
-VERSION = "2.1.0"
+VERSION = "2.1.3"
 REPO = "https://github.com/pacts-and-polyhedrals/unkindness-saga"
 
 shutil.rmtree(SRC, ignore_errors=True)

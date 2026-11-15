@@ -24,6 +24,7 @@ class Doc {
   constructor(data, type, parent = null) {
     this._source = deep(data); Object.assign(this, deep(data)); this.id = data._id ?? rid(); this._id = this.id; this.documentName = type; this.parent = parent;
     this.flags ??= {};
+    Object.defineProperty(this, "_embeddedMap", { enumerable: false, value: { Scene: { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Level: "levels" }, JournalEntry: { JournalEntryPage: "pages" }, Playlist: { PlaylistSound: "sounds" }, Cards: { Card: "cards" }, Actor: { Item: "items" } }[type] ?? {} });
     if (type === "Scene") { for (const k of ["walls", "lights", "notes", "tokens", "levels"]) this[k] = new Coll(k); for (const l of data.levels ?? []) { const d = new Doc(l, "Level", this); this.levels.set(d.id, d); } }
     if (type === "JournalEntry") { const ps = new Coll("JournalEntryPage"); for (const p of data.pages ?? []) ps.set(p._id, new Doc(p, "JournalEntryPage", this)); this.pages = ps; }
     if (type === "Playlist") { const ss = new Coll("PlaylistSound"); for (const p of data.sounds ?? []) ss.set(p._id, new Doc(p, "PlaylistSound", this)); this.sounds = ss; }
@@ -33,8 +34,8 @@ class Doc {
   getFlag(s, k) { return this.flags?.[s]?.[k]; }
   async update(u) { for (const [k, v] of Object.entries(u)) setProp(this, k, v); log.push(`update ${this.documentName}`); return this; }
   async delete() { COLLS[this.documentName]?.delete(this.id); }
-  async updateEmbeddedDocuments(type, ups) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Item: "items", JournalEntryPage: "pages" }; const c = this[map[type]]; for (const u of ups) { const d = c?.get(u._id); const { _id, ...rest } = u; await d?.update(rest); } }
-  toObject() { return deep({ ...this, parent: undefined, _source: undefined }); }
+  async updateEmbeddedDocuments(type, ups) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Item: "items", JournalEntryPage: "pages", Level: "levels", PlaylistSound: "sounds", Card: "cards" }; const c = this[map[type]]; for (const u of ups) { const d = c?.get(u._id); const { _id, ...rest } = u; await d?.update(rest); } }
+  toObject() { const o = {}; for (const [k, v] of Object.entries(this)) { if (k === "parent" || k === "_source") continue; o[k] = v instanceof Coll ? v.contents.map(c => c.toObject()) : v; } return deep(o); }
   async createEmbeddedDocuments(t, arr) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens", Level: "levels", Item: "items", JournalEntryPage: "pages" }; const c = this[map[t]] ??= new Coll(t); for (const a of arr) { if (t === "Note" && !a.entryId) throw new Error("note without entry"); const d = new Doc(a, t, this); c.set(d.id, d); } return arr; }
   async deleteEmbeddedDocuments(t, ids) { const map = { Wall: "walls", AmbientLight: "lights", Note: "notes", Token: "tokens" }; for (const i of ids) this[map[t]].delete(i); }
   async getTokenDocument(o) { return { toObject: () => ({ ...deep(this.prototypeToken), ...o, actorId: this.id }) }; }
@@ -103,6 +104,28 @@ await api.setupAll();
   console.log("hold: rivets posted chat", log.slice(before).includes("chat"));
   const venues = ["low-lantern","gilded-nail","ember-baths","turning-gear","anvilsong-forge","glimmerhall","mossbeard-remedies","deep-script"].map(k => game.scenes.find(s => s.getFlag(MOD, "key") === k));
   console.log("hold: venues", venues.filter(Boolean).length, "walls", venues.reduce((n, s) => n + (s?.walls.size ?? 0), 0), "tokens", venues.reduce((n, s) => n + (s?.tokens.size ?? 0), 0));
+}
+if (GEN >= 14) { // tokens carry a single level id
+  const sc = game.scenes.find(s => s.getFlag(MOD, "key") === "lowhearth"); const lid = sc.initialLevel?.id;
+  const bad = sc.tokens.filter(t => t.level !== lid).length;
+  for (const t of sc.tokens.contents.slice(0, 3)) { t.level = undefined; t._source.level = undefined; }
+  console.log("token levels: wrong after build", bad, "| fixed", await api.art.tokens(), "| wrong now", sc.tokens.filter(t => t.level !== lid).length);
+}
+{ // The Forge without the module's art: images only load from the GitHub repository
+  globalThis.Image = class { set src(u) { this._u = u; if (!u) return; setTimeout(() => (u.startsWith("https://raw.githubusercontent.com/") ? this.onload?.() : this.onerror?.()), 0); } get src() { return this._u; } };
+  const n = await api.art.repair({ force: true });
+  const sc = game.scenes.find(s => s.getFlag(MOD, "key") === "lowhearth");
+  const all = JSON.stringify([...COLLS.Scene.contents, ...COLLS.Actor.contents, ...COLLS.Item.contents, ...COLLS.JournalEntry.contents, ...COLLS.Playlist.contents].map(d => d.toObject()));
+  const plain = (all.match(/(?<!\/)modules\/unkindness-saga\/assets\//g) ?? []).length;
+  const gh = (all.match(/raw\.githubusercontent\.com\/pacts-and-polyhedrals\/unkindness-saga\/v[0-9.]+\/module\/assets\//g) ?? []).length;
+  console.log("forge art: updated", n, "| plain paths left", plain, "| github paths", gh, "| base", game.settings.get(MOD, "artBase"), "| lowhearth map", (sc?.initialLevel?.background?.src ?? sc?.background?.src ?? "").slice(0, 70), "| catacombs", (game.scenes.find(s => /Catacombs \(Eledryll/.test(s.name))?.initialLevel?.background?.src ?? "").slice(-40));
+  const again = await api.art.repair({ force: true });
+  console.log("forge art: second run updates", again);
+  globalThis.Image = class { set src(u) { this._u = u; if (u) setTimeout(() => this.onload?.(), 0); } get src() { return this._u; } };
+  const back = await api.art.repair({ force: true });
+  const all2 = JSON.stringify([...COLLS.Scene.contents, ...COLLS.Actor.contents].map(d => d.toObject()));
+  console.log("forge art: back to module folder, updated", back, "| github paths left", (all2.match(/raw\.githubusercontent/g) ?? []).length);
+  delete globalThis.Image;
 }
 const count = t => COLLS[t].size;
 const p1 = t => COLLS[t].filter(d => d.getFlag(MOD, "part") === "ravenloft").length;
