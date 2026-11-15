@@ -1,0 +1,2411 @@
+{
+ "actors": [
+  {
+   "sourceId": "cu.actor.anastrasya",
+   "name": "Anastrasya — Bride of the Red Court",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/02 — Brides & Finn",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/anastrasya.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 14,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 16,
+      "proficient": 0
+     },
+     "int": {
+      "value": 16,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 15,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 20,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 18
+     },
+     "hp": {
+      "value": 115,
+      "max": 115,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 8,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>The unseen observer. Strahd reveals that Ana has been watching the Unkindness long before they properly met her.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Crimson Rapier",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "1d8+5+3d6",
+     "attacks": 2,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Compelled Waltz",
+     "type": "save",
+     "ability": "wis",
+     "dc": 17,
+     "damage": "",
+     "damageType": "",
+     "description": "On failure move the target up to its speed along a route Anastrasya chooses without provoking; Anastrasya may make one Crimson Rapier attack against it."
+    },
+    {
+     "name": "Courtly Gaze",
+     "type": "save",
+     "ability": "wis",
+     "dc": 17,
+     "damage": "",
+     "damageType": "",
+     "description": "Bonus Action. On failure the target cannot willingly target Anastrasya until the beginning of her next turn."
+    },
+    {
+     "name": "Partner's Step",
+     "type": "utility",
+     "description": "Reaction when an enemy enters within 5 feet: move 15 feet without provoking opportunity attacks."
+    },
+    {
+     "name": "Bloodied Courtier",
+     "type": "utility",
+     "description": "Below 55 HP, Crimson Rapier deals +1d6 necrotic damage."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Vampiric Resilience",
+     "description": "Use the campaign’s normal vampire resistances, charm immunities or weaknesses as appropriate. This module only replaces the sunlight interaction through Veil of the Black Sun."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/anastrasya.webp",
+   "sourceHash": "0d251bf4db261199"
+  },
+  {
+   "sourceId": "cu.actor.volenta",
+   "name": "Volenta — Oathbreaker Bride of the Mask",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/02 — Brides & Finn",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/08-volenta-oathbreaker-bride.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 20,
+      "proficient": 1
+     },
+     "dex": {
+      "value": 14,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 1
+     },
+     "int": {
+      "value": 12,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 16,
+      "proficient": 1
+     },
+     "cha": {
+      "value": 20,
+      "proficient": 1
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 19
+     },
+     "hp": {
+      "value": 155,
+      "max": 155,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 11,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire; oathbreaker paladin"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Volenta — Oathbreaker Bride of the Mask</h2><p>Volenta is the male bride Madam Eva described: a fallen paladin who does not gorge on victims. He chooses them, seduces or dominates them, and drains them slowly over months. In combat he is the patient martial counterweight to Anastrasya: black plate, broken vows, punishing smites, control auras and deliberate pressure on isolated targets.</p><p>He should feel like someone who has had centuries to turn chivalry into predation.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Black Oath Blade",
+     "type": "attack",
+     "bonus": 10,
+     "damage": "1d10+6+2d8",
+     "attacks": 2,
+     "damageType": "slashing/necrotic",
+     "description": "Two measured greatsword attacks. The necrotic damage represents Volenta’s broken oath feeding each strike."
+    },
+    {
+     "name": "Sanguine Smite — Recharge 5–6",
+     "type": "attack",
+     "bonus": 10,
+     "damage": "2d6+6+5d8",
+     "attacks": 1,
+     "damageType": "slashing/necrotic",
+     "description": "After the attack hits, Volenta may expend the recharge to add the necrotic dice. If the target is frightened, charmed or isolated from all allies by 10 feet or more, it also cannot regain hit points until the start of Volenta’s next turn."
+    },
+    {
+     "name": "Dreadful Aspect — 1/Encounter",
+     "type": "save",
+     "ability": "wis",
+     "dc": 18,
+     "damage": "",
+     "damageType": "",
+     "description": "Creatures of Volenta’s choice within 30 feet that can see him must save or become Frightened for 1 minute, repeating the save at the end of each turn. Artifact sunlight grants advantage on this save."
+    },
+    {
+     "name": "Months, Not Minutes",
+     "type": "save",
+     "ability": "wis",
+     "dc": 18,
+     "damage": "3d8",
+     "damageType": "psychic",
+     "description": "Volenta fixes one creature within 30 feet with the intimate certainty of a predator who believes time belongs to him. On a failure the target takes the psychic damage, cannot benefit from advantage against Volenta, and Volenta always knows its direction while both remain in Ravenloft until the end of his next turn."
+    },
+    {
+     "name": "Broken Vow Aura",
+     "type": "utility",
+     "description": "Hostile creatures that begin their turn within 10 feet of Volenta cannot take reactions until the start of their next turn unless they succeed on a DC 18 Wisdom save. A creature that succeeds is immune to the aura until the start of its next turn."
+    },
+    {
+     "name": "Unholy Intercession",
+     "type": "reaction",
+     "description": "When Anastrasya or another allied vampire within 30 feet is hit, Volenta may move up to half his speed toward the attacker without provoking. If he ends within reach, he may impose disadvantage on the next attack that creature makes before the end of its next turn."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, Volenta takes 15 radiant damage at the start of his turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of his next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Aura of Hate",
+     "description": "Volenta’s weapon attacks already include the offensive benefit of his corrupted oath. Do not add another flat Charisma damage bonus unless the encounter needs emergency tuning."
+    },
+    {
+     "name": "Vampiric Resilience",
+     "description": "Use the campaign’s normal vampire resistances and weaknesses as appropriate. This module replaces only the sunlight interaction through Veil of the Black Sun."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/08-08-volenta-oathbreaker-bride.webp",
+   "sourceHash": "e4f5193c094371b4"
+  },
+  {
+   "sourceId": "cu.actor.ludmilla",
+   "name": "Ludmilla — Bride of the Black Sun",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/02 — Brides & Finn",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/ludmilla.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 12,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 16,
+      "proficient": 0
+     },
+     "con": {
+      "value": 16,
+      "proficient": 0
+     },
+     "int": {
+      "value": 20,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 16,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 18,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 105,
+      "max": 105,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 9,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>The analytical bride. Her room contains research on the Unkindness and on why ordinary sunlight failed.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Blood Lance",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "4d10",
+     "attacks": 1,
+     "damageType": "necrotic",
+     "description": ""
+    },
+    {
+     "name": "Grave Sigil",
+     "type": "save",
+     "ability": "dex",
+     "dc": 17,
+     "damage": "5d8",
+     "damageType": "necrotic",
+     "description": "Mark a visible 10-foot square. It erupts at the beginning of Ludmilla’s next turn; half damage on success."
+    },
+    {
+     "name": "Black Sun Pulse",
+     "type": "save",
+     "ability": "con",
+     "dc": 17,
+     "damage": "3d8",
+     "damageType": "necrotic",
+     "description": "Recharge 5–6. Non-artifact light within 60 feet vanishes; on failure blinded until beginning of target’s next turn."
+    },
+    {
+     "name": "Counterspell Reserve",
+     "type": "utility",
+     "description": "Twice during the encounter Ludmilla can attempt to interrupt a spell. Save it for a meaningful cast rather than routine healing."
+    },
+    {
+     "name": "Nightglass Step",
+     "type": "utility",
+     "description": "Bonus Action: teleport between two areas of darkness within 40 feet."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Vampiric Resilience",
+     "description": "Use the campaign’s normal vampire resistances, charm immunities or weaknesses as appropriate. This module only replaces the sunlight interaction through Veil of the Black Sun."
+    },
+    {
+     "name": "Nightglass Pylons",
+     "description": "While at least two Nightglass Pylons remain active, Ludmilla has resistance to radiant damage that is not produced by an artifact. The pylons never stop the Sunsword or equivalent artifact sunlight."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/ludmilla.webp",
+   "sourceHash": "f685653a86f11c98"
+  },
+  {
+   "sourceId": "cu.actor.finn",
+   "name": "Finn — The Sanguine Son",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/02 — Brides & Finn",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/01-finn-the-sanguine-son.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 18,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 14,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 15,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 18,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 18
+     },
+     "hp": {
+      "value": 145,
+      "max": 145,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 10,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Former companion and corrupted addition to Strahd’s household. The encounter is designed to permit salvation, death, or unresolved escape.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Blade / Claw",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "1d8+5+2d6",
+     "attacks": 3,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Bite",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "1d6+5+3d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": "Heal half the necrotic damage dealt."
+    },
+    {
+     "name": "Quick Hand",
+     "type": "utility",
+     "description": "Once per turn Finn deals +3d6 damage when he has advantage or another hostile creature is adjacent to his target."
+    },
+    {
+     "name": "Sanguine Moon Step",
+     "type": "utility",
+     "description": "Bonus Action: teleport 30 feet through red mist."
+    },
+    {
+     "name": "Not Yet",
+     "type": "utility",
+     "description": "Reaction. Once per encounter, when Finn would be reduced to 0 HP, he falls to 1 HP instead."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Vampiric Resilience",
+     "description": "Use the campaign’s normal vampire resistances, charm immunities or weaknesses as appropriate. This module only replaces the sunlight interaction through Veil of the Black Sun."
+    },
+    {
+     "name": "Three Chains of Claim",
+     "description": "Finn can be saved by breaking the Sanguine Moon, Rejected Self, and Master’s Gift chains. Each normally takes an action and a meaningful DC 16 Persuasion, Insight, Religion, or other justified check; strong campaign callbacks may succeed without a roll."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/01-01-finn-the-sanguine-son.webp",
+   "sourceHash": "d3bd1746ad5f0cc0"
+  },
+  {
+   "sourceId": "cu.actor.abbot",
+   "name": "The Abbot — Wedding Officiant",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/01 — Finale Cast",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/02-the-abbot.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 18,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 14,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 17,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 20,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 18,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 18
+     },
+     "hp": {
+      "value": 135,
+      "max": 135,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 10,
+     "alignment": "",
+     "type": {
+      "value": "humanoid",
+      "subtype": "celestial"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Run him primarily as a social scene: three successes before two failures, DC 16, with evidence of Strahd’s betrayals and the fate of Anya/Vasilka especially persuasive.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Radiant Strike",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "2d8+5+2d8",
+     "attacks": 2,
+     "damageType": "bludgeoning/radiant",
+     "description": ""
+    },
+    {
+     "name": "One Healing Miracle",
+     "type": "utility",
+     "description": "If persuaded to abandon the altar, each member of the Unkindness regains 20 HP and may end one disease, curse, or condition currently affecting them. The Abbot then leaves the fight."
+    },
+    {
+     "name": "Bless Finn",
+     "type": "utility",
+     "description": "If the party fails the social confrontation but does not attack the Abbot, he may grant Finn 30 temporary HP before withdrawing."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/02-02-the-abbot.webp",
+   "sourceHash": "3f215b1cc035d663"
+  },
+  {
+   "sourceId": "cu.actor.tatyana",
+   "name": "Ireena / Tatyana",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/01 — Finale Cast",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/tatyana.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 14,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 18,
+      "proficient": 0
+     },
+     "con": {
+      "value": 16,
+      "proficient": 0
+     },
+     "int": {
+      "value": 14,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 16,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 20,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 100,
+      "max": 100,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 7,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Pale, vampiric and Tatyana-aware. Her finale is a choice, not a rescue check.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Agency, Not Objective",
+     "type": "utility",
+     "description": "She is not another bride encounter. Her decisive action in Phase III depends on whether the party treated her as a person with agency rather than a possession to recover."
+    },
+    {
+     "name": "No",
+     "type": "utility",
+     "description": "At approximately half of Strahd Phase III HP, if her agency was respected, she can strip one remaining Legendary Resistance and reveal the coffin’s location."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/tatyana.webp",
+   "sourceHash": "102b56f71e344b27"
+  },
+  {
+   "sourceId": "cu.actor.strahd1",
+   "name": "Strahd — Phase I: The Count Who Knows You",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/03 — Strahd",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/strahd1.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 20,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 20,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 18,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 22,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 19
+     },
+     "hp": {
+      "value": 175,
+      "max": 175,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 18,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Elegant Strahd. Still amused. He should move more than he stands still and use the castle to separate targets.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Crimson Blade",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+6+3d8",
+     "attacks": 2,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Blood Grasp",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d10+6",
+     "attacks": 1,
+     "damageType": "bludgeoning",
+     "description": "Target is grappled, escape DC 18."
+    },
+    {
+     "name": "Bite",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "1d6+6+4d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": "Legal against a grappled, willing, or incapacitated target; heal half necrotic damage."
+    },
+    {
+     "name": "Master's Command",
+     "type": "save",
+     "ability": "wis",
+     "dc": 18,
+     "damage": "",
+     "damageType": "",
+     "description": "Recharge 5–6. On failure charmed until end of next turn; Strahd may command movement or one weapon attack."
+    },
+    {
+     "name": "Ebon Step",
+     "type": "utility",
+     "description": "Bonus Action: teleport between shadows within 30 feet."
+    },
+    {
+     "name": "Mocking Reversal",
+     "type": "utility",
+     "description": "Reaction when an attack misses Strahd: move up to 20 feet without provoking."
+    },
+    {
+     "name": "Legendary — Step (1)",
+     "type": "utility",
+     "description": "Move up to half speed."
+    },
+    {
+     "name": "Legendary — Crimson Blade (1)",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+6+3d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Legendary — Shadow Hand (2)",
+     "type": "save",
+     "ability": "str",
+     "dc": 18,
+     "damage": "",
+     "damageType": "prone",
+     "description": "Pull target 20 feet and knock prone on failure."
+    },
+    {
+     "name": "Legendary — Bite (2)",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "1d6+6+4d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Legendary Resistance",
+     "description": "Four Legendary Resistances are shared across all three Strahd phases. At each phase transition Strahd regains one expended use, to a maximum of four."
+    },
+    {
+     "name": "Regeneration",
+     "description": "Normally 20 HP at the beginning of his turn. It does not function after artifact sunlight exposure or artifact-level radiant damage until the beginning of his following turn. Phase III may reduce this to 10 depending on the Blood Chain."
+    },
+    {
+     "name": "Castle Step",
+     "description": "While not exposed to artifact sunlight, Strahd may move through a solid wall, floor or ceiling as difficult terrain. If he ends movement inside matter he is forced to the nearest open space and takes 20 force damage."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/strahd1.webp",
+   "sourceHash": "c568d9a72f41a617"
+  },
+  {
+   "sourceId": "cu.actor.strahd2",
+   "name": "Strahd — Phase II: The Lord Is the Castle",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/03 — Strahd",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/strahd2.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 20,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 20,
+      "proficient": 0
+     },
+     "int": {
+      "value": 22,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 18,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 22,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 19
+     },
+     "hp": {
+      "value": 190,
+      "max": 190,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 20,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>The Heart of Ravenloft is active. Three Heart Chains make this phase an objective fight rather than another sack of hit points.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Crimson Blade",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+6+3d8",
+     "attacks": 2,
+     "damageType": "piercing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Blood Lightning",
+     "type": "save",
+     "ability": "dex",
+     "dc": 18,
+     "damage": "5d10+3d8",
+     "damageType": "lightning/necrotic",
+     "description": "60-foot line, half on success."
+    },
+    {
+     "name": "Shadow Crush",
+     "type": "save",
+     "ability": "str",
+     "dc": 18,
+     "damage": "4d10",
+     "damageType": "bludgeoning",
+     "description": "On failure restrained by its own shadow; escape DC 18."
+    },
+    {
+     "name": "Heartstep",
+     "type": "utility",
+     "description": "Bonus Action: teleport to any surviving Heart Chain."
+    },
+    {
+     "name": "Legendary — Move (1)",
+     "type": "utility",
+     "description": "Move up to half speed."
+    },
+    {
+     "name": "Legendary — Blood Bolt (1)",
+     "type": "save",
+     "ability": "dex",
+     "dc": 18,
+     "damage": "3d10",
+     "damageType": "necrotic",
+     "description": "60 feet; half on success."
+    },
+    {
+     "name": "Legendary — Break the Floor (2)",
+     "type": "save",
+     "ability": "dex",
+     "dc": 18,
+     "damage": "2d6",
+     "damageType": "bludgeoning",
+     "description": "A 10-foot square collapses; on failure fall 20 feet and land prone."
+    },
+    {
+     "name": "Legendary — Heartstep (2)",
+     "type": "utility",
+     "description": "Teleport to a surviving Heart Chain."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Legendary Resistance",
+     "description": "Four Legendary Resistances are shared across all three Strahd phases. At each phase transition Strahd regains one expended use, to a maximum of four."
+    },
+    {
+     "name": "Regeneration",
+     "description": "Normally 20 HP at the beginning of his turn. It does not function after artifact sunlight exposure or artifact-level radiant damage until the beginning of his following turn. Phase III may reduce this to 10 depending on the Blood Chain."
+    },
+    {
+     "name": "Castle Step",
+     "description": "While not exposed to artifact sunlight, Strahd may move through a solid wall, floor or ceiling as difficult terrain. If he ends movement inside matter he is forced to the nearest open space and takes 20 force damage."
+    },
+    {
+     "name": "Eternal Night",
+     "description": "The chamber is supernatural darkness. Ordinary magical light cannot illuminate it. Artifact sunlight cuts visible corridors through the darkness and suppresses the Veil as normal."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/strahd2.webp",
+   "sourceHash": "39f73a15c603d235"
+  },
+  {
+   "sourceId": "cu.actor.strahd3",
+   "name": "Strahd — Phase III: The Devil Without the Mask",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/03 — Strahd",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/strahd3.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 22,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 22,
+      "proficient": 0
+     },
+     "int": {
+      "value": 16,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 18,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 22,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 20
+     },
+     "hp": {
+      "value": 220,
+      "max": 220,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 21,
+     "alignment": "",
+     "type": {
+      "value": "undead",
+      "subtype": "vampire"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>No charm, no courtly restraint. This is the vampire warlord who has finally realized the death can be permanent.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Rend",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+6+2d8",
+     "attacks": 3,
+     "damageType": "slashing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Bite",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "1d8+6+4d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": "Heal half necrotic damage."
+    },
+    {
+     "name": "The Devil's Roar",
+     "type": "save",
+     "ability": "wis",
+     "dc": 18,
+     "damage": "4d8",
+     "damageType": "psychic",
+     "description": "Recharge 5–6. Failure: frightened until end of next turn; success half damage and not frightened."
+    },
+    {
+     "name": "Predator's Pounce",
+     "type": "utility",
+     "description": "If Strahd moves at least 20 feet straight toward a target before hitting with Rend, target makes DC 18 Strength save or falls prone; Strahd may Bite it as a Bonus Action."
+    },
+    {
+     "name": "Legendary — Rush (1)",
+     "type": "utility",
+     "description": "Move half speed."
+    },
+    {
+     "name": "Legendary — Rend (1)",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+6+2d8",
+     "attacks": 1,
+     "damageType": "slashing/necrotic",
+     "description": ""
+    },
+    {
+     "name": "Legendary — Grave Burst (2)",
+     "type": "save",
+     "ability": "dex",
+     "dc": 18,
+     "damage": "4d8",
+     "damageType": "piercing",
+     "description": "A crypt within 30 feet explodes; on failure target is also knocked prone."
+    },
+    {
+     "name": "Legendary — Drink the Last Breath (3)",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "1d8+6+4d8",
+     "attacks": 1,
+     "damageType": "piercing/necrotic",
+     "description": "May target a creature at 0 HP within reach. This is the first phase in which Strahd willingly attacks the fallen."
+    }
+   ],
+   "features": [
+    {
+     "name": "Veil of the Black Sun",
+     "description": "Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight suppresses the Veil: while exposed, the creature takes 15 radiant damage at the start of its turn, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. A successful DC 18 Dispel Magic ability check suppresses the Veil until the start of the caster’s next turn."
+    },
+    {
+     "name": "Legendary Resistance",
+     "description": "Four Legendary Resistances are shared across all three Strahd phases. At each phase transition Strahd regains one expended use, to a maximum of four."
+    },
+    {
+     "name": "Reduced Regeneration",
+     "description": "Regeneration is 10 HP if the Blood Chain survived Phase II. If the Blood Chain was destroyed, there is no automatic regeneration. Artifact sunlight suppresses any remaining regeneration as usual."
+    },
+    {
+     "name": "Castle Step",
+     "description": "While not exposed to artifact sunlight, Strahd may move through a solid wall, floor or ceiling as difficult terrain. If he ends movement inside matter he is forced to the nearest open space and takes 20 force damage."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/strahd3.webp",
+   "sourceHash": "6ecaf9c22976a926"
+  },
+  {
+   "sourceId": "cu.actor.pylon",
+   "name": "Nightglass Pylon",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Objectives & Hazards",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/09-nightglass-pylon.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 14,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 8,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 3,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 25,
+      "max": 25,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 2,
+     "alignment": "",
+     "type": {
+      "value": "construct",
+      "subtype": "construct"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>One of three pylons in Ludmilla’s laboratory.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Black Sun Conduit",
+     "type": "utility",
+     "description": "While at least two pylons remain, Ludmilla resists radiant damage not produced by an artifact. The pylon is destroyed at 0 HP."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/09-09-nightglass-pylon.webp",
+   "sourceHash": "ca84fba1d6a0bcb8"
+  },
+  {
+   "sourceId": "cu.actor.chain.blood",
+   "name": "Heart Chain — Blood",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Objectives & Hazards",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/10-heart-chain-blood.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 8,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 3,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 3,
+     "alignment": "",
+     "type": {
+      "value": "construct",
+      "subtype": "construct"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Destroying it deals 20 force/radiant damage to Strahd and reduces Phase II regeneration from 20 to 10; Phase III has no regeneration from this chain.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Sever the Chain",
+     "type": "utility",
+     "description": "Destroying it deals 20 force/radiant damage to Strahd and reduces Phase II regeneration from 20 to 10; Phase III has no regeneration from this chain."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/10-10-heart-chain-blood.webp",
+   "sourceHash": "5518728424e5fd17"
+  },
+  {
+   "sourceId": "cu.actor.chain.stone",
+   "name": "Heart Chain — Stone",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Objectives & Hazards",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/11-heart-chain-stone.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 8,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 3,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 3,
+     "alignment": "",
+     "type": {
+      "value": "construct",
+      "subtype": "construct"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Destroying it deals 20 force/radiant damage to Strahd and removes Castle Step for the remainder of the fight.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Sever the Chain",
+     "type": "utility",
+     "description": "Destroying it deals 20 force/radiant damage to Strahd and removes Castle Step for the remainder of the fight."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/11-11-heart-chain-stone.webp",
+   "sourceHash": "2112898bda2267e5"
+  },
+  {
+   "sourceId": "cu.actor.chain.dominion",
+   "name": "Heart Chain — Dominion",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Objectives & Hazards",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/12-heart-chain-dominion.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 8,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 3,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 3,
+     "alignment": "",
+     "type": {
+      "value": "construct",
+      "subtype": "construct"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Destroying it deals 20 force/radiant damage to Strahd and reduces his available Legendary Actions by one each round.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Sever the Chain",
+     "type": "utility",
+     "description": "Destroying it deals 20 force/radiant damage to Strahd and reduces his available Legendary Actions by one each round."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/12-12-heart-chain-dominion.webp",
+   "sourceHash": "f336fc1065f994dc"
+  },
+  {
+   "sourceId": "cu.actor.coffin",
+   "name": "Strahd’s Coffin",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Objectives & Hazards",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/13-strahds-coffin.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 18,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 1,
+      "proficient": 0
+     },
+     "con": {
+      "value": 20,
+      "proficient": 0
+     },
+     "int": {
+      "value": 1,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 1,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 50,
+      "max": 50,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 5,
+     "alignment": "",
+     "type": {
+      "value": "construct",
+      "subtype": "construct"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>The last physical anchor after Strahd reaches 0 HP in Phase III.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Final Anchor",
+     "type": "utility",
+     "description": "Resistance to nonmagical damage. Artifact sunlight touching the coffin suppresses all vampire regeneration. If destroyed before Strahd reforms, his mist is forced to materialize with approximately 60 HP, no Legendary Resistances, no regeneration, and no castle phasing."
+    }
+   ],
+   "features": [],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/13-13-strahds-coffin.webp",
+   "sourceHash": "82da29e66fb190df"
+  },
+  {
+   "sourceId": "cu.actor.orcus",
+   "name": "Orcus — Manifestation of the Death Lord",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Dark Powers & Manifestations",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/04-orcus.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 26,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 14,
+      "proficient": 0
+     },
+     "con": {
+      "value": 24,
+      "proficient": 0
+     },
+     "int": {
+      "value": 20,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 20,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 24,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 20
+     },
+     "hp": {
+      "value": 230,
+      "max": 230,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 17,
+     "alignment": "",
+     "type": {
+      "value": "fiend",
+      "subtype": "demon; dark power"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Orcus — Manifestation of the Death Lord</h2><p>A newly freed Dark Power made corporeal by the collapse of the Amber prison. Orcus does not come to rescue the Unkindness. He comes to collect what centuries of denied death have accumulated around Strahd.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "huge"
+    }
+   },
+   "actions": [
+    {
+     "name": "Skull-Mace of the Manifestation",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d8+7+3d8",
+     "attacks": 2,
+     "damageType": "bludgeoning/necrotic",
+     "description": "Against a fiend, add 2d8 force to one hit each turn. This is why the contracted pit fiend treats Orcus as the immediate enemy."
+    },
+    {
+     "name": "Word of Unmaking",
+     "type": "save",
+     "ability": "con",
+     "dc": 18,
+     "damage": "6d8",
+     "damageType": "necrotic",
+     "description": "Recharge 5–6. 60-foot cone. Half on success. A creature that fails cannot regain hit points until the beginning of Orcus’s next turn."
+    },
+    {
+     "name": "Soul Hook",
+     "type": "save",
+     "ability": "cha",
+     "dc": 18,
+     "damage": "2d8",
+     "damageType": "psychic",
+     "description": "One resurrected creature, soul-coin bearer, or creature returned from death within 60 feet is chained to the grave. On failure it is Restrained until it or an ally uses an action to break the hook (AC 18, 20 HP) or succeeds on a DC 18 Charisma check at the end of its turn."
+    },
+    {
+     "name": "Call the Recently Dead",
+     "type": "utility",
+     "description": "Choose a corpse, destroyed undead, or grave within 60 feet. It erupts as a deathless obstacle or 20-foot necrotic hazard until the end of Orcus’s next turn. Do not add a full extra monster unless pacing needs it."
+    },
+    {
+     "name": "Horned Advance",
+     "type": "utility",
+     "description": "Bonus Action. Move up to half speed toward Strahd, Vampyr, or the pit fiend without provoking opportunity attacks."
+    }
+   ],
+   "features": [
+    {
+     "name": "Dark Power Reconstitution — Wish Required",
+     "description": "Before the Edict of Finality is created by Wish, reducing this manifestation to 0 HP does not defeat Orcus. At the end of the next round he reforms at 115 HP from the nearest Grave Horn or from the death-soaked fabric of Ravenloft, Orcus Pressure increases by 1, and one destroyed Grave Horn may reform. Show this once; after the lesson is learned, do not force the table to grind the same impossible health bar repeatedly. A final banish/spare/bargain result is locked until Wish changes the law."
+    },
+    {
+     "name": "Death Lord’s Priority",
+     "description": "Orcus wants Strahd permanently dead so he can seize the soul and the death-energy of Barovia. He attacks the contracted pit fiend when it interferes, then the Unkindness if they deny him his prize."
+    },
+    {
+     "name": "Legendary Resistance (2)",
+     "description": "The manifestation may choose to succeed on two failed saving throws during the entire Ravenloft finale."
+    },
+    {
+     "name": "Edict of Finality",
+     "description": "Once the Wish has made the Edict active, Orcus can no longer reconstitute in Barovia. Destroyed Grave Horns stay destroyed. Reaching 0 HP creates a real ending choice: banish the manifestation, permit withdrawal, or bargain. This does not erase the true cosmic Orcus from existence."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/04-04-orcus.webp",
+   "sourceHash": "140b65b9525bb659"
+  },
+  {
+   "sourceId": "cu.actor.vampyr",
+   "name": "Vampyr — Manifestation of the First Thirst",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Dark Powers & Manifestations",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/05-vampyr.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 18,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 22,
+      "proficient": 0
+     },
+     "con": {
+      "value": 22,
+      "proficient": 0
+     },
+     "int": {
+      "value": 21,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 20,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 26,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 19
+     },
+     "hp": {
+      "value": 205,
+      "max": 205,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "fly": 60,
+      "hover": true,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 16,
+     "alignment": "",
+     "type": {
+      "value": "fiend",
+      "subtype": "dark power; vampiric"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vampyr — Manifestation of the First Thirst</h2><p>The broken covenant answers Thorgrinn’s blow with hatred. Vampyr arrives as blood climbing upward through Ravenloft’s walls and a red eclipse over the castle, seeking to reclaim Strahd or choose the next vessel itself.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "huge"
+    }
+   },
+   "actions": [
+    {
+     "name": "Bloodlash",
+     "type": "attack",
+     "bonus": 10,
+     "damage": "3d8+6",
+     "attacks": 2,
+     "damageType": "necrotic",
+     "description": "A hit may pull the target up to 15 feet toward a blood pool, Strahd, or one of Vampyr’s covenant tethers."
+    },
+    {
+     "name": "First Thirst",
+     "type": "save",
+     "ability": "con",
+     "dc": 18,
+     "damage": "5d8",
+     "damageType": "necrotic",
+     "description": "Vampyr drinks blood, life-force, or soul resonance; constructs and soul-coin vessels are not exempt. Vampyr regains hit points equal to half the necrotic damage actually dealt."
+    },
+    {
+     "name": "Night Without Stars",
+     "type": "save",
+     "ability": "wis",
+     "dc": 18,
+     "damage": "3d8",
+     "damageType": "psychic",
+     "description": "Recharge 5–6. The battlefield becomes supernatural night until initiative 10 next round. Ordinary light fails. Artifact sunlight remains as a narrow cutting radiance. This is Legna’s prophecy trigger: a silent raven reveals the path to the hidden blood anchor."
+    },
+    {
+     "name": "Covenant Hook",
+     "type": "utility",
+     "description": "Attach a blood tether to Strahd, Finn, Tatyana, Damien, or another creature whose story is entangled with vampirism. Three active Hooks on Strahd when he reaches 0 HP allow Vampyr to attempt to rebind him instead of letting him die. Each Hook is AC 18, 20 HP and can be severed by artifact sunlight."
+    },
+    {
+     "name": "Red Mist Step",
+     "type": "utility",
+     "description": "Bonus Action. Teleport up to 40 feet between blood, mist, a vampire, or a Ravenloft shadow."
+    }
+   ],
+   "features": [
+    {
+     "name": "Dark Power Reconstitution — Wish Required",
+     "description": "Before the Edict of Finality is created by Wish, reducing this manifestation to 0 HP does not defeat Vampyr. At the end of the next round it reforms at 103 HP from the nearest Blood Heart, a vampire, or Strahd’s spilled blood; Vampyr Claim increases by 1 and one destroyed Blood Heart may reform. Show this once; after the rule is understood, do not make the party repeat an unwinnable grind. A final banish/spare/bargain result is locked until Wish changes the law."
+    },
+    {
+     "name": "Vindictive First Thirst",
+     "description": "Vampyr remembers Thorgrinn shattering its Amber prison and calls him “metal dwarf.” It does not primarily want Strahd dead; it wants the covenant, the humiliation, and the right to decide what Strahd becomes next."
+    },
+    {
+     "name": "Artifact Sunlight Vulnerability",
+     "description": "Artifact sunlight suppresses Red Mist Step and Covenant Hook reactions until the start of Vampyr’s next turn. Vampyr takes 20 radiant damage when it begins its turn in artifact sunlight."
+    },
+    {
+     "name": "Legendary Resistance (2)",
+     "description": "The manifestation may choose to succeed on two failed saving throws during the entire Ravenloft finale."
+    },
+    {
+     "name": "Edict of Finality",
+     "description": "Once the Wish has made the Edict active, Vampyr cannot re-form its manifestation inside dying Barovia. Destroyed Blood Hearts remain destroyed and Strahd cannot be rebound by the old covenant. At 0 HP Vampyr can finally be banished, allowed to withdraw, or bargained with."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/05-05-vampyr.webp",
+   "sourceHash": "7ac4c13ed8b202d0"
+  },
+  {
+   "sourceId": "cu.actor.anchor.orcus",
+   "name": "Orcus Anchor — Grave Horn",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Dark Powers & Manifestations",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/14-grave-horn-anchor.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 8,
+      "proficient": 0
+     },
+     "con": {
+      "value": 20,
+      "proficient": 0
+     },
+     "int": {
+      "value": 1,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 18
+     },
+     "hp": {
+      "value": 35,
+      "max": 35,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 5,
+     "alignment": "",
+     "type": {
+      "value": "fiend",
+      "subtype": "dark-power anchor"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Orcus Anchor — Grave Horn</h2><p>A horn of grave-stone and bone pushed through Barovia by Orcus. It is a tactical objective, not a creature with independent turns.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [],
+   "features": [
+    {
+     "name": "Dark Power Anchor",
+     "description": "Destroying a Grave Horn removes one Orcus Intervention from the GM pool and reduces Orcus Pressure by 1. Three destroyed anchors force the manifestation into direct vulnerability."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/14-14-grave-horn-anchor.webp",
+   "sourceHash": "a2d7b866268969a3"
+  },
+  {
+   "sourceId": "cu.actor.anchor.vampyr",
+   "name": "Vampyr Anchor — Blood Heart",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/04 — Dark Powers & Manifestations",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/15-blood-heart-anchor.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 12,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 14,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 1,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 10,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 1,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 18
+     },
+     "hp": {
+      "value": 30,
+      "max": 30,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 0,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 5,
+     "alignment": "",
+     "type": {
+      "value": "fiend",
+      "subtype": "dark-power anchor"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vampyr Anchor — Blood Heart</h2><p>A pulsing knot of blood-shadow that lets Vampyr exist inside Ravenloft despite the broken Amber covenant.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [],
+   "features": [
+    {
+     "name": "Dark Power Anchor",
+     "description": "Destroying a Blood Heart severs one active Covenant Hook or reduces Vampyr Claim by 1. Artifact sunlight deals double damage to the anchor."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/15-15-blood-heart-anchor.webp",
+   "sourceHash": "3c0fe0b2ce182915"
+  },
+  {
+   "sourceId": "cu.actor.vallaki-vampyr-cult",
+   "name": "Vampyr Cult Zealot — Leaderless Blood Choir",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/00A — Vallaki Prelude",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/06-vampyr-cult-zealot.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 12,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 16,
+      "proficient": 0
+     },
+     "con": {
+      "value": 16,
+      "proficient": 0
+     },
+     "int": {
+      "value": 12,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 14,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 18,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 16
+     },
+     "hp": {
+      "value": 72,
+      "max": 72,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 4,
+     "alignment": "",
+     "type": {
+      "value": "humanoid",
+      "subtype": "cultist"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>A surviving member of Lady Wachter's Vampyr cult after the deaths of Wachter and her sons. Without centralized command, these zealots have become more ecstatic and less predictable. Use as a skirmish template, not a required encounter.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Blood Knife",
+     "type": "attack",
+     "bonus": 7,
+     "damage": "1d6+4+2d6",
+     "attacks": 2,
+     "damageType": "piercing/necrotic",
+     "description": "A ritual blade fed by willing or stolen blood."
+    },
+    {
+     "name": "Open the Vein",
+     "type": "save",
+     "ability": "con",
+     "dc": 15,
+     "damage": "4d8",
+     "damageType": "necrotic",
+     "description": "A creature within 30 feet bleeds mystically; half damage on success."
+    },
+    {
+     "name": "Martyr of Wachter",
+     "type": "utility",
+     "description": "When first reduced below half HP, the zealot may move up to its speed toward an ally, hostage, or blood sigil without provoking opportunity attacks."
+    }
+   ],
+   "features": [
+    {
+     "name": "Blood Answered",
+     "description": "The cult is no longer merely symbolic. Detect Magic or similar senses reveal an active external vampiric resonance tied to offered blood."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/06-06-vampyr-cult-zealot.webp",
+   "sourceHash": "2711e256743abb5e"
+  },
+  {
+   "sourceId": "cu.actor.vallaki-orcus-cult",
+   "name": "Orcus Grave Apostle — Bell of the Last Door",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/00A — Vallaki Prelude",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/07-orcus-grave-apostle.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 12,
+      "proficient": 0
+     },
+     "con": {
+      "value": 18,
+      "proficient": 0
+     },
+     "int": {
+      "value": 13,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 16,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 15,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 78,
+      "max": 78,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 4,
+     "alignment": "",
+     "type": {
+      "value": "humanoid",
+      "subtype": "cultist"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>An Orcus cult militant emerging during Vallaki's civil war. Their message is that death is the only honest escape from Barovia and resurrection is a lie that prolongs captivity.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Bone Maul",
+     "type": "attack",
+     "bonus": 7,
+     "damage": "2d6+4+2d6",
+     "attacks": 2,
+     "damageType": "bludgeoning/necrotic",
+     "description": "A maul built around relic-bone and grave iron."
+    },
+    {
+     "name": "Grave Bell",
+     "type": "save",
+     "ability": "wis",
+     "dc": 15,
+     "damage": "3d8",
+     "damageType": "necrotic",
+     "description": "Creatures of the apostle’s choice within 20 feet hear a bell from beneath the earth; frightened until end of next turn on failure."
+    },
+    {
+     "name": "Stand, Witness",
+     "type": "utility",
+     "description": "Once per encounter, a nearby corpse rises as an inert omen or weak undead servant at GM discretion. The point is that something answers without a normal necromantic casting."
+    }
+   ],
+   "features": [
+    {
+     "name": "Death Answered",
+     "description": "The cult’s rites now receive active necromantic response from beyond ordinary spellcasting. Corpses and grave-soil react before the apostle completes the rite."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/07-07-orcus-grave-apostle.webp",
+   "sourceHash": "2ae698f54bc9ba39"
+  },
+  {
+   "sourceId": "cu.actor.arl",
+   "name": "Arl — Contracted Pit Fiend",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/00 — Current Session / Vallaki",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/03-arl-pit-fiend.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 26,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 14,
+      "proficient": 0
+     },
+     "con": {
+      "value": 24,
+      "proficient": 0
+     },
+     "int": {
+      "value": 18,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 18,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 22,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 20
+     },
+     "hp": {
+      "value": 210,
+      "max": 210,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "fly": 60,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 18,
+     "alignment": "",
+     "type": {
+      "value": "fiend",
+      "subtype": "devil; contracted ally"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Arl — Contracted Pit Fiend</h2>A pit fiend found trapped in the hidden summoning chamber beneath Wachter House. The session ended after the parties accepted the terms but before the contract was signed or Arl was released.<div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "large"
+    }
+   },
+   "actions": [
+    {
+     "name": "Infernal Glaive",
+     "type": "attack",
+     "bonus": 11,
+     "damage": "2d10+7+3d8",
+     "attacks": 2,
+     "damageType": "slashing/fire",
+     "description": "Arl fights like a disciplined executioner, not a berserker. Against Orcus or an undead manifestation, one hit each turn deals +2d8 force."
+    },
+    {
+     "name": "Hellchain",
+     "type": "save",
+     "ability": "str",
+     "dc": 18,
+     "damage": "3d8",
+     "damageType": "fire/force",
+     "description": "Recharge 5–6. A target within 30 feet is bound by infernal chain. On a failure it is Restrained until the end of Arl’s next turn. Against Orcus, a successful containment beat also suppresses reactions until initiative 20."
+    },
+    {
+     "name": "Ordered Inferno",
+     "type": "save",
+     "ability": "dex",
+     "dc": 18,
+     "damage": "6d8",
+     "damageType": "fire",
+     "description": "30-foot cone or 20-foot burst. Arl can exclude the Unkindness because the contract requires mutual non-harm."
+    },
+    {
+     "name": "Break the Corrupt Gate",
+     "type": "utility",
+     "description": "Once per major scene, Arl may destroy a mundane/lesser magical barrier or hold a Dark Power front for one pressure check. This is the practical value of sending him into Ravenloft first."
+    }
+   ],
+   "features": [
+    {
+     "name": "Infernal Contract — Mutual Non-Harm",
+     "description": "Arl and the Unkindness may not intentionally harm one another while the Ravenloft contract remains in force. This is reciprocal, not one-sided."
+    },
+    {
+     "name": "Recognition, Not Future Service",
+     "description": "The party rejected a future favour. Arl instead receives truthful written recognition that his assistance materially aided the defeat of Strahd. No souls and no future service are owed."
+    },
+    {
+     "name": "Priority: Orcus",
+     "description": "Once Orcus manifests, Arl treats the demon/Dark Power as the most offensive corruption on the battlefield and naturally focuses it unless the players order otherwise."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/art/tokens/03-03-arl-pit-fiend.webp",
+   "sourceHash": "c3c0a3c852c94919"
+  },
+  {
+   "sourceId": "cu.actor.van-richten",
+   "name": "Rudolph van Richten — Final Briefing",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/00 — Current Session / Vallaki",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/van-richten.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 10,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 16,
+      "proficient": 0
+     },
+     "con": {
+      "value": 14,
+      "proficient": 0
+     },
+     "int": {
+      "value": 20,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 20,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 14,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 88,
+      "max": 88,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 30,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 9,
+     "alignment": "",
+     "type": {
+      "value": "humanoid",
+      "subtype": "human; monster hunter"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Rudolph van Richten — Final Briefing</h2>The hunter who reconstructed members of the Unkindness through soul-coin vessels. He is their final technical counsel before Ravenloft and remains in Vallaki to keep civilians alive.<div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Hunter’s Shot",
+     "type": "attack",
+     "bonus": 8,
+     "damage": "2d8+4+2d6",
+     "attacks": 1,
+     "damageType": "piercing/radiant",
+     "description": "A prepared anti-undead shot. Van Richten is not intended to join the castle assault; this profile exists if Vallaki violence reaches his workshop."
+    },
+    {
+     "name": "Monster Hunter’s Diagnosis",
+     "type": "utility",
+     "description": "As an action, identify one visible undead/fiend weakness, anchor, regeneration condition, or escape method already demonstrated in play."
+    },
+    {
+     "name": "Emergency Field Medicine",
+     "type": "utility",
+     "description": "Once per scene, stabilize a creature and restore 3d8+5 HP using prepared reagents."
+    }
+   ],
+   "features": [
+    {
+     "name": "The Locks Are Open",
+     "description": "Van Richten understands that the Amber Temple’s broken prisons have changed the magical ecology. He knows cult symbols are now being answered by something external."
+    },
+    {
+     "name": "Not Omniscient",
+     "description": "He can infer anchors, inheritance and Wish-scale reality magic, but he cannot prove the exact rules until Orcus/Vampyr demonstrate reconstitution."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/van-richten.webp",
+   "sourceHash": "bcb67d5a19531420"
+  },
+  {
+   "sourceId": "cu.actor.saraphene",
+   "name": "Saraphene — Shadar-kai Vampire Messenger",
+   "type": "npc",
+   "folder": "The Cat and the Unkindness/00 — Current Session / Vallaki",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/saraphene.webp",
+   "ownership": "gm",
+   "system": {
+    "abilities": {
+     "str": {
+      "value": 16,
+      "proficient": 0
+     },
+     "dex": {
+      "value": 20,
+      "proficient": 0
+     },
+     "con": {
+      "value": 16,
+      "proficient": 0
+     },
+     "int": {
+      "value": 14,
+      "proficient": 0
+     },
+     "wis": {
+      "value": 15,
+      "proficient": 0
+     },
+     "cha": {
+      "value": 18,
+      "proficient": 0
+     }
+    },
+    "attributes": {
+     "ac": {
+      "calc": "flat",
+      "flat": 17
+     },
+     "hp": {
+      "value": 112,
+      "max": 112,
+      "temp": 0
+     },
+     "movement": {
+      "walk": 40,
+      "units": "ft"
+     }
+    },
+    "details": {
+     "cr": 8,
+     "alignment": "",
+     "type": {
+      "value": "humanoid",
+      "subtype": "undead; vampire; shadar-kai"
+     },
+     "biography": {
+      "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Saraphene — Shadar-kai Vampire Messenger</h2>The shaved-headed vampire who delivered Strahd’s sealed invitation on the road. She warned that the castle is on full alert, Finn returned injured, Tatyana is protected, the brides are divided, and something important has been moved into one of Ravenloft’s three towers.<div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+     }
+    },
+    "traits": {
+     "size": "med"
+    }
+   },
+   "actions": [
+    {
+     "name": "Shadow Blade",
+     "type": "attack",
+     "bonus": 9,
+     "damage": "1d8+5+3d6",
+     "attacks": 2,
+     "damageType": "piercing/necrotic",
+     "description": "Saraphene is dangerous but has explicitly asked not to fight the Unkindness."
+    },
+    {
+     "name": "Mist Escape",
+     "type": "utility",
+     "description": "Transform into mist and withdraw from a scene unless artifact sunlight prevents it."
+    },
+    {
+     "name": "Court Gossip",
+     "type": "utility",
+     "description": "If Saraphene reappears, she can reveal one current argument, patrol relocation, or bride fear inside Ravenloft rather than joining combat."
+    }
+   ],
+   "features": [
+    {
+     "name": "Survival First",
+     "description": "Saraphene hates Strahd and wants to survive. She is not good and never claimed to be."
+    },
+    {
+     "name": "Shadowfell Origin",
+     "description": "She identified herself as Shadar-kai before vampirism and has served Strahd for roughly eighty years."
+    }
+   ],
+   "token": "modules/unkindness-saga/assets/ravenloft/tokens/saraphene.webp",
+   "sourceHash": "6a6bde7fec2ded39"
+  }
+ ]
+}

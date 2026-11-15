@@ -1,0 +1,365 @@
+{
+ "items": [
+  {
+   "sourceId": "cu.item.veil",
+   "name": "Rules Card — Veil of the Black Sun",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/16-veil-of-the-black-sun.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Ordinary sunlight and Daylight do not trigger vampire sunlight weaknesses. Artifact-grade sunlight penetrates the Veil. A protected vampire beginning its turn within artifact sunlight takes 15 radiant damage, cannot regenerate, cannot use mist-form escape, and cannot use Ravenloft wall-phasing until the start of its next turn. Dispel Magic can suppress the Veil until the beginning of the caster’s next turn with a DC 18 spellcasting ability check.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "32fd8826d8d4b77b"
+  },
+  {
+   "sourceId": "cu.item.plaque",
+   "name": "Baldrik’s Keepsake Box",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/17-baldriks-keepsake-box.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Baldrik’s Keepsake Box</h2><p>A dwarven keepsake box bearing Thorgrinn’s family crest, left with the Vistani by Baldrik roughly a week before the Nov 8 session.</p><p>The lock accepts a <strong>star-shaped key</strong>. Thorgrinn recognizes the style because boxes like this were among the first things the brothers made together at the forge when they were children.</p><p><strong>Current canon:</strong> the box has not yet been opened and the key is not currently in Thorgrinn’s possession. Do not replace it with a funerary plaque or pre-written apology.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "761e5cdde3e001da"
+  },
+  {
+   "sourceId": "cu.item.rune",
+   "name": "GM NOTE — Retired Bronze Rune Hook",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/18-retired-bronze-rune-hook.webp",
+   "ownership": "gm",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>GM NOTE — Retired Bronze Rune Hook</h2><p>This was an earlier speculative transition hook and is <strong>not</strong> part of the Nov 8 ground truth. Do not award it unless you deliberately want to reintroduce it. The Baldrik keepsake box is the canonical Ironfist object now.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "f20fb9fe92f73f89"
+  },
+  {
+   "sourceId": "cu.item.contract",
+   "name": "Righteous Vanguard — Vistani Transit Record",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/19-righteous-vanguard-transit-record.webp",
+   "ownership": "gm",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Righteous Vanguard — Vistani Transit Record</h2><p>A future-facing record that can be found in Ravenloft or recovered from Vistani bookkeeping. It establishes that Baldrik’s Righteous Vanguard travelled through Barovia on Vistani business and returned toward Amphail/Sword Mountains.</p><p><strong>Do not invent a blood-relative magical clause as established fact.</strong> If the dying Mists later resonate with the keepsake box and the route Baldrik travelled, present that as a newly discovered consequence, not something Thorgrinn already knew.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "c8d6f451c2d8862d"
+  },
+  {
+   "sourceId": "cu.item.ludmilla-notes",
+   "name": "Ludmilla’s Black Sun Notes",
+   "type": "loot",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/20-ludmillas-black-sun-notes.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Research on the Unkindness, mechanical Thorgrinn, Raven Queen feathers, the Holy Symbol, Finn’s exposure to Daylight, and the Sunsword. Key conclusion: artifact sunlight does not overpower the Veil; it declares the Veil irrelevant.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "b548690179349c5e"
+  },
+  {
+   "sourceId": "cu.item.chain1",
+   "name": "Finn — Chain of Claim: The Sanguine Moon",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Finn Redemption",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/21-finn-chain-sanguine-moon.webp",
+   "ownership": "gm",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Strahd gave Finn his body back. Break this chain by challenging the idea that resurrection makes Finn Strahd’s property.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {
+    "chain": "sanguine"
+   },
+   "sourceHash": "36f93e73d0dc330e"
+  },
+  {
+   "sourceId": "cu.item.chain2",
+   "name": "Finn — Chain of Claim: The Rejected Self",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Finn Redemption",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/22-finn-chain-rejected-self.webp",
+   "ownership": "gm",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Finn insists the person he used to be is gone. Break this chain by showing that identity changing is not the same as identity ceasing; Thorgrinn is a powerful living counterexample.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {
+    "chain": "self"
+   },
+   "sourceHash": "120caf9cfa26ba8d"
+  },
+  {
+   "sourceId": "cu.item.chain3",
+   "name": "Finn — Chain of Claim: The Master’s Gift",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Finn Redemption",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/23-finn-chain-masters-gift.webp",
+   "ownership": "gm",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><p>Finn believes Strahd made him stronger. Break this chain by showing that being useful to Strahd is not the same as being valued by Strahd.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {
+    "chain": "gift"
+   },
+   "sourceHash": "d7191be7c8c2b71e"
+  },
+  {
+   "sourceId": "cu.item.fate.healer",
+   "name": "Tarokka Fate — The Healer",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/24-tarokka-the-healer.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Damien — Three of Glyphs</h2><p><strong>Test:</strong> mercy.</p><p>At the single-heartbeat crisis, Damien must decide whether to spend his opening striking an exposed enemy or saving the life that prevents a worse victory. Saving Strahd for one heartbeat can be the merciful action without forgiving him: if Vampyr consumes or rebinds him, the Unkindness loses the clean ending they fought for.</p><p>When fulfilled, mark Damien’s prophecy and award one Inspiration or equivalent campaign boon.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "50f9ff139860c189"
+  },
+  {
+   "sourceId": "cu.item.fate.diviner",
+   "name": "Tarokka Fate — The Diviner",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/25-tarokka-the-diviner.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vesper — Two of Stars</h2><p><strong>Test:</strong> truth.</p><p>Once during the finale Vesper may <strong>Read the Unwritten</strong>: ask the GM which visible “truth” is authored by Strahd, Vampyr, or another power rather than inevitable fate. The answer must be honest. She may accept a second impossible vision from the distant Vecna; doing so grants another use and adds +2 Vecna Attention.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "4f9d56b4f74e3a2c"
+  },
+  {
+   "sourceId": "cu.item.fate.traitor",
+   "name": "Tarokka Fate — The Traitor",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/26-tarokka-the-traitor.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Bunch — Nine of Glyphs</h2><p><strong>Test:</strong> trust.</p><p>Strahd, Finn, or a Dark Power offers the arithmetic of monsters: one soul, one companion, one egg, or one sacrifice in exchange for the survival of the rest. If Bunch refuses to select a victim and instead entrusts another creature with a meaningful choice, one deployed ally may immediately change fronts and act once without cost.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "cd3ec07da9d47b7f"
+  },
+  {
+   "sourceId": "cu.item.fate.raven",
+   "name": "Tarokka Fate — The Raven",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/27-tarokka-the-raven.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Legna — The Raven</h2><p><strong>Test:</strong> darkness.</p><p>During Vampyr’s Night Without Stars, the brightest fires are distractions. A single black feather moves against the wind. If Legna follows the silent sign, the Raven Queen reveals Vampyr’s hidden Blood Heart; expose or destroy it to cancel the darkness and reduce Vampyr Claim by 2.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "5357f3c449bbc745"
+  },
+  {
+   "sourceId": "cu.item.fate.horseman",
+   "name": "Tarokka Fate — The Horseman",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/28-tarokka-the-horseman.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Thorgrinn — The Horseman</h2><p><strong>Test:</strong> the ending.</p><p>Orcus recognizes a soul that has died, endured the coin, and continued in iron. During the collapse he offers Thorgrinn the <strong>Black Road</strong>, a path only Thorgrinn can walk: restoration, death, or service depending on Orcus’s bargain. Accepting it points the campaign directly toward Orcus. Refusing it allows the Vistani/Baldrik blood-road to become the road home toward Ironfist territory.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "0113564bad99afd3"
+  },
+  {
+   "sourceId": "cu.item.darkwar",
+   "name": "Rules Card — The War of Broken Gods",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/29-war-of-broken-gods.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Four interests, three active fronts</h2><p>The Unkindness and allies, Strahd/Ravenloft, Orcus, and Vampyr are separate interests. Track Orcus Pressure and Vampyr Claim instead of running four complete boss turns every round.</p><p><strong>Critical rule:</strong> before the Edict of Finality is created by Wish, Orcus and Vampyr cannot be finally defeated. Reducing a manifestation to 0 HP proves the problem rather than solving it: the power reconstitutes through Barovia.</p><p>Once Wish severs their right to anchor, a manifestation at 0 HP creates the final choice: <strong>banish</strong>, <strong>spare/allow withdrawal</strong>, or <strong>bargain</strong>. The future disposition and Arc Attention follow that decision.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "fb9d398dca317760"
+  },
+  {
+   "sourceId": "cu.item.allydeployment",
+   "name": "Rules Card — Ally Deployment",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/30-ally-deployment.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Azrathox and the Contracted Pit Fiend</h2><p><strong>Pit Fiend:</strong> defaults to Orcus. Each major round/scene it remains on Orcus, prevent +1 Orcus Pressure. After three successful containment beats it may use <strong>Hellchain</strong> once to make Orcus vulnerable until the end of the next round.</p><p><strong>Azrathox:</strong> can be assigned to Orcus, Vampyr, or Ravenloft. Against Orcus, his fire destroys massed undead; against Vampyr, dragonfire cauterizes blood anchors; against Ravenloft, he keeps gargoyles, bats, and collapsing towers from sealing the party in.</p><p>Changing an ally’s front is a meaningful order and normally happens between rounds/scenes, not after seeing the result.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "5a2eb5e747a30285"
+  },
+  {
+   "sourceId": "cu.item.wishfinality",
+   "name": "Rules Card — The Edict of Finality",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/31-edict-of-finality.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Wish that makes victory possible</h2><p>Before a Wish changes the metaphysical law of Barovia, Orcus and Vampyr can be staggered, contained and reduced to 0 HP—but their manifestations re-form. They are not ordinary creatures with sufficiently large hit-point totals.</p><p><strong>Recommended Wish:</strong></p><div class=\"cu-readaloud\">“I wish that, until Barovia passes from existence, no Dark Power released from the Amber Temple may anchor itself here, inherit Strahd’s prison, or return from destruction within this domain.”</div><p>Once spoken, <strong>the Edict of Finality</strong> becomes active. Orcus and Vampyr lose Dark Power Reconstitution, their destroyed anchors stay destroyed, neither can steal Strahd’s death, and reducing a manifestation to 0 HP permits a true finale choice.</p><p>The Wish does <strong>not</strong> permanently erase the true cosmic entities from the multiverse. It makes them defeatable <em>here, now, in Barovia</em>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "9a6c59c50aba6019"
+  },
+  {
+   "sourceId": "cu.item.djinnwish",
+   "name": "Story Boon — The Djinn’s Last Wish",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/32-djinns-last-wish.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>A second Wish that should not exist</h2><p>Damien has already used the djinn’s Wish. This final use is not a refreshed spell slot. In catastrophic circumstances the djinn may burn its remaining connection to Wish-magic in order to survive what is happening around Ravenloft.</p><p>The offer appears only when defeat looks real: a Dark Power reconstitutes after 0 HP; Orcus or Vampyr kills Strahd and begins claiming the ending; multiple members of the Unkindness are down while their monstrous allies are breaking; or both Dark Power tracks approach catastrophe.</p><p>If accepted, the djinn grants one final Wish, survives, loses the ability to grant another Wish through this bond, and considers its extraordinary obligation to Damien ended. It is not eager to be heroic. It is desperate not to be swallowed by a new Darklord or a collapsing domain.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "36ba9cb6191ec57b"
+  },
+  {
+   "sourceId": "cu.item.vecnamark",
+   "name": "Vecna’s Mark — The Whispered Eye",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/33-vecnas-whispered-eye.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Whispered Eye</h2><p>Vecna is no longer in Barovia, but distance is not the same thing as ignorance. If a character accepts one of his bargains, a hairline black sigil appears somewhere only they can easily conceal.</p><p>The mark records that the character chose knowledge, survival or victory through Vecna’s intervention. It carries no automatic combat penalty in this finale. Its real consequence is narrative: Vecna’s interest becomes personal, his Attention rises, and he has learned something about the Unkindness that he did not know before.</p><p>If the bargain specifically grants the Borrowed Ending, the mark is the receipt for a Wish.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "0b4667f4ad0514c6"
+  },
+  {
+   "sourceId": "cu.item.van-richten-locks",
+   "name": "Van Richten’s Field Note — The Locks Are Open",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/Rules & Story Items",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/34-van-richtens-field-note.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Van Richten’s Three Rules</h2><ol><li><b>Find the Anchor.</b> A Dark Power cannot enter a small world without fastening itself to something.</li><li><b>Break the Anchor.</b> Destroying a manifestation without breaking what permits it to exist may only buy time.</li><li><b>Control the Ending.</b> Do not allow Orcus, Vampyr, or anything else to own Strahd’s final heartbeat.</li></ol><blockquote>“If you kill one of these things and the world simply puts it back, stop thinking like a monster hunter. You are no longer fighting a creature. You are fighting permission.”</blockquote><p><b>Van Richten’s hypothesis:</b> magic on the scale of <i>Wish</i> may be required to revoke that permission. He cannot prove this yet.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "flags": {},
+   "sourceHash": "280f5f002d18df86"
+  },
+  {
+   "sourceId": "cu.item.arl-contract",
+   "name": "Infernal Contract — Arl and the Unkindness",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/35-infernal-contract-arl.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Infernal Contract — Arl and the Unkindness</h2><p><strong>Status at campaign handoff:</strong> terms accepted; contract not yet signed and Arl not yet released.</p><ol><li>The Unkindness frees Arl from the summoning circle and the Wachter family’s binding/control.</li><li>Arl and the Unkindness will not intentionally harm one another while the Ravenloft undertaking remains active.</li><li>Arl will proceed to Castle Ravenloft and materially assist in the destruction/defeat of the corrupt castle’s current lord and forces. He may interpret this as imposing infernal order rather than “causing chaos.”</li><li>No future service, soul, or unspecified favour is owed by the Unkindness.</li><li>The final written agreement truthfully recognizes Arl’s material assistance in the defeat of Strahd, for use before his infernal peers.</li></ol><p>Damien is the obvious character to scrutinize the final wording before signature.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "sourceHash": "3f7e86ed80a19064"
+  },
+  {
+   "sourceId": "cu.item.strahd-letter",
+   "name": "Strahd’s Sealed Invitation — UNOPENED",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/36-strahds-sealed-invitation.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Strahd’s Sealed Invitation — UNOPENED</h2><p>Saraphene delivered this sealed letter on the Svalich Road. The party explicitly chose <strong>not to open it yet</strong>, planning to take it to Van Richten first.</p><p>Use the GM journal <em>Strahd’s Sealed Letter</em> when it is opened. The module tracks this separately so the invitation cannot accidentally be treated as already known.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "sourceHash": "3ebf166391bc73ce"
+  },
+  {
+   "sourceId": "cu.item.shredded-dossier",
+   "name": "Box of Shredded Black-Wax Documents",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/37-shredded-black-wax-documents.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Box of Shredded Black-Wax Documents</h2><p>Recovered beneath a basement workbench in Wachter House. The box bears Strahd von Zarovich’s emblem and a black wax impression; the contents have been deliberately shredded.</p><p>Van Richten can reconstruct enough to confirm that Wachter’s occult network was larger than her public household and that some rites are now producing genuine external responses. The transcript did <strong>not</strong> establish a complete readable letter, so the module does not invent one.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "sourceHash": "1f6e42dcd048e2c7"
+  },
+  {
+   "sourceId": "cu.item.richten-cache",
+   "name": "Van Richten’s Final Hunter Cache",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/38-van-richtens-final-hunter-cache.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Van Richten’s Final Hunter Cache</h2><p>Recommended finale supply, given only after the workshop briefing:</p><ul><li>Three diamonds worth 300 gp each.</li><li>One diamond worth 500 gp.</li><li>Two doses of superior antitoxin/anti-undead reagent that each grant advantage on one save against a vampire or Dark Power effect.</li><li>Enough mundane stakes, blessed salt, wire, chalk and silver fittings for the party’s planned approach.</li></ul><p>The diamonds satisfy the party’s explicitly stated reason for visiting Van Richten. They are a GM finale resource, not something established in the transcript.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "sourceHash": "2bb46d916046e23d"
+  },
+  {
+   "sourceId": "cu.item.saraphene-intel",
+   "name": "Saraphene’s Ravenloft Intelligence",
+   "type": "feat",
+   "folder": "The Cat and the Unkindness/05 — Story Items & Rules",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/39-saraphenes-ravenloft-intelligence.webp",
+   "ownership": "observer",
+   "system": {
+    "description": {
+     "value": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Saraphene’s Ravenloft Intelligence</h2><ul><li>Strahd knows the Amber Temple fell and is afraid.</li><li>Ravenloft is on full alert.</li><li>Finn returned injured and terrified.</li><li>Spawn have been positioned around sleeping/resting areas.</li><li>The main entrance has deliberately been left open.</li><li>Tatyana/Ireena is alive and under strict orders not to be harmed.</li><li>The brides are arguing; Saraphene believes at least one may betray Strahd for survival.</li><li>An important object was moved to one of the three towers. The transcript drops the noun, so the module does not silently declare it to be the coffin.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   },
+   "sourceHash": "7508ee431a6f9833"
+  }
+ ]
+}

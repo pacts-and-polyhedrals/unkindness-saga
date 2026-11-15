@@ -1,0 +1,284 @@
+{
+ "macros": [
+  {
+   "sourceId": "cu.macro.setup",
+   "name": "Ravenloft Finale — Setup / Repair",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.setup();",
+   "sourceHash": "f1dedc73348438ea"
+  },
+  {
+   "sourceId": "cu.macro.dashboard",
+   "name": "Ravenloft Finale — Dashboard",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.dashboard();",
+   "sourceHash": "41fc9fa12e42b29f"
+  },
+  {
+   "sourceId": "cu.macro.mockery",
+   "name": "Strahd — Mock the Unkindness",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptMockery();",
+   "sourceHash": "b0650c0d2f4fbd6b"
+  },
+  {
+   "sourceId": "cu.macro.lair",
+   "name": "Ravenloft — Lair Action",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptLair();",
+   "sourceHash": "b3b6223d2ec18cf9"
+  },
+  {
+   "sourceId": "cu.macro.bride",
+   "name": "Ravenloft — Bride/Finn Status",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptBride();",
+   "sourceHash": "a9668346c30e4d43"
+  },
+  {
+   "sourceId": "cu.macro.finn",
+   "name": "Finn — Break/Restore Chain",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptFinnChain();",
+   "sourceHash": "da0f2345e5858f6d"
+  },
+  {
+   "sourceId": "cu.macro.phase",
+   "name": "Strahd — Set Phase",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptPhase();",
+   "sourceHash": "d5e078898eb0d1a4"
+  },
+  {
+   "sourceId": "cu.macro.heart",
+   "name": "Strahd — Heart Chain",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptHeart();",
+   "sourceHash": "fc84538d0adc2edf"
+  },
+  {
+   "sourceId": "cu.macro.coffin",
+   "name": "Strahd — Coffin Chase Distance",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptCoffin();",
+   "sourceHash": "17a6af2fda7d20bd"
+  },
+  {
+   "sourceId": "cu.macro.sun",
+   "name": "Artifact Sunlight — Rule Card",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptSunlight();",
+   "sourceHash": "f4222929242429e6"
+  },
+  {
+   "sourceId": "cu.macro.action",
+   "name": "Ravenloft Finale — NPC Action",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.npcAction();",
+   "sourceHash": "e3e9645795213efd"
+  },
+  {
+   "sourceId": "cu.macro.story",
+   "name": "Ravenloft Finale — Story Flags",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptStoryFlag();",
+   "sourceHash": "0ad9ff1d55841e3c"
+  },
+  {
+   "sourceId": "cu.macro.darkpower",
+   "name": "Dark Powers — Pressure / Claim / Status",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/orcus.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptDarkPower();",
+   "sourceHash": "9c288fdbe7ad5bd2"
+  },
+  {
+   "sourceId": "cu.macro.ally",
+   "name": "Finale — Deploy Ally",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/ally.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptAlly();",
+   "sourceHash": "e4b7fdcc3584d31e"
+  },
+  {
+   "sourceId": "cu.macro.prophecy",
+   "name": "Madam Eva — Fulfil Prophecy",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/prophecy.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptProphecy();",
+   "sourceHash": "a02a0f1969a7be02"
+  },
+  {
+   "sourceId": "cu.macro.arc",
+   "name": "Dark Powers — Arc Attention",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/prophecy.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptArc();",
+   "sourceHash": "c8bef4744ea30142"
+  },
+  {
+   "sourceId": "cu.macro.intervention",
+   "name": "Dark Powers — Intervention",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/vampyr.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptIntervention();",
+   "sourceHash": "8b26eb0c995bb5d3"
+  },
+  {
+   "sourceId": "cu.macro.powerending",
+   "name": "Dark Power — Banish / Spare / Bargain",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/orcus.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptPowerEnding();",
+   "sourceHash": "c1a2cb7f4974498f"
+  },
+  {
+   "sourceId": "cu.macro.wish",
+   "name": "Final Wish — Crisis / Cast",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/prophecy.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptWish();",
+   "sourceHash": "36ce721dcc68c5ef"
+  },
+  {
+   "sourceId": "cu.macro.vecna",
+   "name": "Vecna — Offer Bargain",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/prophecy.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptVecnaDeal();",
+   "sourceHash": "2726fc97efcd9d3e"
+  },
+  {
+   "sourceId": "cu.macro.reconstitution",
+   "name": "Dark Power — Reconstitution",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/orcus.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptReconstitution();",
+   "sourceHash": "afe2b7a6ff74c1d3"
+  },
+  {
+   "sourceId": "cu.macro.vallaki",
+   "name": "Vallaki — Prelude / Intervention",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptVallaki();",
+   "sourceHash": "5d976c41c82bdd55"
+  },
+  {
+   "sourceId": "cu.macro.stage",
+   "name": "Finale — Set Current Stage",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptStage();",
+   "sourceHash": "4cbcda850ee086e7"
+  },
+  {
+   "sourceId": "cu.macro.arl",
+   "name": "Arl — Contract / Release",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/ally.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptArl();",
+   "sourceHash": "07d7db90d2bc9ff0"
+  },
+  {
+   "sourceId": "cu.macro.letter",
+   "name": "Strahd — Open / Read Letter",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/strahd.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptLetter();",
+   "sourceHash": "b6e29297b4526fc8"
+  },
+  {
+   "sourceId": "cu.macro.prep",
+   "name": "Finale — Preparation Ledger",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/item.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.promptPrep();",
+   "sourceHash": "3f237a87ac0479ac"
+  },
+  {
+   "sourceId": "cu.macro.reset-handoff",
+   "name": "Finale — Reset State to Nov 8 Handoff",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "command": "await game.catAndUnkindness.resetToHandoff();",
+   "sourceHash": "6b33020a2663039c"
+  },
+  {
+   "sourceId": "cu.macro.art-refresh",
+   "name": "Ravenloft Art — Refresh Existing Scene Tokens",
+   "type": "script",
+   "folder": "The Cat and the Unkindness/06 — Ravenloft Finale GM Macros",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/30-ally-deployment.webp",
+   "ownership": "none",
+   "command": "await (await import(\"/modules/unkindness-saga/scripts/ravenloft-art.mjs\")).applyArtToWorld({includeAllScenes:true});",
+   "sourceHash": "6f3de61635688ebb"
+  }
+ ]
+}

@@ -1,0 +1,232 @@
+{
+  "spells": [
+    {
+      "sourceId": "il.spell.chisel-sign",
+      "name": "Chisel-Sign",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Chisel-Sign</h2><p>You inscribe a palm-sized magical rune on stone, metal or wood. It can glow faintly, identify a maker, or hold up to twenty-five words readable only by creatures you designate when casting. The mark lasts until dispelled or physically removed. This spell cannot authenticate a signature that you did not witness.</p><p><strong>Level:</strong> Cantrip &nbsp; <strong>School:</strong> TRS &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Instantaneous &nbsp; <strong>Range:</strong> Touch</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 0,
+        "school": "trs"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "df8d7152cc6b0d18e0f4e47f07690281bbbe4370edb9d2ab0667738cce4fed02"
+    },
+    {
+      "sourceId": "il.spell.returning-hammer",
+      "name": "Rune of the Returning Hammer",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Rune of the Returning Hammer</h2><p>Mark one weapon you hold. For the duration, after you make a ranged attack by throwing that weapon, it returns to your hand at the end of the attack. Once during the spell, when the weapon returns, you may cause it to deal 1d6 force damage to one unattended object within 5 feet of its path.</p><p><strong>Level:</strong> 1 &nbsp; <strong>School:</strong> TRS &nbsp; <strong>Casting:</strong> bonus &nbsp; <strong>Duration:</strong> 1 minute &nbsp; <strong>Range:</strong> 30 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 1,
+        "school": "trs"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "8eaee4efd0fd6fd6808573236f90627faa908c395caba060d4fe1c553724aa1a"
+    },
+    {
+      "sourceId": "il.spell.stoneward-script",
+      "name": "Stoneward Script",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Stoneward Script</h2><p>When you or a creature you can see within range takes bludgeoning, piercing, or slashing damage while touching the ground or worked stone, carve a momentary ward in the air. Reduce the damage by 1d8 + your spellcasting ability modifier. At Higher Levels: +1d8 for each slot above 1st.</p><p><strong>Level:</strong> 1 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> reaction &nbsp; <strong>Duration:</strong> Instantaneous &nbsp; <strong>Range:</strong> 30 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 1,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "6ee464b15dea462b7746e3db8ce615d01254aa4a735fa824bdc785d37bcabbca"
+    },
+    {
+      "sourceId": "il.spell.echoes-masonry",
+      "name": "Echoes in the Masonry",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Echoes in the Masonry</h2><p>Touch worked stone and choose one of the following impressions from the last 24 hours: the strongest impact it endured, the loudest spoken sentence nearby, or the direction from which the largest group of creatures approached. The spell reports an impression, not names or motives.</p><p><strong>Level:</strong> 2 &nbsp; <strong>School:</strong> DIV &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Concentration, up to 10 minutes &nbsp; <strong>Range:</strong> Touch</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 2,
+        "school": "div"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "e830f1f9402b44a031bcde3d978a621f228f73a48414f9f07c8cc4272ee64ec1"
+    },
+    {
+      "sourceId": "il.spell.oath-rune",
+      "name": "Oath-Rune of the Shieldmates",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Oath-Rune of the Shieldmates</h2><p>Touch two willing creatures. While both remain within 30 feet of each other, each gains 3 temporary hit points at the start of its turn if it has none. The rune ends early for both if either willingly attacks the other. At Higher Levels: mark one additional willing creature per slot level above 2nd.</p><p><strong>Level:</strong> 2 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> 1 hour &nbsp; <strong>Range:</strong> Touch</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 2,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "24ac7979ae5b5f89297d83b2f50a6be4af90406d66df326782f1f37a5ecbaad3"
+    },
+    {
+      "sourceId": "il.spell.seal-breach",
+      "name": "Seal the Breach",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Seal the Breach</h2><p>Reinforce a door, gate, tunnel support, or 10-foot section of nonmagical wall. It gains 30 temporary hit points and advantage on checks or saves made to resist forced opening or collapse. If the structure would fail catastrophically, the spell instead delays that failure until the end of the next round, making the danger obvious.</p><p><strong>Level:</strong> 3 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> 8 hours &nbsp; <strong>Range:</strong> Touch</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 3,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "6dfd1cdc9939cabd4981a6425750bd991b18b0cee67337c09f16abaef44d735e"
+    },
+    {
+      "sourceId": "il.spell.hammerfall",
+      "name": "Hammerfall Sigil",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Hammerfall Sigil</h2><p>Place a visible rune on a surface. Choose a simple trigger you can perceive when casting. When triggered, the rune erupts in a 10-foot radius. Creatures there make a Dexterity save, taking 4d8 thunder damage on a failure or half on a success; a failed save also knocks a Large or smaller creature prone. The sigil can be found with Investigation against your spell save DC and safely suppressed with dispel magic.</p><p><strong>Level:</strong> 3 &nbsp; <strong>School:</strong> EVO &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Until triggered or 8 hours &nbsp; <strong>Range:</strong> 30 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 3,
+        "school": "evo"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "91ed7c018b5cf9681cde9171657d9a858a24671c23c1bd98be77f61c13865d90"
+    },
+    {
+      "sourceId": "il.spell.shared-burden",
+      "name": "Rune of Shared Burden",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Rune of Shared Burden</h2><p>Mark up to three willing creatures. When one marked creature takes damage, it may use its reaction to divide that damage equally among any number of marked creatures within 30 feet, rounding damage against the original target up. Resistances and vulnerabilities are applied after the division.</p><p><strong>Level:</strong> 3 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Concentration, up to 1 minute &nbsp; <strong>Range:</strong> 30 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 3,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "7e5329365ac8229a9ad6411a2ddfc0037e48ea16e25e97c33234a7aae323f2b7"
+    },
+    {
+      "sourceId": "il.spell.forgeward-bastion",
+      "name": "Forgeward Bastion",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Forgeward Bastion</h2><p>Runes burn into the ground around you. You and allies in the emanation have advantage on saves against being shoved, knocked prone, or forcibly moved, and gain half cover against ranged attacks originating outside the emanation. The area moves with you only while you remain in contact with the ground.</p><p><strong>Level:</strong> 4 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Concentration, up to 10 minutes &nbsp; <strong>Range:</strong> Self (15-foot emanation)</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 4,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "7c198d05d0bdd283800d9f795469e91c46a0da12e03e1fbf6f48dace98cb7da7"
+    },
+    {
+      "sourceId": "il.spell.runegate",
+      "name": "Runegate Traverse",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Runegate Traverse</h2><p>Choose a worked-stone surface you can touch and another marked stone surface you have personally inscribed within range. You and up to four willing creatures touching the first surface teleport to unoccupied spaces adjacent to the second. If the destination mark has been destroyed, the spell fails without expending the slot.</p><p><strong>Level:</strong> 4 &nbsp; <strong>School:</strong> CON &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Instantaneous &nbsp; <strong>Range:</strong> 500 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 4,
+        "school": "con"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "4f423de55b3b9249bfe7b7ab0266c9b8b7f3844dc3db01f99be4fe506a7a20f1"
+    },
+    {
+      "sourceId": "il.spell.ancestral-aegis",
+      "name": "Ancestral Aegis",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Ancestral Aegis</h2><p>Choose up to five willing creatures. A spectral shield-rune follows each target. Once per round when a marked target is hit by an attack, that target may add +3 to its AC against that attack, potentially causing it to miss. Each target can use this benefit once during the spell.</p><p><strong>Level:</strong> 5 &nbsp; <strong>School:</strong> ABJ &nbsp; <strong>Casting:</strong> action &nbsp; <strong>Duration:</strong> Concentration, up to 1 minute &nbsp; <strong>Range:</strong> 30 feet</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 5,
+        "school": "abj"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "5644f8853bf412a33cd09e8f211a9a041f99ce0213ef4321a3ecba85c4f7072f"
+    },
+    {
+      "sourceId": "il.spell.carved-name",
+      "name": "Truth of the Carved Name",
+      "type": "spell",
+      "folder": "Rune Magic",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-rune\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Truth of the Carved Name</h2><p>Create a stone tablet that records the exact spoken words of up to six creatures who willingly touch it during the casting. For the duration, whenever a recorded speaker knowingly makes a false factual statement while touching the tablet, their carved line cracks and produces a clear chime. The spell does not reveal the truth, detect misleading omissions, or affect unwilling creatures.</p><p><strong>Level:</strong> 5 &nbsp; <strong>School:</strong> DIV &nbsp; <strong>Casting:</strong> ritual &nbsp; <strong>Duration:</strong> 8 hours &nbsp; <strong>Range:</strong> Touch</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        },
+        "level": 5,
+        "school": "div"
+      },
+      "flags": {
+        "runeMagic": true
+      },
+      "sourceHash": "2d4ad13863daa7dcee4c365c2ebfb5549489bbbe90bccae4f8182b81aa698bda"
+    }
+  ]
+}

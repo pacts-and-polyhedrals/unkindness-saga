@@ -1,0 +1,104 @@
+/* The Shield Between Us: Ironfist Legacy — basalt, bronze and ember. Pacts & Polyhedrals house style. */
+@font-face { font-family: "IFL Cinzel"; src: url("../assets/fonts/cinzel-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "IFL Cinzel"; src: url("../assets/fonts/cinzel-latin-900-normal.woff2") format("woff2"); font-weight: 900; }
+@font-face { font-family: "IFL Cinzel"; src: url("../assets/fonts/cinzel-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IFL Decorative"; src: url("../assets/fonts/cinzel-decorative-latin-900-normal.woff2") format("woff2"); font-weight: 900; }
+@font-face { font-family: "IFL Garamond"; src: url("../assets/fonts/eb-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IFL Garamond"; src: url("../assets/fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "IFL Garamond"; src: url("../assets/fonts/eb-garamond-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "IFL Fell"; src: url("../assets/fonts/im-fell-english-latin-400-italic.woff2") format("woff2"); font-style: italic; }
+
+:root {
+  --il-basalt: #161312; --il-basalt2: #231d1a; --il-stone: #e8dcc0; --il-bronze: #c8963a; --il-gold: #f3d48a;
+  --il-ember: #8e2a14; --il-crimson: #7a1a18; --il-ink: #1e140c; --il-moss: #7e9a5a; --il-steel: #9aa0aa;
+}
+
+/* ------------------------------------------------------------------ journals */
+.il-journal { font-family: "IFL Garamond", "EB Garamond", Georgia, serif; font-size: 15.5px; line-height: 1.55; color: #e8dcc0;
+  background: radial-gradient(ellipse at top, #2a201a 0%, #161312 70%); padding: 18px 24px 26px; border: 2px solid #3a2a1a;
+  box-shadow: inset 0 0 0 1px #c8963a55, inset 0 0 60px #000a; border-radius: 6px; }
+.il-journal h1, .il-journal h2, .il-journal h3, .il-journal h4 { font-family: "IFL Cinzel", Cinzel, serif; color: var(--il-gold); border-bottom: 1px solid #c8963a66; text-shadow: 0 2px 0 #000; }
+.il-journal h2 { font-size: 1.35em; margin-top: 1.1em; } .il-journal h3 { font-size: 1.12em; } .il-journal h4 { font-size: 1em; border: 0; margin: 0 0 .3em; }
+.il-journal p { margin: .45em 0 .7em; } .il-journal strong { color: #ffd890; } .il-journal em { color: #f0c8a0; }
+.il-journal a.content-link, .il-journal a.inline-roll { background: #3a2a1a; color: #ffd890; border: 1px solid #c8963a88; }
+.il-journal ul, .il-journal ol { margin: .3em 0 .8em 1.2em; }
+.il-banner { margin: -18px -24px 14px; padding: 18px 24px 14px; background: linear-gradient(180deg, #4a1a10, #1a0e0a) , url("../assets/art/banner.webp") center/cover;
+  background-blend-mode: multiply; border-bottom: 3px solid var(--il-bronze); }
+.il-banner h1 { font-family: "IFL Decorative", "IFL Cinzel", serif; font-size: 2.1em; margin: 0; border: 0; color: var(--il-gold); }
+.il-kicker { font-family: "IFL Cinzel", serif; letter-spacing: .25em; text-transform: uppercase; color: #ffb38a; font-size: .8em; }
+.il-sub { display: block; font-family: "IFL Fell", serif; font-style: italic; color: #e8d0b0; margin-top: .2em; }
+.il-hero { width: 100%; border: 2px solid var(--il-bronze); border-radius: 4px; margin: .4em 0 1em; }
+.il-portrait { float: right; width: 210px; margin: 0 0 10px 16px; border: 3px solid var(--il-bronze); border-radius: 4px; box-shadow: 0 4px 14px #000; }
+.il-readaloud { background: linear-gradient(135deg, #2c241c, #1c1612); border-left: 6px solid var(--il-bronze); margin: 1em 0; padding: .7em 1.1em;
+  font-family: "IFL Fell", "IFL Garamond", serif; font-style: italic; font-size: 1.07em; color: #f4e6c8; box-shadow: inset 0 0 22px #000c; }
+.il-readaloud h4 { font-family: "IFL Cinzel", serif; font-style: normal; color: #ffb38a; font-size: .8em; letter-spacing: .2em; text-transform: uppercase; }
+.il-secret { background: #2a0c0a; border: 1px solid #8e2a14; border-left: 6px solid #c0283a; padding: .6em 1em; margin: 1em 0; }
+.il-box { background: #201a16; border: 1px solid #c8963a66; border-radius: 4px; padding: .6em 1em; margin: 1em 0; }
+.il-box.il-close { border-color: #c0283a; background: #241210; }
+.il-strip { display: flex; flex-wrap: wrap; gap: .3em 1.2em; background: #0e0b0a; border: 1px solid #c8963a55; border-radius: 4px; padding: .45em .8em; margin: 0 0 1em; font-size: .9em; }
+.il-table { width: 100%; border-collapse: collapse; margin: .6em 0 1em; background: #1c1612; }
+.il-table th { background: #3a2414; color: var(--il-gold); font-family: "IFL Cinzel", serif; font-size: .85em; padding: .4em .5em; border: 1px solid #5a3a1a; text-align: left; }
+.il-table td { border: 1px solid #3a2a1a; padding: .4em .5em; vertical-align: top; }
+.il-table tr:nth-child(even) td { background: #241c16; }
+.il-dossier blockquote.il-line { font-family: "IFL Fell", serif; font-style: italic; color: #ffd890; border-left: 4px solid var(--il-bronze); padding-left: .8em; margin: .6em 0; }
+.il-parchment { background: linear-gradient(135deg, #efe2c0, #d8c8a0); color: #1e140c; padding: 1.4em 1.8em; border: 2px solid #5a3a1a; box-shadow: inset 0 0 40px #8a6a3a88;
+  font-family: "IFL Fell", "IFL Garamond", serif; font-size: 1.1em; }
+.il-parchment h2 { color: #4a1a10; text-shadow: none; border-color: #8a6a3a; }
+.il-parchment .il-table { background: transparent; } .il-parchment .il-table td { border-color: #8a6a3a; } .il-parchment .il-table tr:nth-child(even) td { background: #e2d2ac; }
+.il-item p, .il-dossier p { margin: .35em 0; }
+
+/* ------------------------------------------------------------------ chat */
+.il-chat { font-family: "IFL Garamond", serif; font-size: 14px; color: #e8dcc0; background: #1a1412; border: 1px solid var(--il-bronze); border-radius: 4px; padding: 6px 9px; }
+.il-chat h3 { font-family: "IFL Cinzel", serif; color: var(--il-gold); border-bottom: 1px solid #c8963a66; margin: 0 0 4px; font-size: 1.05em; }
+.il-chat strong { color: #ffd890; } .il-chat .hint { color: #b8a888; font-style: italic; font-size: .92em; }
+.il-chat img.il-card { display: block; width: 100%; max-width: 260px; margin: 2px auto 6px; border: 0; }
+.il-ruling { font-family: "IFL Cinzel", serif; font-weight: 900; text-align: center; letter-spacing: .08em; padding: 3px; border-radius: 3px; }
+.il-ruling.good { background: #24401e; color: #c8f0a0; } .il-ruling.bad { background: #4a1210; color: #ffb0a0; }
+
+/* ------------------------------------------------------------------ apps */
+.il-app .window-content { background: #161312; color: #e8dcc0; font-family: "IFL Garamond", serif; }
+.il-app h3 { font-family: "IFL Cinzel", serif; color: var(--il-gold); border-bottom: 1px solid #c8963a66; margin: .7em 0 .35em; }
+.il-app button { font-family: "IFL Cinzel", serif; background: #2a1e16; color: #f3d48a; border: 1px solid #c8963a88; }
+.il-app button:hover { background: #3a2a1a; box-shadow: 0 0 6px #c8963a88; }
+.il-app button.active, .il-ev.on { background: #7a1a18; color: #fff0d0; border-color: #ffb38a; }
+.il-app .hint { color: #b8a888; font-style: italic; font-size: .9em; }
+.il-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; } .il-row button { flex: 1 1 auto; }
+.il-big { width: 100%; font-size: 1.15em; padding: 8px; margin-bottom: 6px; }
+.il-mhead img, .il-ledger-banner { width: 100%; border: 1px solid #c8963a88; border-radius: 3px; }
+.il-scenes { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow-y: auto; }
+.il-scenes li { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; border-bottom: 1px solid #3a2a1a; }
+.il-scenes li button { flex: 0 0 auto; width: auto; }
+.il-danger button { background: #4a1210; }
+.il-track { display: flex; align-items: center; gap: 6px; margin: .6em 0 .1em; } .il-track b { flex: 0 0 150px; font-family: "IFL Cinzel", serif; color: #ffd890; }
+.il-track button { flex: 0 0 28px; width: 28px; }
+.il-pips { display: flex; gap: 3px; } .il-pips i { font-style: normal; width: 24px; height: 24px; line-height: 22px; text-align: center; border: 1px solid #c8963a88; border-radius: 50%; color: #8a7a62; font-size: 12px; }
+.il-pips i.on { background: radial-gradient(#ffd27a, #c8963a); color: #1e140c; font-weight: 700; }
+.il-council { display: flex; align-items: center; gap: 6px; margin: 3px 0; } .il-council b { flex: 0 0 90px; } .il-council span { flex: 1; text-align: center; }
+.il-council button { flex: 0 0 28px; }
+.il-form label { display: block; margin: 6px 0; } .il-form select, .il-form input[type=number], .il-form input[type=text] { width: 100%; }
+
+/* the Stone Clock (visible to everyone) */
+#il-clock { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 70; min-width: 240px; text-align: center;
+  background: linear-gradient(#231d1a, #120e0c); border: 2px solid var(--il-bronze); border-radius: 8px; box-shadow: 0 6px 22px #000c; color: #e8dcc0;
+  font-family: "IFL Garamond", serif; padding: 0 12px 10px; }
+#il-clock header { font-family: "IFL Cinzel", serif; font-weight: 900; color: var(--il-gold); letter-spacing: .08em; padding: 6px 0; border-bottom: 1px solid #c8963a66; margin-bottom: 6px; }
+#il-clock .il-clock-big { font-family: "IFL Decorative", serif; font-size: 52px; color: #ffb38a; line-height: 1; text-shadow: 0 0 14px #ff7a1a; }
+#il-clock .il-clock-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 4px 0; }
+#il-clock .il-clock-row span { width: 80px; text-align: right; font-size: .9em; color: #c8b898; }
+#il-clock .il-clock-row i { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #c8963a; }
+#il-clock .il-clock-row i.on { background: #c8963a; } #il-clock .il-clock-row i.bad { border-color: #c0283a; } #il-clock .il-clock-row i.bad.on { background: #c0283a; }
+#il-clock .il-ctl { display: flex; gap: 4px; justify-content: center; margin-top: 6px; }
+#il-clock .il-ctl button { font-family: "IFL Cinzel", serif; font-size: 11px; background: #2a1e16; color: #f3d48a; border: 1px solid #c8963a88; padding: 2px 6px; width: auto; }
+
+/* Shadows Beyond Barovia */
+.il-inheritance .il-power { display: flex; gap: 10px; align-items: center; padding: 6px 8px; margin: 6px 0; background: rgba(0,0,0,0.25); border-radius: 4px; }
+.il-inheritance .il-power img { width: 48px; height: 48px; border: 2px solid #150b0b; }
+.il-inheritance .il-att { font-family: "Cinzel", serif; font-size: 1.4em; margin: 0 6px; }
+.il-inheritance .il-tag { text-transform: uppercase; font-size: 0.8em; letter-spacing: 0.06em; color: #e8c35a; }
+.il-inheritance .il-power button { width: 26px; height: 24px; line-height: 1; padding: 0; }
+.il-inheritance .il-outcomes li { margin: 3px 0; }
+.il-journal .il-shadows { border-left: 4px solid #3b1d5a; }
+.il-journal .il-shadow-orcus { border-left: 4px solid #1c4a2a; }
+.il-journal .il-shadow-vampyr { border-left: 4px solid #5c0f14; }
+.il-journal .il-shadow-vecna { border-left: 4px solid #3b1d5a; }
+.il-journal .il-shadow-all { border-left: 4px solid #6b4416; }

@@ -1,0 +1,76 @@
+{
+  "runes": {
+    "VARN": {
+      "name": "VARN — Ward",
+      "cut": "Once per short rest, when you take bludgeoning, piercing, or slashing damage, reduce it by 1d6 + your proficiency bonus.",
+      "bound": "Once per short rest, reduce one instance of damage by 1d8 + proficiency bonus; until the start of your next turn you have advantage against being shoved or knocked prone.",
+      "crowned": "Twice per long rest, reduce one instance of damage by 2d8 + proficiency bonus and gain resistance to that damage type until the start of your next turn."
+    },
+    "DOR": {
+      "name": "DOR — Impact",
+      "cut": "Once per turn for 1 minute after activation, one weapon hit deals +1d4 force damage. 1/long rest.",
+      "bound": "As Cut, but +1d6 force; once during the minute you may push a Large or smaller target 10 feet after a hit (Strength save vs 8 + PB + chosen crafting ability).",
+      "crowned": "As Bound, +1d8 force, and the push may affect Huge or smaller targets."
+    },
+    "KETH": {
+      "name": "KETH — Binding",
+      "cut": "The item cannot be casually disarmed; you have advantage on checks or saves to keep hold of it or maintain an anchor.",
+      "bound": "1/long rest after a hit or successful grapple, spectral runic bands reduce the target speed to 0 until the start of your next turn unless it succeeds on a Strength save.",
+      "crowned": "2/long rest; on a failed save the target is also restrained until the start of your next turn."
+    },
+    "ORUN": {
+      "name": "ORUN — Memory",
+      "cut": "Store and replay up to one minute of spoken words or workshop sounds.",
+      "bound": "3 charges. Spend 1 to gain advantage on one History or Investigation check concerning worked stone, crafted objects, or inscriptions you can touch. Regain 1d3 charges at dawn.",
+      "crowned": "1/long rest, ask a worked stone or crafted object one question about a significant event it physically witnessed within the last year; the answer is an impression, not omniscient testimony."
+    },
+    "THAR": {
+      "name": "THAR — Oath",
+      "cut": "Choose one willing ally after a long rest. Once per short rest, add +2 AC against one attack while you are within 5 feet of that ally.",
+      "bound": "The reaction becomes +3 AC and can be used within 10 feet if you can move adjacent without exceeding your speed.",
+      "crowned": "2/short rest; when the reaction causes the attack to miss, the protected ally gains temporary HP equal to your proficiency bonus."
+    },
+    "DRATH": {
+      "name": "DRATH — Ember",
+      "cut": "Gain resistance to the first 10 points of fire damage you take after each long rest.",
+      "bound": "Gain fire resistance for 1 minute, 1/long rest. A weapon bearing the rune glows and can ignite unattended mundane tinder.",
+      "crowned": "Fire resistance is constant while the rune is active and attuned; 1/long rest you may become immune to fire until the start of your next turn."
+    },
+    "ISKAR": {
+      "name": "ISKAR — Frost",
+      "cut": "Ignore ordinary extreme-cold discomfort and preserve a Small object for 24 hours.",
+      "bound": "1/long rest when you hit, reduce the target speed by 10 feet until the end of its next turn; you also gain cold resistance for 1 minute.",
+      "crowned": "Cold resistance is constant while active; 2/long rest reduce a hit target speed to 0 until the start of your next turn."
+    },
+    "VAEL": {
+      "name": "VAEL — Passage",
+      "cut": "Gain advantage on one check per short rest to climb, squeeze through, or navigate worked stone.",
+      "bound": "1/long rest teleport up to 30 feet between two visible spaces touching stone or masonry.",
+      "crowned": "2/long rest teleport up to 60 feet between visible stone surfaces, bringing one willing adjacent creature."
+    },
+    "GRUM": {
+      "name": "GRUM — Weight",
+      "cut": "Advantage on checks and saves against being shoved or moved while standing on stone.",
+      "bound": "1/short rest, as a bonus action become braced until your next turn: speed 0, advantage on Strength saves, and +1 AC.",
+      "crowned": "As Bound, +2 AC, and allies directly behind you gain half cover against attacks passing through your space."
+    },
+    "RUUN": {
+      "name": "RUUN — Voice",
+      "cut": "Your voice can carry clearly through 300 feet of worked tunnels without becoming painfully loud nearby.",
+      "bound": "1/short rest issue a coordinated signal; up to PB willing allies who hear you may move 5 feet without provoking opportunity attacks.",
+      "crowned": "2/short rest; allies may move up to 10 feet and gain advantage on the next check made to complete a shared objective before your next turn."
+    },
+    "MOR": {
+      "name": "MOR — Lineage",
+      "cut": "Key an item to one named willing bearer; it displays a visible warning when held by anyone else.",
+      "bound": "The bearer has advantage on saves against charm effects that would force them to surrender or betray the keyed item or named ward.",
+      "crowned": "1/long rest when the bearer fails such a save, they may reroll it and must use the new result."
+    },
+    "KHAL": {
+      "name": "KHAL — Forge",
+      "cut": "Repair a damaged mundane object twice as quickly and restore cosmetic damage during a short rest.",
+      "bound": "3 charges. Spend 1 during a short rest to restore 2d8 + PB hit points to a construct or object; regain 1d3 charges at dawn.",
+      "crowned": "The repair becomes 4d8 + PB and can restore a disabled non-artifact mechanism if at least half of it remains."
+    }
+  }
+}

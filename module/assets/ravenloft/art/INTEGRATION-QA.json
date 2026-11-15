@@ -1,0 +1,18 @@
+{
+  "moduleId": "cat-and-unkindness",
+  "version": "0.6.0",
+  "release": "Complete artwork edition, built from user-supplied v0.6.0 ZIP",
+  "importedSceneCount": 21,
+  "charactersAndObjectActorsUpdated": 15,
+  "itemIconsUpdated": 24,
+  "journalThumbnailsUpdated": 22,
+  "newCircularActorAndObjectTokens": 15,
+  "uniqueNewIllustratedSources": 39,
+  "originalMapsPreserved": true,
+  "originalCombatAndMechanicScriptPreserved": true,
+  "finn": "Ginger-haired halfling vampire, from individually generated art",
+  "artRefreshMacro": "cu.macro.art-refresh",
+  "integrationMethod": "Direct source document update and art asset embed; no overlay necessary",
+  "manualStep": "GM runs game.catAndUnkindness.setup() after first installation or update; then the Art Refresh Macro for tokens already in scenes",
+  "liveFoundryBootTest": "Not performed (static package/source tests only)"
+}

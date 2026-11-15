@@ -1,0 +1,172 @@
+{
+  "id": "unkindness-saga",
+  "title": "The Unkindness Saga: Ravenloft Finale & Ironfist Legacy",
+  "description": "<p>The Sunday group's whole run from Wachter House to Kharad-Varr in one module. <strong>Part I — The Cat and the Unkindness</strong>: the Curse of Strahd finale overlay (Arl, Van Richten, Vallaki's cult war, the brides and Finn, three-phase Strahd, the War of Broken Gods with Orcus, Vampyr and Vecna, the Wish, the coffin chase, Barovia's collapse) with 23 walled and lit scenes and a live finale dashboard. <strong>Part II — The Shield Between Us: Ironfist Legacy</strong>: Thorgrinn's homecoming across twelve Sundays, 15 painted battlemaps, <em>the Hold of Kharad-Varr</em> (a linked painted overview of the whole mountain and eight new venue maps — taverns, baths, a gaming house, smith, enchanter, apothecary and rune smiths — each with a self-contained side quest), the full cast, evidence politics, rune magic, original music and the Stone Ledger — with <em>Shadows Beyond Barovia</em> carrying Part I's ending (Dark Power Attention, final choices, mercy, the Wish, the prophecies) into every session. One Manager sets up both parts.</p>",
+  "version": "2.1.0",
+  "authors": [
+    {
+      "name": "Asmo, Pacts & Polyhedrals (Ben Vale)",
+      "url": "https://www.patreon.com/pactsandpolyhedrals"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.0.0",
+          "verified": "6.0.6"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/ravenloft.mjs",
+    "scripts/ironfist.mjs"
+  ],
+  "styles": [
+    "styles/ravenloft.css",
+    "styles/ironfist.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "journals",
+      "label": "Part II · Adventure Book & Journals",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "actors",
+      "label": "Part II · Actors: Cast & Encounter Profiles",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "items",
+      "label": "Part II · Evidence, Story Items, Runes & Rewards",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "spells",
+      "label": "Part II · Rune Spells",
+      "path": "packs/spells",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "tables",
+      "label": "Part II · Roll Tables",
+      "path": "packs/tables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "macros",
+      "label": "Part II · Macros",
+      "path": "packs/macros",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "playlists",
+      "label": "Part II · Music & Sound Effects",
+      "path": "packs/playlists",
+      "type": "Playlist",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "cards",
+      "label": "Part II · Card Decks",
+      "path": "packs/cards",
+      "type": "Cards",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "The Unkindness Saga — Part II: Ironfist Legacy",
+      "sorting": "m",
+      "color": "#4a0c10",
+      "packs": [
+        "journals",
+        "actors",
+        "items",
+        "spells",
+        "tables",
+        "macros",
+        "playlists",
+        "cards"
+      ],
+      "folders": []
+    }
+  ],
+  "media": [
+    {
+      "type": "cover",
+      "url": "modules/unkindness-saga/assets/art/title.webp"
+    },
+    {
+      "type": "icon",
+      "url": "modules/unkindness-saga/assets/icons/il-title.webp"
+    }
+  ],
+  "url": "https://github.com/pacts-and-polyhedrals/unkindness-saga",
+  "manifest": "https://github.com/pacts-and-polyhedrals/unkindness-saga/releases/latest/download/module.json",
+  "download": "https://github.com/pacts-and-polyhedrals/unkindness-saga/releases/download/v2.1.0/unkindness-saga.zip",
+  "readme": "https://github.com/pacts-and-polyhedrals/unkindness-saga/blob/main/README.md",
+  "changelog": "https://github.com/pacts-and-polyhedrals/unkindness-saga/blob/main/CHANGELOG.md",
+  "bugs": "https://github.com/pacts-and-polyhedrals/unkindness-saga/issues",
+  "license": "LICENSE",
+  "flags": {}
+}

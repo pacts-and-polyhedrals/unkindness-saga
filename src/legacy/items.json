@@ -1,0 +1,625 @@
+{
+  "items": [
+    {
+      "sourceId": "il.evidence.e1",
+      "name": "E1 — Ninth Sluice Gauge Record",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E1 — Ninth Sluice Gauge Record</h2><p>A dated pressure record proving the foundry diversion began before the first recorded Cinder-Tusk raid.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E1",
+        "evidenceTags": [
+          "CAUSE"
+        ]
+      },
+      "sourceHash": "ec5335124f12d5dce50aa8860dbbfc73a4c491dea146b8225bcb384539732fdc"
+    },
+    {
+      "sourceId": "il.evidence.e2",
+      "name": "E2 — Foundry Requisition Ledger",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E2 — Foundry Requisition Ledger</h2><p>A requisition showing military foundry output and premium contract deliveries rising during the household shortages.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E2",
+        "evidenceTags": [
+          "CAUSE",
+          "SUPPLY"
+        ]
+      },
+      "sourceHash": "ea06b3fa77e867a70d2e93088f91cbd0ac0a44e8b44391b90f12050836817f14"
+    },
+    {
+      "sourceId": "il.evidence.e3",
+      "name": "E3 — Baldrik’s Occupancy Classification",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E3 — Baldrik’s Occupancy Classification</h2><p>Baldrik’s signed inspection: domestic kitchens, workshops and household allotments are listed before the occupied district is classified as enemy-support territory.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E3",
+        "evidenceTags": [
+          "CIVILIANS",
+          "COMMAND"
+        ]
+      },
+      "sourceHash": "ac89f6340e525de1559b02635cc89cd615a3302a7673b592c5aff3aeeb2093d0"
+    },
+    {
+      "sourceId": "il.evidence.e4",
+      "name": "E4 — Water-and-Stone Compact",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E4 — Water-and-Stone Compact</h2><p>Matching dwarven and Cinder-Tusk copies of the old agreement governing shared water, maintenance access and notice before major diversions.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E4",
+        "evidenceTags": [
+          "CAUSE",
+          "SETTLEMENT"
+        ]
+      },
+      "sourceHash": "6e12bd51832bb5683419e1af63f4146151da84da4a42d481417bae42f89d3aa4"
+    },
+    {
+      "sourceId": "il.evidence.e5",
+      "name": "E5 — Hadrik’s Last Bastion Order",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E5 — Hadrik’s Last Bastion Order</h2><p>A sealed order authorizing pressure reversal through the lower network under emergency war powers.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E5",
+        "evidenceTags": [
+          "CIVILIANS",
+          "COMMAND"
+        ]
+      },
+      "sourceHash": "775598ba538d9d17eee243781f15a105b9115210087d9db98160ee69b608d7f8"
+    },
+    {
+      "sourceId": "il.evidence.e6",
+      "name": "E6 — Joint Flood Assessment",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E6 — Joint Flood Assessment</h2><p>Runa and Skrik independently calculate that Last Bastion will flood Lowhearth after striking the Cinder warrens.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E6",
+        "evidenceTags": [
+          "CIVILIANS",
+          "SETTLEMENT"
+        ]
+      },
+      "sourceHash": "ceb5bdb7e3f1beea15247d99a33566fbb4d4b7df1dc63ce87306dd392c18b8aa"
+    },
+    {
+      "sourceId": "il.evidence.e7",
+      "name": "E7 — Korga’s Upper Reservoir Order",
+      "type": "loot",
+      "folder": "Evidence & Documents",
+      "img": "modules/unkindness-saga/assets/evidence.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>E7 — Korga’s Upper Reservoir Order</h2><p>An authenticated assault order showing Korga intends to seize the upper reservoir rather than merely recover lost water access.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "evidenceId": "E7",
+        "evidenceTags": [
+          "THREAT",
+          "SETTLEMENT"
+        ]
+      },
+      "sourceHash": "c3d0045e4997eaf89df941ab27d8186fc847a6e9cdb37c8cbf599d5ad4dc6119"
+    },
+    {
+      "sourceId": "il.item.commission",
+      "name": "Honorary Ironfist Commission",
+      "type": "loot",
+      "folder": "Story Items",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Honorary Ironfist Commission</h2><p>A ceremonial commission offering rank, salary and residence while imposing service obligations and restrictions on speaking in the clan’s name.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {},
+      "sourceHash": "18c6c9fd1f749a004827a2247069a75dfee6430c7b8f2f16a32cc8331e6486b0"
+    },
+    {
+      "sourceId": "il.item.pressure-key",
+      "name": "Heartworks Pressure Key",
+      "type": "loot",
+      "folder": "Story Items",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Heartworks Pressure Key</h2><p>A heavy three-toothed key used to authorize manual intervention at one of the Heartworks regulator stations.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {},
+      "sourceHash": "8f4a7606443b168847918d0eac70ded84a8df92434f7c93b9f326fdb2575f233"
+    },
+    {
+      "sourceId": "il.item.bastion-manual",
+      "name": "Last Bastion Operating Manual",
+      "type": "loot",
+      "folder": "Story Items",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Last Bastion Operating Manual</h2><p>The original engineering manual for the three-station pressure network. It documents the reservoir wheel, relief channel and reversal brake.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {},
+      "sourceHash": "7bbb4b36f223dde00c82abdab86c4edf26bc9ef6cc6e86bf1f3e635d473b9cd6"
+    },
+    {
+      "sourceId": "il.item.deepwell-accord",
+      "name": "Deepwell Accord Draft",
+      "type": "loot",
+      "folder": "Story Items",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Deepwell Accord Draft</h2><p>A writable treaty framework covering water access, prisoners, civilian corridors, oversight and review dates.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {},
+      "sourceHash": "59a4c1a9013411ff111b2804af41a1357a4e31e4b7532b727574d12af6df61d3"
+    },
+    {
+      "sourceId": "il.item.two-rivet-shield",
+      "name": "The Two-Rivet Shield",
+      "type": "loot",
+      "folder": "Story Items",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>The Two-Rivet Shield</h2><p>Baldrik still carries the shield the brothers repaired when they were too poor to hire a smith. It is a family symbol first and a magic reward only if the story makes it one.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {},
+      "sourceHash": "9a1e68d60e984760a41cac14a93ff13e46741c0066c059ff421163ee9b297c59"
+    },
+    {
+      "sourceId": "il.material.deep-silver",
+      "name": "Deep Silver Wire",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Deep Silver Wire</h2><p>Deep Silver Wire — 100 gp per coil. Carries memory and oath effects.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "380c879ac279d4e2a6e59aa757e9de602eea8df12456de878d0a1eb367688aaf"
+    },
+    {
+      "sourceId": "il.material.emberglass",
+      "name": "Emberglass Powder",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Emberglass Powder</h2><p>Emberglass Powder — 150 gp per vial. Stabilizes heat-bearing matrices.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "0773140272efbd3254b4d28d5948e878098eeaf7b5ce4206eb435af30ab0bdff"
+    },
+    {
+      "sourceId": "il.material.oathstone",
+      "name": "Oathstone Blank",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Oathstone Blank</h2><p>Oathstone Blank — 200 gp. Porous black stone that accepts spoken commitments.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "e2da7c54b0d6aefcbc10443407158e9af4b7e7715bd74e8eb51c6b08b289b7bd"
+    },
+    {
+      "sourceId": "il.material.sky-iron",
+      "name": "Sky-Iron Fragment",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Sky-Iron Fragment</h2><p>Sky-Iron Fragment — 500 gp. Meteoric iron for force and passage runes.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "a4714baafd1159b0c0004c466951a9a193534dc5ec9663fd055d81da32264fd4"
+    },
+    {
+      "sourceId": "il.material.hearthstone",
+      "name": "Hearthstone Resin",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Hearthstone Resin</h2><p>Hearthstone Resin — 75 gp per jar. Seals household wards and living-space runes.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "ae7f5c777cfe65f8b9807aea92f8433b4e1ba04b994c084c78bbb29dc5cae653"
+    },
+    {
+      "sourceId": "il.material.ironbone",
+      "name": "Ironbone Steel Bar",
+      "type": "loot",
+      "folder": "Runic Materials",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Ironbone Steel Bar</h2><p>Ironbone Steel Bar — 250 gp. Military alloy for high-stress rune plates.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runicMaterial": true
+      },
+      "sourceHash": "998a3fffebe39020e53beae763277c6c5c33da2af311a00087c1b67a27270661"
+    },
+    {
+      "sourceId": "il.rune.varn",
+      "name": "VARN — Ward",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>VARN — Ward</h2><p><strong>Root meaning:</strong> Ward</p>\n<p><strong>Cut:</strong> Once per short rest, when you take bludgeoning, piercing, or slashing damage, reduce it by 1d6 + your proficiency bonus.</p>\n<p><strong>Bound:</strong> Once per short rest, reduce one instance of damage by 1d8 + proficiency bonus; until the start of your next turn you have advantage against being shoved or knocked prone.</p>\n<p><strong>Crowned:</strong> Twice per long rest, reduce one instance of damage by 2d8 + proficiency bonus and gain resistance to that damage type until the start of your next turn.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "VARN",
+        "grades": {
+          "cut": "Once per short rest, when you take bludgeoning, piercing, or slashing damage, reduce it by 1d6 + your proficiency bonus.",
+          "bound": "Once per short rest, reduce one instance of damage by 1d8 + proficiency bonus; until the start of your next turn you have advantage against being shoved or knocked prone.",
+          "crowned": "Twice per long rest, reduce one instance of damage by 2d8 + proficiency bonus and gain resistance to that damage type until the start of your next turn."
+        }
+      },
+      "sourceHash": "e3ffa3563f70385d0ab8d7a4c9c8c16dae5b5e5a39f174d4b5cd94c208f14170"
+    },
+    {
+      "sourceId": "il.rune.dor",
+      "name": "DOR — Impact",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>DOR — Impact</h2><p><strong>Root meaning:</strong> Impact</p>\n<p><strong>Cut:</strong> Once per turn for 1 minute after activation, one weapon hit deals +1d4 force damage. 1/long rest.</p>\n<p><strong>Bound:</strong> As Cut, but +1d6 force; once during the minute you may push a Large or smaller target 10 feet after a hit (Strength save vs 8 + PB + chosen crafting ability).</p>\n<p><strong>Crowned:</strong> As Bound, +1d8 force, and the push may affect Huge or smaller targets.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "DOR",
+        "grades": {
+          "cut": "Once per turn for 1 minute after activation, one weapon hit deals +1d4 force damage. 1/long rest.",
+          "bound": "As Cut, but +1d6 force; once during the minute you may push a Large or smaller target 10 feet after a hit (Strength save vs 8 + PB + chosen crafting ability).",
+          "crowned": "As Bound, +1d8 force, and the push may affect Huge or smaller targets."
+        }
+      },
+      "sourceHash": "8a8c5b85ad58b1d2f0f2e48ae21f0bfe0005e8cae2a47a5e8f87b41c60d87511"
+    },
+    {
+      "sourceId": "il.rune.keth",
+      "name": "KETH — Binding",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>KETH — Binding</h2><p><strong>Root meaning:</strong> Binding</p>\n<p><strong>Cut:</strong> The item cannot be casually disarmed; you have advantage on checks or saves to keep hold of it or maintain an anchor.</p>\n<p><strong>Bound:</strong> 1/long rest after a hit or successful grapple, spectral runic bands reduce the target speed to 0 until the start of your next turn unless it succeeds on a Strength save.</p>\n<p><strong>Crowned:</strong> 2/long rest; on a failed save the target is also restrained until the start of your next turn.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "KETH",
+        "grades": {
+          "cut": "The item cannot be casually disarmed; you have advantage on checks or saves to keep hold of it or maintain an anchor.",
+          "bound": "1/long rest after a hit or successful grapple, spectral runic bands reduce the target speed to 0 until the start of your next turn unless it succeeds on a Strength save.",
+          "crowned": "2/long rest; on a failed save the target is also restrained until the start of your next turn."
+        }
+      },
+      "sourceHash": "5defa423af0e42d151edf2a42521281fe2afe685bc5d4ef71d680df5cdc12d06"
+    },
+    {
+      "sourceId": "il.rune.orun",
+      "name": "ORUN — Memory",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>ORUN — Memory</h2><p><strong>Root meaning:</strong> Memory</p>\n<p><strong>Cut:</strong> Store and replay up to one minute of spoken words or workshop sounds.</p>\n<p><strong>Bound:</strong> 3 charges. Spend 1 to gain advantage on one History or Investigation check concerning worked stone, crafted objects, or inscriptions you can touch. Regain 1d3 charges at dawn.</p>\n<p><strong>Crowned:</strong> 1/long rest, ask a worked stone or crafted object one question about a significant event it physically witnessed within the last year; the answer is an impression, not omniscient testimony.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "ORUN",
+        "grades": {
+          "cut": "Store and replay up to one minute of spoken words or workshop sounds.",
+          "bound": "3 charges. Spend 1 to gain advantage on one History or Investigation check concerning worked stone, crafted objects, or inscriptions you can touch. Regain 1d3 charges at dawn.",
+          "crowned": "1/long rest, ask a worked stone or crafted object one question about a significant event it physically witnessed within the last year; the answer is an impression, not omniscient testimony."
+        }
+      },
+      "sourceHash": "65356f5a7889b6c1b0244dba1452664f2931d2d8c83accaaab78bc70bb423da4"
+    },
+    {
+      "sourceId": "il.rune.thar",
+      "name": "THAR — Oath",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>THAR — Oath</h2><p><strong>Root meaning:</strong> Oath</p>\n<p><strong>Cut:</strong> Choose one willing ally after a long rest. Once per short rest, add +2 AC against one attack while you are within 5 feet of that ally.</p>\n<p><strong>Bound:</strong> The reaction becomes +3 AC and can be used within 10 feet if you can move adjacent without exceeding your speed.</p>\n<p><strong>Crowned:</strong> 2/short rest; when the reaction causes the attack to miss, the protected ally gains temporary HP equal to your proficiency bonus.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "THAR",
+        "grades": {
+          "cut": "Choose one willing ally after a long rest. Once per short rest, add +2 AC against one attack while you are within 5 feet of that ally.",
+          "bound": "The reaction becomes +3 AC and can be used within 10 feet if you can move adjacent without exceeding your speed.",
+          "crowned": "2/short rest; when the reaction causes the attack to miss, the protected ally gains temporary HP equal to your proficiency bonus."
+        }
+      },
+      "sourceHash": "907416f1e7bc4822a5f5e3415612a3c3045559a71b75a96d247f373b78be37e1"
+    },
+    {
+      "sourceId": "il.rune.drath",
+      "name": "DRATH — Ember",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>DRATH — Ember</h2><p><strong>Root meaning:</strong> Ember</p>\n<p><strong>Cut:</strong> Gain resistance to the first 10 points of fire damage you take after each long rest.</p>\n<p><strong>Bound:</strong> Gain fire resistance for 1 minute, 1/long rest. A weapon bearing the rune glows and can ignite unattended mundane tinder.</p>\n<p><strong>Crowned:</strong> Fire resistance is constant while the rune is active and attuned; 1/long rest you may become immune to fire until the start of your next turn.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "DRATH",
+        "grades": {
+          "cut": "Gain resistance to the first 10 points of fire damage you take after each long rest.",
+          "bound": "Gain fire resistance for 1 minute, 1/long rest. A weapon bearing the rune glows and can ignite unattended mundane tinder.",
+          "crowned": "Fire resistance is constant while the rune is active and attuned; 1/long rest you may become immune to fire until the start of your next turn."
+        }
+      },
+      "sourceHash": "8b57ca0d647464470082d155717223e537556f8f2b6416a41a80d780d6691b6c"
+    },
+    {
+      "sourceId": "il.rune.iskar",
+      "name": "ISKAR — Frost",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>ISKAR — Frost</h2><p><strong>Root meaning:</strong> Frost</p>\n<p><strong>Cut:</strong> Ignore ordinary extreme-cold discomfort and preserve a Small object for 24 hours.</p>\n<p><strong>Bound:</strong> 1/long rest when you hit, reduce the target speed by 10 feet until the end of its next turn; you also gain cold resistance for 1 minute.</p>\n<p><strong>Crowned:</strong> Cold resistance is constant while active; 2/long rest reduce a hit target speed to 0 until the start of your next turn.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "ISKAR",
+        "grades": {
+          "cut": "Ignore ordinary extreme-cold discomfort and preserve a Small object for 24 hours.",
+          "bound": "1/long rest when you hit, reduce the target speed by 10 feet until the end of its next turn; you also gain cold resistance for 1 minute.",
+          "crowned": "Cold resistance is constant while active; 2/long rest reduce a hit target speed to 0 until the start of your next turn."
+        }
+      },
+      "sourceHash": "ec8863c0db9f0434f73f3648521812704d589d00a7d8290e8d1d1613005d78dc"
+    },
+    {
+      "sourceId": "il.rune.vael",
+      "name": "VAEL — Passage",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>VAEL — Passage</h2><p><strong>Root meaning:</strong> Passage</p>\n<p><strong>Cut:</strong> Gain advantage on one check per short rest to climb, squeeze through, or navigate worked stone.</p>\n<p><strong>Bound:</strong> 1/long rest teleport up to 30 feet between two visible spaces touching stone or masonry.</p>\n<p><strong>Crowned:</strong> 2/long rest teleport up to 60 feet between visible stone surfaces, bringing one willing adjacent creature.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "VAEL",
+        "grades": {
+          "cut": "Gain advantage on one check per short rest to climb, squeeze through, or navigate worked stone.",
+          "bound": "1/long rest teleport up to 30 feet between two visible spaces touching stone or masonry.",
+          "crowned": "2/long rest teleport up to 60 feet between visible stone surfaces, bringing one willing adjacent creature."
+        }
+      },
+      "sourceHash": "a08b54b93a9da7b391d35f0b4d2b2a4a40e01c1e8dec1b4c1fbde2ff863ef667"
+    },
+    {
+      "sourceId": "il.rune.grum",
+      "name": "GRUM — Weight",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>GRUM — Weight</h2><p><strong>Root meaning:</strong> Weight</p>\n<p><strong>Cut:</strong> Advantage on checks and saves against being shoved or moved while standing on stone.</p>\n<p><strong>Bound:</strong> 1/short rest, as a bonus action become braced until your next turn: speed 0, advantage on Strength saves, and +1 AC.</p>\n<p><strong>Crowned:</strong> As Bound, +2 AC, and allies directly behind you gain half cover against attacks passing through your space.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "GRUM",
+        "grades": {
+          "cut": "Advantage on checks and saves against being shoved or moved while standing on stone.",
+          "bound": "1/short rest, as a bonus action become braced until your next turn: speed 0, advantage on Strength saves, and +1 AC.",
+          "crowned": "As Bound, +2 AC, and allies directly behind you gain half cover against attacks passing through your space."
+        }
+      },
+      "sourceHash": "0e2b21545ae8f51f88df1f91e00fd5f8f733fbcb5e15801cdddaf111884e1ce7"
+    },
+    {
+      "sourceId": "il.rune.ruun",
+      "name": "RUUN — Voice",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>RUUN — Voice</h2><p><strong>Root meaning:</strong> Voice</p>\n<p><strong>Cut:</strong> Your voice can carry clearly through 300 feet of worked tunnels without becoming painfully loud nearby.</p>\n<p><strong>Bound:</strong> 1/short rest issue a coordinated signal; up to PB willing allies who hear you may move 5 feet without provoking opportunity attacks.</p>\n<p><strong>Crowned:</strong> 2/short rest; allies may move up to 10 feet and gain advantage on the next check made to complete a shared objective before your next turn.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "RUUN",
+        "grades": {
+          "cut": "Your voice can carry clearly through 300 feet of worked tunnels without becoming painfully loud nearby.",
+          "bound": "1/short rest issue a coordinated signal; up to PB willing allies who hear you may move 5 feet without provoking opportunity attacks.",
+          "crowned": "2/short rest; allies may move up to 10 feet and gain advantage on the next check made to complete a shared objective before your next turn."
+        }
+      },
+      "sourceHash": "0819ad4091c9e05ef90c012ef803a481f786452b6ec6b988385b0df7216cdd3b"
+    },
+    {
+      "sourceId": "il.rune.mor",
+      "name": "MOR — Lineage",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>MOR — Lineage</h2><p><strong>Root meaning:</strong> Lineage</p>\n<p><strong>Cut:</strong> Key an item to one named willing bearer; it displays a visible warning when held by anyone else.</p>\n<p><strong>Bound:</strong> The bearer has advantage on saves against charm effects that would force them to surrender or betray the keyed item or named ward.</p>\n<p><strong>Crowned:</strong> 1/long rest when the bearer fails such a save, they may reroll it and must use the new result.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "MOR",
+        "grades": {
+          "cut": "Key an item to one named willing bearer; it displays a visible warning when held by anyone else.",
+          "bound": "The bearer has advantage on saves against charm effects that would force them to surrender or betray the keyed item or named ward.",
+          "crowned": "1/long rest when the bearer fails such a save, they may reroll it and must use the new result."
+        }
+      },
+      "sourceHash": "a0c82f388be00b23e2a1530ffe7750d9af0514176a8c59ddf7f4668e2a4391bc"
+    },
+    {
+      "sourceId": "il.rune.khal",
+      "name": "KHAL — Forge",
+      "type": "feat",
+      "folder": "Rune Templates",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>KHAL — Forge</h2><p><strong>Root meaning:</strong> Forge</p>\n<p><strong>Cut:</strong> Repair a damaged mundane object twice as quickly and restore cosmetic damage during a short rest.</p>\n<p><strong>Bound:</strong> 3 charges. Spend 1 during a short rest to restore 2d8 + PB hit points to a construct or object; regain 1d3 charges at dawn.</p>\n<p><strong>Crowned:</strong> The repair becomes 4d8 + PB and can restore a disabled non-artifact mechanism if at least half of it remains.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "runeCode": "KHAL",
+        "grades": {
+          "cut": "Repair a damaged mundane object twice as quickly and restore cosmetic damage during a short rest.",
+          "bound": "3 charges. Spend 1 during a short rest to restore 2d8 + PB hit points to a construct or object; regain 1d3 charges at dawn.",
+          "crowned": "The repair becomes 4d8 + PB and can restore a disabled non-artifact mechanism if at least half of it remains."
+        }
+      },
+      "sourceHash": "b95e6bf9ee9b31a9cba41700dad143813dcde3fc098c0bd8c99ed9f8642c815f"
+    },
+    {
+      "sourceId": "il.item.shieldmates-rivet",
+      "name": "Shieldmate’s Rivet",
+      "type": "feat",
+      "folder": "Runic Rewards",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Shieldmate’s Rivet</h2><p>Once per long rest, when a creature you can see within 10 feet takes damage, you may use your reaction to reduce the damage by <strong>2d8 + your proficiency bonus</strong>. If the protected creature is a party member with whom you have completed this arc, it also gains temporary hit points equal to your proficiency bonus. The rivet may be fixed to a shield, armour, weapon haft or worn as a badge; the effect does not require a shield.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "rarity": "rare"
+      },
+      "sourceHash": "7ea81358f8364d203df38858ce91620d470347d951376945b88721ddffa51e3e"
+    },
+    {
+      "sourceId": "il.item.stone-script-chisel",
+      "name": "Stone-Script Chisel",
+      "type": "tool",
+      "folder": "Runic Rewards",
+      "img": "modules/unkindness-saga/assets/rune.svg",
+      "ownership": "observer",
+      "system": {
+        "description": {
+          "value": "<section class=\"ironfist-legacy il-slab il-bronze\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Stone-Script Chisel</h2><p>A masterwork runecarver’s tool. While using it for runic crafting, a proficient crafter may treat one normal failure by 1 or 2 points as a success that gains a Crafting Complication. This benefit can be used once per long rest.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+        }
+      },
+      "flags": {
+        "rarity": "uncommon"
+      },
+      "sourceHash": "ad6ed2faf59e4f63e0d063535e822a370dae0455e2df154d5d9dae23697b7f3b"
+    }
+  ]
+}

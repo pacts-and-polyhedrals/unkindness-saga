@@ -1,0 +1,1914 @@
+{
+  "actors": [
+    {
+      "sourceId": "il.actor.heddra",
+      "name": "Aunt Heddra Ironfist",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 13,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 12,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 15,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 14,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 13
+          },
+          "hp": {
+            "value": 42,
+            "max": 42,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 1,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Lower-tier household steward; affectionate, practical, and unwilling to confuse family loyalty with moral immunity.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Handaxe",
+          "type": "attack",
+          "bonus": 4,
+          "damage": "1d6+2",
+          "attacks": 1,
+          "damageType": "physical",
+          "description": ""
+        }
+      ],
+      "features": [
+        {
+          "name": "Household Authority",
+          "description": "Among Lowhearth households, Heddra can usually secure a hearing, shelter, food, or a messenger without a roll unless doing so creates serious danger."
+        }
+      ],
+      "sourceHash": "bad86f055e2b167abe39bdb36a328b600b2889216ab461cda623c1ce4014dc3f"
+    },
+    {
+      "sourceId": "il.actor.runa",
+      "name": "Runa Ironfist",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 12,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 14,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 18,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 12,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 16
+          },
+          "hp": {
+            "value": 88,
+            "max": 88,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Military engineer, Heddra’s daughter and Thorgrinn’s cousin. Concealed a safety warning and must decide whether technical service can be ethical.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Runic Hammer",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+4+1d6",
+          "attacks": 1,
+          "damageType": "bludgeoning/force",
+          "description": ""
+        },
+        {
+          "name": "Rune Bolt",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "2d8+4",
+          "attacks": 1,
+          "damageType": "force",
+          "description": ""
+        },
+        {
+          "name": "Pressure Ward",
+          "type": "utility",
+          "description": "Reaction: reduce damage to an adjacent creature or mechanism by 1d10+4."
+        }
+      ],
+      "features": [
+        {
+          "name": "Master Engineer",
+          "description": "Advantage on checks concerning pumps, pressure networks, dwarven engineering, and runic mechanisms."
+        }
+      ],
+      "sourceHash": "9c79e234411f5f6857148f933b31a8f0131064e25f449b84f7ede043fe0ed3d4"
+    },
+    {
+      "sourceId": "il.actor.baldrik",
+      "name": "Baldrik Ironfist",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 20,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 18,
+            "proficient": 0
+          },
+          "int": {
+            "value": 10,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 14,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 20
+          },
+          "hp": {
+            "value": 170,
+            "max": 170,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 9,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Thorgrinn’s brother. Still carries the repaired childhood shield. His arc is accountability, not secret possession or predetermined redemption.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Warhammer",
+          "type": "attack",
+          "bonus": 9,
+          "damage": "2d8+5",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Hold With Me",
+          "type": "utility",
+          "description": "Bonus Action: one willing ally within 10 feet has advantage on its next attack before Baldrik’s next turn."
+        },
+        {
+          "name": "The Old Shield",
+          "type": "utility",
+          "description": "Reaction: reduce damage to an adjacent willing ally by 2d8+4."
+        },
+        {
+          "name": "Second Wind",
+          "type": "utility",
+          "description": "Once per encounter, regain 25 HP as a bonus action."
+        }
+      ],
+      "features": [
+        {
+          "name": "Vanguard Captain",
+          "description": "Baldrik can coordinate disciplined Ironfist soldiers but does not possess supernatural authority over civilians or PCs."
+        }
+      ],
+      "sourceHash": "01023bb8ff019ce5f518b931e42b0a6b0a1a2f2b8b8a3458afb1b9c8867c142d"
+    },
+    {
+      "sourceId": "il.actor.hadrik",
+      "name": "Marshal-General Hadrik Varr",
+      "type": "npc",
+      "folder": "Ironfist Authorities",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 18,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 18,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 18,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 20
+          },
+          "hp": {
+            "value": 180,
+            "max": 180,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 10,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Marshal-General responsible for Last Bastion. A political antagonist who remains vulnerable to evidence, lawful removal, surrender, and ordinary player solutions.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Command-Blade",
+          "type": "attack",
+          "bonus": 9,
+          "damage": "2d8+4",
+          "attacks": 3,
+          "damageType": "slashing",
+          "description": ""
+        },
+        {
+          "name": "Redeploy",
+          "type": "utility",
+          "description": "Bonus Action: two willing allies within 30 feet may use reactions to move 15 feet."
+        },
+        {
+          "name": "Parry",
+          "type": "utility",
+          "description": "Reaction: +3 AC against one visible melee attack."
+        },
+        {
+          "name": "Legendary — Reposition",
+          "type": "utility",
+          "description": "Move 15 feet, provoking normally. Two legendary actions per round."
+        },
+        {
+          "name": "Legendary — Strike",
+          "type": "attack",
+          "bonus": 9,
+          "damage": "2d8+4",
+          "attacks": 1,
+          "damageType": "slashing",
+          "description": "Costs 2 legendary actions."
+        }
+      ],
+      "features": [],
+      "sourceHash": "96bdd66b50f852256ab9ab4957a46f243c060a52182086099deb16b29aa1e3d9"
+    },
+    {
+      "sourceId": "il.actor.brynja",
+      "name": "General Brynja Flintward",
+      "type": "npc",
+      "folder": "Ironfist Authorities",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 20,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 18,
+            "proficient": 0
+          },
+          "int": {
+            "value": 12,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 16,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 14,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 21
+          },
+          "hp": {
+            "value": 165,
+            "max": 165,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 9,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Defence general. Can become a principled ally when shown both credible evidence and a workable defence plan.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Warhammer",
+          "type": "attack",
+          "bonus": 9,
+          "damage": "1d10+5",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Hold the Line",
+          "type": "utility",
+          "description": "Reaction: when an ally within 10 feet would be pushed, knocked prone, or moved, Brynja grants advantage on the save/check and may move 5 feet toward them."
+        },
+        {
+          "name": "Defensive Order",
+          "type": "utility",
+          "description": "Bonus Action: up to PB allies within 30 feet gain +1 AC until the start of Brynja’s next turn while they remain within 5 feet of cover or an ally."
+        }
+      ],
+      "features": [],
+      "sourceHash": "0ccbb9ee89aeabc7342ecba372448bfdb4231153b16c7db3349600998d2015f5"
+    },
+    {
+      "sourceId": "il.actor.odran",
+      "name": "General Odran Brassmantle",
+      "type": "npc",
+      "folder": "Ironfist Authorities",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 12,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 14,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 16,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 18,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 17
+          },
+          "hp": {
+            "value": 96,
+            "max": 96,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 6,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Contracts and supply general. Motivated by stability, enforceable terms and the question of how everyone eats after the crisis.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Cane-Sword",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+3",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Terms of Engagement",
+          "type": "utility",
+          "description": "Once per encounter, Odran can force a 1-round pause in hostilities among creatures willing to hear terms. This is not mind control and fails against creatures determined to continue fighting."
+        }
+      ],
+      "features": [],
+      "sourceHash": "4cca0f5984966c98af0e5f931f99ec62b5a2ebe9102437d5d945af8d273187da"
+    },
+    {
+      "sourceId": "il.actor.dagnner",
+      "name": "Sergeant Dagnner",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 18,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 12,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 13,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 19
+          },
+          "hp": {
+            "value": 118,
+            "max": 118,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 7,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Righteous Vanguard sergeant seen in Barovia. Pragmatic, disciplined and increasingly concerned about being ordered into politically convenient atrocities.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Military Hammer",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "1d8+5",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Form Shield Wall",
+          "type": "utility",
+          "description": "Bonus Action: two adjacent allied soldiers gain +2 AC until one moves away or Dagnner’s next turn."
+        },
+        {
+          "name": "Interpose",
+          "type": "utility",
+          "description": "Reaction: reduce damage to adjacent ally by 1d10+3."
+        }
+      ],
+      "features": [],
+      "sourceHash": "6141890938ecc328ca34a45be72420cc1980dbbc19182109119b1c04b0dbd623"
+    },
+    {
+      "sourceId": "il.actor.edda",
+      "name": "Edda, Warden of the Fifth Finger",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 16,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 13,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 15,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 14,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 18
+          },
+          "hp": {
+            "value": 92,
+            "max": 92,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>First Ironfist authority the party meets after Barovia. Procedural rather than cruel; values accurate registers and functioning roads.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Spear",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+4",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Gate Discipline",
+          "type": "utility",
+          "description": "Allied guards within 15 feet gain advantage on checks to resist being deceived or rushed through a controlled checkpoint."
+        }
+      ],
+      "features": [],
+      "sourceHash": "b6ebec65be07011378c9d205e7cb4885df80265f1658ed3bd6c22396f1b27a4b"
+    },
+    {
+      "sourceId": "il.actor.yrsa",
+      "name": "Sister Yrsa Coalbraid",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 14,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 13,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 18,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 15,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 18
+          },
+          "hp": {
+            "value": 90,
+            "max": 90,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 6,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Shrine keeper, veteran medic and advocate for Thorgrinn’s bodily autonomy.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Forge-Mace",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+4",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Coalbraid Benediction",
+          "type": "utility",
+          "description": "3/day, heal an adjacent creature 2d8+4 HP or stabilize it and end frightened."
+        },
+        {
+          "name": "Witness of Stone",
+          "type": "utility",
+          "description": "Advantage on checks to authenticate oaths, burial records, and religious or memorial inscriptions."
+        }
+      ],
+      "features": [],
+      "sourceHash": "00cc03f4cd0b5a33fe1d95629dae107db2599b9659b39c759499608b71582af2"
+    },
+    {
+      "sourceId": "il.actor.tovik",
+      "name": "Tovik Deepgauge",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 14,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 15,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 11,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 15
+          },
+          "hp": {
+            "value": 52,
+            "max": 52,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 2,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Ninth Sluice foreman and keeper of the gauge record.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Work Hammer",
+          "type": "attack",
+          "bonus": 5,
+          "damage": "1d6+2",
+          "attacks": 1,
+          "damageType": "physical",
+          "description": ""
+        },
+        {
+          "name": "Read the Pressure",
+          "type": "utility",
+          "description": "Can identify dangerous changes in a visible pump or gauge without a roll; complex sabotage still requires investigation."
+        }
+      ],
+      "features": [],
+      "sourceHash": "d49738a544f1527a17204c245cad561b7e52712e6aa42e6ce56c17aed6be92bd"
+    },
+    {
+      "sourceId": "il.actor.venn",
+      "name": "Venn Stoneclerk",
+      "type": "npc",
+      "folder": "Ironfist Cast",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 9,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 12,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 13,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 12
+          },
+          "hp": {
+            "value": 26,
+            "max": 26,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 0.25,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Records clerk. Not a combatant; a vital witness to how orders and reports moved through the bureaucracy.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Dagger",
+          "type": "attack",
+          "bonus": 3,
+          "damage": "1d4+1",
+          "attacks": 1,
+          "damageType": "physical",
+          "description": ""
+        }
+      ],
+      "features": [
+        {
+          "name": "Archive Memory",
+          "description": "Advantage on checks to locate an indexed military record or identify a suspicious alteration in a registry."
+        }
+      ],
+      "sourceHash": "cb2517bab1db7789453fadcd99db65b35313ae894e70a59f5f064fb91c951b3d"
+    },
+    {
+      "sourceId": "il.actor.korga",
+      "name": "Korga Emberjaw",
+      "type": "npc",
+      "folder": "Cinder-Tusk Cast",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 22,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 14,
+            "proficient": 0
+          },
+          "con": {
+            "value": 20,
+            "proficient": 0
+          },
+          "int": {
+            "value": 12,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 16,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 18
+          },
+          "hp": {
+            "value": 220,
+            "max": 220,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 11,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "orc"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>War-chief whose grievance is legitimate but whose chosen answer is conquest. Can lose political authority, surrender, or be defeated without reducing his people to extensions of him.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Ember Cleaver",
+          "type": "attack",
+          "bonus": 10,
+          "damage": "2d10+6",
+          "attacks": 3,
+          "damageType": "slashing",
+          "description": ""
+        },
+        {
+          "name": "Breaking Roar",
+          "type": "save",
+          "ability": "wis",
+          "dc": 17,
+          "damage": "",
+          "damageType": "fear",
+          "description": "15-foot cone; on failure frightened until the end of Korga’s next turn."
+        },
+        {
+          "name": "Brace",
+          "type": "utility",
+          "description": "Reaction: reduce one instance of damage by 1d10+5."
+        },
+        {
+          "name": "Unbroken Will",
+          "type": "utility",
+          "description": "Twice per encounter, when Korga fails a save he may succeed instead and take 20 unavoidable damage."
+        },
+        {
+          "name": "Legendary — Reposition",
+          "type": "utility",
+          "description": "Move 15 feet, provoking normally. Two legendary actions per round."
+        },
+        {
+          "name": "Legendary — Cleave",
+          "type": "attack",
+          "bonus": 10,
+          "damage": "2d10+6",
+          "attacks": 1,
+          "damageType": "slashing",
+          "description": "Costs 2 legendary actions."
+        }
+      ],
+      "features": [],
+      "sourceHash": "10783445252cc83d3f27a06b10bfde518423d63d44d6b77c94498782ccd1c113"
+    },
+    {
+      "sourceId": "il.actor.urzha",
+      "name": "Urzha Deepwell",
+      "type": "npc",
+      "folder": "Cinder-Tusk Cast",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 17,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 18,
+            "proficient": 0
+          },
+          "int": {
+            "value": 14,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 17,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 16,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 17
+          },
+          "hp": {
+            "value": 100,
+            "max": 100,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "orc"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Civilian representative demanding water, secure homes, prisoner protections and accountability on both sides.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Longspear",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d10+4",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Hold the Truce",
+          "type": "utility",
+          "description": "Allies who can hear Urzha have advantage on the first check to avoid escalating a negotiation into violence, provided she is actively arguing for restraint."
+        }
+      ],
+      "features": [],
+      "sourceHash": "3ffcb2f9391070d476927367b9169a757ad12e54a049f4301fe8f59b4060fb46"
+    },
+    {
+      "sourceId": "il.actor.skrik",
+      "name": "Skrik Coilhand",
+      "type": "npc",
+      "folder": "Cinder-Tusk Cast",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 10,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 18,
+            "proficient": 0
+          },
+          "con": {
+            "value": 14,
+            "proficient": 0
+          },
+          "int": {
+            "value": 18,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 13,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 16
+          },
+          "hp": {
+            "value": 78,
+            "max": 78,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "goblin"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Goblin engineer and saboteur. Caused real harm, knows the lower pressure network, and can become Runa’s necessary collaborator.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Coilknife",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d6+4",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Pressure Bolt",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "2d8+4",
+          "attacks": 1,
+          "damageType": "force",
+          "description": ""
+        },
+        {
+          "name": "Remote Bleed Valve",
+          "type": "utility",
+          "description": "1/short rest, manipulate a visible pressure mechanism within 30 feet as though adjacent if he has studied its controls."
+        },
+        {
+          "name": "Flash Charge",
+          "type": "save",
+          "ability": "dex",
+          "dc": 16,
+          "damage": "4d6",
+          "damageType": "thunder",
+          "description": "10-foot radius; half on successful save."
+        }
+      ],
+      "features": [],
+      "sourceHash": "24d96ceaf95488ece939263ebf217613ace2e480c56647ab1406549fcec25e9d"
+    },
+    {
+      "sourceId": "il.actor.brakk",
+      "name": "Brakk Ash-Tusk",
+      "type": "npc",
+      "folder": "Cinder-Tusk Cast",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 18,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 14,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 12,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 14,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 14,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 18
+          },
+          "hp": {
+            "value": 125,
+            "max": 125,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 7,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "orc"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Tunnel captain used at the Ninth Sluice and comparable officer encounters. Mission-focused, not suicidal.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Tunnel Blade",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "2d6+4",
+          "attacks": 3,
+          "damageType": "slashing",
+          "description": ""
+        },
+        {
+          "name": "Rally",
+          "type": "utility",
+          "description": "Once per encounter, two allies within 30 feet gain 10 temporary HP and may use reactions to move 10 feet."
+        },
+        {
+          "name": "Punish an Opening",
+          "type": "utility",
+          "description": "Reaction: after an adjacent enemy misses with a melee attack, make one Tunnel Blade attack."
+        }
+      ],
+      "features": [],
+      "sourceHash": "fad54eabd71d807fa87e2cb1d1bf72e200f6242fb3316ad3a61432f5634fe043"
+    },
+    {
+      "sourceId": "il.actor.ketta",
+      "name": "Ketta Sparkfinger",
+      "type": "npc",
+      "folder": "Cinder-Tusk Cast",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 9,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 18,
+            "proficient": 0
+          },
+          "con": {
+            "value": 14,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 13,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 12,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 16
+          },
+          "hp": {
+            "value": 54,
+            "max": 54,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 3,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "goblin"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Goblin sapper who can serve as captive, witness, engineer or recurring foe depending on play.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Shortblade",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d6+4",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Bolt",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+4",
+          "attacks": 1,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Thunder Charge",
+          "type": "save",
+          "ability": "dex",
+          "dc": 16,
+          "damage": "3d6",
+          "damageType": "thunder",
+          "description": "Visible charge detonates at the start of Ketta’s next turn in a 10-foot radius; an adjacent creature can disable or throw it first."
+        }
+      ],
+      "features": [],
+      "sourceHash": "ed6a3049fba219212750bd0131760d504e849fc5263728735ed68c7e97ba9b4b"
+    },
+    {
+      "sourceId": "il.actor.ironfist-trooper",
+      "name": "Ironfist Trooper",
+      "type": "npc",
+      "folder": "Opposition Templates",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 16,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 14,
+            "proficient": 0
+          },
+          "int": {
+            "value": 10,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 12,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 10,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 17
+          },
+          "hp": {
+            "value": 32,
+            "max": 32,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 2,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Ordinary disciplined Ironfist soldier; holds objectives and surrenders when lawfully relieved or clearly abandoned.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Spear",
+          "type": "attack",
+          "bonus": 6,
+          "damage": "1d8+3",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Cover a Comrade",
+          "type": "utility",
+          "description": "Reaction: +2 AC to one adjacent willing ally against one visible attack."
+        }
+      ],
+      "features": [],
+      "sourceHash": "37c2e5df72bb0c9ba1a6864f513cfb194b3ff1685b183359cea65fdba8e96d3d"
+    },
+    {
+      "sourceId": "il.actor.shield-warden",
+      "name": "Ironfist Shield Warden",
+      "type": "npc",
+      "folder": "Opposition Templates",
+      "img": "modules/unkindness-saga/assets/ironfist.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 20,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 10,
+            "proficient": 0
+          },
+          "con": {
+            "value": 18,
+            "proficient": 0
+          },
+          "int": {
+            "value": 10,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 12,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 12,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 19
+          },
+          "hp": {
+            "value": 85,
+            "max": 85,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 25,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "dwarf"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Elite defender for records, doors and evacuation lanes.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Hammer",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "1d8+7",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Shield Press",
+          "type": "save",
+          "ability": "str",
+          "dc": 16,
+          "damage": "",
+          "damageType": "prone",
+          "description": "After a hammer hit, bonus action: push 5 feet or knock prone."
+        },
+        {
+          "name": "Interpose",
+          "type": "utility",
+          "description": "Reaction: reduce damage to an adjacent ally by 1d10+3."
+        }
+      ],
+      "features": [],
+      "sourceHash": "1ac1e3172bf9e7a70cfbb8350c1999c7863510100c19d036c4cca4ce76f777ef"
+    },
+    {
+      "sourceId": "il.actor.shock-trooper",
+      "name": "Cinder-Tusk Shock Trooper",
+      "type": "npc",
+      "folder": "Opposition Templates",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 20,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 12,
+            "proficient": 0
+          },
+          "con": {
+            "value": 16,
+            "proficient": 0
+          },
+          "int": {
+            "value": 10,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 12,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 12,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 17
+          },
+          "hp": {
+            "value": 78,
+            "max": 78,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 5,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "orc"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Heavy assault fighter used to clear routes for engineers.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Heavy Axe",
+          "type": "attack",
+          "bonus": 8,
+          "damage": "2d8+5",
+          "attacks": 2,
+          "damageType": "slashing",
+          "description": ""
+        },
+        {
+          "name": "Press the Line",
+          "type": "utility",
+          "description": "Bonus Action: move 15 feet toward a visible hostile creature; first hit against it this turn deals +1d6 damage."
+        }
+      ],
+      "features": [],
+      "sourceHash": "c1ba35619a79d2b07aaf053221c09d093389387fc646e415080074bb6de1b223"
+    },
+    {
+      "sourceId": "il.actor.goblin-sapper",
+      "name": "Goblin Sapper",
+      "type": "npc",
+      "folder": "Opposition Templates",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 10,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 18,
+            "proficient": 0
+          },
+          "con": {
+            "value": 14,
+            "proficient": 0
+          },
+          "int": {
+            "value": 16,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 12,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 10,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 16
+          },
+          "hp": {
+            "value": 40,
+            "max": 40,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 3,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "goblin"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Objective-focused engineer and saboteur.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Shortblade",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d6+4",
+          "attacks": 2,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Bolt",
+          "type": "attack",
+          "bonus": 7,
+          "damage": "1d8+4",
+          "attacks": 1,
+          "damageType": "piercing",
+          "description": ""
+        },
+        {
+          "name": "Thunder Charge",
+          "type": "save",
+          "ability": "dex",
+          "dc": 16,
+          "damage": "3d6",
+          "damageType": "thunder",
+          "description": "Visible charge; 10-foot radius; can be thrown or disabled before detonation."
+        }
+      ],
+      "features": [],
+      "sourceHash": "d35d95b9ba58d390704f9dc516f28f097230ba0ca5ce41641c90f673d04140d5"
+    },
+    {
+      "sourceId": "il.actor.bastion-engine",
+      "name": "The Bastion Engine",
+      "type": "npc",
+      "folder": "Opposition Templates",
+      "img": "modules/unkindness-saga/assets/cindertusk.svg",
+      "ownership": "gm",
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 24,
+            "proficient": 0
+          },
+          "dex": {
+            "value": 8,
+            "proficient": 0
+          },
+          "con": {
+            "value": 22,
+            "proficient": 0
+          },
+          "int": {
+            "value": 3,
+            "proficient": 0
+          },
+          "wis": {
+            "value": 12,
+            "proficient": 0
+          },
+          "cha": {
+            "value": 1,
+            "proficient": 0
+          }
+        },
+        "attributes": {
+          "ac": {
+            "calc": "flat",
+            "flat": 20
+          },
+          "hp": {
+            "value": 240,
+            "max": 240,
+            "temp": 0
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "cr": 12,
+          "alignment": "",
+          "type": {
+            "value": "humanoid",
+            "subtype": "construct"
+          },
+          "biography": {
+            "value": "<section class=\"ironfist-legacy il-slab il-stone\"><div class=\"il-knot\">◆ ◈ ◆</div><h2>Dossier</h2><p>Heartworks guardian/control engine. A hazard with hit points, not a moral person and not powered by Thorgrinn or any captive soul.</p><div class=\"il-knot il-bottom\">◆ ◈ ◆</div></section>"
+          }
+        },
+        "traits": {
+          "size": "med"
+        }
+      },
+      "actions": [
+        {
+          "name": "Pressure Hammer",
+          "type": "attack",
+          "bonus": 10,
+          "damage": "2d10+7",
+          "attacks": 2,
+          "damageType": "bludgeoning",
+          "description": ""
+        },
+        {
+          "name": "Scalding Vent",
+          "type": "save",
+          "ability": "dex",
+          "dc": 17,
+          "damage": "5d8",
+          "damageType": "fire",
+          "description": "20-foot line of superheated steam; half on success."
+        },
+        {
+          "name": "Hydraulic Shock",
+          "type": "save",
+          "ability": "str",
+          "dc": 17,
+          "damage": "3d10",
+          "damageType": "bludgeoning",
+          "description": "15-foot radius; on failure pushed 15 feet and knocked prone."
+        },
+        {
+          "name": "Locked Instruction",
+          "type": "utility",
+          "description": "The engine stops attacking when all three regulator stations are completed or its operating state is otherwise safely disabled. It contains no captive soul."
+        }
+      ],
+      "features": [],
+      "sourceHash": "6c96c2774657c98c24bcf0c71f796a02773a8e6487adedea4771fe4e5c79f5e6"
+    }
+  ]
+}

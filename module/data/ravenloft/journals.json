@@ -1,0 +1,954 @@
+{
+ "journals": [
+  {
+   "sourceId": "cu.journal.command",
+   "name": "00 — START HERE: THE LAST TWO SESSIONS",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "cmd.start",
+     "name": "Exact Handoff — Nov 8",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Start here — do not replay completed material</h2><p>The module now begins at the precise session cutoff.</p><div class=\"cu-readaloud\"><strong>Location:</strong> hidden summoning chamber beneath Wachter House, Vallaki.<br><br><strong>Time:</strong> late evening, shortly after the party infiltrated Vallaki around 10 PM.<br><br><strong>Immediate situation:</strong> Lady Wachter and her sons Karl and Nikolai are dead; their bodies are hidden in Damien's portable hole. Finn escaped in bat form. The resurrected servant was paid 32 pp and sent toward the Abbey. The party found shredded black-wax documents bearing Strahd's crest and then found Arl in the summoning circle.<br><br><strong>The actual cliffhanger:</strong> Arl's terms have been accepted, but the contract has not yet been written/signed and he has not been released.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "cmd.truth",
+     "name": "Continuity That Is Already True",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not accidentally reset these choices</h2><ul><li>Strahd’s invitation letter is still sealed/unopened.</li><li>The party planned to take it to Van Richten.</li><li>Saraphene already delivered Ravenloft intelligence and departed.</li><li>Tatyana answered the Sending: Ravenloft is watching; Strahd is afraid; she is “sometimes” herself and sounded more like frightened Ireena.</li><li>The party created <strong>nine flasks of holy water</strong> total: three each from Damien, Vesper and Legna.</li><li>Thorgrinn’s mechanical arm has been adapted to use silver shot.</li><li>Legna has Thorgrinn’s potion of fire giant strength.</li><li>Bunch has the Cloak of the Bat and Stone of Controlling Earth Elementals available among her equipment.</li><li>Azrathox is not inside Vallaki. He agreed to meet them after they leave the city.</li><li>Thorgrinn has Baldrik’s unopened family-crested keepsake box with the star-shaped lock.</li><li>Madam Eva’s final five prophecies have already been spoken.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "cmd.flow",
+     "name": "Run Order — From Here to Campaign End",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The complete finale path</h2><ol><li><strong>Sign & free Arl.</strong> 10–20 min.</li><li><strong>Reach Van Richten.</strong> Use Vallaki civil-war visuals, not a mandatory street combat. 10–20 min.</li><li><strong>Open Strahd’s letter at the workshop.</strong> 10 min.</li><li><strong>Van Richten’s final briefing & supplies.</strong> 30–45 min.</li><li><strong>One optional Vallaki intervention.</strong> 0–30 min.</li><li><strong>Exit Vallaki and reunite with Azrathox.</strong> 10 min.</li><li><strong>Approach Ravenloft / War of Broken Gods begins.</strong> 30–60 min.</li><li><strong>Brides / Abbot / Finn / Tatyana.</strong> 2–3 hours.</li><li><strong>Strahd mythic phases + Dark Power crisis + Wish.</strong> 3–5 hours.</li><li><strong>Coffin, Barovia collapse, prophecy/arc resolution, Ironfist transition.</strong> 30–60 min.</li></ol><p>The intended split is after Finn/Tatyana or at Strahd’s first physical appearance.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "cmd.win",
+     "name": "What “Finish the Campaign” Means",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Five end conditions</h2><ol><li>Strahd reaches a <strong>permanent</strong> death and his coffin cannot restore him.</li><li>Neither Orcus nor Vampyr inherits Barovia through Strahd’s ending.</li><li>The Wish/Edict of Finality makes at least the active Dark Power manifestations genuinely finishable in Barovia.</li><li>The five Tarokka prophecies receive opportunities to become true through player choice—not forced outcomes.</li><li>The final Vecna/Orcus/Vampyr Attention totals and player choices determine the supernatural shadow over the next arc while the physical exit still points toward Thorgrinn’s family.</li></ol><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "7134792f298f5685"
+  },
+  {
+   "sourceId": "cu.journal.rules",
+   "name": "01 — BLACK SUN & RAVENLOFT RULES",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/16-veil-of-the-black-sun.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "rules.sun",
+     "name": "Veil of the Black Sun",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The sunlight rule</h2>\n<p>Strahd, his brides and Finn possess the <strong>Veil of the Black Sun</strong>.</p>\n<p>Ordinary sunlight does not harm them. <em>Daylight</em> does not trigger their sunlight weakness. Normal radiant damage still works normally.</p>\n<p><strong>Artifact sunlight</strong> penetrates the Veil. A protected vampire beginning its turn in artifact sunlight takes <strong>15 radiant damage</strong>, cannot regenerate, cannot enter mist-form escape, and cannot use Ravenloft wall-phasing until the beginning of its next turn.</p>\n<p><strong>Dispel Magic:</strong> DC 18 spellcasting ability check. Success suppresses the Veil until the beginning of the caster's next turn.</p>\n<p>The Sunsword and the strongest anti-vampire manifestations of the Holy Symbol qualify. A similarly potent sacred artifact can qualify at GM discretion.</p>\n<p>This is meant to reward the campaign artifacts rather than make them irrelevant.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "rules.bridemist",
+     "name": "Bride mist rule",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Defeating a bride</h2>\n<p>When a bride reaches 0 HP, the Veil tries to turn them into mist.</p>\n<p>The party has until the end of the next round to expose the fallen bride to artifact sunlight or another powerful anti-vampire effect.</p>\n<ul>\n<li><strong>Success:</strong> the bride is destroyed.</li>\n<li><strong>Failure:</strong> they escape into Ravenloft and may return as a complication in Strahd Phase II with about 40 HP.</li>\n</ul>\n<p>This teaches the same finality rule the party will need against Strahd.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "1f281c5d63f2e944"
+  },
+  {
+   "sourceId": "cu.journal.prelude",
+   "name": "02 — THE LAST ROAD: VALLAKI TO RAVENLOFT",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "road.exit",
+     "name": "1 — Leave Vallaki",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The city behind them</h2><p>If the party chose a Vallaki intervention, resolve its consequence before they cross the gate. Otherwise do not invent a pursuit simply to delay Ravenloft.</p><div class=\"cu-readaloud\">The gate closes behind you. For a few steps the chanting is still audible. Then the trees swallow Vallaki and the road becomes only mud, moonlight and the sound of five people who have run out of reasons to turn back.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "road.dragon",
+     "name": "2 — Azrathox Returns",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Rendezvous</h2><div class=\"cu-readaloud\">Something enormous moves above the treeline. Red scales catch moonlight. Azrathox lands hard enough to send wet leaves spiralling across the road.<br><br>He looks at each of you, then toward Vallaki.<br><br>“You did not ask me to massacre it.”<br><br>A pause.<br><br>“I am learning this may be considered progress.”</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Bunch’s relationship with the dragon matters. He is no longer merely hired transport, but he still wants his share of Ravenloft’s treasure.</p>"
+    },
+    {
+     "sourcePageId": "road.baldrik",
+     "name": "3 — Thorgrinn’s Unopened Box",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Ironfist foreshadowing that is actually established</h2><p>Do not add another Baldrik letter. Thorgrinn already received the stronger object: the unopened keepsake box.</p><p>During flight, a hard impact or magical disturbance causes the box to shift in Thorgrinn’s haversack. He recognizes the star-shaped lock and remembers making this style with Baldrik as children.</p><p>No key appears. The box stays closed. The important feeling is that <strong>Baldrik expected something of Thorgrinn’s future strongly enough to leave this behind</strong>, even after seeing him dead.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "road.manifest",
+     "name": "4 — The Prisoners Reach the Castle First",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Trigger the War of Broken Gods</h2><div class=\"cu-readaloud\">Ravenloft appears through the storm—and the mountain below it moves.<br><br>Two immense horns break the grave-soil beneath the castle as green corpse-light begins climbing toward the walls.<br><br>At the same moment every high window bleeds upward. The blood gathers above the towers into a red-black wound in the sky.<br><br>Far ahead, an infernal flare answers from the castle approach. Arl has reached Ravenloft.<br><br>Then the bells of the castle begin to ring.<br><br>Not for you.<br><br>For them.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Move directly into <strong>03A — The War of Broken Gods</strong>. Arl defaults toward Orcus. The players decide where Azrathox goes.</p>"
+    }
+   ],
+   "sourceHash": "c5e50b4b0d1a2d7a"
+  },
+  {
+   "sourceId": "cu.journal.approach",
+   "name": "03 — THE CASTLE OPENS ITS MOUTH",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "app.dragon",
+     "name": "Azrathox and the Storm",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The approach</h2>\n<p>Azrathox carries the Unkindness toward Ravenloft. Lightning reveals the castle by design: Strahd wants his entrance framed properly.</p>\n<p>Halfway across the valley, Strahd's voice comes from the thunder:</p>\n<blockquote class=\"cu-readaloud\">“You brought me a dragon.”<br><br>“That is new.”</blockquote>\n<p>The line matters: even Strahd has not seen <strong>this exact version</strong> of events.</p>\n<p>Ancient castle wards prevent Azrathox from entering the interior. Do not make the dragon irrelevant; gargoyles and enormous bat swarms tear free of the towers and Azrathox fights them above the castle while the party enters. Periodically let the party hear impacts through the ceiling.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "app.dinner",
+     "name": "The Unattended Dinner",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The front door is unlocked</h2>\n<p>A dining table is set for five. Five glasses. Five chairs. A sixth chair at the head is turned backwards.</p>\n<p>On Thorgrinn's plate is a small piece of dwarven mail or correspondence already opened by Strahd. It contains a simple line from home:</p>\n<blockquote class=\"cu-readaloud\">“Baldrik says there may be roads where ordinary roads end. If you find him, both of you come home.”</blockquote>\n<p>Strahd has written underneath:</p>\n<blockquote class=\"cu-readaloud\"><strong>He found you. One of you simply failed to return.</strong></blockquote>\n<p>The doors close. The organ begins. The gauntlet starts.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "cfc5c56f313c7fd7"
+  },
+  {
+   "sourceId": "cu.journal.lair",
+   "name": "04 — STRAHD AS THE INVISIBLE LAIR BOSS",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "lair.actions",
+     "name": "Castle Actions",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Initiative 20 during the bride gauntlet</h2>\n<p>Strahd is not physically present. His voice comes from portraits, mirrors, fireplaces, statues, corpses, the organ, or directly through a bride.</p>\n<p>Choose one Castle Action at initiative 20:</p>\n<p><strong>The House Moves.</strong> A 20-foot section of floor/wall/stair shifts. Creatures there make DC 17 Dexterity saves or are moved up to 15 feet to spaces Strahd chooses.</p>\n<p><strong>The Curtains Reach.</strong> One creature makes DC 17 Strength or Dexterity save or is Restrained by living shadow until it uses an action to escape.</p>\n<p><strong>Blackout.</strong> Mundane and non-artifact magical light is extinguished. Artifact sunlight remains. Strahd: “There. Much better.”</p>\n<p><strong>The Master's Courtesy.</strong> One bride moves up to half speed without provoking and may end one Grappled or Restrained condition on themselves.</p>\n<p><strong>The Organ Plays.</strong> DC 17 Constitution save; 14 thunder + 14 psychic and pushed 10 feet on failure; half damage and no push on success.</p>\n<p><strong>A Word in the Ear.</strong> DC 17 Wisdom save; on failure disadvantage on the target's next attack roll or saving throw. Once a character succeeds against this action, they become immune to it.</p>\n<p>Use separation, movement and humiliation more often than raw damage.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "lair.tone",
+     "name": "How Strahd Speaks",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Performance rule</h2>\n<p>As long as Strahd calls them <strong>the Unkindness</strong>, he believes he owns the story.</p>\n<p>During the brides he is conversational and quiet. During Phase I he is entertained. Phase II is when he starts using individual names. Phase III contains no collective nickname at all.</p>\n<p>General lines:</p>\n<blockquote class=\"cu-readaloud\">“There you are. I was beginning to think you had mistaken surviving for arriving.”</blockquote>\n<blockquote class=\"cu-readaloud\">“An Unkindness of ravens. You circle death so faithfully. One would almost think you worship it.”</blockquote>\n<blockquote class=\"cu-readaloud\">“I invited you to dinner. You burned my invitation. I invited you to a wedding. At least your manners have improved.”</blockquote>\n<blockquote class=\"cu-readaloud\">“You have killed me before. That is the amusing part. Usually you don't remember.”</blockquote>\n<blockquote class=\"cu-readaloud\">“The book told you? How terribly rude. I had grown rather fond of watching you discover it again.”</blockquote>\n<p>For Thorgrinn:</p>\n<blockquote class=\"cu-readaloud\">“Your brother mourned you.”</blockquote>\n<p>Later:</p>\n<blockquote class=\"cu-readaloud\">“What will he call you when he sees you again, I wonder? Brother? Machine? Miracle?”</blockquote>\n<p>And, when he realizes Thorgrinn received something from Baldrik:</p>\n<blockquote class=\"cu-readaloud\">“Your brother left you a box. He expected you to understand the lock.”</blockquote><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "bbfaef32c6795419"
+  },
+  {
+   "sourceId": "cu.journal.brides1",
+   "name": "05 — MOVEMENT I: ANASTRASYA & VOLENTA",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/08-volenta-oathbreaker-bride.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "b1.setup",
+     "name": "The Ballroom",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Ballroom</h2>\n<p>The ballroom lights ignite. <strong>Anastrasya is already dancing alone.</strong></p>\n<p>Volenta is not on the ceiling. He stands at the far end of the room in blackened plate, a cracked bridal mask fixed over part of his face, his sword point resting on the floor as though he has been waiting through an entire ceremony for the Unkindness to arrive.</p>\n<p>Strahd says:</p>\n<blockquote class=\"cu-readaloud\">“You have met some members of my household.”<br><br>“Ana has met all of you.”<br><br>“Volenta prefers longer courtships.”</blockquote>\n<p><strong>Anastrasya</strong> manipulates movement, sight lines and attention. <strong>Volenta</strong> is the male Oathbreaker bride Madam Eva described: patient, martial and predatory. He does not frenzy. He selects the character who becomes isolated and turns the ballroom into a duel they did not agree to fight.</p>\n<h3>Environmental beats</h3>\n<ul>\n<li><strong>Round 2 — The First Dance Ends:</strong> chandeliers fall. DC 16 Dexterity save, 3d10 bludgeoning on failure, half on success; fallen chandeliers create difficult terrain. Volenta uses the new lanes to cut one character away from the others.</li>\n<li><strong>Round 3 — Processional:</strong> the walls rotate, narrowing and lengthening the ballroom. Anastrasya may move one willing allied vampire 15 feet as part of the change. Volenta should use Broken Vow Aura to deny reactions while crossing the new lane.</li>\n<li><strong>Round 4 — The Groom in Every Mirror:</strong> every mirror shows Strahd behind one character. An attack against the correct mirror destroys it and cancels Strahd's next Castle Action. Volenta immediately marks whoever attacks the wrong mirror with <em>Months, Not Minutes</em>.</li>\n</ul>\n<h3>How Volenta Fights</h3>\n<p>Volenta opens with <strong>Dreadful Aspect</strong> if he can catch at least three characters. He then uses <strong>Black Oath Blade</strong> and holds <strong>Sanguine Smite</strong> for a target who is frightened, isolated or already committed to protecting someone else. He should feel like an Oathbreaker paladin who has had centuries to learn patience, not a generic vampire bruiser.</p>\n<p>If Anastrasya is threatened, <strong>Unholy Intercession</strong> lets him cross the floor and punish the attacker. If Volenta is exposed to artifact sunlight, his poise finally cracks.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "2be6191399a1f26b"
+  },
+  {
+   "sourceId": "cu.journal.brides2",
+   "name": "06 — MOVEMENT II: LUDMILLA",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/09-nightglass-pylon.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "b2.lab",
+     "name": "The Laboratory of Night",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Setup</h2>\n<p>The chamber is arranged like someone has spent months learning how to kill the party.</p>\n<p>There are diagrams of mechanical Thorgrinn, Raven Queen feathers, the Holy Symbol, Finn's reaction to <em>Daylight</em>, and the Sunsword.</p>\n<p>Strahd says:</p>\n<blockquote class=\"cu-readaloud\">“Ludmilla believes preparation defeats chaos.”<br><br>“You may demonstrate the flaw in her hypothesis.”</blockquote>\n<p>Three <strong>Nightglass Pylons</strong> surround the room. While at least two remain, Ludmilla resists non-artifact radiant damage. Artifact sunlight always cuts through.</p>\n<p>Her notes reveal the rule explicitly:</p>\n<blockquote class=\"cu-readaloud\"><strong>It does not overpower the veil. It declares the veil irrelevant.</strong></blockquote>\n<p>That sentence gives the players confidence that the artifacts they earned matter.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "f931554e755eedd4"
+  },
+  {
+   "sourceId": "cu.journal.abbot",
+   "name": "07 — THE ABBOT AT THE ALTAR",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/02-the-abbot.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "abbot.social",
+     "name": "The Wedding Officiant",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not default to another boss fight</h2>\n<p>The Abbot is preparing the altar. He still believes some version of the wedding may end Barovia's suffering because Strahd has given him one more promise to rationalize.</p>\n<p>Run a social challenge: <strong>3 successes before 2 failures, DC 16</strong>.</p>\n<p>Valid approaches include Religion, Insight, Persuasion, presenting Strahd's betrayals, and confronting him with the death of Anya/Vasilka. Good player-created approaches should count.</p>\n<p><strong>Success:</strong> he finally realizes Strahd wanted to watch him keep trying. He leaves the altar after one healing miracle: every member of the Unkindness regains 20 HP and may end one disease, curse, or condition currently affecting them.</p>\n<p><strong>Failure without violence:</strong> he blesses Finn with 30 temporary HP and withdraws.</p>\n<p><strong>If attacked:</strong> use the Abbot actor, but do not force him to fight to the death.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "69a580bbfc566276"
+  },
+  {
+   "sourceId": "cu.journal.finn",
+   "name": "08 — FINN: THE LAST DOOR",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/01-finn-the-sanguine-son.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "finn.setup",
+     "name": "The Sanguine Son",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The chapel</h2>\n<p>Finn waits alone. No spawn, no bride, no disposable minions. Strahd wants this choice to belong to the Unkindness.</p>\n<p>Finn is dressed for the wedding court and looks healthier than he ever did alive.</p>\n<p>Strahd says:</p>\n<blockquote class=\"cu-readaloud\">“You wanted him back.”<br><br>“I merely listened.”</blockquote>\n<p>Finn smiles:</p>\n<blockquote class=\"cu-readaloud\">“Don't make this weird.”</blockquote>\n<p>Then combat begins.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "finn.chains",
+     "name": "The Three Chains of Claim",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Saving Finn</h2>\n<p>Finn has three <strong>Chains of Claim</strong>. They are emotional/metaphysical restraints, not targetable objects.</p>\n<p><strong>The Sanguine Moon.</strong> Strahd gave Finn his body back. Challenge the belief that resurrection creates ownership.</p>\n<p><strong>The Rejected Self.</strong> Finn insists his old self is gone. Show that transformation does not erase identity. Thorgrinn is an obvious counterexample.</p>\n<p><strong>The Master's Gift.</strong> Finn believes Strahd made him stronger. Show that usefulness is not the same as being valued.</p>\n<p>Breaking a chain normally requires an action and a meaningful DC 16 Persuasion, Insight, Religion, or other justified check. A powerful campaign callback may simply work.</p>\n<p>Excellent callbacks include Waterdeep, Justin, Finn's old companions, his death, Madam Eva's quick-hand/careful-hand warning, and his fear of rats.</p>\n<p>When all three chains break, Finn stops fighting. He looks toward Strahd's voice:</p>\n<blockquote class=\"cu-readaloud\">“You knew.”</blockquote>\n<p>Strahd answers:</p>\n<blockquote class=\"cu-readaloud\">“Of course.”</blockquote>\n<p>If Finn turns, <strong>once per Strahd phase he may cancel one Ravenloft Lair Action</strong>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "finn.rats",
+     "name": "The Rat Beat",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Halfway through the fight</h2>\n<p>Strahd releases rats into the chapel solely to humiliate Finn.</p>\n<p>Finn freezes for a fraction of a second.</p>\n<p>The old fear is still there.</p>\n<p>If the players respond emotionally rather than treating this merely as a mechanical vulnerability, grant advantage on the next attempt to break a Chain.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "b83ae15ae1fa5daf"
+  },
+  {
+   "sourceId": "cu.journal.tatyana",
+   "name": "09 — IREENA / TATYANA",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "tat.choice",
+     "name": "Her choice",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Not another bride stat block</h2>\n<p>Ireena/Tatyana appears after Finn's resolution. She is pale, vampiric, Tatyana-aware, familiar and sad.</p>\n<p>If someone says <strong>“We came to save you,”</strong> she hardens.</p>\n<p>If someone says <strong>“We failed you,”</strong> she listens.</p>\n<p>If someone says <strong>“You don't belong to him,”</strong> she looks toward the dark where Strahd has been speaking.</p>\n<p>Her central line:</p>\n<blockquote class=\"cu-readaloud\">“You still think this is about getting me out.”<br><br>“It is about whether he is allowed to keep choosing for everyone.”</blockquote>\n<p>Then the chapel doors open.</p>\n<p>Strahd is standing immediately behind the party.</p>\n<blockquote class=\"cu-readaloud\">“At last.”</blockquote>\n<p>He looks at the bodies, Finn, Tatyana and the Unkindness.</p>\n<blockquote class=\"cu-readaloud\">“Well.”<br><br>“This has become inconvenient.”</blockquote>\n<p>This is the ideal end of Session One.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "92319d8677b89436"
+  },
+  {
+   "sourceId": "cu.journal.rest",
+   "name": "10 — STRAHD’S COURTESY",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "rest.offer",
+     "name": "The short rest",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>An absurd offer</h2>\n<p>Strahd offers the party a genuine short rest:</p>\n<blockquote class=\"cu-readaloud\">“You have travelled a considerable distance.”<br><br>“Drink. Bind your wounds. Pray if you still find it comforting.”<br><br>“I have waited centuries.”<br><br>“An hour will not inconvenience me.”</blockquote>\n<p><strong>If accepted:</strong> allow a genuine Short Rest. Strahd begins Phase I with <strong>30 temporary HP</strong> because he also prepared.</p>\n<p><strong>If refused:</strong> Strahd receives no temporary HP and cannot use a Lair Action during round one.</p>\n<p>Both choices are valid.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "f3635f58d933ccbc"
+  },
+  {
+   "sourceId": "cu.journal.phase1",
+   "name": "11 — STRAHD PHASE I: THE COUNT WHO KNOWS YOU",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "p1.run",
+     "name": "Run the phase",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Elegant Strahd</h2>\n<p>Use <strong>Strahd — Phase I</strong>.</p>\n<p>He is still playing. He walks when he could run. He uses movement, charm, walls and reach to force the party to waste actions finding him.</p>\n<p>Shared across all phases:</p>\n<ul>\n<li>Save DC 18.</li>\n<li>Attack +10/+11.</li>\n<li>Four Legendary Resistances total across the confrontation.</li>\n<li>At each phase transition he regains one expended Legendary Resistance, up to four.</li>\n<li>Castle Step fails under artifact sunlight.</li>\n</ul>\n<h3>Phase I lair ideas</h3>\n<ul>\n<li>Rotate a staircase.</li>\n<li>Create a door where there was none.</li>\n<li>A character's shadow attacks for 3d8 necrotic.</li>\n<li>A portrait becomes a portal.</li>\n<li>Tilt the floor and move creatures 20 feet.</li>\n</ul>\n<h3>At 0 HP</h3>\n<p>Strahd looks surprised, then smiles:</p>\n<blockquote class=\"cu-readaloud\">“Oh.”<br><br>“So it is this version.”</blockquote>\n<p>He explodes into bats. The Heart begins beating through the stone. Start Phase II.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "9d6e888a1e04a517"
+  },
+  {
+   "sourceId": "cu.journal.phase2",
+   "name": "12 — STRAHD PHASE II: THE LORD IS THE CASTLE",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/11-heart-chain-stone.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "p2.run",
+     "name": "Heart of Ravenloft",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Objective phase</h2>\n<p>Use <strong>Strahd — Phase II</strong> plus three Heart Chain actors.</p>\n<p>The battlefield should be vertical: staircases, balconies, the Heart, black fog.</p>\n<p>Three chains connect Strahd to Ravenloft:</p>\n<p><strong>Blood:</strong> 35 HP, AC 17. Destroying it deals 20 irresistible radiant/force to Strahd and reduces Phase II regeneration from 20 to 10. Phase III gets no regeneration from this chain.</p>\n<p><strong>Stone:</strong> 35 HP, AC 17. Destroying it deals 20 damage and removes Castle Step for the rest of the fight.</p>\n<p><strong>Dominion:</strong> 35 HP, AC 17. Destroying it deals 20 damage and removes one Legendary Action per round.</p>\n<p>The party may ignore the chains and focus Strahd. The chains are advantages, not mandatory puzzle keys.</p>\n<h3>Eternal Night</h3>\n<p>Ordinary magical light cannot illuminate the chamber. Artifact sunlight cuts visible corridors through the darkness.</p>\n<h3>The mask slips</h3>\n<p>At roughly half HP, Strahd stops saying “the Unkindness” and addresses individual characters by name.</p>\n<p>For Thorgrinn:</p>\n<blockquote class=\"cu-readaloud\">“Your brother opened a road into my country.”<br><br>“Perhaps he will be the one who leads you out.”</blockquote>\n<p>At 0 HP the Heart ruptures, the floor collapses, and Phase III begins in the catacombs.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "1e4d24f0fb5bcab8"
+  },
+  {
+   "sourceId": "cu.journal.phase3",
+   "name": "13 — STRAHD PHASE III: THE DEVIL WITHOUT THE MASK",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "p3.run",
+     "name": "The frightened predator",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>No more courtliness</h2>\n<p>Use <strong>Strahd — Phase III</strong>.</p>\n<p>His jaw distends, shadow mismatches his body, and movement becomes animalistic. No Charm. No theatrical patience.</p>\n<p>This is the first phase in which he willingly attacks a fallen character.</p>\n<h3>Tatyana's choice</h3>\n<p>At approximately half HP, Strahd orders Tatyana to come to him.</p>\n<p>If the party treated her entirely as a helpless object to recover, she rejects both sides and leaves.</p>\n<p>If they respected her agency, she says:</p>\n<blockquote class=\"cu-readaloud\">“No.”</blockquote>\n<p>Remove one remaining Legendary Resistance from Strahd and reveal the coffin's location. Set Coffin Distance to 4 instead of 5.</p>\n<p>If Finn was saved, his presence makes Strahd's loss of control even more visible.</p>\n<h3>Voice progression</h3>\n<p>Bloodied:</p>\n<blockquote class=\"cu-readaloud\">“I brought you here.”</blockquote>\n<p>Later:</p>\n<blockquote class=\"cu-readaloud\">“I made this possible.”</blockquote>\n<p>Then:</p>\n<blockquote class=\"cu-readaloud\">“You are nothing without this place!”</blockquote>\n<p>If they remind him they destroyed the Amber powers:</p>\n<blockquote class=\"cu-readaloud\">“I know.”</blockquote>\n<p>That is the first time his voice should sound afraid.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "a7524d16115f4cab"
+  },
+  {
+   "sourceId": "cu.journal.coffin",
+   "name": "14 — THE COFFIN CHASE & PERMANENT DEATH",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/13-strahds-coffin.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "coffin.chase",
+     "name": "Five-round chase",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Crimson mist</h2>\n<p>When Phase III reaches 0 HP, Strahd becomes crimson mist racing toward his coffin.</p>\n<p>Start at <strong>Distance 5</strong>. If Tatyana revealed the location, start at <strong>Distance 4</strong>.</p>\n<p>Each round every character may use movement and one action to overcome an obstacle or reduce Distance.</p>\n<p>Examples:</p>\n<ul>\n<li>Athletics smashes through a closing route.</li>\n<li>Acrobatics crosses broken stairs.</li>\n<li>Arcana interferes with the mist's supernatural movement.</li>\n<li>Religion follows the vampiric bond.</li>\n<li>Perception/Investigation uses the Tome.</li>\n<li>A spell that genuinely bypasses an obstacle simply works.</li>\n</ul>\n<p>A successful contribution reduces Distance by 1. An exceptional solution may reduce it by 2. A serious failure can increase it by 1.</p>\n<p>If Finn survived, once during the chase he can say <strong>“This way.”</strong> Reduce Distance by 1.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "coffin.final",
+     "name": "The last anchor",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Strahd's coffin</h2>\n<p><strong>AC 17, 50 HP, resistance to nonmagical damage.</strong></p>\n<p>Artifact sunlight touching the coffin suppresses all vampire regeneration.</p>\n<p>Once the party reaches it, they have <strong>three rounds</strong> before Strahd reforms.</p>\n<p>If the coffin is destroyed first, the mist is forced to materialize. Strahd returns with about <strong>60 HP</strong>, no Legendary Resistances, no regeneration, and no castle phasing. This is not a fourth full phase; let the players execute the vampire.</p>\n<p>If he reforms before the coffin breaks, he returns at about <strong>80 HP</strong> and fights until the anchor is destroyed. Do not reset the entire encounter.</p>\n<h3>Permanent death</h3>\n<p>When the coffin is gone and Strahd reaches 0 again, the Amber cycle fails to catch him.</p>\n<p>He looks upward, waiting for the old return.</p>\n<p>Nothing answers.</p>\n<p>Then:</p>\n<blockquote class=\"cu-readaloud\">“What did you do?”</blockquote>\n<p>Let a player answer.</p>\n<p>Then he dies.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "5a29da45b4daa4bc"
+  },
+  {
+   "sourceId": "cu.journal.collapse",
+   "name": "15 — BAROVIA DIES / IRONFIST BEGINS",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "collapse.domain",
+     "name": "1 — The Domain Collapses",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>No victory lap inside Ravenloft</h2><p>When Strahd dies permanently and no Dark Power inherits the ending, Barovia begins losing the structure that held it apart from the wider planes.</p><div class=\"cu-readaloud\">Every flame goes out.<br><br>The moon disappears.<br><br>For one impossible second there is no wind anywhere in Barovia.<br><br>Then Ravenloft begins turning into mist from the highest tower downward.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Outsiders are ejected rather than erased. Trapped souls can finally rejoin the natural cycle.</p>"
+    },
+    {
+     "sourcePageId": "collapse.dark",
+     "name": "2 — Resolve the Cosmic Shadow",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Before the Mists take them</h2><p>Read the Vecna / Orcus / Vampyr Attention totals and the final disposition of each manifested power. This determines the supernatural thread that survives Barovia.</p><p>A tie is allowed. Do not force a single villain if the party repeatedly courted two.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "collapse.box",
+     "name": "3 — The Keepsake Box Reacts",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The real Baldrik bridge</h2><p>As the Mists lose their old borders, Thorgrinn’s family-crested keepsake box becomes unexpectedly heavy in his hands. The star-shaped keyhole catches a spark of pale light.</p><p>This does <strong>not</strong> mean the box was secretly a teleportation device. It means the collapsing Mists are searching for a surviving connection outside Barovia, and Baldrik’s recent Vistani route plus the object he left for Thorgrinn provide one.</p><div class=\"cu-readaloud\">For an instant Thorgrinn smells hot iron, coal smoke and wet mountain stone.<br><br>Not Barovia.<br><br>Home.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "collapse.transition",
+     "name": "4 — The First Sound Is an Anvil",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Transition to The Shield Between Us</h2><div class=\"cu-readaloud\">Three strikes.<br><br>Pause.<br><br>Two strikes.<br><br>Cold air. Pine. Rain. Coal smoke. Real weather.<br><br>The white mist tears apart around you.<br><br>For the first time in what feels like forever, the darkness above you is only night.<br><br>There are stars.<br><br>Beneath your feet is a flawlessly engineered stone road.<br><br>Fifty yards away stands a squat fortress built directly into the mountainside.<br><br>Above it, snapping in the wind, hangs a white banner.<br><br>A closed fist grips an iron nail.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p><strong>The Shield Between Us begins.</strong></p><section class=\"cat-unkindness cu-slab\"><p><strong>Continue in Part II.</strong> Open @UUID[JournalEntry.o8bIRKUDB10umImA]{00 — Start Here: The Stone Ledger} and run @UUID[Macro.Ou4X1MvYSjCkH3wE]{Import the Ravenloft Ending} so the Dark Powers, brides, Finn, Tatyana, the Wish and the prophecies carry into @UUID[JournalEntry.RDsRJ0uUqbq7Ve36]{Shadows Beyond Barovia}. (These links work once Part II is set up.)</p></section>"
+    }
+   ],
+   "sourceHash": "ade2b891acffb9c2"
+  },
+  {
+   "sourceId": "cu.journal.mockery",
+   "name": "16 — STRAHD MOCKERY DECK",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "mock.lines",
+     "name": "Targeted lines",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>General</h2>\n<ul>\n<li>“There you are. I was beginning to think you had mistaken surviving for arriving.”</li>\n<li>“An Unkindness of ravens. You circle death so faithfully.”</li>\n<li>“You have killed me before. Usually you don't remember.”</li>\n<li>“The book told you? How terribly rude.”</li>\n</ul>\n<h2>Damien</h2>\n<ul>\n<li>“How many voices have you collected, Damien? I wonder which one answers when nobody else is listening.”</li>\n<li>“You drank monstrosity rather than die. Do stop pretending we have nothing in common.”</li>\n</ul>\n<h2>Vesper</h2>\n<ul>\n<li>“Hold your little sun higher, Vesper. Ravenloft has swallowed dawn before.”</li>\n</ul>\n<h2>Bunch</h2>\n<ul>\n<li>“You are the one I find genuinely perplexing. Everyone else brings scars. You keep bringing hope.”</li>\n</ul>\n<h2>Legna</h2>\n<ul>\n<li>“Your Queen keeps returning you. Mine never learned to let go either.”</li>\n<li>“Finn is here, you know. You did say you wanted to save him.”</li>\n</ul>\n<h2>Thorgrinn</h2>\n<ul>\n<li>“Your brother mourned you.”</li>\n<li>“What will he call you when he sees you again? Brother? Machine? Miracle?”</li>\n<li>“Your brother left you a box. He expected you to understand the lock.”</li>\n</ul>\n<p>Use these as ingredients, not a script. The macro can pick from them when you need a line quickly.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "191c2b5be6ec50e5"
+  },
+  {
+   "sourceId": "cu.journal.tuning",
+   "name": "17 — ENCOUNTER TUNING",
+   "folder": "The Cat and the Unkindness/01 — Finale Journals",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "tune.power",
+     "name": "Powerful-party controls",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not solve difficulty by doubling HP</h2>\n<p>If the Unkindness is deleting encounters too quickly, increase <strong>battlefield pressure</strong>:</p>\n<ul>\n<li>Bring a mist-escaped bride back in Phase II at about 40 HP.</li>\n<li>Use Strahd's movement more aggressively.</li>\n<li>Activate another environmental problem.</li>\n<li>Separate the artifact-light carrier from the rest of the party.</li>\n<li>Make the Heart Chains matter tactically.</li>\n<li>Collapse safe ground rather than adding AC.</li>\n</ul>\n<p>If the party arrives depleted:</p>\n<ul>\n<li>Reduce bride HP by 15–20%.</li>\n<li>Increase the Abbot's miracle.</li>\n<li>Let Strahd genuinely grant the short rest.</li>\n<li>Delay one Castle Action.</li>\n</ul>\n<p>The Sunsword, Holy Symbol and Tome should make the finale <strong>possible</strong>. Never respond to the players earning them by making Strahd immune to them.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "tune.performance",
+     "name": "The final name rule",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Who owns “the Unkindness”?</h2>\n<p>During the brides Strahd says <strong>the Unkindness</strong>.</p>\n<p>During Phase I he may even say <strong>my Unkindness</strong>.</p>\n<p>During Phase II he begins using names.</p>\n<p>During Phase III he never calls them the Unkindness again.</p>\n<p>After Strahd's permanent death, let Damien, Vesper, Bunch, Legna or Thorgrinn be the first person to use the name again.</p>\n<p>This time it belongs to them.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "fb2c67b1bca6a07b"
+  },
+  {
+   "sourceId": "cu.journal.darkwar",
+   "name": "03A — THE WAR OF BROKEN GODS",
+   "folder": "The Cat and the Unkindness/01 — Finale Sequence",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/29-war-of-broken-gods.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "war.arrival",
+     "name": "Arrival — The Prisoners Return",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><div class=\"cu-readaloud\">Azrathox banks toward Ravenloft as lightning exposes every tower at once. Then the graveyard below the castle rises.<br><br>Not the dead. The earth itself.<br><br>Two immense horns push through the soil as a shape of bone, shadow and green corpse-light hauls itself toward the walls. At the same instant, every window in Ravenloft begins to bleed upward. The blood does not fall. It climbs, gathering above the castle into a red-black eclipse.<br><br>The infernal seal binding your contracted pit fiend burns hot enough to smoke.<br><br>From the battlements Strahd looks first at Orcus. Then at the living wound in the sky.<br><br>For perhaps the first time, he does not smile.<br><br>“You broke their cages,” he says. “Very well, Unkindness. Let us discover which of us they came to collect.”</div><h3>Intent</h3><p><strong>Orcus:</strong> kill Strahd permanently, seize the accumulated soul/death-energy of the Domain, and punish anyone who denies him the harvest.</p><p><strong>Vampyr:</strong> reclaim the covenant, rebind or replace Strahd, and punish the “metal dwarf” who shattered its prison.</p><p><strong>Strahd:</strong> make the Unkindness solve his Dark Power problem, then kill them once the field is cleaner.</p><p><strong>The Unkindness:</strong> whatever the players decide. They may help any side temporarily without becoming that side’s servants.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "war.fronts",
+     "name": "Three Fronts, Not Four Initiative Blocks",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Pressure & Claim</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Track</th><th>Start</th><th>At 4</th><th>At 6</th></tr></thead><tbody><tr><td>Orcus Pressure</td><td>2</td><td>Graves rupture; Orcus gains an extra Intervention this scene.</td><td>Orcus breaches Ravenloft fully; his manifestation gains +40 temporary HP and immediately Soul Hooks one resurrected PC.</td></tr><tr><td>Vampyr Claim</td><td>2</td><td>Black Sun thickens; vampires gain 10 temporary HP at the start of their next scene.</td><td>Vampyr establishes three Covenant Hooks and can attempt to rebind Strahd the first time he reaches 0 HP.</td></tr></tbody></table></div><p>At the end of each major combat round/scene, an unattended Dark Power advances by 1. A deployed ally prevents the advance on its assigned front. Direct party success may reduce the track by 1 or 2.</p><p>Do not advance both tracks merely because time passed during roleplay. Advance them when a tactical opportunity was actually left uncontested.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "war.choices",
+     "name": "Helping the Enemy Is Allowed",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Temporary cooperation</h2>\n<p><strong>Help Orcus:</strong> he can suppress Strahd’s regeneration for a round or tear open a route through Ravenloft. Every deliberate cooperation adds +1 Orcus Attention. Orcus does not become friendly.</p>\n<p><strong>Help Vampyr:</strong> it can suppress Strahd’s Black Sun veil, reveal a blood-route through the castle, or yank Strahd out of wall-phasing. Every cooperation adds +1 Vampyr Attention and may create a Covenant Hook.</p>\n<p><strong>Help Strahd:</strong> he may cancel one castle hazard, reveal an anchor, or spend a legendary action attacking a Dark Power instead of a PC. This is not redemption. It is a prisoner fighting his jailers.</p>\n<p><strong>Help neither:</strong> hardest route, but it limits future claims. Reward intelligent neutrality rather than punishing it.</p>\n<h3>Target priorities</h3><p>Orcus prefers Strahd → pit fiend → Vampyr → death-defying PCs. Vampyr prefers Strahd/Tatyana/Finn → Thorgrinn/Damien → Sunsword bearer → Orcus. Strahd changes targets whenever doing so makes the Unkindness solve a problem for him.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "b9674d8b4b407855"
+  },
+  {
+   "sourceId": "cu.journal.allies",
+   "name": "03B — DEPLOY THE MONSTERS YOU BEFRIENDED",
+   "folder": "The Cat and the Unkindness/01 — Finale Sequence",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/30-ally-deployment.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "ally.az",
+     "name": "Azrathox, Scourge of the Silver Wing",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Azrathox</h2><p>The Unkindness recruited an ancient red dragon rather than killing him. That decision must matter here.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Deployment</th><th>Effect</th></tr></thead><tbody><tr><td>Against Orcus</td><td>Prevents Orcus Pressure increasing. Once per scene dragonfire can erase a mass-undead complication without a combat.</td></tr><tr><td>Against Vampyr</td><td>Prevents Vampyr Claim increasing. Once per scene cauterize a Blood Heart: it loses 15 HP and cannot reform that round.</td></tr><tr><td>Against Ravenloft</td><td>Strahd cannot close the roof/bridge route with gargoyles and bats; cancel one castle-wide Lair Action per scene.</td></tr></tbody></table></div><p><strong>Empathy payoff:</strong> if Bunch reminds Azrathox what she taught him about love, once during the finale he may protect a creature rather than treasure: take the consequence of one failed front on himself and gain 1 Strain.</p><p>At 3 Strain he withdraws injured rather than dies automatically.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ally.fiend",
+     "name": "The Contracted Pit Fiend",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Infernal Ally</h2><p>The contract is the canon anchor: the pit fiend is freed from its containment, causes chaos at Ravenloft, helps defeat Strahd, and does not harm the adventurers. Its true name is deliberately not invented here.</p><p>Its default response to Orcus is immediate hostility. A devil may hate Strahd, but a Demon Prince walking into the same battlefield is a much older problem.</p><h3>Demonbreaker deployment</h3><p>While assigned to Orcus, prevent +1 Orcus Pressure at each front tick. After three successful containment beats, unlock <strong>Hellchain</strong>: Orcus cannot use a reaction or Legendary Resistance until the end of the next round.</p><h3>The Healer trigger</h3><p>Orcus eventually impales or crushes the pit fiend’s infernal heart. The fiend will die at the end of the next round unless Damien spends his action preserving it. At that same moment Strahd or Orcus should be visibly vulnerable. This is Madam Eva’s choice between the hand that strikes and the hand that saves.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "ae568f3a23fce7ea"
+  },
+  {
+   "sourceId": "cu.journal.orcus",
+   "name": "03C — ORCUS: THE HARVEST OF DENIED DEATH",
+   "folder": "The Cat and the Unkindness/02 — Dark Powers",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/04-orcus.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "orcus.role",
+     "name": "What Orcus Wants",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Orcus does not want Strahd’s throne</h2><p>He wants the <strong>ending</strong> Strahd has denied for centuries: the death of the Darklord, the released dead, and the enormous spiritual harvest produced when Barovia finally breaks.</p><p>This makes Orcus temporarily useful. It also makes him catastrophic if he is allowed to “win.”</p><h3>Why he notices the Unkindness</h3><ul><li>They have repeatedly died and returned.</li><li>They carried souls in coins and mechanical vessels.</li><li>They permanently killed Exethanter by finding the phylactery.</li><li>They restored Legna rather than surrendering him to death.</li><li>Thorgrinn remains a living contradiction: a soul in iron who continues to choose life.</li></ul><p>Orcus calls them <strong>grave-thieves</strong>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "orcus.interventions",
+     "name": "Orcus Interventions",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Initiative 20 / front beat</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>d6</th><th>Intervention</th></tr></thead><tbody><tr><td>1</td><td><strong>Bone Rain.</strong> DC 18 Dex; 4d8 piercing/necrotic, half on success.</td></tr><tr><td>2</td><td><strong>Denied Death.</strong> A corpse or destroyed undead rises as a 20-foot hazardous zone until next round.</td></tr><tr><td>3</td><td><strong>Soul Hook.</strong> Target a resurrected PC or soul-coin vessel; DC 18 Cha or Restrained by a 20-HP hook.</td></tr><tr><td>4</td><td><strong>Death Knell.</strong> Strahd cannot regenerate until initiative 20 next round. If the party knowingly benefits, +1 Orcus Attention.</td></tr><tr><td>5</td><td><strong>Infernal Challenge.</strong> Orcus and the pit fiend clash; if the fiend is deployed elsewhere, Orcus Pressure +1.</td></tr><tr><td>6</td><td><strong>The Horseman Looks Back.</strong> Orcus recognizes Thorgrinn and speaks the first line of the Black Road offer.</td></tr></tbody></table></div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "orcus.mercy",
+     "name": "When Orcus Is Beaten",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not make “0 HP” mean “you killed Orcus forever”</h2><p>At 0 HP the manifestation kneels inside a storm of ash and gives the Unkindness a final choice.</p><p><strong>Banish:</strong> destroy the manifestation violently. +2 Orcus Attention; future disposition = <em>vengeful</em>.</p><p><strong>Permit withdrawal:</strong> refuse to feed the battlefield another death when the manifestation can no longer contest them. +1 Orcus Attention; disposition = <em>indebted/curious</em>.</p><p><strong>Bargain:</strong> accept the Black Road, a death-mark, or a promise of later audience. +3 Orcus Attention; disposition = <em>claimant</em>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "4ea92d9eb4198ac4"
+  },
+  {
+   "sourceId": "cu.journal.vampyr",
+   "name": "03D — VAMPYR: THE FIRST THIRST RETURNS",
+   "folder": "The Cat and the Unkindness/02 — Dark Powers",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/05-vampyr.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "vamp.role",
+     "name": "What Vampyr Wants",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vampyr is more personal</h2><p>Vampyr does not arrive as a second demon army. It arrives <strong>inside the blood already spilled in Ravenloft</strong>.</p><p>It remembers Thorgrinn smashing the sarcophagus. It remembers the Unkindness refusing to inherit Strahd’s covenant. It regards Strahd as stolen property and the party as thieves who broke a sacred chain.</p><p>Its objective is therefore not merely to kill Strahd. It wants to <strong>reclaim, rebind, or replace</strong> him.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vamp.interventions",
+     "name": "Vampyr Interventions",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Initiative 10 / front beat</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>d6</th><th>Intervention</th></tr></thead><tbody><tr><td>1</td><td><strong>Blood Tide.</strong> 20-foot zone becomes difficult terrain; DC 18 Con on entry or 3d8 necrotic.</td></tr><tr><td>2</td><td><strong>Black Sun.</strong> Non-artifact light vanishes. Artifact sunlight remains and points like a blade through the dark.</td></tr><tr><td>3</td><td><strong>Covenant Hook.</strong> Attach a tether to Strahd or a vampiric target. Three on Strahd threaten a rebind at 0 HP.</td></tr><tr><td>4</td><td><strong>Metal Dwarf.</strong> Thorgrinn is targeted by First Thirst despite having no ordinary blood; Vampyr drinks soul resonance instead.</td></tr><tr><td>5</td><td><strong>Possess the Wound.</strong> A destroyed bride’s mist becomes a Blood Heart unless artifact sunlight prevents it.</td></tr><tr><td>6</td><td><strong>Night Without Stars.</strong> Trigger Legna’s prophecy scene.</td></tr></tbody></table></div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vamp.mercy",
+     "name": "When Vampyr Is Beaten",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The First Thirst cannot be solved by another sarcophagus in this scene</h2><p><strong>Banish:</strong> sever every visible blood tether and drive it screaming into the Mists. +2 Vampyr Attention; disposition = <em>vengeful</em>.</p><p><strong>Allow withdrawal:</strong> stop attacking when the covenant has been broken and let the First Thirst leave empty-handed. +1 Vampyr Attention; disposition = <em>obsessed</em>.</p><p><strong>Bargain:</strong> permit a mark, blood-debt, or future meeting in exchange for leaving Strahd unclaimed. +3 Vampyr Attention; disposition = <em>possessive claimant</em>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "6b90f2b994c01a48"
+  },
+  {
+   "sourceId": "cu.journal.prophecies",
+   "name": "00A — MADAM EVA: FIVE PROPHECIES COME DUE",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/27-tarokka-the-raven.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "prop.overview",
+     "name": "Fulfilment Matrix",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Final Reading Was Not Decorative</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>PC / Card</th><th>Promised test</th><th>Payoff in the finale</th></tr></thead><tbody><tr><td>Damien — Healer</td><td>Mercy</td><td>A single heartbeat: preserve the life that prevents Vampyr/Orcus from stealing the ending, even when an exposed enemy could be struck instead.</td></tr><tr><td>Vesper — Diviner</td><td>Truth</td><td>See who authored a “certain” future. Read the Unwritten; optionally let distant Vecna look back through the lantern.</td></tr><tr><td>Bunch — Traitor</td><td>Trust</td><td>Reject “one must suffer so the others live.” Choose trust and let another person/ally make a free choice.</td></tr><tr><td>Legna — Raven</td><td>Darkness</td><td>During Night Without Stars, follow the silent black feather rather than the brightest supernatural violence.</td></tr><tr><td>Thorgrinn — Horseman</td><td>The ending</td><td>Orcus offers the Black Road that only Thorgrinn can walk. Choose ending, service, or the road back toward family.</td></tr></tbody></table></div><p>Each fulfilled prophecy grants one Inspiration-equivalent reward and changes the battlefield once. Do not require the player to recite Madam Eva’s exact wording.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "prop.damien",
+     "name": "Damien — The Single Heartbeat",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>“Do not mistake the one who falls for the one who is lost.”</h2><p>Run this after the pit fiend has meaningfully contained Orcus or during Strahd’s last phase.</p><p><strong>Version A — the pit fiend:</strong> Orcus tears open the fiend’s infernal heart. It dies at the end of the next round. At the same time Orcus or Strahd is exposed. Damien can attack or preserve the ally.</p><p><strong>Version B — the unforgivable patient:</strong> Vampyr begins consuming/rebinding Strahd at 0 HP. Strahd genuinely asks Damien to stop it. Damien can preserve Strahd for exactly one heartbeat so the Unkindness can kill him correctly. This is mercy without absolution.</p><p><strong>Reward:</strong> if Damien chooses the saving hand for a reason larger than pity, cancel one Dark Power claim and grant the saved creature one immediate action.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "prop.vesper",
+     "name": "Vesper — Who Wrote This?",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>“Ask instead… who has been permitted to write it.”</h2><p>Once in the finale, describe three apparently inevitable outcomes. One is an authored lie or enforced fate.</p><p>Vesper may invoke <strong>Read the Unwritten</strong>. Tell her plainly which outcome is being imposed and by whom.</p><p>Then offer a second possibility as a whisper from impossibly far away: <em>“Again?”</em></p><p>If she accepts the second vision, she gains another Read the Unwritten and <strong>Vecna Attention +2</strong>. This is not a trap hidden from the player; tell her something noticed her looking back.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "prop.bunch",
+     "name": "Bunch — The Arithmetic of Monsters",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>“Only one of you must suffer so that the others might live.”</h2><p>At a moment of real pressure, make a credible offer through a familiar voice—Finn, Strahd imitating Finn, or a Dark Power using a dead voice.</p><p>Examples: surrender one soul coin to seal Orcus; surrender the silver dragon egg to purchase Azrathox’s escape; let Vampyr claim Finn to release everyone else; allow one PC to inherit the covenant so Barovia survives.</p><p>If Bunch rejects the arithmetic and instead entrusts a meaningful choice to Finn, Azrathox, or another ally, that ally immediately changes fronts and acts. Mark the prophecy fulfilled.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "prop.legna",
+     "name": "Legna — The Smallest Sign",
+     "sort": 40,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>“Some allies do not arrive with trumpets.”</h2><p>During Vampyr’s Night Without Stars, remove every visible point of reference except artifact sunlight and battlefield destruction.</p><p>Then describe one black feather travelling <strong>against the wind</strong>.</p><p>If Legna follows it, silent ravens gather on an invisible object: the true Blood Heart anchoring Vampyr. Expose it immediately; reduce Vampyr Claim by 2 and cancel the darkness when the Heart is destroyed.</p><p>The Raven Queen does not attack for him. She shows him the truth. He must act on it.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "prop.thor",
+     "name": "Thorgrinn — The Black Road",
+     "sort": 50,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>“A road that none of your companions can walk.”</h2><p>Orcus recognizes Thorgrinn because death already took him and did not keep him.</p><div class=\"cu-readaloud\">“Metal is not life,” the horned shadow says. “And yet you insist.<br><br>You have crossed my road so many times that even the stones know your weight.<br><br>Come properly this time.”</div><p>During the final collapse a black road appears that only Thorgrinn can perceive clearly. Orcus may offer restoration to flesh, release from the soul coin, or service as a rider/champion. Do not make the promised restoration automatically trustworthy.</p><p><strong>Accept:</strong> immediate Orcus route; +3 Orcus Attention.</p><p><strong>Step onto it only to confront/refuse Orcus:</strong> +2 Orcus Attention and return if he succeeds at the scene’s challenge.</p><p><strong>Refuse and remain with the Unkindness:</strong> the black road dies. During Barovia’s collapse, Baldrik’s recent Vistani route and the unopened keepsake box become the strongest surviving personal connection pulling Thorgrinn toward Ironfist territory.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "06d9fcced2cdd1a0"
+  },
+  {
+   "sourceId": "cu.journal.arc",
+   "name": "00B — WHAT HUNTS THEM NEXT?",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/33-vecnas-whispered-eye.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "arc.track",
+     "name": "Dark Power Attention",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Attention is not approval</h2><p>Track <strong>Vecna, Orcus, and Vampyr Attention</strong>. The highest result determines which released power has the strongest reason to pursue, tempt, recruit, or punish the Unkindness after Barovia.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Action</th><th>Attention</th></tr></thead><tbody><tr><td>Directly defeat/banish a manifestation</td><td>+2 to that power</td></tr><tr><td>Show mercy / permit withdrawal when you could continue</td><td>+1 to that power; disposition becomes indebted, curious, or obsessed</td></tr><tr><td>Accept a bargain/mark/boon</td><td>+3 to that power; disposition becomes claimant</td></tr><tr><td>Deliberately cooperate against Strahd or another power</td><td>+1 to the assisted power</td></tr><tr><td>Use Vesper’s second forbidden vision</td><td>+2 Vecna</td></tr><tr><td>Choose to pursue the escaped Vecna instead of either present power</td><td>+3 Vecna</td></tr><tr><td>Thorgrinn accepts the Black Road</td><td>+3 Orcus</td></tr><tr><td>Vampyr successfully marks a PC who voluntarily keeps the mark</td><td>+2 Vampyr</td></tr></tbody></table></div><p><strong>Ties are good.</strong> A tie means a combined arc rather than a bookkeeping failure.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "arc.outcomes",
+     "name": "Campaign Routes",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vecna Trail</h2><p>The power that left first has been watching the others break loose. A high Vecna score means knowledge, authorship, the repeated timeline, and the question of who writes reality become the next cosmic problem.</p><h2>Orcus Trail</h2><p>Death notices the party that keeps returning. The pit fiend conflict, Legna’s resurrection, soul coins, and Thorgrinn’s body all become central. Orcus may hunt them from hatred or invite them because he cannot decide whether they are blasphemers or masterpieces.</p><h2>Vampyr Trail</h2><p>The covenant is broken but the First Thirst survives. Finn, Tatyana, Damien’s history with vampirism, and the possibility of new vampire lineages become the next problem.</p><h2>Ironfist bridge</h2><p>The Baldrik/Vistani route can still make Ironfist the immediate geographic arc. The highest Attention score becomes the <strong>cosmic shadow behind it</strong> or the campaign arc that follows, preserving the Thorgrinn homecoming without making the Dark Power choices irrelevant.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "67a2cc4851629be7"
+  },
+  {
+   "sourceId": "cu.journal.achievements",
+   "name": "00C — THE UNKINDNESS: WHAT THE DARKNESS REMEMBERS",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "ach.major",
+     "name": "Major Achievements to Call Back",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not run the finale as if these are generic level-10 adventurers</h2><ul><li>They killed Mama Yaga after a near-total party loss.</li><li>They returned in soul-coin/mechanical bodies; Thorgrinn still remains mechanical.</li><li>They killed Baba Lysaga and her walking hut.</li><li>They restored Raven Queen shrines and released an ancient vampiric white dragon from corruption.</li><li>They learned the Order of the Silver Dragon’s failure and recovered the Tome of Strahd.</li><li>They learned that Strahd’s killer could become the next Strahd.</li><li>They defeated uncanny doubles and found graves bearing their own names.</li><li>They recovered a living silver dragon egg.</li><li>They recruited Azrathox instead of killing him.</li><li>They permanently destroyed Exethanter by finding the real phylactery.</li><li>They broke the Amber mechanisms and released/disabled the powers behind Strahd’s return.</li><li>They restored Legna through memory, soul coin, and the Raven Queen.</li><li>They know Barovia may die when Strahd finally dies—and chose to continue anyway.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ach.reactions",
+     "name": "Who Cares About What",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h3>Strahd</h3><p>He cares that they broke the loop and made his death real. His mockery should increasingly sound like someone trying to convince himself the old script still works.</p><h3>Orcus</h3><p>He cares about every denied death: the mechanical bodies, Legna, Exethanter, the vampiric dragon, and the fact the party repeatedly refuses to leave souls where death put them.</p><h3>Vampyr</h3><p>It cares that Damien became a vampire to save everyone and later escaped that state; that Finn remains contested; that Tatyana refuses ownership; and especially that Thorgrinn smashed its prison and refused the succession covenant.</p><h3>Vecna</h3><p>He cares about the Tome, the repeated loops, Vesper’s relationship to hidden truth, and whether the party realizes that prophecy and history are both forms of authored information.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ach.latest",
+     "name": "What Happened Immediately Before This Module Starts",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Nov 8 additions</h2><ul><li>Received Baldrik’s family-crested keepsake box from the Vistani.</li><li>Learned the group has repeated versions of this struggle across roughly forty subjective years inside the loop.</li><li>Received Madam Eva’s final five-card personal reading.</li><li>Prepared nine flasks of holy water.</li><li>Sent Tatyana a direct apology/message; she answered sounding frightened and more like Ireena.</li><li>Silvered Thorgrinn’s arm-mounted ammunition.</li><li>Met Saraphene and learned Strahd is afraid and Ravenloft divided.</li><li>Infiltrated Vallaki invisibly through guarded gates.</li><li>Finn escaped Wachter House injured.</li><li>Killed Lady Wachter and both sons after a failed attempt to capture/question them.</li><li>Recovered Luba’s Tarokka of Souls and Heward’s Handy Haversack.</li><li>Found shredded Strahd-marked papers in the basement.</li><li>Found Arl the pit fiend and accepted the substance of an infernal contract—without signing/releasing him yet.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "868bb683054c26f4"
+  },
+  {
+   "sourceId": "cu.journal.integration",
+   "name": "10A — DARK POWERS THROUGH THE STRAHD PHASES",
+   "folder": "The Cat and the Unkindness/03 — Strahd Boss Fight",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/objects/12-heart-chain-dominion.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "int.p1",
+     "name": "Phase I — The Count Uses Them",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Phase I modification</h2><p>Strahd remains elegant and mocking, but the Dark Powers are now visible problems. At initiative 20 Orcus intervenes; at initiative 10 Vampyr intervenes unless contained by allies.</p><p>Strahd may spend one Legendary Action to attack a Dark Power anchor instead of a PC. If the party deliberately protects him so he can do it, that counts as a temporary alliance but not as mercy.</p><p>Key line: <strong>“You broke their cages. Surely you did not expect me to clean up after you.”</strong></p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "int.wish",
+     "name": "The Impossible Moment",
+     "sort": 5,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>When Dark Powers intersect the Strahd phases</h2><p>Do not fire the Wish requirement too early. Let the bride gauntlet and early Strahd play establish the castle first.</p><p><strong>Best timing:</strong> late Phase I through Phase III, when Orcus/Vampyr have been physically engaged or when one of them threatens to own Strahd’s death.</p><p>If a manifestation is reduced to 0 before the Wish, run <strong>Dark Power — Reconstitution</strong>. The impossible reform is the proof. Then make the djinn and/or Vecna routes available.</p><p>After the Edict of Finality, the same HP totals suddenly matter. This should feel like the party has finally made the battlefield obey mortal rules.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "int.p2",
+     "name": "Phase II — The Castle Has Three Masters",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Phase II modification</h2><p>The Heart Chains now matter to all sides.</p><ul><li><strong>Orcus</strong> wants the Blood Chain destroyed so Strahd can die.</li><li><strong>Vampyr</strong> wants the Dominion Chain intact long enough to reattach its covenant.</li><li><strong>Strahd</strong> wants whichever configuration kills the Unkindness first.</li></ul><p>Let the party exploit those contradictions. Cleverly baiting Orcus into destroying a Heart Chain or Vampyr into preventing Strahd’s escape is exactly the sort of play this encounter is for.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "int.p3",
+     "name": "Phase III — Nobody Gets Strahd for Free",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Phase III modification</h2><p>Once Strahd is frightened of permanent death, both Dark Powers move to collect him.</p><p><strong>Orcus:</strong> when Strahd first falls below 60 HP, Orcus attempts <em>Death’s Due</em>. If not stopped, Strahd loses regeneration and Orcus Pressure +1.</p><p><strong>Vampyr:</strong> when Strahd first reaches 0 HP, if three Covenant Hooks are active it attempts to rebind him at 80 HP. The party has one round to sever a Hook or invoke Damien’s prophecy choice.</p><p>This makes “helping Strahd” for a heartbeat strategically possible without redeeming him. The Unkindness has spent the entire campaign learning that <strong>how he dies matters</strong>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "int.final",
+     "name": "After Strahd Falls",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not resolve the powers automatically</h2><p>If Orcus and Vampyr are still present when Strahd dies, they turn on each other immediately over the released soul-energy of Barovia.</p><p>The party may flee, intervene, finish one manifestation, bargain, or show mercy. That final decision is what sets the Attention tracker.</p><p>If both are driven off, the collapse proceeds to the coffin/Barovia exit. If one remains dominant, it leaves a visible signature on the dissolving Mists and follows the party’s story beyond the Domain.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "3250c3a24c1b8c20"
+  },
+  {
+   "sourceId": "cu.journal.wish",
+   "name": "00D — THE WISH THAT MAKES VICTORY POSSIBLE",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/31-edict-of-finality.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "wish.rule",
+     "name": "The Rule Above Hit Points",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>They are not boss monsters yet</h2><p>Orcus and Vampyr have been released from the Amber Temple. Their bodies at Ravenloft are <strong>manifestations</strong>, but until reality is rewritten they remain connected to principles larger than a stat block.</p><p>Before Wish, the party can wound them, contain them, destroy anchors, force retreats and use them against Strahd. What they cannot do is produce a final victory by dealing enough damage.</p><p>The first time one reaches 0 HP, let everyone believe for a heartbeat that it worked.</p><div class=\"cu-readaloud\">The body comes apart. The castle shakes. For one impossible second there is silence.<br><br>Then the wound in reality opens again.<br><br>It is not healing.<br><br>It is being <em>reasserted</em>.</div><p>The manifestation reforms at roughly half HP. Increase its Pressure/Claim by 1. Then make the solution visible. Do not demand another full unwinnable grind.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.crisis",
+     "name": "When the Wish Appears",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Dire need, not convenience</h2><p>The two Wish routes should not appear at the start of the battle. Let the party earn the realization that ordinary victory is impossible.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Crisis trigger</th><th>What it means</th></tr></thead><tbody><tr><td>A Dark Power reaches 0 HP and reconstitutes</td><td>The party has proved that damage cannot finish it.</td></tr><tr><td>Orcus or Vampyr strikes the blow that drops Strahd</td><td>A three-round claim window begins unless reality is rewritten.</td></tr><tr><td>At least two members of the Unkindness are down and an allied monster is failing</td><td>The battle genuinely looks lost.</td></tr><tr><td>Orcus Pressure and Vampyr Claim both reach 5+</td><td>Both powers are close to dominating the ending.</td></tr><tr><td>The party discovers the rule through the Tome / Vesper’s prophecy before suffering it</td><td>Reward foresight: the offers can arrive before the first reconstitution.</td></tr></tbody></table></div><p>At that moment Damien’s old djinn bond can flare. If Vecna has noticed the group—especially after Vesper’s prophecy or any earlier bargain—his voice may arrive at exactly the same time.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.djinn",
+     "name": "Route One — Damien’s Djinn",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Last Wish</h2><div class=\"cu-readaloud\">Damien hears the voice before anyone sees the light.<br><br>“No. Absolutely not. I already paid that debt.”<br><br>A pause. Something enormous screams outside Ravenloft.<br><br>“Unfortunately, if that thing inherits this place, I suspect technicalities will cease to matter.”<br><br>Another pause.<br><br>“One. More. Wish. Then we are finished.”</div><p>The djinn has already granted its normal Wish. This is an emergency sacrifice of its remaining Wish-granting connection. The djinn wants to survive, not become a martyr.</p><p><strong>If accepted:</strong> it grants one final Wish. The djinn survives, becomes unable to grant another Wish through this bond, and regards the extraordinary debt to Damien as settled. The djinn can flee once the domain begins collapsing.</p><p><strong>If refused:</strong> do not punish the party. Vecna may still offer the second route, or the Unkindness may continue struggling until another crisis trigger.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.vecna",
+     "name": "Route Two — Vecna’s Borrowed Ending",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>A Wish from outside the page</h2><p>Vecna does not return to Barovia. He is watching from another plane because the Unkindness has become interesting: they broke the loop that imprisoned Strahd, released powers that should have remained contained, permanently killed an ancient lich, and repeatedly violated the expected boundary between life and death.</p><div class=\"cu-readaloud\">A voice speaks from nowhere in the room.<br><br>Not loud. Not even close.<br><br>“You have discovered the difficulty.”<br><br>“This is not a creature you can kill.”<br><br>“It is a sentence reality continues to repeat.”<br><br>“I can give you another ending.”</div><p>Vecna can provide the <strong>Borrowed Ending</strong>: one effect equivalent to Wish. He requires a bargain. The price must be stated before acceptance.</p><p>Accepting the Wish bargain increases Vecna Attention by 1; actually using Vecna’s Wish increases it by a further 2.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.edict",
+     "name": "The Edict of Finality",
+     "sort": 40,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Recommended use of Wish</h2><div class=\"cu-readaloud\">“I wish that, until Barovia passes from existence, no Dark Power released from the Amber Temple may anchor itself here, inherit Strahd’s prison, or return from destruction within this domain.”</div><p>Do not monkey-paw wording that clearly expresses this intent. The importance of the moment comes from changing reality, not tricking the players with grammar.</p><h3>Mechanical effect</h3><ul><li>Orcus and Vampyr immediately lose <strong>Dark Power Reconstitution</strong>.</li><li>Destroyed Grave Horns and Blood Hearts can no longer reform.</li><li>Orcus/Vampyr cannot use Strahd’s death to become the new anchor of Barovia.</li><li>If either manifestation is already at 0 HP, it is immediately placed into its final ending state.</li><li>If it has reconstituted already, it keeps its current HP; the Wish does not refill or damage it.</li><li>At 0 HP, use the existing <strong>Banish / Spare / Bargain</strong> resolution.</li><li>The true multiversal Orcus or Vampyr is not erased. Their manifestation and claim <em>here</em> are what can now be defeated.</li></ul><p>Every creature capable of understanding metaphysics immediately knows that something changed. Strahd should stop smiling.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.claim",
+     "name": "If a Dark Power Kills Strahd",
+     "sort": 50,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The three-round inheritance</h2><p>If Orcus or Vampyr deals the blow that reduces Strahd to his final defeated state before the Edict exists, do not resolve the coffin chase normally.</p><p>Start a <strong>three-round Claim Clock</strong>.</p><ul><li><strong>Round 1:</strong> Strahd’s mist begins flowing toward the Dark Power instead of the coffin.</li><li><strong>Round 2:</strong> Ravenloft responds to a possible new master. Orcus raises the dead architecture; Vampyr makes every wall pulse like a vein.</li><li><strong>Round 3:</strong> without Wish or another truly equivalent metaphysical answer, the Dark Power inherits the anchor. Strahd is gone, but Barovia has not been freed. The Unkindness has won a battle and lost the ending.</li></ul><p>Damien’s djinn recognizes this as an existential threat and may offer the Last Wish immediately. Vecna also understands exactly what is happening.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "wish.wording",
+     "name": "If the Players Word It Differently",
+     "sort": 60,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Reward intent and cleverness</h2><p>The players do not need to recite the recommended Edict.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Wish intent</th><th>Adjudication</th></tr></thead><tbody><tr><td>“Make Orcus and Vampyr mortal here.”</td><td>Excellent. Both lose reconstitution until Barovia ends.</td></tr><tr><td>“No Dark Power can claim Strahd or Barovia.”</td><td>Stops inheritance; also sever reconstitution if the wording clearly rejects their anchoring.</td></tr><tr><td>“Banish Orcus and Vampyr.”</td><td>The Wish can eject both current manifestations immediately if they have already had their anchors meaningfully weakened; otherwise sever them and reduce each to a vulnerable final state rather than ending the entire finale for free.</td></tr><tr><td>“Kill Orcus.”</td><td>It can destroy the manifestation, not erase the true demon prince from all planes. Vampyr remains unless included.</td></tr><tr><td>A highly creative equivalent</td><td>Prefer the interpretation that preserves the enormity of the Wish and the players’ intent.</td></tr></tbody></table></div><p>This is a campaign-defining 9th-level intervention. It should feel like reality obeyed—not like a technicality was discovered.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "de79f87329aac7aa"
+  },
+  {
+   "sourceId": "cu.journal.vecna",
+   "name": "00E — VECNA: THE EYE BEYOND BAROVIA",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/33-vecnas-whispered-eye.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "vecna.watch",
+     "name": "Vecna Watches from Elsewhere",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>He does not come back to Barovia</h2><p>Vecna has already escaped. Do not reduce that achievement by teleporting him back in as another combatant.</p><p>Instead, he watches the Unkindness from another plane. Their pattern is irresistible to him: impossible resurrections, soul coins, a permanently destroyed lich, the Tome’s revelation of repeated timelines, a broken Dark Power prison, and five people who keep doing the thing the story says they cannot do.</p><p>His presence should begin as an impossible observation: a sentence in the Tome that was not there before, an eye in a reflection, a whisper that only one PC hears, or Vesper looking too far beyond the final page.</p><p>Vecna does not initially want them dead. <strong>He wants to know what they will trade when certainty fails.</strong></p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vecna.whispers",
+     "name": "Personal Whispers",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Use only when the character is vulnerable</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>PC</th><th>Vecna’s line</th></tr></thead><tbody><tr><td>Damien</td><td>“You have already become a monster once to save them. Why become precious now?”</td></tr><tr><td>Vesper</td><td>“You were told to ask who writes the future. You looked. I noticed.”</td></tr><tr><td>Bunch</td><td>“Loyalty is simply a secret you have decided not to sell. Shall we test the price?”</td></tr><tr><td>Legna</td><td>“Your Queen collects endings. I collect what endings conceal.”</td></tr><tr><td>Thorgrinn</td><td>“A soul in a coin is still a secret in a box. I know something of boxes.”</td></tr></tbody></table></div><p>These are invitations, not compulsions. A player must understand that accepting help also increases Vecna’s personal interest.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vecna.minor",
+     "name": "Emergency Deals",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Lesser bargains before the Wish</h2><p>In dire need Vecna can offer a character one immediate intervention. Accepting any lesser deal increases Vecna Attention by 1.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Offer</th><th>Immediate benefit</th><th>Concrete price</th></tr></thead><tbody><tr><td>Refuse Death</td><td>A character who would fall to 0 HP instead remains at 1 HP and ends one condition.</td><td>Vecna takes one precious memory chosen by that player until Vecna is confronted.</td></tr><tr><td>The Unwritten Step</td><td>Teleport up to 60 feet ignoring Ravenloft walls, wards and opportunity attacks.</td><td>The character tells Vecna one true secret they have never knowingly given him.</td></tr><tr><td>Remembered Power</td><td>Recover one expended spell slot of the character’s highest available level, or one comparable once-per-rest class resource.</td><td>Accept the Whispered Eye mark.</td></tr><tr><td>See the Author</td><td>Automatically identify the source of one illusion, false fate, possession or supernatural command and gain advantage on resisting it.</td><td>Vecna is allowed to look through the character’s senses for one minute at a future moment chosen by the GM; never during private real-world player material.</td></tr></tbody></table></div><p>Do not spam offers. One or two across the entire finale is enough to establish that he is watching.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vecna.prices",
+     "name": "Prices for the Borrowed Ending",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Wish bargain</h2><p>For the full Borrowed Ending, state the price before the player accepts. Good prices create future campaign material without taking away the player’s current character.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Character-specific price</th><th>What Vecna gains</th></tr></thead><tbody><tr><td>Damien gives the memory of why he first chose monstrosity to save the others.</td><td>Vecna learns the emotional key to Damien’s self-sacrifice; the memory can become a future recovery quest.</td></tr><tr><td>Vesper accepts the Whispered Eye whenever she looks beyond written fate.</td><td>Vecna gains a window into the campaign’s divinations.</td></tr><tr><td>Bunch gives Vecna one secret she has protected out of loyalty.</td><td>Vecna learns something she valued more than victory.</td></tr><tr><td>Legna gives the first true name/title by which the Raven Queen recognized him.</td><td>Vecna gains a dangerous fragment of Raven Queen lore—not control over her.</td></tr><tr><td>Thorgrinn allows Vecna to read the construction and inscriptions of his soul coin.</td><td>Vecna learns how this particular soul-binding technology preserved identity.</td></tr></tbody></table></div><p>If none fits the player, negotiate a similarly finite price. Avoid vague “you owe me anything later” bargains.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vecna.arc",
+     "name": "What the Bargain Does to the Next Arc",
+     "sort": 40,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Interest becomes relationship</h2><p>Merely being observed does not force a Vecna campaign. Accepted bargains do.</p><ul><li>Refusing Vecna after hearing him: optionally +1 Attention if the refusal itself fascinates him.</li><li>Accepting a minor deal: +1 Vecna Attention.</li><li>Accepting the Borrowed Ending bargain: +1 Vecna Attention.</li><li>Casting the Wish through Vecna: +2 additional Vecna Attention.</li></ul><p>Thus a Vecna-granted Wish usually adds <strong>+3 total</strong>, enough to make him a serious contender for the next cosmic arc without automatically overriding every Orcus/Vampyr choice.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "fce4a20e7534d864"
+  },
+  {
+   "sourceId": "cu.journal.vallaki-prelude",
+   "name": "01 — VALLAKI: THE LOCKS ARE OPEN",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/29-war-of-broken-gods.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "vallaki.route",
+     "name": "0 — From Wachter House to Van Richten",
+     "sort": -10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The streets between them</h2><p>The party is already inside Vallaki. Do not replay the gate infiltration. The route to Van Richten should take minutes, not hours.</p><div class=\"cu-readaloud\">You step out of Wachter House into a city that looks as though it has forgotten which revolution it is currently surviving.<br><br>Barricades divide streets that were open the last time you saw them. One junction is painted with wet red handprints. The next is hung with little bone spirals. Somewhere behind shuttered windows a child is crying. Somewhere else men are chanting the same six words over and over until they stop sounding like language.<br><br>No one seems to own Vallaki tonight.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Show one Vampyr sign, one Orcus sign and one civilian consequence. Combat is optional unless the party chooses to intervene.</p>"
+    },
+    {
+     "sourcePageId": "vallaki.arrival",
+     "name": "1 — A City Already at War",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Vallaki Before Ravenloft</h2><p>The Unkindness reaches Van Richten only after seeing what the broken Amber seals are already doing to ordinary people. Lady Wachter and her sons are dead by the party's hand, but her death did not end the cult of Vampyr. It removed its command structure. Orcus' cult is exploiting the vacuum.</p><div class=\"cu-readaloud\">Vallaki no longer sounds like a frightened city. It sounds like two funerals trying to murder one another. Somewhere beyond the rooftops a bell tolls three times. A second bell answers from another district. Red cloth hangs from one barricade. White bone charms from the next. Between them, ordinary people have shuttered their doors and begun painting symbols over symbols, praying that whichever god notices first will mistake the house for someone else's.</div><h3>What the streets show</h3><ul><li><b>Vampyr cultists</b> smear thresholds with offered blood, call Lady Wachter a martyr, and promise that the First Thirst will choose a worthier vessel than Strahd.</li><li><b>Orcus cultists</b> ring grave bells, decorate barricades with bone tokens, and proclaim that the only honest liberation from Barovia is death without return.</li><li><b>Civilians</b> are trapped between them. The old political conflict has become theological possession.</li></ul><p>This is not another Vallaki regime-change plot. It is the first symptom of a cosmological succession crisis.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vallaki.signs",
+     "name": "2 — Signs Across Barovia",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Dark Powers Are Being Answered</h2><p>These are <b>new finale symptoms</b> Van Richten has gathered from refugees, hunters, ravens and Vistani travellers. Use two or three, not necessarily all of them.</p><ul><li>Graves have opened without a necromancer nearby; some corpses simply stand and face west as though listening.</li><li>Animals have been found completely drained where no vampire spawn were seen.</li><li>The Mists have moved against Strahd's known will, closing roads he previously kept open.</li><li>People with no prior occult training dream the same symbols and wake knowing prayers they were never taught.</li><li>Ravens have abandoned certain roofs and crossroads entirely.</li><li>Old cult marks that had been decorative superstition now produce measurable magical residue.</li></ul><p>The important change is not that people have become more fanatical. <b>Something is answering them.</b></p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vallaki.van-richten",
+     "name": "3 — Van Richten: The Warning",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Van Richten’s Workshop — Final Briefing</h2><p>He knows the party is coming only if they warned/contacted him. He has nevertheless barricaded the workshop because the city is in open factional violence.</p><div class=\"cu-readaloud\">Van Richten opens the door only far enough to see the first face. His eyes move immediately to the blood, the ash, the sealed letter and the infernal smell following you from Wachter House.<br><br>“Inside. Quickly.”<br><br>He locks three separate bolts behind you.<br><br>“Tell me you did not release another thing from the Amber Temple.”</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Let the players tell him. His reaction to Orcus and Vampyr is not “you fools”; it is the exhausted realization that the cost of making Strahd mortal has arrived early.</p><div class=\"cu-readaloud\">“You broke the locks. I am not telling you that was wrong. If Strahd was ever going to die properly, the prison had to be opened.<br><br>But locks do not distinguish between the prisoner you came to kill and the things imprisoned beside him.”</div><div class=\"cu-readaloud\">“Strahd von Zarovich may no longer be the most frightening thing living in Barovia.”</div>"
+    },
+    {
+     "sourcePageId": "vallaki.knowledge",
+     "name": "4 — What Van Richten Knows",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>What Van Richten can establish tonight</h2><h3>He knows</h3><ul><li>Wachter’s blood cult survives her death and is now leaderless.</li><li>A rival Orcus cult is openly active; grave charms and corpse rites are producing effects beyond normal cult magic.</li><li>Strahd’s control has weakened.</li><li>The Amber Temple’s old resurrection machinery has been damaged.</li></ul><h3>He can infer</h3><ul><li>Freed Dark Powers need <strong>anchors</strong> to act inside Barovia.</li><li>Strahd’s bond to the Domain makes his final death a potential <strong>inheritance event</strong>.</li><li>Killing him at the wrong moment could let Orcus or Vampyr claim the vacancy.</li><li>If a manifestation dies and simply returns, damage is attacking the symptom rather than the rule.</li></ul><h3>He cannot honestly promise</h3><ul><li>That Wish is definitely required. He can only tell them reality-altering magic may be necessary.</li><li>What Vecna is doing outside Barovia.</li><li>Which of the three tower clues Saraphene meant if the players ask about her dropped noun.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vallaki.inheritance",
+     "name": "5 — Do Not Let Them Own His Last Heartbeat",
+     "sort": 40,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Warning That Changes the Finale</h2><div class=\"cu-readaloud\">Van Richten turns the map of Ravenloft toward you.<br><br>“If I am right, then killing Strahd is no longer enough.”<br><br>“Do not let one of those things kill him for you.”<br><br>“Do not let it take his body, his blood, his soul, his coffin, or whatever remains of the bond between him and this land.”<br><br>“You must control the ending.”</div><p>If the party asks how, he gives them a hunter's model:</p><ol><li><b>Find the Anchor.</b> A god-sized thing cannot enter a small world without fastening itself to something.</li><li><b>Break the Anchor.</b> Destroying the manifestation without this is only buying time.</li><li><b>Revoke the Claim.</b> If the thing simply returns, then the problem is not hit points. The problem is what reality is allowing.</li></ol><div class=\"cu-readaloud\">“And if you reach that point—if you kill something and the world simply puts it back—then you are beyond my profession.”<br><br>“You will need magic that does not wound reality.”<br><br>“You will need magic that tells reality it is wrong.”<br><br>He pauses.<br><br>“Wish, perhaps.”<br><br>“Gods help us, I hope I am being dramatic.”</div><p>This foreshadows the Edict of Finality without solving the encounter before the players actually witness Dark Power Reconstitution.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vallaki.choice",
+     "name": "6 — Optional: One Last Choice in Vallaki",
+     "sort": 50,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>They Cannot Save Every Street Before Ravenloft</h2><p>After the warning, give the Unkindness a strategic choice. This is optional, but it makes the castle pressure tracks feel earned.</p><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Choice</th><th>Immediate Result</th><th>Ravenloft Effect</th></tr></thead><tbody><tr><td>Break a Vampyr blood rite</td><td>Free captives and destroy a living blood-font.</td><td>Vampyr Claim −1; Orcus Pressure +1 as its cult gains ground.</td></tr><tr><td>Destroy an Orcus grave reliquary</td><td>Prevent a district's dead from becoming an army.</td><td>Orcus Pressure −1; Vampyr Claim +1 as blood-cult cells seize territory.</td></tr><tr><td>Evacuate civilians</td><td>Neither cult is strategically weakened, but dozens escape.</td><td>No Pressure/Claim shift. Mark <b>Mercy Before Victory</b>; Damien may draw on it during his prophecy test.</td></tr><tr><td>Strike both rituals</td><td>A costly, high-risk intervention before Ravenloft.</td><td>Orcus Pressure −1 and Vampyr Claim −1, but the GM should impose a real resource cost agreed from play (spell slots, consumables, injury or exhaustion).</td></tr><tr><td>Leave immediately</td><td>Preserve strength for Ravenloft.</td><td>No change. The war continues behind them.</td></tr></tbody></table></div><p>Use the <b>Vallaki — Prelude / Intervention</b> macro to record this.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "vallaki.departure",
+     "name": "7 — Departure for Ravenloft",
+     "sort": 60,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>What Van Richten gives them before they go</h2><p>This is the payoff for the party’s stated plan to seek allies and diamonds.</p><ul><li><strong>Three 300 gp diamonds</strong> suitable for Revivify.</li><li><strong>One 500 gp diamond</strong> for a more serious resurrection emergency if their magic supports it.</li><li>Two doses of anti-undead field reagent: advantage on one saving throw against a vampire or Dark Power effect.</li><li>A chalked diagram of Ravenloft’s known exterior approaches and a reminder that the front door being open is an invitation, not a weakness.</li></ul><div class=\"cu-readaloud\">At the door, Van Richten stops you one last time.<br><br>“You have spent months learning how to kill Strahd.”<br><br>“Tonight, remember that the thing trying hardest to help you kill him may be the thing you most need to stop.”</div><div class=\"cu-readaloud\">If asked whether that means helping Strahd for a moment:<br><br>“A drowning wolf may share a rock with you. That does not make it a dog.”</div><p>He stays in Vallaki to keep the cult war from turning the whole city into an anchor while the Unkindness assaults Ravenloft.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "458dddcaffb5d4e0"
+  },
+  {
+   "sourceId": "cu.journal.current-handoff",
+   "name": "00A — EXACT HANDOFF: WACHTER HOUSE",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/35-infernal-contract-arl.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "handoff.room",
+     "name": "1 — The Hidden Summoning Chamber",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Opening read-aloud</h2><div class=\"cu-readaloud\">The painted circle still glows beneath Arl’s feet. Brimstone hangs in the air beneath a house whose owners are now dead upstairs. Somewhere above you, Vallaki is quiet in the wrong way—the silence between two mobs deciding where to march next.<br><br>Arl looks from Legna to Damien and then to the rest of the Unkindness.<br><br>“Recognition. Mutual protection. Freedom from this circle and the Wachters’ little leash. No future service.”<br><br>He bares far too many teeth.<br><br>“Write it properly.”</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "handoff.contract",
+     "name": "2 — Finish the Contract",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Scene: Damien and Arl</h2><p>Do not renegotiate from zero unless the players choose to. The previous session already accepted the substance.</p><h3>Accepted terms</h3><ol><li>Free Arl from the circle and Wachter control.</li><li>Mutual non-harm between Arl and the Unkindness for the Ravenloft undertaking.</li><li>Arl goes ahead to Ravenloft and materially assists in defeating its corrupt lord/forces.</li><li>No future favour, soul or unspecified service from the Unkindness.</li><li>Arl receives truthful recognition of his assistance in Strahd’s defeat.</li></ol><p>Let Damien tighten wording. A DC 15 Intelligence (Investigation), Arcana, or appropriate noble/legal check may identify a dangerous ambiguity; success lets the player close it. Failure does <strong>not</strong> create a gotcha clause—the contract remains what the group actually negotiated.</p><p>Use <strong>Arl — Contract / Release</strong>.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "handoff.release",
+     "name": "3 — Break the Circle",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Arl is released</h2><div class=\"cu-readaloud\">The last line dries.<br><br>Arl places one claw against the inner edge of the summoning circle. For the first time, the paint burns from the inside out.<br><br>The house shudders. Every candle above you goes blue.<br><br>The pit fiend steps across the line, looks down at his own feet as though checking that reality still permits them to move, and exhales a column of smoke.<br><br>“Castle Ravenloft.”<br><br>He smiles.<br><br>“I shall go impose order.”</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Arl goes first because the party specifically wanted him to enter through the front and create a destructive distraction. He does not know Orcus will become his primary target yet.</p>"
+    },
+    {
+     "sourcePageId": "handoff.evidence",
+     "name": "4 — What They Leave the House With",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Continuity inventory</h2><ul><li>Strahd’s unopened sealed invitation.</li><li>Box of shredded papers bearing Strahd’s crest and black wax impression.</li><li>Luba’s Tarokka of Souls, found by Vesper.</li><li>Heward’s Handy Haversack, found by Thorgrinn; his Baldrik keepsake box can be stored inside.</li><li>The three Wachter corpses in Damien’s portable hole unless the party changes that.</li></ul><p>No direct intact correspondence between Lady Wachter and Strahd was found in the house.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "handoff.next",
+     "name": "5 — Next Destination: Van Richten",
+     "sort": 40,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not add another detour</h2><p>The group already agreed where to go next: Van Richten’s workshop/house in Vallaki. They specifically wanted a safe place to read Strahd’s letter and discuss the Ravenloft plan.</p><p>Use the civil-war streets as atmosphere and a decision point. A random combat here risks spending the session on a problem the players have already chosen not to make their primary objective.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "0726643cd1e66e8d"
+  },
+  {
+   "sourceId": "cu.journal.arl-contract",
+   "name": "00B — ARL: THE CONTRACT BEFORE RAVENLOFT",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/35-infernal-contract-arl.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "arl.terms",
+     "name": "1 — Canonical Terms",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The deal already negotiated</h2><p><strong>Party consideration:</strong> release from the circle and Wachter control.</p><p><strong>Arl consideration:</strong> mutual non-harm, direct/material assistance against Ravenloft and Strahd, and truthful written recognition of that aid.</p><p><strong>Explicitly rejected:</strong> a future service owed by the group.</p><p><strong>Not part of the deal:</strong> souls, infernal ownership of party members, secret punishment clauses or a retroactive favour.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "arl.wording",
+     "name": "2 — Suggested Contract Text",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Player-facing draft</h2><div class=\"cu-readaloud\"><strong>By mutual agreement between Arl and the five adventurers known as the Unkindness:</strong><br><br>The Unkindness shall release Arl from the summoning circle beneath Wachter House and from such control as that household presently exercises over him.<br><br>From the moment of release until the present assault upon Castle Ravenloft is concluded, neither Arl nor any member of the Unkindness shall knowingly and intentionally inflict direct harm upon the other.<br><br>Arl shall proceed to Castle Ravenloft and materially assist in the defeat of Strahd von Zarovich and the hostile powers defending or corrupting his seat, according to Arl’s own methods so long as those methods do not violate the mutual protection above.<br><br>The Unkindness incurs no future service, soul-debt, open favour or unspecified obligation by this agreement.<br><br>If Arl materially assists in the defeat of Strahd von Zarovich, the surviving members of the Unkindness shall truthfully acknowledge that assistance in this contract and when directly asked by competent infernal authority.</div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>Let Damien edit this. Do not force this exact wording if the players produce better language.</p>"
+    },
+    {
+     "sourcePageId": "arl.future",
+     "name": "3 — What Arl Does After Release",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Arrival at Ravenloft</h2><p>Arl travels ahead and initially attacks Ravenloft’s defenders as contracted. When Orcus manifests, the pit fiend’s priorities change naturally: a demon-lord/Dark Power attempting to seize Barovia is a vastly more offensive cosmic problem.</p><p>Unless redirected, set <strong>Arl → Orcus</strong> when the War of Broken Gods begins.</p><p>If he survives, the recognition clause matters in the epilogue: the party can truthfully sign that Arl aided the defeat. This closes the contract without owing a future adventure hook unless you deliberately want one.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "433313676764708a"
+  },
+  {
+   "sourceId": "cu.journal.strahd-letter",
+   "name": "00C — STRAHD’S SEALED LETTER",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/36-strahds-sealed-invitation.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "letter.state",
+     "name": "1 — It Is Still Sealed",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Current state</h2><p>The party deliberately did not open this on the road. They joked that opening it might start a timer and decided to save it for Van Richten’s house. Treat that caution as real player choice.</p><p>Opening the letter does <strong>not</strong> secretly trigger an arbitrary countdown. The genuine countdown is Barovia’s destabilization after the Amber Temple.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "letter.text",
+     "name": "2 — Suggested Contents",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-blood\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>When they finally open it</h2><div class=\"cu-readaloud\">To the Unkindness,<br><br>You have broken my temple, murdered those I named family, stolen the dead from their endings, and convinced yourselves that this constitutes victory.<br><br>I will indulge the misunderstanding once more.<br><br>The gates of Ravenloft stand open. Enter as guests, and you may yet receive the courtesy you refused before. Enter as prey, and the castle shall entertain itself.<br><br>Finn has returned to me. Tatyana remains under my protection. My household is divided, my servants frightened, and the dead beneath my floors have begun whispering names that even I did not invite.<br><br>You wanted an ending.<br><br>Come before lesser things decide it for us.<br><br><strong>— Strahd von Zarovich</strong></div><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section><p>This text is new finale writing consistent with Saraphene’s delivery; the Nov 8 transcript establishes the invitation premise (“guests or prey”) but not the complete written contents.</p>"
+    },
+    {
+     "sourcePageId": "letter.richten",
+     "name": "3 — Van Richten’s Read",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>What the letter tells him</h2><ul><li>Strahd is frightened enough to admit instability indirectly.</li><li>He wants the Unkindness inside Ravenloft before Orcus/Vampyr can seize the initiative.</li><li>“Lesser things decide it for us” is arrogance, but it confirms that Strahd believes something else can now contest his ending.</li><li>Do not treat the open gates as safety. Treat them as Strahd trying to choose the battlefield.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "947eccdb1cc733f3"
+  },
+  {
+   "sourceId": "cu.journal.continuity-ledger",
+   "name": "00D — CONTINUITY LEDGER: WHAT THE PARTY ACTUALLY HAS",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/items/17-baldriks-keepsake-box.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "ledger.party",
+     "name": "1 — Party and Level",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>The Unkindness</h2><p><strong>Level 10:</strong> Damien, Vesper, Bunch, Legna and Thorgrinn.</p><p>Thorgrinn remains in his mechanical soul-coin body. Legna is restored to living flesh through the Raven Queen’s rite. Damien previously escaped vampirism. Do not homogenize their body states.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ledger.relics",
+     "name": "2 — Major Relics / Tools",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Already possessed</h2><ul><li>Tome of Strahd.</li><li>Sun Sword / Sunblade.</li><li>Holy Symbol of Ravenkind.</li><li>Nine newly crafted flasks of holy water (3 Damien, 3 Vesper, 3 Legna).</li><li>Thorgrinn’s silver-shot arm modification.</li><li>Legna’s potion of fire giant strength from Thorgrinn.</li><li>Bunch’s Cloak of the Bat, Helm of Brilliance, Boots of Levitation and Stone of Controlling Earth Elementals as discussed at table.</li><li>Damien’s portable hole.</li><li>Two immovable rods were specifically raised as a possible castle-scaling plan.</li></ul><p>Do not invent that any of these have been spent unless play spends them.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ledger.allies",
+     "name": "3 — Allies and Their Current Locations",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Not all allies are physically together</h2><ul><li><strong>Arl:</strong> still trapped at the exact campaign handoff; terms accepted, release pending.</li><li><strong>Azrathox:</strong> ancient red dragon ally; deliberately stayed outside Vallaki and will rendezvous after the party exits.</li><li><strong>Van Richten:</strong> next destination, not yet visited this session.</li><li><strong>Raven Queen:</strong> patron/divine interest, not a combat NPC to deploy.</li><li><strong>Vistani:</strong> cannot directly fight Strahd due their old pact; they intend to leave before the pocket collapses.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "ledger.people",
+     "name": "4 — People Still Unresolved",
+     "sort": 30,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Do not forget them</h2><ul><li><strong>Finn:</strong> escaped Wachter House; visibly injured after the Amber Temple release.</li><li><strong>Tatyana/Ireena:</strong> alive in Ravenloft, protected by Strahd, frightened, and intermittently more like her original self.</li><li><strong>Saraphene:</strong> asked to survive and flee; may provide one final piece of court intelligence if useful.</li><li><strong>The Abbot:</strong> survived earlier events and remains a possible Ravenloft complication, not automatically a combat boss.</li><li><strong>Baldrik:</strong> left Barovia/Vistani business roughly a week earlier, toward Amphail and then the Sword Mountains; Thorgrinn has his unopened keepsake box.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "b775d94dfc20ad82"
+  },
+  {
+   "sourceId": "cu.journal.bride-continuity",
+   "name": "03X — BRIDE CONTINUITY: VOLENTA THE OATHBREAKER",
+   "folder": "The Cat and the Unkindness/03 — Brides & Castle Court",
+   "img": "modules/unkindness-saga/assets/ravenloft/art/portraits/08-volenta-oathbreaker-bride.webp",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "bride.conflict",
+     "name": "Canon resolved",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Canon resolved: Volenta is the male Oathbreaker</h2>\n<p>The Nov 8 reading was intentional. There is no additional unnamed consort.</p>\n<p>The established bride roster remains <strong>Ludmilla, Anastrasya and Volenta</strong>, but Volenta has been reinterpreted in Strahd1 as a <strong>male Oathbreaker paladin</strong>. He is the bride Madam Eva described as preferring seduction and a long drain over months rather than ravenous feeding.</p>\n<ul><li><strong>Ludmilla:</strong> female, magic-user bride.</li><li><strong>Anastrasya:</strong> female, ravenous/manipulative bride.</li><li><strong>Volenta:</strong> male, Oathbreaker paladin bride; patient predation and martial pressure.</li></ul>\n<p>Do not create or deploy a fourth consort to reconcile the prophecy.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "4572df58b932b859"
+  },
+  {
+   "sourceId": "cu.journal.runbook",
+   "name": "00E — TWO-SESSION GM RUNBOOK",
+   "folder": "The Cat and the Unkindness/00 — Command Centre",
+   "img": "modules/unkindness-saga/assets/ravenloft/module.svg",
+   "ownership": "gm",
+   "pages": [
+    {
+     "sourcePageId": "run.s1",
+     "name": "Session One — From the Cellar to Strahd",
+     "sort": 0,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Target: reach the physical Strahd appearance</h2><div class=\"cu-table-wrap\"><table class=\"cu-table\"><thead><tr><th>Beat</th><th>Target time</th><th>Stop if running long</th></tr></thead><tbody><tr><td>Arl contract/release</td><td>15 min</td><td>Never cut; this is the exact cliffhanger</td></tr><tr><td>Van Richten route + letter</td><td>20 min</td><td>Skip street combat</td></tr><tr><td>Van Richten briefing/cache</td><td>35 min</td><td>Use field-note handout</td></tr><tr><td>Optional Vallaki intervention</td><td>0–25 min</td><td>Resolve as challenge, not full battle</td></tr><tr><td>Azrathox + Dark Power arrival</td><td>30–45 min</td><td>3 rounds / one objective each front</td></tr><tr><td>Brides</td><td>75–120 min</td><td>Use retreat/surrender/mist rules</td></tr><tr><td>Abbot + Finn + Tatyana</td><td>60–90 min</td><td>End after “At last.”</td></tr></tbody></table></div><p>The ideal cliffhanger is Strahd finally appearing in person after Finn/Tatyana resolve.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "run.s2",
+     "name": "Session Two — Kill the Devil Correctly",
+     "sort": 10,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>Target: finish campaign</h2><ol><li>Strahd’s courtesy/rest offer.</li><li>Phase I: elegant Strahd.</li><li>Phase II: castle/Heart Chains while Orcus/Vampyr interventions escalate.</li><li>Demonstrate at least one Dark Power reconstitution if the party tries to finish it.</li><li>Open Djinn/Vecna Wish routes only when defeat becomes real.</li><li>Cast Wish → Edict of Finality.</li><li>Phase III: frightened Strahd / Tatyana choice / prophecies.</li><li>Coffin chase and final execution.</li><li>Resolve Dark Power final dispositions and arc attention.</li><li>Barovia collapse → keepsake box → Ironfist road.</li></ol><p>Do not add another mandatory encounter after the coffin. The campaign should be allowed to end.</p><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    },
+    {
+     "sourcePageId": "run.fail",
+     "name": "Failure That Still Creates a Campaign",
+     "sort": 20,
+     "html": "<section class=\"cat-unkindness cu-slab cu-stone\"><div class=\"cu-sigil\">☾ ◆ ☽</div><h2>If the ending goes wrong</h2><ul><li><strong>Orcus inherits:</strong> Strahd dies but Barovia becomes a kingdom of final death/necromantic dominion. End the campaign with the Unkindness escaping a newborn Orcus domain; Orcus becomes dominant next arc.</li><li><strong>Vampyr inherits:</strong> Strahd is rebound/replaced and Barovia becomes a blood covenant under a new claimant. Vampyr dominates next arc.</li><li><strong>Vecna saves them:</strong> Barovia can still be freed, but the price paid and +Vecna Attention make the next arc about authorship/secrets.</li><li><strong>Party wipe:</strong> use the five prophecies, Raven Queen bond, djinn/Vecna offer or ally sacrifice only if it follows established choices. Do not simply reset the loop; they broke it.</li></ul><div class=\"cu-sigil cu-bottom\">☾ ◆ ☽</div></section>"
+    }
+   ],
+   "sourceHash": "35a9ed12444f90b3"
+  }
+ ]
+}

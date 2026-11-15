@@ -1,0 +1,103 @@
+{
+  "macros": [
+    {
+      "sourceId": "il.macro.setup",
+      "name": "Ironfist — Setup / Repair",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.setup();",
+      "sourceHash": "d70e3b29a8f959c963458e8949060c0b41b456ebd8b6a7810f49630f437b4e8a"
+    },
+    {
+      "sourceId": "il.macro.dashboard",
+      "name": "Ironfist — Dashboard",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.postDashboard();",
+      "sourceHash": "e8342ad5724e4fca755a6879023914943477add01636cfbe2de4c366aecfaefa"
+    },
+    {
+      "sourceId": "il.macro.evidence",
+      "name": "Ironfist — Award Evidence",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptEvidence();",
+      "sourceHash": "0162b52ec4dba3934ac07a4062541e1a67af222848d9f83ca4235d29ec4cb17b"
+    },
+    {
+      "sourceId": "il.macro.defence",
+      "name": "Ironfist — Adjust Defence",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptTrack(\"defenceReadiness\");",
+      "sourceHash": "96ae81e1323b825deda0e48822c0c9503c62223a87ccac175eed67e60206f695"
+    },
+    {
+      "sourceId": "il.macro.accord",
+      "name": "Ironfist — Adjust Accord",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptTrack(\"civilianAccord\");",
+      "sourceHash": "7c7f738a54b6cef2a170c28cc30402563abc84e6f943bedc86b151ead63538ad"
+    },
+    {
+      "sourceId": "il.macro.hearing",
+      "name": "Ironfist — Stone Council Hearing",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptHearing();",
+      "sourceHash": "357551275681e45193210b0040ba6de835a039e8eaf7b9f66498e87b59fc7171"
+    },
+    {
+      "sourceId": "il.macro.forge",
+      "name": "Ironfist — Forge Rune",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.forgeRune();",
+      "sourceHash": "4aeb8e0cf6017740d25f5114950488d2828fa0e222f5e39e5e3a12a2efe4fd4a"
+    },
+    {
+      "sourceId": "il.macro.action",
+      "name": "Ironfist — NPC Action",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.npcAction();",
+      "sourceHash": "1ffa350bfc6d2e3ee67e5ac02d084e7251a225734cbc647943254b56c5ea1fba"
+    },
+    {
+      "sourceId": "il.macro.baldrik",
+      "name": "Ironfist — Baldrik Accountability",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptBaldrik();",
+      "sourceHash": "39903a8ad546365b03619f3b8268c300a536521960ca9f11ce8701bfb56cfac0"
+    },
+    {
+      "sourceId": "il.macro.council",
+      "name": "Ironfist — Council Stance",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptCouncil();",
+      "sourceHash": "a8f0126b039c9ccd1fb4dcdd8e669c0dc9a91c4bfe51389ab7df7a51676124b9"
+    },
+    {
+      "sourceId": "il.macro.learn-rune",
+      "name": "Ironfist — Learn / Unlearn Rune",
+      "folder": "Ironfist Utilities",
+      "type": "script",
+      "img": "modules/unkindness-saga/assets/module-rune.svg",
+      "command": "await game.ironfist.promptRuneLearn();",
+      "sourceHash": "3c64ee580a609bd107922857445254271afb63b10799fdcda076ecc2d8b19cc9"
+    }
+  ]
+}
